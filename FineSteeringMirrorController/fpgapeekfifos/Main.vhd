@@ -7,6 +7,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 --~ use work.ads1258.all;
 --~ use work.ads1258accumulator_pkg.all;
+library work;
+use work.CGraphTypes.all;
 
 entity Main is
 port (
@@ -17,7 +19,7 @@ port (
 	
 	nCsXO : out std_logic;
 	SckXO : out std_logic;
-	MosiXO : out std_logic;
+	MosiXO : inout std_logic;
 	
 	--D/A's
 	
@@ -89,8 +91,6 @@ port (
 	Oe3 : out std_logic;
 	Rx3 : in std_logic;
 	PPS : in std_logic;
-	TxUsb : in std_logic;
-	RxUsb : out std_logic;
 	
 	--MonitorA/D
 	
@@ -260,7 +260,9 @@ architecture architecture_Main of Main is
 						component SpiDacPorts is
 						generic (
 							MASTER_CLOCK_FREQHZ : natural := 100000000;
-							BIT_WIDTH : natural := 24--;
+							BIT_WIDTH : natural := 16;
+							CPOL : std_logic := '0'; --'standard' spi knob - inverts clock polarity (0 seems to be the standard, 1 less common)
+							CPHA : std_logic := '0'--; --'standard' spi knob - inverts clock phase (0 seems to be the standard, 1 less common)
 						);
 						port (
 						
@@ -274,10 +276,15 @@ architecture architecture_Main of Main is
 							Mosi : out  std_logic;
 							Miso : in  std_logic;
 							
+							--Debug
+							SpiRstOut : out std_logic;
+							SpiXferCompleteOut : out std_logic;
+
 							--Control signals
 							DacWriteOut : in std_logic_vector(BIT_WIDTH - 1 downto 0);
 							WriteDac : in std_logic;
-							DacReadback : out std_logic_vector(BIT_WIDTH - 1 downto 0)--;
+							DacReadback : out std_logic_vector(BIT_WIDTH - 1 downto 0);
+							TransferComplete : out std_logic--;
 								
 						); end component;
 						
@@ -431,6 +438,11 @@ architecture architecture_Main of Main is
 							ReadFifo	: in std_logic;
 							FifoReadAck : out std_logic;
 							FifoReadData : out std_logic_vector(7 downto 0);
+							--Packet decodes:
+							LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadLen : out std_logic_vector(31 downto 0);
+							HeaderFooterPayloadLenMatches : out std_logic;
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
@@ -640,6 +652,9 @@ architecture architecture_Main of Main is
 							PowerCycd : in std_logic;
 							nPowerCycClr : out std_logic;								
 							PowernEn : out std_logic;
+							ChopEn : out std_logic;
+							ChopRefState : out std_logic;
+							ChopAdcState : out std_logic;
 							Uart0OE : out std_logic;
 							Uart1OE : out std_logic;
 							Uart2OE : out std_logic;
@@ -657,7 +672,8 @@ architecture architecture_Main of Main is
 							DacCReadback : in std_logic_vector(23 downto 0);	
 							DacDReadback : in std_logic_vector(23 downto 0);	
 							DacTransferComplete : in std_logic;
-
+							DitherClkDiv : out std_logic_vector(15 downto 0);	
+							
 							-- FSM Readback A/Ds
 							ReadAdcSample : out std_logic;
 							AdcSampleToReadA : in std_logic_vector(47 downto 0);	
@@ -665,7 +681,11 @@ architecture architecture_Main of Main is
 							AdcSampleToReadC : in std_logic_vector(47 downto 0);	
 							AdcSampleToReadD : in std_logic_vector(47 downto 0);	
 							AdcSampleNumAccums : in std_logic_vector(15 downto 0);	
-							
+							AdcClkDivider : out std_logic_vector(15 downto 0);	
+							AdcSamplesToAverage : out std_logic_vector(15 downto 0);	
+							ControlAdcMaxAccums : out std_logic_vector(15 downto 0);	
+							MonitorAdcMaxAccums : out std_logic_vector(15 downto 0);	
+
 							--Monitor A/D:
 							MonitorAdcChannelReadIndex : out std_logic_vector(4 downto 0);
 							ReadMonitorAdcSample : out std_logic;
@@ -744,19 +764,6 @@ architecture architecture_Main of Main is
 							Uart3TxFifoData : out std_logic_vector(7 downto 0);
 							Uart3TxFifoCount : in std_logic_vector(9 downto 0);
 							Uart3ClkDivider : out std_logic_vector(7 downto 0);
-							
-							UartLabFifoReset : out std_logic;
-							ReadUartLab : out std_logic;
-							UartLabRxFifoFull : in std_logic;
-							UartLabRxFifoEmpty : in std_logic;
-							UartLabRxFifoData : in std_logic_vector(7 downto 0);
-							UartLabRxFifoCount : in std_logic_vector(9 downto 0);
-							WriteUartLab : out std_logic;
-							UartLabTxFifoFull : in std_logic;
-							UartLabTxFifoEmpty : in std_logic;
-							UartLabTxFifoData : out std_logic_vector(7 downto 0);
-							UartLabTxFifoCount : in std_logic_vector(9 downto 0);
-							UartLabClkDivider : out std_logic_vector(7 downto 0);
 							
 							--Timing
 							IdealTicksPerSecond : in std_logic_vector(31 downto 0);
@@ -917,9 +924,10 @@ architecture architecture_Main of Main is
 							AdcPowerDown : in std_logic; --self-explanatory...
 							AdcClkDivider : in std_logic_vector(15 downto 0); --This knob controls the acquisition speed of the A/D.
 							SamplesToAverage : in std_logic_vector(15 downto 0); --Only supported on LTC2380-24 hardware! This also controls the acquisition speed of the A/D; each 4x averaging gives an extra bit of SNR or 6dB.
+							MaxAccums : in std_logic_vector(15 downto 0); --This alows us to determine if the final bit width fits in a 32b integer or a 40b integer 
 							ChopperEnable : in std_logic; --turns chopper on/off to reduce 1/f noise and offset!
-							ChopperMuxPos : out std_logic; --switches inputs when chopper on to reduce 1/f noise and offset!
-							ChopperMuxNeg : out std_logic; --switches inputs when chopper on to reduce 1/f noise and offset!
+							ChopperMuxRef : out std_logic; --switches inputs when chopper on to reduce 1/f noise and offset!
+							ChopperMuxAdc : out std_logic; --switches inputs when chopper on to reduce 1/f noise and offset!
 						
 							--Bus interface
 							ReadAdcSample : in std_logic;		
@@ -939,7 +947,8 @@ architecture architecture_Main of Main is
 												
 						component SpiDacQuadPorts is
 						generic (
-							MASTER_CLOCK_FREQHZ : natural := 100000000--;
+							MASTER_CLOCK_FREQHZ : natural := 100000000;
+							BYTE_WIDTH : natural := 3--;
 						);
 						port (
 						
@@ -964,18 +973,18 @@ architecture architecture_Main of Main is
 							
 							--Control signals
 							WriteDac : in std_logic;
-							DacWriteOutA : in std_logic_vector(23 downto 0);
-							DacWriteOutB : in std_logic_vector(23 downto 0);
-							DacWriteOutC : in std_logic_vector(23 downto 0);
-							DacWriteOutD : in std_logic_vector(23 downto 0);
-							DacReadbackA : out std_logic_vector(23 downto 0);
-							DacReadbackB : out std_logic_vector(23 downto 0);
-							DacReadbackC : out std_logic_vector(23 downto 0);
-							DacReadbackD : out std_logic_vector(23 downto 0);
+							DacWriteOutA : in std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacWriteOutB : in std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacWriteOutC : in std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacWriteOutD : in std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacReadbackA : out std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacReadbackB : out std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacReadbackC : out std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
+							DacReadbackD : out std_logic_vector((BYTE_WIDTH * 8) - 1 downto 0);
 							TransferComplete : out std_logic--;
 							
-						); end component;
-						
+						); 
+						end component;
 						
 						component SpiExtBusAddrTxPorts is
 						generic 
@@ -1017,9 +1026,13 @@ architecture architecture_Main of Main is
 								
 						); end component;
 						
-						component CrcFifo is
+
+						component DacDitherer is
 						generic (
-								DEPTH_BITS : natural := 10--;
+							REGISTER_IN_BITS : natural := 24;
+							REGISTER_OUT_BITS : natural := 24;
+							DATA_BITS : natural := 20;
+							DITHER_BITS : natural := 2--;
 						);
 						port (
 						
@@ -1027,16 +1040,15 @@ architecture architecture_Main of Main is
 							clk : in std_logic;
 							rst : in std_logic;
 							
-							FifoStartAddr : in unsigned(DEPTH_BITS - 1 downto 0);
-							FifoEndAddr : in unsigned(DEPTH_BITS - 1 downto 0);
-							FifoPeekAddr : out unsigned(DEPTH_BITS - 1 downto 0);
-							FifoPeekData : in std_logic_vector(7 downto 0);
+							-- A/D:
+							DitherClkDiv : in std_logic_vector(15 downto 0);
+							DacTrigger : out std_logic;
+							DacXferComplete : in std_logic;
 							
-							Crc : out std_logic_vector(31 downto 0);
-							CrcComplete : out std_logic--;
+							SetPointIn : in std_logic_vector(REGISTER_IN_BITS - 1 downto 0);
+							DacMagnitudeOut : out std_logic_vector(REGISTER_OUT_BITS - 1 downto 0)--;
 							
 						); end component;
-
 						
 --Constants & Setup
 	
@@ -1069,7 +1081,7 @@ architecture architecture_Main of Main is
 		
 		-- Ram bus
 						
-			signal RamBusLatch_i : std_logic;		
+			--~ signal RamBusLatch_i : std_logic;		
 			signal RamBusCE_i : std_logic;		
 			signal RamBusWrnRd_i : std_logic;		
 			signal RamBusAddress_i : std_logic_vector(9 downto 0);		
@@ -1089,30 +1101,64 @@ architecture architecture_Main of Main is
 		-- FSM D/As
 		
 			signal DacSelectMaxti : std_logic;	
-			signal nCsDacA_i : std_logic;	
-			signal nCsDacB_i : std_logic;	
-			signal nCsDacC_i : std_logic;	
-			signal nCsDacD_i : std_logic;	
-			signal SckDacs_i : std_logic;	
-			signal MosiDacA_i : std_logic;	
-			signal MosiDacB_i : std_logic;	
-			signal MosiDacC_i : std_logic;	
-			signal MosiDacD_i : std_logic;	
-			signal MisoDacA_i : std_logic;	
-			signal MisoDacB_i : std_logic;	
-			signal MisoDacC_i : std_logic;	
-			signal MisoDacD_i : std_logic;	
+			signal nCsDacMaxA_i : std_logic;	
+			signal nCsDacMaxB_i : std_logic;	
+			signal nCsDacMaxC_i : std_logic;	
+			signal nCsDacMaxD_i : std_logic;	
+			signal SckDacsMax_i : std_logic;	
+			signal MosiDacMaxA_i : std_logic;	
+			signal MosiDacMaxB_i : std_logic;	
+			signal MosiDacMaxC_i : std_logic;	
+			signal MosiDacMaxD_i : std_logic;	
+			--~ signal MisoDacMaxA_i : std_logic;	
+			--~ signal MisoDacMaxB_i : std_logic;	
+			--~ signal MisoDacMaxC_i : std_logic;	
+			--~ signal MisoDacMaxD_i : std_logic;				
+			signal nCsDacTiA_i : std_logic;	
+			signal nCsDacTiB_i : std_logic;	
+			signal nCsDacTiC_i : std_logic;	
+			signal nCsDacTiD_i : std_logic;	
+			signal SckDacsTi_i : std_logic;	
+			signal MosiDacTiA_i : std_logic;	
+			signal MosiDacTiB_i : std_logic;	
+			signal MosiDacTiC_i : std_logic;	
+			signal MosiDacTiD_i : std_logic;	
+			--~ signal MisoDacTiA_i : std_logic;	
+			--~ signal MisoDacTiB_i : std_logic;	
+			--~ signal MisoDacTiC_i : std_logic;	
+			--~ signal MisoDacTiD_i : std_logic;	
 			signal DacASetpoint : std_logic_vector(23 downto 0);	
 			signal DacBSetpoint : std_logic_vector(23 downto 0);	
 			signal DacCSetpoint : std_logic_vector(23 downto 0);	
 			signal DacDSetpoint : std_logic_vector(23 downto 0);	
-			signal WriteDacs : std_logic;	
+			signal DacASetpointMax_i : std_logic_vector(23 downto 0);	
+			signal DacBSetpointMax_i : std_logic_vector(23 downto 0);	
+			signal DacCSetpointMax_i : std_logic_vector(23 downto 0);	
+			signal DacDSetpointMax_i : std_logic_vector(23 downto 0);	
+			signal DacASetpointTi_i : std_logic_vector(15 downto 0);	
+			signal DacBSetpointTi_i : std_logic_vector(15 downto 0);	
+			signal DacCSetpointTi_i : std_logic_vector(15 downto 0);	
+			signal DacDSetpointTi_i : std_logic_vector(15 downto 0);	
 			signal DacAReadback : std_logic_vector(23 downto 0);	
 			signal DacBReadback : std_logic_vector(23 downto 0);	
 			signal DacCReadback : std_logic_vector(23 downto 0);	
 			signal DacDReadback : std_logic_vector(23 downto 0);	
+			signal DacAReadbackMax : std_logic_vector(23 downto 0);	
+			signal DacBReadbackMax : std_logic_vector(23 downto 0);	
+			signal DacCReadbackMax : std_logic_vector(23 downto 0);	
+			signal DacDReadbackMax : std_logic_vector(23 downto 0);	
+			signal DacAReadbackTi : std_logic_vector(15 downto 0);	
+			signal DacBReadbackTi : std_logic_vector(15 downto 0);	
+			signal DacCReadbackTi : std_logic_vector(15 downto 0);	
+			signal DacDReadbackTi : std_logic_vector(15 downto 0);	
+			
+			signal WriteDacs : std_logic;	
 			signal nLDacs_i : std_logic;	
-			signal DacTransferComplete : std_logic;	
+			signal DacTriggerTi : std_logic;	
+			signal DacTransferCompleteTi : std_logic;	
+			signal DacTriggerMax : std_logic;	
+			signal DacTransferCompleteMax : std_logic;	
+			signal DitherClkDiv : std_logic_vector(15 downto 0);	
 			
 			
 		-- FSM Readback A/Ds
@@ -1137,10 +1183,16 @@ architecture architecture_Main of Main is
 			signal AdcSampleToReadC : std_logic_vector(47 downto 0);	
 			signal AdcSampleToReadD : std_logic_vector(47 downto 0);	
 			signal AdcSampleNumAccums : std_logic_vector(15 downto 0);	
-			signal ChopperMuxPos_i : std_logic;
-			signal ChopperMuxNeg_i : std_logic;			
-			
-			
+			signal ChopEn : std_logic;
+			signal ChopRefState : std_logic;
+			signal ChopAdcState : std_logic;
+			signal ChopperMuxRef : std_logic;
+			signal ChopperMuxAdc : std_logic;	
+			signal AdcClkDivider : std_logic_vector(15 downto 0);	
+			signal AdcSamplesToAverage : std_logic_vector(15 downto 0);	
+			signal ControlAdcMaxAccums : std_logic_vector(15 downto 0);	
+			signal MonitorAdcMaxAccums : std_logic_vector(15 downto 0);	
+
 		--Monitor A/D
 		
 			signal nDrdyMonitorAdc0_i : std_logic;
@@ -1154,7 +1206,7 @@ architecture architecture_Main of Main is
 			signal MonitorAdcReadSample : std_logic;
 			--~ signal MonitorAdcSample : ltc244xaccumulator;
 			--~ signal MonitorAdcSample : ads1258accumulator;			
-			signal MonitorAdcSample : std_logic_vector(63 downto 0);
+			--~ signal MonitorAdcSample : std_logic_vector(63 downto 0);
 			signal MonitorAdcReset : std_logic;
 			signal MonitorAdcReset_i : std_logic;			
 			signal MonitorAdcSpiDataIn : std_logic_vector(7 downto 0);
@@ -1199,6 +1251,10 @@ architecture architecture_Main of Main is
 			signal Uart0DoCrc : std_logic;
 			signal Uart0CrcDone : std_logic;
 			signal Uart0Crc : std_logic_vector(31 downto 0);
+			signal Uart0LastHeaderEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0PayloadLen : std_logic_vector(31 downto 0);
+			signal Uart0HeaderFooterPayloadLenMatches : std_logic;
 			
 			signal Uart1FifoReset : std_logic;
 			signal Uart1FifoReset_i : std_logic;
@@ -1258,27 +1314,7 @@ architecture architecture_Main of Main is
 			signal UartTxClk3 : std_logic;			
 			signal Txd3_i : std_logic;
 			signal Rxd3_i : std_logic;
-			signal UartRx3Dbg : std_logic;		
-			
-			signal UartLabFifoReset : std_logic;
-			signal UartLabFifoReset_i : std_logic;
-			signal ReadUartLab : std_logic;
-			signal UartLabRxFifoFull : std_logic;
-			signal UartLabRxFifoEmpty : std_logic;
-			signal UartLabRxFifoReadAck : std_logic;
-			signal UartLabRxFifoData : std_logic_vector(7 downto 0);
-			signal UartLabRxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal WriteUartLab : std_logic;
-			signal UartLabTxFifoFull : std_logic;
-			signal UartLabTxFifoEmpty : std_logic;
-			signal UartLabTxFifoData : std_logic_vector(7 downto 0);
-			signal UartLabTxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal UartLabClkDivider : std_logic_vector(7 downto 0);
-			signal UartClkLab : std_logic;			
-			signal UartTxClkLab : std_logic;			
-			signal RxUsb_i : std_logic;
-			signal TxUsb_i : std_logic;
-			signal UartRxLabDbg : std_logic;		
+			--~ signal UartRx3Dbg : std_logic;		
 
 			signal TxdUartBitCount : std_logic_vector(3 downto 0); --debug
 			
@@ -1287,16 +1323,20 @@ architecture architecture_Main of Main is
 			signal PPS_i : std_logic;	
 			signal PPSCountReset : std_logic; --generated by register read
 			signal PPSDetected : std_logic; --are edges occuring on PPS?  Mainly used by rtc to decide wether to roll the clock over on it's own or let PPS sync it
-			signal PPSCount : std_logic_vector(31 downto 0) := x"00000000"; --How many MasterClocks have gone by since the last PPS edge (so we can phase-lock oscillator to GPS time)
-			signal PPSCounter : std_logic_vector(31 downto 0) := x"00000000"; --This one is the current count for this second, not the total for the last second...
-			signal ClkDacWrite : std_logic_vector(15 downto 0) := x"0000";
+			signal PPSCount : std_logic_vector(31 downto 0); --How many MasterClocks have gone by since the last PPS edge (so we can phase-lock oscillator to GPS time)
+			signal PPSCounter : std_logic_vector(31 downto 0); --This one is the current count for this second, not the total for the last second...
+			signal ClkDacWrite : std_logic_vector(15 downto 0);
 			signal WriteClkDac : std_logic;
 			signal ClkDacReadback : std_logic_vector(15 downto 0);
 			signal nCsXO_i : std_logic;
 			signal SckXO_i : std_logic;
 			signal MosiXO_i : std_logic;
 			signal MisoXO_i : std_logic;
-
+			
+		--GPIOs
+		
+		signal Ux1SelJmp_i : std_logic;
+		
 		constant nCsEnabled : std_logic := '0';
 		constant nCsNotEnabled : std_logic := '1';
 		
@@ -1435,12 +1475,18 @@ begin
 		PowernEn => PowernEn,
 		PowerCycd => PowerCycd,
 		nPowerCycClr => nPowerCycClr,
-		Uart0OE => OE0,
-		Uart1OE => OE1,
-		Uart2OE => OE2,
-		Uart3OE => OE3,
-		--~ Ux1SelJmp => Ux1SelJmp,
-		Ux1SelJmp => open,
+		ChopEn => ChopEn,
+		ChopRefState => ChopRefState,
+		ChopAdcState => ChopAdcState,
+		--~ Uart0OE => OE0,
+		--~ Uart1OE => OE1,
+		--~ Uart2OE => OE2,
+		--~ Uart3OE => OE3,
+		Uart0OE => open,
+		Uart1OE => open,
+		Uart2OE => open,
+		Uart3OE => open,
+		Ux1SelJmp => Ux1SelJmp_i,
 				
 		--FSM D/A's
 		DacASetpoint => DacASetpoint,
@@ -1455,7 +1501,8 @@ begin
 		--~ DacAReadback => DacASetpoint,
 		--~ DacBReadback => DacBSetpoint,
 		--~ DacCReadback => DacCSetpoint--,
-		DacTransferComplete => DacTransferComplete,
+		DacTransferComplete => (DacTransferCompleteMax and DacTransferCompleteTi),
+		DitherClkDiv => DitherClkDiv,
 		
 		--FSM A/D's
 		ReadAdcSample => ReadAdcSample,
@@ -1464,12 +1511,17 @@ begin
 		AdcSampleToReadC => AdcSampleToReadC,
 		AdcSampleToReadD => AdcSampleToReadD,
 		AdcSampleNumAccums => AdcSampleNumAccums,
-		
+		AdcClkDivider => AdcClkDivider,
+		AdcSamplesToAverage => AdcSamplesToAverage,	
+		ControlAdcMaxAccums => ControlAdcMaxAccums,	
+		MonitorAdcMaxAccums => MonitorAdcMaxAccums,	
+					
 		--Monitor A/D
 		MonitorAdcChannelReadIndex => MonitorAdcChannel,
 		ReadMonitorAdcSample => MonitorAdcReadSample,
 		--~ MonitorAdcSampleToRead => ltc244xaccum_to_std_logic(MonitorAdcSample),
-		MonitorAdcSampleToRead => MonitorAdcSample,
+		--~ MonitorAdcSampleToRead => MonitorAdcSample,
+		MonitorAdcSampleToRead => (others => '0'),
 		MonitorAdcReset => MonitorAdcReset,
 		MonitorAdcSpiDataIn => MonitorAdcSpiDataIn,
 		MonitorAdcSpiDataOut0 => MonitorAdcSpiDataOut0,
@@ -1545,20 +1597,6 @@ begin
 		Uart3TxFifoData => Uart3TxFifoData,
 		Uart3TxFifoCount => Uart3TxFifoCount,
 		Uart3ClkDivider => Uart3ClkDivider,
-		
-		
-		UartLabFifoReset => UartLabFifoReset,
-		ReadUartLab => ReadUartLab,
-		UartLabRxFifoFull => UartLabRxFifoFull,
-		UartLabRxFifoEmpty => UartLabRxFifoEmpty,
-		UartLabRxFifoData => UartLabRxFifoData,
-		UartLabRxFifoCount => UartLabRxFifoCount,
-		WriteUartLab => WriteUartLab,
-		UartLabTxFifoFull => UartLabTxFifoFull,
-		UartLabTxFifoEmpty => UartLabTxFifoEmpty,
-		UartLabTxFifoData => UartLabTxFifoData,
-		UartLabTxFifoCount => UartLabTxFifoCount,
-		UartLabClkDivider => UartLabClkDivider,
 				
 		--Timing
 		IdealTicksPerSecond => std_logic_vector(to_unsigned(BoardMasterClockFreq, 32)),
@@ -1577,47 +1615,66 @@ begin
 		--~ IBufFSMDacMisoB : IBufP1Ports port map(clk => MasterClk, I => MosiDacB, O => MisoDacB_i); --No actual Miso on MAX5719, so we're looping back the Mosi signal to see if the bit is stuck on the pcb...
 		--~ IBufFSMDacMisoC : IBufP1Ports port map(clk => MasterClk, I => MosiDacC, O => MisoDacC_i); --No actual Miso on MAX5719, so we're looping back the Mosi signal to see if the bit is stuck on the pcb...
 		--~ IBufFSMDacMisoD : IBufP1Ports port map(clk => MasterClk, I => MosiDacD, O => MisoDacD_i); --No actual Miso on MAX5719, so we're looping back the Mosi signal to see if the bit is stuck on the pcb...
-		
+
+	--Running D/A's at 10MHz sck, so should be able to run dither at 10/4 = 400kHz max...
+	--~ DITHER_CLOCK_DIV => 1048576, --100Hz
+	--~ DITHER_CLOCK_DIV => 104857, --1kHz
+	--~ DITHER_CLOCK_DIV => 10485, --10kHz
+	--~ DITHER_CLOCK_DIV => 1024, --102kHz
+	
+	DacDithererMaxA : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 24, DATA_BITS => 20, DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => DacTriggerMax, DacXferComplete => DacTransferCompleteMax, SetPointIn => DacASetpoint, DacMagnitudeOut => DacASetpointMax_i);
+	DacDithererMaxB : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 24, DATA_BITS => 20, DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteMax, SetPointIn => DacBSetpoint, DacMagnitudeOut => DacBSetpointMax_i);
+	DacDithererMaxC : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 24, DATA_BITS => 20, DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteMax, SetPointIn => DacCSetpoint, DacMagnitudeOut => DacCSetpointMax_i);
+	DacDithererMaxD : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 24, DATA_BITS => 20, DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteMax, SetPointIn => DacDSetpoint, DacMagnitudeOut => DacDSetpointMax_i);
+
+	DacDithererTiA : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 16, DATA_BITS => 16,	DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => DacTriggerTi, DacXferComplete => DacTransferCompleteTi, SetPointIn => DacASetpoint, DacMagnitudeOut => DacASetpointTi_i);
+	DacDithererTiB : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 16, DATA_BITS => 16,	DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteTi, SetPointIn => DacBSetpoint, DacMagnitudeOut => DacBSetpointTi_i);
+	DacDithererTiC : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 16, DATA_BITS => 16,	DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteTi, SetPointIn => DacCSetpoint, DacMagnitudeOut => DacCSetpointTi_i);
+	DacDithererTiD : DacDitherer generic map (REGISTER_IN_BITS => 24, REGISTER_OUT_BITS => 16, DATA_BITS => 16,	DITHER_BITS => 4) port map (clk => MasterClk, rst => MasterReset, DitherClkDiv => DitherClkDiv, DacTrigger => open, DacXferComplete => DacTransferCompleteTi, SetPointIn => DacDSetpoint, DacMagnitudeOut => DacDSetpointTi_i);
+
 	--MAX5719 is left-shifted, MSB-first
-	FSMDacs_i : SpiDacQuadPorts
+	FSMDacsMax_i : SpiDacQuadPorts
 	generic map 
 	(
-		MASTER_CLOCK_FREQHZ => BoardMasterClockFreq--,
+		MASTER_CLOCK_FREQHZ => BoardMasterClockFreq,
+		BYTE_WIDTH => 3--,
+
 	)
 	port map 
 	(
 		clk => MasterClk,
 		rst => MasterReset,
-		nCsA => nCsDacA_i,
-		nCsB => nCsDacB_i,
-		nCsC => nCsDacC_i,
-		nCsD => nCsDacD_i,
-		Sck => SckDacs_i,
-		MosiA => MosiDacA_i,
-		MosiB => MosiDacB_i,
-		MosiC => MosiDacC_i,
-		MosiD => MosiDacD_i,
-		MisoA => MosiDacA_i, --these should really loop back at the board level not the signal level, but we got two d/a's to juggle...
-		MisoB => MosiDacB_i,
-		MisoC => MosiDacC_i,
-		MisoD => MosiDacD_i,
-		WriteDac => WriteDacs,
-		DacWriteOutA => DacASetpoint,
-		DacWriteOutB => DacBSetpoint,
-		DacWriteOutC => DacCSetpoint,
-		DacWriteOutD => DacDSetpoint,
-		DacReadbackA => DacAReadback,
-		DacReadbackB => DacBReadback,
-		DacReadbackC => DacCReadback,
-		DacReadbackD => DacDReadback,
-		TransferComplete => DacTransferComplete
+		nCsA => nCsDacMaxA_i,
+		nCsB => nCsDacMaxB_i,
+		nCsC => nCsDacMaxC_i,
+		nCsD => nCsDacMaxD_i,
+		Sck => SckDacsMax_i,
+		MosiA => MosiDacMaxA_i,
+		MosiB => MosiDacMaxB_i,
+		MosiC => MosiDacMaxC_i,
+		MosiD => MosiDacMaxD_i,
+		MisoA => MosiDacMaxA_i, --these should really loop back at the board level not the signal level, but we got two d/a's to juggle...
+		MisoB => MosiDacMaxB_i,
+		MisoC => MosiDacMaxC_i,
+		MisoD => MosiDacMaxD_i,
+		--~ --Enable these to remove dither:
+		--~ WriteDac => WriteDacs,
+		--~ DacWriteOutA => DacASetpoint(31 downto 8),
+		--~ DacWriteOutB => DacBSetpoint(31 downto 8),
+		--~ DacWriteOutC => DacCSetpoint(31 downto 8),
+		--~ DacWriteOutD => DacDSetpoint(31 downto 8),
+		WriteDac => DacTriggerMax,
+		DacWriteOutA => DacASetpointMax_i,
+		DacWriteOutB => DacBSetpointMax_i,
+		DacWriteOutC => DacCSetpointMax_i,
+		DacWriteOutD => DacDSetpointMax_i,
+		DacReadbackA => DacAReadbackMax,
+		DacReadbackB => DacBReadbackMax,
+		DacReadbackC => DacCReadbackMax,
+		DacReadbackD => DacDReadbackMax,
+		TransferComplete => DacTransferCompleteMax
 	);
-
-	--~ UserJmpJstnCse <= nCsDacA_i;
-	--~ TP3 <= SckDacs_i;
-	--~ TP1 <= MosiDacA_i;
-	--~ TP1 <= nLDacs_i;	
-
+	
 	--not(nCs) prolly works, but this is more technically correct:
 	nLDacsOneShot : OneShotPorts
 	generic map (
@@ -1629,38 +1686,88 @@ begin
 	)
 	port map (	
 		clk => MasterClk,
-		rst => not(nCsDacA_i),
+		rst => not(nCsDacMaxA_i),
 		shot => nLDacs_i
 	);
 
+	--DAC8830 takes last 16 MSB's, so it needs it's own component to drive it
+	FSMDacsTi_i : SpiDacQuadPorts
+	generic map 
+	(
+		MASTER_CLOCK_FREQHZ => BoardMasterClockFreq,
+		BYTE_WIDTH => 2--,
+	)
+	port map 
+	(
+		clk => MasterClk,
+		rst => MasterReset,
+		nCsA => nCsDacTiA_i,
+		nCsB => nCsDacTiB_i,
+		nCsC => nCsDacTiC_i,
+		nCsD => nCsDacTiD_i,
+		Sck => SckDacsTi_i,
+		MosiA => MosiDacTiA_i,
+		MosiB => MosiDacTiB_i,
+		MosiC => MosiDacTiC_i,
+		MosiD => MosiDacTiD_i,
+		MisoA => MosiDacTiA_i, --these should really loop back at the board level not the signal level, but we got two d/a's to juggle...
+		MisoB => MosiDacTiB_i,
+		MisoC => MosiDacTiC_i,
+		MisoD => MosiDacTiD_i,
+		WriteDac => DacTriggerTi,
+		DacWriteOutA => DacASetpointTi_i,
+		DacWriteOutB => DacBSetpointTi_i,
+		DacWriteOutC => DacCSetpointTi_i,
+		DacWriteOutD => DacDSetpointTi_i,
+		DacReadbackA => DacAReadbackTi,
+		DacReadbackB => DacBReadbackTi,
+		DacReadbackC => DacCReadbackTi,
+		DacReadbackD => DacDReadbackTi,
+		TransferComplete => DacTransferCompleteTi
+	);
+
+
 	--D/A Muxing:
 	
-	MosiTiDacA <= MosiDacA_i when (DacSelectMaxti = '0') else 'Z';
-	MosiTiDacB <= MosiDacB_i when (DacSelectMaxti = '0') else 'Z';
-	MosiTiDacC <= MosiDacC_i when (DacSelectMaxti = '0') else 'Z';
-	MosiTiDacD <= MosiDacD_i when (DacSelectMaxti = '0') else 'Z';
-	SckTiDacs <= SckDacs_i when (DacSelectMaxti = '0') else 'Z';
-	nCsTiDacs <= nCsDacA_i when (DacSelectMaxti = '0') else 'Z';
+	MosiTiDacA <= MosiDacTiA_i when (DacSelectMaxti = '0') else 'Z';
+	MosiTiDacB <= MosiDacTiB_i when (DacSelectMaxti = '0') else 'Z';
+	MosiTiDacC <= MosiDacTiC_i when (DacSelectMaxti = '0') else 'Z';
+	MosiTiDacD <= MosiDacTiD_i when (DacSelectMaxti = '0') else 'Z';
+	SckTiDacs <= SckDacsTi_i when (DacSelectMaxti = '0') else 'Z';
+	nCsTiDacs <= nCsDacTiA_i when (DacSelectMaxti = '0') else 'Z';
 	PowerEnTi <= not(DacSelectMaxti);
 	
-	MosiMaxDacA <= MosiDacA_i when (DacSelectMaxti = '1') else 'Z';
-	MosiMaxDacB <= MosiDacB_i when (DacSelectMaxti = '1') else 'Z';
-	MosiMaxDacC <= MosiDacC_i when (DacSelectMaxti = '1') else 'Z';
-	MosiMaxDacD <= MosiDacD_i when (DacSelectMaxti = '1') else 'Z';
-	SckMaxDacs <= SckDacs_i when (DacSelectMaxti = '1') else 'Z';
-	nCsMaxDacs <= nCsDacA_i when (DacSelectMaxti = '1') else 'Z';
+	MosiMaxDacA <= MosiDacMaxA_i when (DacSelectMaxti = '1') else 'Z';
+	MosiMaxDacB <= MosiDacMaxB_i when (DacSelectMaxti = '1') else 'Z';
+	MosiMaxDacC <= MosiDacMaxC_i when (DacSelectMaxti = '1') else 'Z';
+	MosiMaxDacD <= MosiDacMaxD_i when (DacSelectMaxti = '1') else 'Z';
+	SckMaxDacs <= SckDacsMax_i when (DacSelectMaxti = '1') else 'Z';
+	nCsMaxDacs <= nCsDacMaxA_i when (DacSelectMaxti = '1') else 'Z';
 	nLoadMaxDacs <= nLDacs_i when (DacSelectMaxti = '1') else 'Z';
 	PowerEnMax <= DacSelectMaxti;
 	
-	--~ TP1_i <= nCsDacA_i;
-	--~ TP2_i <= nLDacs_i;
-	--~ TP2_i <= MosiDacA_i;
-	--~ TP2_i <= RamBusWE;
-	--~ TP3_i <= SckDacs_i;
-	--~ TP3_i <= WriteDacs;
-	--~ TP4_i <= MisoDacA_i;
-	--~ TP4_i <= WriteAck;
-	--~ TP4_i <= RamBusData_in(0);
+	DacAReadback <= (DacAReadbackTi, others => '0') when (DacSelectMaxti = '0') else DacAReadbackMax;
+	DacBReadback <= (DacBReadbackTi, others => '0') when (DacSelectMaxti = '0') else DacBReadbackMax;
+	DacCReadback <= (DacCReadbackTi, others => '0') when (DacSelectMaxti = '0') else DacCReadbackMax;
+	DacDReadback <= (DacDReadbackTi, others => '0') when (DacSelectMaxti = '0') else DacDReadbackMax;
+	
+	--~ TP1 <= DacTriggerTi;
+	--~ TP2 <= DacTransferCompleteTi;
+	--~ TP3 <= SckDacsTi_i;
+	--~ TP4 <= DacASetpointTi_i(2);
+	--~ TP5 <= DacASetpointTi_i(3);
+	--~ TP6 <= DacASetpointTi_i(4);
+	--~ TP7 <= DacASetpointTi_i(5);
+	--~ TP8 <= DacASetpointTi_i(6);
+	
+	--~ TP1 <= nCsDacA_i;
+	--~ TP2 <= SckDacs_i;
+	--~ TP3 <= MosiDacA_i;
+	--~ TP4 <= nLDacs_i;
+	--~ TP5 <= WriteDacs;
+	--~ TP6 <= DacSelectMaxti;
+	--~ TP7 <= DacASetpoint(0);
+	--~ TP8 <= WriteDacs;	
 	
 	----------------------------- A/D's ----------------------------------
 	
@@ -1700,58 +1807,51 @@ begin
 		AdcPowerDown => '0',
 		--~ AdcClkDivider => x"002F", --1MHz
 		--~ AdcClkDivider => x"05DC", --32kHz
-		AdcClkDivider => x"0FFF", --32kHz
-		--~ SamplesToAverage => x"03FF",		
-		SamplesToAverage => x"0001",		
-		ChopperEnable => '0',
-		ChopperMuxPos => ChopperMuxPos_i,
-		ChopperMuxNeg => ChopperMuxNeg_i,
+		--~ AdcClkDivider => x"0FFF", --24kHz
+		--~ AdcClkDivider => x"00FF", --400kHz
+		--~ AdcClkDivider => x"FFFF", --1kHz
+		--~ SamplesToAverage => x"FFFF",		
+		--~ SamplesToAverage => x"0001",		
+		AdcClkDivider => AdcClkDivider,
+		SamplesToAverage => AdcSamplesToAverage,	
+		MaxAccums => ControlAdcMaxAccums,			
+		ChopperEnable => ChopEn,
+		ChopperMuxRef => ChopperMuxRef,
+		ChopperMuxAdc => ChopperMuxAdc,
 		ReadAdcSample  => ReadAdcSample,
 		AdcSampleToReadA => AdcSampleToReadA,
 		AdcSampleToReadB => AdcSampleToReadB,
 		AdcSampleToReadC => AdcSampleToReadC,
 		AdcSampleToReadD => AdcSampleToReadD,
 		AdcSampleNumAccums => AdcSampleNumAccums,
-		--~ TP1 => TP1_i,
-		--~ TP2 => TP2_i,
-		--~ TP3 => TP3_i,
-		--~ TP4 => TP4_i--,		
-		TP1 => open,
-		TP2 => open,
-		TP3 => open,
-		TP4 => open--,		
+		TP1 => TP5,
+		TP2 => TP6,
+		TP3 => TP7,
+		TP4 => TP8--,		
+		--~ TP1 => open,
+		--~ TP2 => open,
+		--~ TP3 => open,
+		--~ TP4 => open--,		
 	);
 
+	--Lets the software set the chopper states when chopping is disabled:
+	ChopRef <= ChopRefState when (ChopEn = '0') else ChopperMuxRef;
+	ChopAdcs <= ChopAdcState when (ChopEn = '0') else ChopperMuxAdc;
+	
 	--Map the other A/D signals to the actual pins:
-	
-	--~ ChopperMuxPos_i
-	--~ ChopperMuxNeg_i
-	ChopRef <= '0';
-	ChopAdcs <= '0';
-	
 	TrigAdcs <= TrigAdcs_i;
-	--~ nCsAdcA <= nCsAdcA_i;
-	--~ nCsAdcB <= nCsAdcB_i;
-	--~ nCsAdcC <= nCsAdcC_i;
-	--~ nCsAdcD <= nCsAdcD_i;
 	nCsAdcs <= nCsAdcA_i;
 	SckAdcs <= SckAdcs_i;
 		
 	--To test between fpga & A/D:
-	--~ TP1_i <= TrigAdcs_i;
-	--~ TP2_i <= nDrdyAdcA_i;
-	--~ TP3_i <= nCsAdcA_i;
-	--~ TP4_i <= SckAdcs_i;
-	--~ TP8_i <= SarAdcMiso_i;	
-	--~ TP5_i <= MisoAdcA_i;
-	--~ TP6_i <= MisoAdcB_i;
-	--~ TP7_i <= MisoAdcC_i;
-	--~ TP8_i <= ReadAdcSample;
-	
-	--To test between fpga & uC:
-	--~ TP8_i <= SarReadAdcSample;
-	--~ TP4_i <= SarAdcSampleReadAck;
-	--~ TP5_i <= SarFifoAdcSample(0);
+	--~ TP1 <= TrigAdcs_i;
+	TP2 <= nDrdyAdcA_i;
+	TP3 <= nCsAdcA_i;
+	TP4 <= SckAdcs_i;
+	--~ TP5 <= MisoAdcA_i;
+	--~ TP6 <= MisoAdcB_i;
+	--~ TP7 <= MisoAdcC_i;
+	--~ TP8 <= ReadAdcSample;
 	
 	----------------------------------------------------------------Monitor A/D--------------------------------------------------------------------
 			
@@ -1792,6 +1892,7 @@ begin
 		--~ AdcSampleLatched => MonitorAdcSampleLatched,
 		--~ AdcChannelLatched => open,
 		--~ AdcChannelReadIndex => MonitorAdcChannel,
+		--~ MaxAccums => MonitorAdcMaxAccums,			
 		--~ ReadAdcSample => MonitorAdcReadSample,
 		--~ AdcSampleToRead => MonitorAdcSampleToRead--,
 	--~ );
@@ -1831,26 +1932,26 @@ begin
 	SckMonAdcs <= SckMonitorAdc_i;
 	MosiMonAdcs <= MosiMonitorAdc_i;	
 	
-	TrigMonAdcs <= 'Z'; --We're not driving this rn
+	TrigMonAdcs <= '1'; --high for autoscan (we might use this as clk input later if we want power of 2 data rates...)
 	
 	MonitorAdcReset_i <= MasterReset or MonitorAdcReset;
 	
 	--~ TP1 <= nCsMonitorAdc_i;
 	--~ TP2 <= SckMonitorAdc_i;
 	--~ TP3 <= MosiMonitorAdc_i;
-	--~ TP4 <= MisoMonitorAdc_i;
-	--~ TP5 <= MonitorAdcSpiXferStart;
+	--~ TP4 <= MisoMonitorAdc0_i;
+	--~ TP5 <= MisoMonitorAdc1_i;
 	--~ TP6 <= MonitorAdcSpiXferDone;
 	--~ TP7 <= MonitorAdcSpiDataIn(0);
-	--~ TP8 <= MonitorAdcSpiDataOut(0);
+	--~ TP8 <= MonitorAdcSpiDataOut0(0);
 	
 	
 	----------------------------- RS-422 ----------------------------------
 	
-	--~ Oe0 <= '1';
-	--~ Oe1 <= '1';
-	--~ Oe2 <= '1';
-	--~ Oe3 <= '1';
+	Oe0 <= '1';
+	Oe1 <= '1';
+	Oe2 <= '1';
+	Oe3 <= '1';
 	
 	--This is just to excercise the thing so it stays in the design...
 	--~ Ux1SelJmp <= '1' when ( (Rxd1 = '1') and (Rxd2 = '0') ) else '0' when ( (Rxd1 = '0') and (Rxd2 = '1') ) else 'Z';
@@ -1951,6 +2052,10 @@ begin
 		Dbg1 => open,
 		RxComplete => open,
 		ReadFifo => ReadUart0,
+		LastHeaderEnd => Uart0LastHeaderEnd,
+		LastFooterEnd => Uart0LastFooterEnd,
+		PayloadLen => Uart0PayloadLen,
+		HeaderFooterPayloadLenMatches => Uart0HeaderFooterPayloadLenMatches,
 		FifoFull => Uart0RxFifoFull,
 		FifoEmpty => Uart0RxFifoEmpty,
 		FifoReadData => Uart0RxFifoData,
@@ -2006,6 +2111,7 @@ begin
 		rst => Uart0FifoReset_i,
 		--~ BaudDivider => Uart0ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart0,
 		WriteData => Uart0TxFifoData,
@@ -2103,6 +2209,7 @@ begin
 		rst => Uart1FifoReset_i,
 		--~ BaudDivider => Uart1ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		WriteStrobe => WriteUart1,
 		WriteData => Uart1TxFifoData,
 		FifoFull => Uart1TxFifoFull,
@@ -2204,6 +2311,7 @@ begin
 		rst => Uart2FifoReset_i,
 		--~ BaudDivider => Uart2ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart2,
 		WriteData => Uart2TxFifoData,
@@ -2315,6 +2423,7 @@ begin
 		rst => Uart3FifoReset_i,
 		--~ BaudDivider => Uart3ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart3,
 		WriteData => Uart3TxFifoData,
@@ -2336,120 +2445,16 @@ begin
 	--Mux master reset (boot) and user reset (datamapper)
 	Uart3FifoReset_i <= MasterReset or Uart3FifoReset;
 
-	
-	
-	UartLabBitClockDiv : ClockDividerPorts
-	generic map
-	(
-		CLOCK_DIVIDER => natural((real(102000000) / ( real(115200) * 16.0)) - 1.0),
-		DIVOUT_RST_STATE => '0'--;
-	)
-	port map
-	(
-		--~ clk => MasterClk,
-		clk => UartClk,
-		rst => MasterReset,
-		div => UartClkLab
-	);
-	UartLabTxBitClockDiv : ClockDividerPorts
-	generic map
-	(
-		CLOCK_DIVIDER => 16,
-		DIVOUT_RST_STATE => '0'--;
-	)
-	port map
-	(
-		clk => UartClkLab,
-		rst => MasterReset,
-		div => UartTxClkLab
-	);
-	
-	--~ Ux1SelJmp <= UartClkLab;
-	
-	IBufTxUsb : IBufP3Ports port map(clk => UartClk, I => TxUsb, O => TxUsb_i); --if you want to change the pin for this chip select, it's here
-	
-	--~ Ux1SelJmp <= TxUsb;
-	
-	RS4LabLab_RxLab : UartRxFifoExtClk
-	generic map
-	(
-		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
-		--~ BAUD_DIVIDER_BITS => 8--,
-		--~ BAUDRATE => 1Lab500000--,
-		--~ BAUDRATE => 8000000--,
-		--~ BAUDRATE => BoardMasterClockFreq / 16--, --9.Lab16MHz
-		--~ BAUDRATE => BoardMasterClockFreq / 819Lab--,
-		--~ BAUDRATE => 115Lab00--,
-	)
-	port map
-	(
-		clk => MasterClk,
-		uclk => UartClkLab,
-		rst => UartLabFifoReset_i,
-		--~ BaudDivider => UartLabClkDivider,
-		Rxd => TxUsb_i,
-		Dbg1 => open,
-		RxComplete => open,
-		ReadFifo => ReadUartLab,
-		FifoFull => UartLabRxFifoFull,
-		FifoEmpty => UartLabRxFifoEmpty,
-		FifoReadData => UartLabRxFifoData,
-		FifoCount => UartLabRxFifoCount,
-		FifoReadAck => open--,		
-	);
-	
-	RS4LabLab_TxLab : UartTxFifoExtClk
-	--~ RS4LabLab_TxLab : UartTxFifo
-	generic map
-	(
-		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		--~ DEPTH_BITS => 10,
-		DEPTH_BITS => 10--,
-		--~ BAUD_DIVIDER_BITS => 8--,
-		--~ BAUDRATE => 1Lab500000--,
-		--~ BAUDRATE => 8000000--,
-		--~ BAUDRATE => BoardMasterClockFreq / 16--, --9.Lab16MHz
-		--~ BAUDRATE => BoardMasterClockFreq / 819Lab--,
-		--~ BAUDRATE => 115Lab00--,
-	)
-	port map
-	(
-		clk => MasterClk,
-		--~ uclk => MasterClk,
-		uclk => UartTxClkLab,
-		rst => UartLabFifoReset_i,
-		--~ BaudDivider => UartLabClkDivider,
-		BitClockOut => open,
-		--~ BitClockOut => Ux1SelJmp,		
-		WriteStrobe => WriteUartLab,
-		WriteData => UartLabTxFifoData,
-		FifoFull => UartLabTxFifoFull,
-		FifoEmpty => UartLabTxFifoEmpty,
-		FifoCount => UartLabTxFifoCount,
-		TxInProgress => open,
-		--~ TxInProgress => SckMonitorAdcTPLab,		
-		Cts => '0',
-		Txd => RxUsb_i--,
-		--~ Txd => open--,
-	);
-	RxUsb <= RxUsb_i;
-	
-	--Debug monitors
-	--~ RxUsb <= Txd0_i;
-	--~ Txd1 <= Rxd0_i;
-	
-	--Mux master reset (boot) and user reset (datamapper)
-	UartLabFifoReset_i <= MasterReset or UartLabFifoReset;
-
 	--DEBUG
-	--~ TP8 <= RxUsb_i;
 	
-	--~ LedR <= not(RxUsb_i);
-	--~ TP1 <= RxUsb_i;
+	TP1 <= UartTxClk2;
+	--~ TP8 <= TxdLab_i;
+	
+	--~ LedR <= not(TxdLab_i);
+	--~ TP1 <= TxdLab_i;
 	
 	--Debug monitors
-	--~ RxUsb <= Txd0_i;
+	--~ TxdLab <= Txd0_i;
 	--~ Txd1 <= Rxd0_i;
 	
 	--~ TP1 <= RxdUsb_i;
@@ -2465,6 +2470,23 @@ begin
 	--~ TP7 <= UartUsbRxFifoCount(0);
 	--~ TP8 <= UartUsbRxFifoCount(1);
 	
+	--~ TP1 <= Uart0TxFifoEmpty;
+	--~ TP2 <= Uart1TxFifoEmpty;
+	--~ TP3 <= Uart2TxFifoEmpty;
+	--~ TP4 <= Uart3TxFifoEmpty;
+	--~ TP5 <= WriteUart0;
+	--~ TP6 <= WriteUart1;
+	--~ TP7 <= WriteUart2;
+	--~ TP8 <= WriteUart3;
+
+	--~ TP1 <= Uart0TxFifoData(0);
+	--~ TP2 <= Uart0TxFifoData(1);
+	--~ TP3 <= Uart0TxFifoData(2);
+	--~ TP4 <= Uart0TxFifoData(3);
+	--~ TP5 <= Uart0TxFifoData(4);
+	--~ TP6 <= Uart0TxFifoData(5);
+	--~ TP7 <= Uart0TxFifoData(6);
+	--~ TP8 <= Uart0TxFifoData(7);	
 	
 	----------------------------- Timing ----------------------------------
 	
@@ -2529,14 +2551,16 @@ begin
 		--~ Milliseconds => Milliseconds--,
 	--~ );
 	
-	--~ IBufDacMiso : IBufP2Ports port map(clk => MasterClk, I => '1', O => MisoXO_i);
-	MisoXO_i <= '1';
+	IBufDacMiso : IBufP2Ports port map(clk => MasterClk, I => MosiXO, O => MisoXO_i);
+	--~ MisoXO_i <= '1';
 
 	ClkDac_i : SpiDacPorts
 	generic map 
 	(
 		MASTER_CLOCK_FREQHZ => BoardMasterClockFreq,
-		BIT_WIDTH => 16
+		BIT_WIDTH => 16,
+		CPOL => '0',
+		CPHA => '0'--,
 	)
 	port map 
 	(
@@ -2548,7 +2572,10 @@ begin
 		Miso => MisoXO_i,
 		DacWriteOut => ClkDacWrite,
 		WriteDac => WriteClkDac,
-		DacReadback => ClkDacReadback
+		DacReadback => ClkDacReadback,
+		SpiRstOut => open,
+		SpiXferCompleteOut => open,
+		TransferComplete => open--,
 	);
 
 	nCsXO <= nCsXO_i;
@@ -2569,14 +2596,24 @@ begin
 		
 	--  Discrete I/O Connections
 	
-		TP1 <= RamBusnCs;
-		TP2 <= RamBusWrnRd;
-		TP3 <= RamBusDataIn(0);
-		TP4 <= RamBusDataIn(1);
-		TP5 <= RamBusDataIn(2);
-		TP6 <= PowerCycd;
-		TP7 <= RamBusDataIn(3);
-		TP8 <= Fault3VA or Fault1V or PowerCycd or Fault5V;
+		--~ TP1 <= RamBusnCs;
+		--~ TP2 <= RamBusWrnRd;
+		--~ TP3 <= RamBusDataIn(0);
+		--~ TP4 <= RamBusDataIn(1);
+		--~ TP5 <= RamBusDataIn(2);
+		--~ TP6 <= PowerCycd;
+		--~ TP7 <= RamBusDataIn(3);
+		--~ TP8 <= Fault3VA or Fault1V or PowerCycd or Fault5V;
+			
+		--~ TP1 <= ClkDacWrite(0);
+		--~ TP2 <= ClkDacWrite(1);
+		--~ TP3 <= ClkDacWrite(2);
+		--~ TP4 <= ClkDacWrite(3);
+		--~ TP5 <= ClkDacWrite(4);
+		--~ TP6 <= ClkDacWrite(5);
+		--~ TP7 <= ClkDacWrite(6);
+		--~ TP8 <= ClkDacWrite(7);	
+		
 			
 	----------------------------- Clocked Logic / Main Loop ----------------------------------
 	

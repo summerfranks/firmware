@@ -40,8 +40,7 @@ entity PeekRingBuffer is
     PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
     LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
 	LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-    PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
-	PayloadLen : out std_logic_vector(31 downto 0);
+    PayloadLen : out std_logic_vector(31 downto 0);
 	HeaderFooterPayloadLenMatches : out std_logic;
     ByteIn : in std_logic_vector(7 downto 0);
     ByteOut : out std_logic_vector(7 downto 0);
@@ -138,7 +137,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		Byte1 => x"AD",
 		Byte2 => x"BA",
 		Byte3 => x"BE"--,
-	);
+	)
 	port map
 	(
 		clk => clk,
@@ -155,7 +154,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		Byte1 => x"0F",
 		Byte2 => x"AD",
 		Byte3 => x"ED"--,
-	);
+	)
 	port map
 	(
 		clk => clk,
@@ -243,11 +242,11 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 			if (WriteAddress >= LastHeaderEnd) then
 			
-				if (WriteAddress = (LastHeaderEnd + 3) then PayloadLen <= MaybePayloadLen; end if;
+				if (WriteAddress = (LastHeaderEnd + 3)) then PayloadLen <= MaybePayloadLen; end if;
 			
 			else
 
-				if (WriteAddress = (LastHeaderEnd + 3 - (2**PeekRamDepth)) then PayloadLen <= MaybePayloadLen; end if; --!!!this calc is WRONG!!! Needs to WRAP correctly...
+				if (WriteAddress = (LastHeaderEnd + 3 - (2**PeekRamDepth))) then PayloadLen <= MaybePayloadLen; end if; --!!!this calc is WRONG!!! Needs to WRAP correctly...
 			
 			end if;
 			
@@ -258,11 +257,11 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		end if;
 
 		--Update on the edge of found; can't put this on the writereq edge, because the flag will toggle on the next clock after, not synchrounously!
-		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then LastHeaderEnd = WriteAddress - "0000000001"; end if;
+		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then LastHeaderEnd <= WriteAddress - "0000000001"; end if;
 		
 		if ( (LastFooterFound = '0') and (FooterFound = '1') ) then 
 		
-			LastFooterEnd = WriteAddress - "0000000001"; 
+			LastFooterEnd <= WriteAddress - "0000000001"; 
 			
 			--Found a footer! This should initiate more checks; namely, generating & testing the CRC and checking if headerpos +length <+appropriate offsets> = footerpos
 				--Really need to test & fix CRCer first...

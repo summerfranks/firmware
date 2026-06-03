@@ -58,7 +58,7 @@ architecture PatternFinderImplemenatation of PatternFinder is
   	
     if (rst = '1') then
       
-		BytePos <= '00';
+		BytePos <= "00";
 		LastWriteReq <= '0';
 		Found <= '0';
 		

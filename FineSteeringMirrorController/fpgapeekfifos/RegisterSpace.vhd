@@ -59,6 +59,9 @@ entity RegisterSpacePorts is
 		PowerCycd : in std_logic;
 		nPowerCycClr : out std_logic;								
 		PowernEn : out std_logic;
+		ChopEn : out std_logic;
+		ChopRefState : out std_logic;
+		ChopAdcState : out std_logic;
 		Uart0OE : out std_logic;
 		Uart1OE : out std_logic;
 		Uart2OE : out std_logic;
@@ -76,6 +79,7 @@ entity RegisterSpacePorts is
 		DacCReadback : in std_logic_vector(23 downto 0);		
 		DacDReadback : in std_logic_vector(23 downto 0);		
 		DacTransferComplete : in std_logic; --Prolly a bad idea if we try writing new data to the D/A's while a xfer is in progress...				
+		DitherClkDiv : out std_logic_vector(15 downto 0);	
 
 		-- FSM Readback A/Ds
 		ReadAdcSample : out std_logic;
@@ -84,7 +88,11 @@ entity RegisterSpacePorts is
 		AdcSampleToReadC : in std_logic_vector(47 downto 0);	
 		AdcSampleToReadD : in std_logic_vector(47 downto 0);	
 		AdcSampleNumAccums : in std_logic_vector(15 downto 0);	
-		
+		AdcClkDivider : out std_logic_vector(15 downto 0);	
+		AdcSamplesToAverage : out std_logic_vector(15 downto 0);	
+		ControlAdcMaxAccums : out std_logic_vector(15 downto 0);	
+		MonitorAdcMaxAccums : out std_logic_vector(15 downto 0);	
+
 		--Monitor A/D:
 		MonitorAdcChannelReadIndex : out std_logic_vector(4 downto 0);
 		ReadMonitorAdcSample : out std_logic;
@@ -165,19 +173,6 @@ entity RegisterSpacePorts is
 		Uart3TxFifoCount : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 		Uart3ClkDivider : out std_logic_vector(7 downto 0);
 		
-		UartLabFifoReset : out std_logic;
-		ReadUartLab : out std_logic;
-		UartLabRxFifoFull : in std_logic;
-		UartLabRxFifoEmpty : in std_logic;
-		UartLabRxFifoData : in std_logic_vector(7 downto 0);
-		UartLabRxFifoCount : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-		WriteUartLab : out std_logic;
-		UartLabTxFifoFull : in std_logic;
-		UartLabTxFifoEmpty : in std_logic;
-		UartLabTxFifoData : out std_logic_vector(7 downto 0);
-		UartLabTxFifoCount : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-		UartLabClkDivider : out std_logic_vector(7 downto 0);
-
 		--Timing
 		IdealTicksPerSecond : in std_logic_vector(31 downto 0);
 		ActualTicksLastSecond : in std_logic_vector(31 downto 0);
@@ -206,8 +201,8 @@ architecture RegisterSpace of RegisterSpacePorts is
 	--~ constant PPSRtcPhaseCmpAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(28, MAX_ADDRESS_BITS));
 
 	constant ControlRegisterAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(32, MAX_ADDRESS_BITS)); --we have guard addresses on all fifos because accidental reading still removes a char from the fifo.
-	--~ constant MotorControlStatusAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(36, MAX_ADDRESS_BITS));
-	--~ constant PosSensAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(40, MAX_ADDRESS_BITS));
+	constant AdcConfigAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(36, MAX_ADDRESS_BITS));
+	constant AccumConfigAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(40, MAX_ADDRESS_BITS));
 	
 	constant DacASetpointAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(44, MAX_ADDRESS_BITS));
 	constant DacBSetpointAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(48, MAX_ADDRESS_BITS));
@@ -241,9 +236,7 @@ architecture RegisterSpace of RegisterSpacePorts is
 	constant Uart3FifoStatusAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(156, MAX_ADDRESS_BITS));
 	constant Uart3FifoReadDataAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(160, MAX_ADDRESS_BITS));
 	
-	constant UartLabFifoAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(164, MAX_ADDRESS_BITS));
-	constant UartLabFifoStatusAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(168, MAX_ADDRESS_BITS));
-	constant UartLabFifoReadDataAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(172, MAX_ADDRESS_BITS));
+	--~ constant AdcConfigAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(164, MAX_ADDRESS_BITS));
 	
 	constant Uart0RxFifoPeekReadAddrAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(176, MAX_ADDRESS_BITS));
 	constant Uart0RxFifoPeekWriteAddrAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(180, MAX_ADDRESS_BITS));
@@ -255,21 +248,18 @@ architecture RegisterSpace of RegisterSpacePorts is
 	constant Uart0CrcCurrentAddrAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(204, MAX_ADDRESS_BITS));
 	constant Uart0CrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(208, MAX_ADDRESS_BITS));
  
+	constant LatchAdcsAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(200, MAX_ADDRESS_BITS));
+	constant DacConfigAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(204, MAX_ADDRESS_BITS));
+	
 	--Control Signals
 	
-	signal LastReadReq :  std_logic := '0';		
-	signal LastWriteReq :  std_logic := '0';		
+	signal LastReadReq : std_logic;
+	signal LastWriteReq : std_logic;
 
-	--signal Uart0ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(102000000) / ( real(38400) * 32.0)) - 1.0), 8));	--38.4k
-	--signal Uart1ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(102000000) / ( real(230400) * 32.0)) - 1.0), 8));	--230k
-	--signal Uart0ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(153000000) / ( real(38400) * 32.0)) - 1.0), 8));	--38.4k
-	--signal Uart1ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(153000000) / ( real(230400) * 32.0)) - 1.0), 8));	--230k
-	signal Uart0ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(102000000) / ( real(38400) * 16.0)) - 1.0), 8));	--38.4k
-	signal Uart1ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(102000000) / ( real(230400) * 16.0)) - 1.0), 8));	--230k
-	--signal Uart0ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(153000000) / ( real(38400) * 16.0)) - 1.0), 8));	--38.4k
-	--signal Uart1ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(natural((real(153000000) / ( real(230400) * 16.0)) - 1.0), 8));	--230k
-	signal Uart2ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(0, 8));	--"real fast"
-	signal Uart3ClkDivider_i : std_logic_vector(7 downto 0) := std_logic_vector(to_unsigned(0, 8));	--"real fast"
+	signal Uart0ClkDivider_i : std_logic_vector(7 downto 0);
+	signal Uart1ClkDivider_i : std_logic_vector(7 downto 0);
+	signal Uart2ClkDivider_i : std_logic_vector(7 downto 0);
+	signal Uart3ClkDivider_i : std_logic_vector(7 downto 0);
 	
 	signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 	signal Uart0RxFifoPeekMultiPopAddr_i : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);	
@@ -277,27 +267,36 @@ architecture RegisterSpace of RegisterSpacePorts is
 	signal Uart0CrcEndAddr_i : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);	
 	
 	signal MonitorAdcChannelReadIndex_i : std_logic_vector(4 downto 0);	
-	signal MonitorAdcSpiFrameEnable_i : std_logic := '0';	
+	signal MonitorAdcSpiFrameEnable_i : std_logic;
 	
-	signal WriteDacs_i :  std_logic := '0';		
-	signal DacASetpoint_i :  std_logic_vector(23 downto 0) := x"000000";		
-	signal DacBSetpoint_i :  std_logic_vector(23 downto 0) := x"000000";		
-	signal DacCSetpoint_i :  std_logic_vector(23 downto 0) := x"000000";	
-	signal DacDSetpoint_i :  std_logic_vector(23 downto 0) := x"000000";	
+	signal WriteDacs_i :  std_logic;
+	signal DacASetpoint_i :  std_logic_vector(23 downto 0);		
+	signal DacBSetpoint_i :  std_logic_vector(23 downto 0);		
+	signal DacCSetpoint_i :  std_logic_vector(23 downto 0);	
+	signal DacDSetpoint_i :  std_logic_vector(23 downto 0);	
 	
-	signal PowernEn_i :  std_logic := '0';								
-	signal Uart0OE_i :  std_logic := '0';
-	signal Uart1OE_i :  std_logic := '0';
-	signal Uart2OE_i :  std_logic := '0';
-	signal Uart3OE_i :  std_logic := '0';								
-	signal Ux1SelJmp_i :  std_logic := '0';
+	signal PowernEn_i :  std_logic;
+	signal Uart0OE_i :  std_logic;
+	signal Uart1OE_i :  std_logic;
+	signal Uart2OE_i :  std_logic;
+	signal Uart3OE_i :  std_logic;								
+	signal Ux1SelJmp_i :  std_logic;
 	
-	signal PowernEnHV_i :  std_logic := '0';
-	signal HVEn1_i :  std_logic := '0';
-	signal HVEn2_i :  std_logic := '0';
-	signal DacSelectMaxti_i :  std_logic := '0';								
-	signal GlobalFaultInhibit_i :  std_logic := '0';
-	signal nFaultsClr_i :  std_logic := '0';
+	signal PowernEnHV_i :  std_logic;
+	signal HVEn1_i :  std_logic;
+	signal HVEn2_i :  std_logic;
+	signal DacSelectMaxti_i :  std_logic;
+	signal GlobalFaultInhibit_i :  std_logic;
+	signal nFaultsClr_i :  std_logic;
+	
+	signal ChopEn_i :  std_logic;
+	signal ChopRefState_i :  std_logic;
+	signal ChopAdcState_i :  std_logic;
+	signal AdcClkDivider_i : std_logic_vector(15 downto 0);	
+	signal AdcSamplesToAverage_i : std_logic_vector(15 downto 0);	
+	signal ControlAdcMaxAccums_i : std_logic_vector(15 downto 0);	
+	signal MonitorAdcMaxAccums_i : std_logic_vector(15 downto 0);	
+	signal DitherClkDiv_i : std_logic_vector(15 downto 0);	
 		
 begin
 
@@ -340,28 +339,99 @@ begin
 	GlobalFaultInhibit <= GlobalFaultInhibit_i;
 	nFaultsClr <= nFaultsClr_i;
 	
-		
+	ChopEn <= ChopEn_i;
+	ChopRefState <= ChopRefState_i;
+	ChopAdcState <= ChopAdcState_i;	
+	AdcClkDivider <= AdcClkDivider_i;	
+	AdcSamplesToAverage <= AdcSamplesToAverage_i;	
+	ControlAdcMaxAccums <= ControlAdcMaxAccums_i;
+	MonitorAdcMaxAccums <= MonitorAdcMaxAccums_i;
+	DitherClkDiv <= DitherClkDiv_i;
+	
 	process (clk, rst)
 	begin
 	
 		if (rst = '1') then
 		
+			--Set all the generic outs to zero to avoid feedback mux warnings
+			DataOut <= (others => '0');
+			PPSCountReset <= '1';
+			ReadAdcSample <= '0';
+			nPowerCycClr <= '0';
+			WriteUart3 <= '0';
+			WriteUart2 <= '0';
+			WriteUart1 <= '0';
+			WriteUart0 <= '0';
+			WriteClkDac <= '0';
+			Uart3FifoReset <= '1';
+			Uart2FifoReset <= '1';
+			Uart1FifoReset <= '1';
+			Uart0FifoReset <= '1';
+			ReadUart3 <= '0';
+			ReadUart2 <= '0';
+			ReadUart1 <= '0';
+			ReadUart0 <= '0';
+			ReadMonitorAdcSample <= '0';
+			MonitorAdcSpiXferStart <= '0';
+			MonitorAdcReset <= '1';
+			ClkDacWrite <= (others => '0');
+			Uart3TxFifoData <= (others => '0');
+			Uart2TxFifoData <= (others => '0');
+			Uart1TxFifoData <= (others => '0');
+			Uart0TxFifoData <= (others => '0');
+			MonitorAdcSpiDataIn <= (others => '0');
+			ReadAck <= '1';
+			WriteAck <= '1';
+
 			LastReadReq <= '0';			
 			LastWriteReq <= '0';		
 
+			--~ Uart0ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(38400) * 16.0)) - 1.0), 8));
+			--~ Uart1ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(230400) * 16.0)) - 1.0), 8));
+			--~ Uart2ClkDivider_i <= std_logic_vector(to_unsigned(0, 8));	--"real fast"
+			--~ Uart3ClkDivider_i <= std_logic_vector(to_unsigned(0, 8));	--"real fast"
 			Uart0ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(115200) * 16.0)) - 1.0), 8));
 			Uart1ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(115200) * 16.0)) - 1.0), 8));
-			Uart2ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(115200) * 16.0)) - 1.0), 8));
-			Uart3ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(115200) * 16.0)) - 1.0), 8));
+			Uart2ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(460800) * 16.0)) - 1.0), 8)); --the final divider here should be 14 (13.8) from the main clock; expect this to be screwed up the first time...
+			Uart3ClkDivider_i <= std_logic_vector(to_unsigned(natural((real(102000000) / ( real(921600) * 16.0)) - 1.0), 8)); --the final divider here should be 7 (6.9) from the main clock; expect this to be screwed up the first time...
 			
 			MonitorAdcChannelReadIndex_i <= "00000";	
+			MonitorAdcSpiFrameEnable_i <= '0';
 			
+			DacSelectMaxti_i <= '1';	
 			WriteDacs_i <= '0';		
 			DacASetpoint_i <= x"000000";		
 			DacBSetpoint_i <= x"000000";		
 			DacCSetpoint_i <= x"000000";	
 			DacDSetpoint_i <= x"000000";	
-					
+			
+			Uart0OE_i <= '1';
+			Uart1OE_i <= '1';
+			Uart2OE_i <= '1';
+			Uart3OE_i <= '1';								
+						
+			PowernEn_i <= '0';
+			Ux1SelJmp_i <= '0';
+			PowernEnHV_i <= '1';
+			HVEn1_i <= '1';
+			HVEn2_i <= '0';
+			GlobalFaultInhibit_i <= '0';
+			nFaultsClr_i <= '1';
+			ChopEn_i <= '1';
+			ChopRefState_i <= '0';
+			ChopAdcState_i <= '0';
+			
+			--~ AdcClkDivider => x"002F", --1MHz
+			--~ AdcClkDivider => x"05DC", --32kHz
+			--~ AdcClkDivider => x"0FFF", --24kHz
+			AdcClkDivider_i <= x"00FF"; --400kHz
+			--~ AdcClkDivider => x"FFFF", --1kHz
+			AdcSamplesToAverage_i <= x"FFFF";		
+			--~ AdcSamplesToAverage_i => x"0001",		
+			ControlAdcMaxAccums_i <= x"00FF"; --24b A/D won't overflow 32b int unless >256 accums...
+			MonitorAdcMaxAccums_i <= x"00FF";
+			DitherClkDiv_i <= x"03FF"; --1024
+
 		else
 			
 			if ( (clk'event) and (clk = '1') ) then
@@ -404,44 +474,74 @@ begin
 							
 							when DacASetpointAddr =>
 
+								--~ DataOut <= DacAReadback;
 								DataOut(23 downto 0) <= DacAReadback;
-								--~ DataOut(31 downto 24) <= x"58";
+								--DataOut(31 downto 24) <= x"58";
 								DataOut(31 downto 24) <= x"00";
 							
 							when DacBSetpointAddr =>
 
+								--~ DataOut <= DacBReadback;
 								DataOut(23 downto 0) <= DacBReadback;
-								--~ DataOut(31 downto 24) <= x"58";
+								--DataOut(31 downto 24) <= x"58";
 								DataOut(31 downto 24) <= x"00";
 							
 							when DacCSetpointAddr =>
 
+								--~ DataOut <= DacCReadback;
 								DataOut(23 downto 0) <= DacCReadback;
-								--~ DataOut(31 downto 24) <= x"58";
+								--DataOut(31 downto 24) <= x"58";
 								DataOut(31 downto 24) <= x"00";
 							
 							when DacDSetpointAddr =>
 
+								--~ DataOut <= DacDReadback;
 								DataOut(23 downto 0) <= DacDReadback;
-								--~ DataOut(31 downto 24) <= x"58";
+								--DataOut(31 downto 24) <= x"58";
 								DataOut(31 downto 24) <= x"00";
 														
+							when DacConfigAddr =>
+							
+								DataOut(15 downto 0) <= DitherClkDiv_i;
+								DataOut(31 downto 16) <= x"0000";
+								
 								
 
 							--FSM Readback A/D's
 							
+							--~ when LatchAdcsAddr =>
+							
+								--~ ReadAdcSample <= '1';	
+								
+							when AdcConfigAddr =>
+							
+								DataOut(15 downto 0) <= AdcClkDivider_i;
+								DataOut(31 downto 16) <= AdcSamplesToAverage_i;
+								--Ponder adding SPI clock divider as well..
+								
+							when AccumConfigAddr =>
+							
+								DataOut(15 downto 0) <= ControlAdcMaxAccums_i;
+								DataOut(31 downto 16) <= MonitorAdcMaxAccums_i;
+								
+								
 							--AdcSampleToReadA
 							
 							when AdcAAccumulatorAddr =>
 
 								DataOut <= AdcSampleToReadA(31 downto 0);
+								--~ DataOut <= x"00000013";
+								--~ DataOut(15 downto 0) <= x"D0D0";
+								--~ DataOut(31 downto 16) <= x"6969";
 								
-								ReadAdcSample <= '1';	
+								--~ ReadAdcSample <= '1';	
 
 							when AdcAAccumulatorAddr + std_logic_vector(to_unsigned(4, MAX_ADDRESS_BITS)) =>
 
 								DataOut(15 downto 0) <= AdcSampleToReadA(47 downto 32);
 								DataOut(31 downto 16) <= AdcSampleNumAccums;
+								--~ DataOut(15 downto 0) <= x"D0D0";
+								--~ DataOut(31 downto 16) <= x"6969";
 								
 															
 							--AdcSampleToReadB
@@ -449,39 +549,52 @@ begin
 							when AdcBAccumulatorAddr =>
 
 								DataOut <= AdcSampleToReadB(31 downto 0);
+								--~ DataOut <= x"00000013";
+								--~ DataOut(15 downto 0) <= x"F00D";
+								--~ DataOut(31 downto 16) <= x"6666";
 								
-								ReadAdcSample <= '1';	
+								--~ ReadAdcSample <= '1';	
 
 							when AdcBAccumulatorAddr + std_logic_vector(to_unsigned(4, MAX_ADDRESS_BITS)) =>
 
 								DataOut(15 downto 0) <= AdcSampleToReadB(47 downto 32);
 								DataOut(31 downto 16) <= AdcSampleNumAccums;
+								--~ DataOut(15 downto 0) <= x"D0D0";
+								--~ DataOut(31 downto 16) <= x"6969";
 							
 							--AdcSampleToReadC
 							
 							when AdcCAccumulatorAddr =>
 
 								DataOut <= AdcSampleToReadC(31 downto 0);
+								--~ DataOut <= x"00000013";
 								
-								ReadAdcSample <= '1';	
+								--~ ReadAdcSample <= '1';	
 
 							when AdcCAccumulatorAddr + std_logic_vector(to_unsigned(4, MAX_ADDRESS_BITS)) =>
 
 								DataOut(15 downto 0) <= AdcSampleToReadC(47 downto 32);
 								DataOut(31 downto 16) <= AdcSampleNumAccums;
+								--~ DataOut(15 downto 0) <= x"BAAD";
+								--~ DataOut(31 downto 16) <= x"8888";
 							
 							--AdcSampleToReadD
 							
 							when AdcDAccumulatorAddr =>
 
 								DataOut <= AdcSampleToReadD(31 downto 0);
+								--~ DataOut <= x"00000013";
 								
-								ReadAdcSample <= '1';	
+								--~ ReadAdcSample <= '1';	
 
 							when AdcDAccumulatorAddr + std_logic_vector(to_unsigned(4, MAX_ADDRESS_BITS)) =>
 
 								DataOut(15 downto 0) <= AdcSampleToReadD(47 downto 32);
 								DataOut(31 downto 16) <= AdcSampleNumAccums;
+								--~ DataOut(15 downto 0) <= x"D0D0";
+								--~ DataOut(31 downto 16) <= x"6969";
+								
+								--~ ReadAdcSample <= '1';	
 							
 							
 								
@@ -640,8 +753,6 @@ begin
 								DataOut(27 downto 18) <= Uart3RxFifoCount;
 								DataOut(31 downto 28) <= "0000";
 								
-								
-								
 							--Uart Clock dividers
 							when UartClockDividersAddr =>
 
@@ -651,33 +762,7 @@ begin
 								DataOut(31 downto 24) <= Uart3ClkDivider_i;
 								
 								
-								
-							when UartLabFifoAddr =>
 
-								ReadUartLab <= '1';
-								--~ DataOut(7 downto 0) <= UartLabRxFifoData; --note that as the fifo hasn't actually had time to do the read yet, this will actually be the previous byte
-								--~ DataOut(31 downto 8) <= x"000000";
-								DataOut <= x"BAADC0DE";
-								
-							when UartLabFifoReadDataAddr =>
-
-								DataOut(7 downto 0) <= UartLabRxFifoData; --note that as the fifo hasn't actually had time to do the read yet, this will actually be the previous byte
-								DataOut(31 downto 8) <= x"000000";
-							
-							when UartLabFifoStatusAddr =>
-
-								DataOut(0) <= UartLabRxFifoEmpty;
-								DataOut(1) <= UartLabRxFifoFull;
-								DataOut(2) <= UartLabTxFifoEmpty;
-								DataOut(3) <= UartLabTxFifoFull;
-								DataOut(4) <= '0';
-								DataOut(5) <= '0';
-								DataOut(6) <= '0';
-								DataOut(7) <= '0';
-								DataOut(17 downto 8) <= UartLabRxFifoCount;
-								DataOut(27 downto 18) <= UartLabRxFifoCount;
-								DataOut(31 downto 28) <= "0000";
-								
 
 								
 							--Timing
@@ -726,7 +811,7 @@ begin
 								DataOut(12) <= nHVFaultD;								
 								DataOut(13) <= PowerCycd;
 								DataOut(14) <= PowernEn_i;
-								DataOut(15) <= '0';
+								DataOut(15) <= ChopEn_i;
 								
 								DataOut(16) <= Uart0OE_i;
 								DataOut(17) <= Uart1OE_i;
@@ -743,9 +828,9 @@ begin
 								DataOut(27) <= DacSelectMaxti_i;
 								DataOut(28) <= GlobalFaultInhibit_i;
 								DataOut(29) <= nFaultsClr_i;
-								DataOut(30) <= '0';
-								DataOut(31) <= '0';
-								 								
+								DataOut(30) <= ChopRefState_i;
+								DataOut(31) <= ChopAdcState_i;
+								 										
 								--~ DataOut(31 downto 23) <= "000000000";
 								
 								
@@ -832,7 +917,6 @@ begin
 						ReadUart1 <= '0';						
 						ReadUart2 <= '0';		
 						ReadUart3 <= '0';		
-						ReadUartLab <= '0';		
 	
 					end if;
 					
@@ -859,6 +943,7 @@ begin
 							when DacASetpointAddr =>
 
 								DacASetpoint_i <= DataIn(23 downto 0);
+								--~ DacASetpoint_i <= DataIn;
 								
 								--The $$$ question: does our processor hit the low addr last or the high one???
 								--Also we shold prolly wait until all the D/A registers are loaded, and do it on channel "C" only
@@ -870,29 +955,56 @@ begin
 							when DacBSetpointAddr =>
 
 								DacBSetpoint_i <= DataIn(23 downto 0);
+								--~ DacBSetpoint_i <= DataIn;
 								
 							--DacCSetpoint
 								
-								when DacCSetpointAddr =>
+							when DacCSetpointAddr =>
 
 								DacCSetpoint_i <= DataIn(23 downto 0);
+								--~ DacCSetpoint_i <= DataIn;
 							
 							--DacDSetpoint
 														
 							when DacDSetpointAddr =>
 
 								DacDSetpoint_i <= DataIn(23 downto 0);
+								--~ DacDSetpoint_i <= DataIn;
 								
 								--The $$$ question: does our processor hit the low addr last or the high one???
 								--Also we shold prolly wait until all the D/A registers are loaded, and do it on channel "C" only
 								--~ WriteDacs_i <= '1';
 							
 								--The $$$ question: does our processor hit the low addr last or the high one???
-								if ('1' = DacTransferComplete) then WriteDacs_i <= '1'; end if;
+								--~ if ('1' = DacTransferComplete) then WriteDacs_i <= '1'; end if;
+								WriteDacs_i <= '1';
+								
+							when DacConfigAddr =>
+							
+								DitherClkDiv_i <= DataIn(15 downto 0);
+								--~  <= DataIn(31 downto 16);
+							
+
 								
 								
 							--~ --FSM Readback A/D's
-	
+							
+							when LatchAdcsAddr =>
+							
+								ReadAdcSample <= '1';	
+								
+							when AdcConfigAddr =>
+							
+								AdcClkDivider_i <= DataIn(15 downto 0);
+								AdcSamplesToAverage_i <= DataIn(31 downto 16);
+								--Ponder adding SPI clock divider as well..
+								
+							when AccumConfigAddr =>
+							
+								ControlAdcMaxAccums_i <= DataIn(15 downto 0);
+								MonitorAdcMaxAccums_i <= DataIn(31 downto 16);
+								
+								
 							--~ when AdcAAccumulatorAddr =>
 								
 								--~ ReadAdcSample <= '1';	
@@ -959,15 +1071,6 @@ begin
 
 								Uart3FifoReset <= '1';
 								
-							when UartLabFifoAddr =>
-
-								WriteUartLab <= '1';
-								UartLabTxFifoData <= DataIn(7 downto 0);
-								
-							when UartLabFifoStatusAddr =>
-
-								UartLabFifoReset <= '1';
-							
 							--Uart Clock dividers
 							when UartClockDividersAddr =>
 
@@ -1004,6 +1107,7 @@ begin
 								
 								nPowerCycClr <= DataIn(13);
 								PowernEn_i <= DataIn(14);
+								ChopEn_i <= DataIn(15);
 								
 								Uart0OE_i <= DataIn(16);
 								Uart1OE_i <= DataIn(17);
@@ -1018,6 +1122,8 @@ begin
 								DacSelectMaxti_i <= DataIn(27);
 								GlobalFaultInhibit_i <= DataIn(28);
 								nFaultsClr_i <= DataIn(29);
+								ChopRefState_i <= DataIn(30);
+								ChopAdcState_i <= DataIn(31);
 								
 							
 							--Uart0 Peek Fifo
@@ -1043,7 +1149,7 @@ begin
 							
 							
 
-
+								
 							when others => 
 
 
@@ -1065,6 +1171,8 @@ begin
 						
 					else
 					
+						ReadAdcSample <= '0';							
+					
 						WriteAck <= '0';
 						
 						WriteDacs_i <= '0';		
@@ -1085,8 +1193,6 @@ begin
 						Uart2FifoReset <= '0';						
 						WriteUart3 <= '0';		
 						Uart3FifoReset <= '0';						
-						WriteUartLab <= '0';		
-						UartLabFifoReset <= '0';						
 						
 						nPowerCycClr <= '0';												
 						--~ ??nFaultsClr_i <= DataIn(29);

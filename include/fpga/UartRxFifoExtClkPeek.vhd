@@ -55,6 +55,12 @@ entity UartRxFifoExtClkPeek is
 		ReadFifo	: in std_logic;
 		FifoReadAck : out std_logic;
 		FifoReadData : out std_logic_vector(7 downto 0);
+
+		--Packet decodes:
+		LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+		LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+		PayloadLen : out std_logic_vector(31 downto 0);
+		HeaderFooterPayloadLenMatches : out std_logic;
 		
 		--Fifo status:
 		FifoFull	: out std_logic;
@@ -92,6 +98,10 @@ architecture implementation of UartRxFifoExtClkPeek is
 			DataEndAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
 			PeekAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
 			PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
+			LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+			LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
+			PayloadLen : out std_logic_vector(31 downto 0);
+			HeaderFooterPayloadLenMatches : out std_logic;
 			ByteIn : in std_logic_vector(7 downto 0);
 			ByteOut : out std_logic_vector(7 downto 0);
 			WriteReq : in std_logic;
@@ -170,7 +180,11 @@ begin
 		DataEndAddress => FifoWriteAddr,
 		PeekAddress => FifoPeekAddr,
 		PopAddress => FifoMultiPopAddr,
-		ByteIn => RxData,
+		LastHeaderEnd => LastHeaderEnd,
+		LastFooterEnd => LastFooterEnd,
+		PayloadLen => PayloadLen,
+		HeaderFooterPayloadLenMatches => HeaderFooterPayloadLenMatches,
+    	ByteIn => RxData,
 		ByteOut => FifoPeekData,
 		WriteReq => WriteFifo_i,
 		PopReq => FifoMultiPopStrobe,
