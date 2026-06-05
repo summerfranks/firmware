@@ -85,7 +85,7 @@ architecture PatternFinderImplemenatation of PatternFinder is
 					
 				when "11" =>
 				
-					if (ByteIn = Byte3) then Found <= "1"; else Found <= "0"; end if; BytePos <= "00";
+					if (ByteIn = Byte3) then Found <= '1'; else Found <= '0'; end if; BytePos <= "00";
 
 			end case;
 			

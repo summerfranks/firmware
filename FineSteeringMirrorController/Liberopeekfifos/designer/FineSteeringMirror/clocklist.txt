@@ -9,6 +9,4 @@
 "Main_0/Uart2TxBitClockDiv/div_i:Q",,"Main_0/Uart2TxBitClockDiv/div_i:Q","Main_0/Uart2TxBitClockDiv/div_i:Q"
 "Main_0/Uart3BitClockDiv/clko_i:Q",,"Main_0/Uart3BitClockDiv/clko_i:Q","Main_0/Uart3BitClockDiv/clko_i:Q"
 "Main_0/Uart3TxBitClockDiv/div_i:Q",,"Main_0/Uart3TxBitClockDiv/div_i:Q","Main_0/Uart3TxBitClockDiv/div_i:Q"
-"Main_0/UartLabBitClockDiv/div_i:Q",,"Main_0/UartLabBitClockDiv/div_i:Q","Main_0/UartLabBitClockDiv/div_i:Q"
-"Main_0/UartLabTxBitClockDiv/div_i:Q",,"Main_0/UartLabTxBitClockDiv/div_i:Q","Main_0/UartLabTxBitClockDiv/div_i:Q"
 "XO1",,"XO1","XO1"

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Fri Aug 15 12:28:38 2025
+// Created by SmartDesign Thu Jun  4 12:07:13 2026
 // Version: 2023.2 2023.2.0.10
 //////////////////////////////////////////////////////////////////////
 
@@ -18,6 +18,10 @@ module FineSteeringMirror(
     Fault5V,
     FaultHV,
     FaultNegV,
+    MisoAdcA,
+    MisoAdcB,
+    MisoAdcC,
+    MisoAdcD,
     MisoMonAdc0,
     MisoMonAdc1,
     PPS,
@@ -26,24 +30,33 @@ module FineSteeringMirror(
     Rx1,
     Rx2,
     Rx3,
-    TxUsb,
     XO1,
+    nDrdyAdcA,
+    nDrdyAdcB,
+    nDrdyAdcC,
+    nDrdyAdcD,
     nDrdyMonAdc0,
     nDrdyMonAdc1,
+    nHVFaultA,
+    nHVFaultB,
+    nHVFaultC,
+    nHVFaultD,
     // Outputs
+    ChopAdcs,
+    ChopRef,
     GlobalFaultInhibit,
     HVEn1,
     HVEn2,
     MosiMonAdcs,
-    MosiXO,
     Oe0,
     Oe1,
     Oe2,
     Oe3,
+    PowerEnMax,
+    PowerEnTi,
     PowerSync,
     PowernEn,
     PowernEnHV,
-    RxUsb,
     SckAdcs,
     SckMonAdcs,
     SckXO,
@@ -67,7 +80,21 @@ module FineSteeringMirror(
     nFaultsClr,
     nPowerCycClr,
     // Inouts
-    Ux1SelJmp
+    MosiMaxDacA,
+    MosiMaxDacB,
+    MosiMaxDacC,
+    MosiMaxDacD,
+    MosiTiDacA,
+    MosiTiDacB,
+    MosiTiDacC,
+    MosiTiDacD,
+    MosiXO,
+    SckMaxDacs,
+    SckTiDacs,
+    Ux1SelJmp,
+    nCsMaxDacs,
+    nCsTiDacs,
+    nLoadMaxDacs
 );
 
 //--------------------------------------------------------------------
@@ -83,6 +110,10 @@ input  Fault43V;
 input  Fault5V;
 input  FaultHV;
 input  FaultNegV;
+input  MisoAdcA;
+input  MisoAdcB;
+input  MisoAdcC;
+input  MisoAdcD;
 input  MisoMonAdc0;
 input  MisoMonAdc1;
 input  PPS;
@@ -91,26 +122,35 @@ input  Rx0;
 input  Rx1;
 input  Rx2;
 input  Rx3;
-input  TxUsb;
 input  XO1;
+input  nDrdyAdcA;
+input  nDrdyAdcB;
+input  nDrdyAdcC;
+input  nDrdyAdcD;
 input  nDrdyMonAdc0;
 input  nDrdyMonAdc1;
+input  nHVFaultA;
+input  nHVFaultB;
+input  nHVFaultC;
+input  nHVFaultD;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
+output ChopAdcs;
+output ChopRef;
 output GlobalFaultInhibit;
 output HVEn1;
 output HVEn2;
 output MosiMonAdcs;
-output MosiXO;
 output Oe0;
 output Oe1;
 output Oe2;
 output Oe3;
+output PowerEnMax;
+output PowerEnTi;
 output PowerSync;
 output PowernEn;
 output PowernEnHV;
-output RxUsb;
 output SckAdcs;
 output SckMonAdcs;
 output SckXO;
@@ -136,12 +176,26 @@ output nPowerCycClr;
 //--------------------------------------------------------------------
 // Inout
 //--------------------------------------------------------------------
+inout  MosiMaxDacA;
+inout  MosiMaxDacB;
+inout  MosiMaxDacC;
+inout  MosiMaxDacD;
+inout  MosiTiDacA;
+inout  MosiTiDacB;
+inout  MosiTiDacC;
+inout  MosiTiDacD;
+inout  MosiXO;
+inout  SckMaxDacs;
+inout  SckTiDacs;
 inout  Ux1SelJmp;
+inout  nCsMaxDacs;
+inout  nCsTiDacs;
+inout  nLoadMaxDacs;
 //--------------------------------------------------------------------
 // Nets
 //--------------------------------------------------------------------
-wire          ChopAdc;
-wire          ChopRef;
+wire          ChopAdcs_net_0;
+wire          ChopRef_net_0;
 wire          DEVRST_N;
 wire          Fault1V;
 wire          Fault2VA;
@@ -164,34 +218,47 @@ wire          HVEn1_net_0;
 wire          HVEn2_net_0;
 wire          Main_0_RamBusAck;
 wire   [31:0] Main_0_RamBusDataOut;
+wire          MisoAdcA;
+wire          MisoAdcB;
+wire          MisoAdcC;
+wire          MisoAdcD;
 wire          MisoMonAdc0;
 wire          MisoMonAdc1;
-wire          MosiDacAMax;
-wire          MosiDacATi;
-wire          MosiDacBMax;
-wire          MosiDacBTi;
-wire          MosiDacCMax;
-wire          MosiDacCTi;
-wire          MosiDacDMax;
-wire          MosiDacDTi;
+wire          MosiMaxDacA;
+wire          MosiMaxDacB;
+wire          MosiMaxDacC;
+wire          MosiMaxDacD;
 wire          MosiMonAdcs_net_0;
-wire          MosiXO_net_0;
+wire          MosiTiDacA;
+wire          MosiTiDacB;
+wire          MosiTiDacC;
+wire          MosiTiDacD;
+wire          MosiXO;
 wire          nCsAdcs_net_0;
-wire          nCsDacsMax;
-wire          nCsDacsTi;
+wire          nCsMaxDacs;
 wire          nCsMonAdcs_net_0;
+wire          nCsTiDacs;
 wire          nCsXO_net_0;
+wire          nDrdyAdcA;
+wire          nDrdyAdcB;
+wire          nDrdyAdcC;
+wire          nDrdyAdcD;
 wire          nDrdyMonAdc0;
 wire          nDrdyMonAdc1;
 wire          nFaultsClr_net_0;
-wire          nLDacsMax;
+wire          nHVFaultA;
+wire          nHVFaultB;
+wire          nHVFaultC;
+wire          nHVFaultD;
+wire          nLoadMaxDacs;
 wire          nPowerCycClr_net_0;
 wire          Oe0_net_0;
 wire          Oe1_net_0;
 wire          Oe2_net_0;
 wire          Oe3_net_0;
 wire          PowerCycd;
-wire          PowerEnMax;
+wire          PowerEnMax_net_0;
+wire          PowerEnTi_net_0;
 wire          PowernEn_net_0;
 wire          PowernEnHV_net_0;
 wire          PowerSync_net_0;
@@ -200,11 +267,10 @@ wire          Rx0;
 wire          Rx1;
 wire          Rx2;
 wire          Rx3;
-wire          RxUsb_net_0;
 wire          SckAdcs_net_0;
-wire          SckDacsMax;
-wire          SckDacsTi;
+wire          SckMaxDacs;
 wire          SckMonAdcs_net_0;
+wire          SckTiDacs;
 wire          SckXO_net_0;
 wire          TP1_net_0;
 wire          TP2_net_0;
@@ -220,7 +286,6 @@ wire          Tx0_net_0;
 wire          Tx1_net_0;
 wire          Tx2_net_0;
 wire          Tx3_net_0;
-wire          TxUsb;
 wire          Ux1SelJmp;
 wire          XO1;
 wire          Oe0_net_1;
@@ -228,7 +293,6 @@ wire          Oe1_net_1;
 wire          Oe2_net_1;
 wire          nCsXO_net_1;
 wire          SckXO_net_1;
-wire          MosiXO_net_1;
 wire          Oe3_net_1;
 wire          nPowerCycClr_net_1;
 wire          PowerSync_net_1;
@@ -257,7 +321,10 @@ wire          TP5_net_1;
 wire          TP6_net_1;
 wire          TP7_net_1;
 wire          TP8_net_1;
-wire          RxUsb_net_1;
+wire          PowerEnTi_net_1;
+wire          PowerEnMax_net_1;
+wire          ChopRef_net_1;
+wire          ChopAdcs_net_1;
 wire   [31:0] AMBA_SLAVE_0_PADDRS_net_0;
 //--------------------------------------------------------------------
 // TiedOff Nets
@@ -282,8 +349,6 @@ assign nCsXO_net_1              = nCsXO_net_0;
 assign nCsXO                    = nCsXO_net_1;
 assign SckXO_net_1              = SckXO_net_0;
 assign SckXO                    = SckXO_net_1;
-assign MosiXO_net_1             = MosiXO_net_0;
-assign MosiXO                   = MosiXO_net_1;
 assign Oe3_net_1                = Oe3_net_0;
 assign Oe3                      = Oe3_net_1;
 assign nPowerCycClr_net_1       = nPowerCycClr_net_0;
@@ -340,8 +405,14 @@ assign TP7_net_1                = TP7_net_0;
 assign TP7                      = TP7_net_1;
 assign TP8_net_1                = TP8_net_0;
 assign TP8                      = TP8_net_1;
-assign RxUsb_net_1              = RxUsb_net_0;
-assign RxUsb                    = RxUsb_net_1;
+assign PowerEnTi_net_1          = PowerEnTi_net_0;
+assign PowerEnTi                = PowerEnTi_net_1;
+assign PowerEnMax_net_1         = PowerEnMax_net_0;
+assign PowerEnMax               = PowerEnMax_net_1;
+assign ChopRef_net_1            = ChopRef_net_0;
+assign ChopRef                  = ChopRef_net_1;
+assign ChopAdcs_net_1           = ChopAdcs_net_0;
+assign ChopAdcs                 = ChopAdcs_net_1;
 //--------------------------------------------------------------------
 // Slices assignments
 //--------------------------------------------------------------------
@@ -387,18 +458,20 @@ FineSteeringMirror_sb FineSteeringMirror_sb_0(
 Main Main_0(
         // Inputs
         .clk                ( FCCC_C0_0_GL1 ),
-        .nHVFaultA          ( VCC_net ),
-        .nHVFaultB          ( VCC_net ),
-        .nHVFaultC          ( VCC_net ),
-        .nHVFaultD          ( VCC_net ),
-        .MisoAdcA           ( VCC_net ),
-        .MisoAdcB           ( VCC_net ),
-        .MisoAdcC           ( VCC_net ),
-        .MisoAdcD           ( VCC_net ),
-        .nDrdyAdcA          ( VCC_net ),
-        .nDrdyAdcB          ( VCC_net ),
-        .nDrdyAdcC          ( VCC_net ),
-        .nDrdyAdcD          ( VCC_net ),
+        .nHVFaultA          ( nHVFaultA ),
+        .nHVFaultB          ( nHVFaultB ),
+        .nHVFaultC          ( nHVFaultC ),
+        .nHVFaultD          ( nHVFaultD ),
+        .MisoAdcA           ( MisoAdcA ),
+        .MisoAdcB           ( MisoAdcB ),
+        .MisoAdcC           ( MisoAdcC ),
+        .MisoAdcD           ( MisoAdcD ),
+        .nDrdyAdcA          ( nDrdyAdcA ),
+        .nDrdyAdcB          ( nDrdyAdcB ),
+        .nDrdyAdcC          ( nDrdyAdcC ),
+        .nDrdyAdcD          ( nDrdyAdcD ),
+        .RamBusAddress      ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PADDRS9to0 ),
+        .RamBusDataIn       ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PWDATAS ),
         .RamBusnCs          ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PSELS0 ),
         .RamBusWrnRd        ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PWRITES ),
         .RamBusLatch        ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PENABLES ),
@@ -407,7 +480,6 @@ Main Main_0(
         .Rx2                ( Rx2 ),
         .Rx3                ( Rx3 ),
         .PPS                ( PPS ),
-        .TxUsb              ( TxUsb ),
         .MisoMonAdc0        ( MisoMonAdc0 ),
         .nDrdyMonAdc0       ( nDrdyMonAdc0 ),
         .MisoMonAdc1        ( MisoMonAdc1 ),
@@ -422,22 +494,20 @@ Main Main_0(
         .Fault43V           ( Fault43V ),
         .Fault5V            ( Fault5V ),
         .FaultHV            ( FaultHV ),
-        .RamBusAddress      ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PADDRS9to0 ),
-        .RamBusDataIn       ( FineSteeringMirror_sb_0_AMBA_SLAVE_0_PWDATAS ),
         // Outputs
         .nCsXO              ( nCsXO_net_0 ),
         .SckXO              ( SckXO_net_0 ),
-        .MosiXO             ( MosiXO_net_0 ),
-        .PowerEnTi          (  ),
-        .PowerEnMax         ( PowerEnMax ),
+        .PowerEnTi          ( PowerEnTi_net_0 ),
+        .PowerEnMax         ( PowerEnMax_net_0 ),
         .HVEn1              ( HVEn1_net_0 ),
         .HVEn2              ( HVEn2_net_0 ),
         .PowernEnHV         ( PowernEnHV_net_0 ),
-        .ChopRef            ( ChopRef ),
-        .ChopAdcs           ( ChopAdc ),
+        .ChopRef            ( ChopRef_net_0 ),
+        .ChopAdcs           ( ChopAdcs_net_0 ),
         .TrigAdcs           ( TrigAdcs_net_0 ),
         .SckAdcs            ( SckAdcs_net_0 ),
         .nCsAdcs            ( nCsAdcs_net_0 ),
+        .RamBusDataOut      ( Main_0_RamBusDataOut ),
         .RamBusAck          ( Main_0_RamBusAck ),
         .Tx0                ( Tx0_net_0 ),
         .Oe0                ( Oe0_net_0 ),
@@ -447,7 +517,6 @@ Main Main_0(
         .Oe2                ( Oe2_net_0 ),
         .Tx3                ( Tx3_net_0 ),
         .Oe3                ( Oe3_net_0 ),
-        .RxUsb              ( RxUsb_net_0 ),
         .nCsMonAdcs         ( nCsMonAdcs_net_0 ),
         .SckMonAdcs         ( SckMonAdcs_net_0 ),
         .MosiMonAdcs        ( MosiMonAdcs_net_0 ),
@@ -465,21 +534,21 @@ Main Main_0(
         .TP6                ( TP6_net_0 ),
         .TP7                ( TP7_net_0 ),
         .TP8                ( TP8_net_0 ),
-        .RamBusDataOut      ( Main_0_RamBusDataOut ),
         // Inouts
-        .MosiTiDacA         ( MosiDacATi ),
-        .MosiTiDacB         ( MosiDacBTi ),
-        .MosiTiDacC         ( MosiDacCTi ),
-        .MosiTiDacD         ( MosiDacDTi ),
-        .SckTiDacs          ( SckDacsTi ),
-        .nCsTiDacs          ( nCsDacsTi ),
-        .MosiMaxDacA        ( MosiDacAMax ),
-        .MosiMaxDacB        ( MosiDacBMax ),
-        .MosiMaxDacC        ( MosiDacCMax ),
-        .MosiMaxDacD        ( MosiDacDMax ),
-        .SckMaxDacs         ( SckDacsMax ),
-        .nCsMaxDacs         ( nCsDacsMax ),
-        .nLoadMaxDacs       ( nLDacsMax ),
+        .MosiXO             ( MosiXO ),
+        .MosiTiDacA         ( MosiTiDacA ),
+        .MosiTiDacB         ( MosiTiDacB ),
+        .MosiTiDacC         ( MosiTiDacC ),
+        .MosiTiDacD         ( MosiTiDacD ),
+        .SckTiDacs          ( SckTiDacs ),
+        .nCsTiDacs          ( nCsTiDacs ),
+        .MosiMaxDacA        ( MosiMaxDacA ),
+        .MosiMaxDacB        ( MosiMaxDacB ),
+        .MosiMaxDacC        ( MosiMaxDacC ),
+        .MosiMaxDacD        ( MosiMaxDacD ),
+        .SckMaxDacs         ( SckMaxDacs ),
+        .nCsMaxDacs         ( nCsMaxDacs ),
+        .nLoadMaxDacs       ( nLoadMaxDacs ),
         .Ux1SelJmp          ( Ux1SelJmp ) 
         );
 

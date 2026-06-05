@@ -16,3 +16,27 @@ fsm_state_encoding {131089410895} 101 {0100000}
 fsm_state_encoding {131089410895} 110 {1000000}
 
 fsm_registers {131089410895} {sm0_state[6]}  {sm0_state[5]}  {sm0_state[4]}  {sm0_state[3]}  {sm0_state[2]}  {sm0_state[1]}  {sm0_state[0]} 
+
+fsm_encoding {36594591} sequential
+
+fsm_state_encoding {36594591} 00 {00}
+
+fsm_state_encoding {36594591} 01 {01}
+
+fsm_state_encoding {36594591} 10 {10}
+
+fsm_state_encoding {36594591} 11 {11}
+
+fsm_registers {36594591} {BytePos[1]}  {BytePos[0]} 
+
+fsm_encoding {36594592} sequential
+
+fsm_state_encoding {36594592} 00 {00}
+
+fsm_state_encoding {36594592} 01 {01}
+
+fsm_state_encoding {36594592} 10 {10}
+
+fsm_state_encoding {36594592} 11 {11}
+
+fsm_registers {36594592} {BytePos[1]}  {BytePos[0]} 

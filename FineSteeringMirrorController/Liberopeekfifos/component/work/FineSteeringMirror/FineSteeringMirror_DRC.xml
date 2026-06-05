@@ -3,11 +3,130 @@
 <drcreport>
   <header>FineSteeringMirror</header>
   <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected top level output port FineSteeringMirror:MosiXO</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/FineSteeringMirror:MosiXO</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Floating Driver</message>
+    <detail>Floating output pin FineSteeringMirror:TxUsb</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/FineSteeringMirror:TxUsb</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected top level output port FineSteeringMirror:RxUsb</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/FineSteeringMirror:RxUsb</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiXO</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiXO</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiTiDacA</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiTiDacA</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiTiDacB</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiTiDacB</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiTiDacC</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiTiDacC</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiTiDacD</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiTiDacD</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:SckTiDacs</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:SckTiDacs</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:nCsTiDacs</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:nCsTiDacs</crossprobe>
+  </drc>
+  <drc>
     <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin Main_0:PowerEnTi</detail>
     <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:PowerEnTi</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiMaxDacA</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiMaxDacA</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiMaxDacB</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiMaxDacB</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiMaxDacC</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiMaxDacC</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:MosiMaxDacD</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:MosiMaxDacD</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:SckMaxDacs</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:SckMaxDacs</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:nCsMaxDacs</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:nCsMaxDacs</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin Main_0:nLoadMaxDacs</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/FineSteeringMirror/pins/Main_0:nLoadMaxDacs</crossprobe>
   </drc>
   <drc>
     <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/warn.png</status>

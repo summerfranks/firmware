@@ -3,12 +3,13 @@
 --------------------------------------------------------------------------------
 
 library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
---~ use work.ads1258.all;
---~ use work.ads1258accumulator_pkg.all;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.all;
 library work;
 use work.CGraphTypes.all;
+--~ use work.ads1258.all;
+--~ use work.ads1258accumulator_pkg.all;
 
 entity Main is
 port (
@@ -420,10 +421,6 @@ architecture architecture_Main of Main is
 						end component;
 
 						component UartRxFifoExtClkPeek is
-						generic 
-						(
-							DEPTH_BITS : natural := 10--;
-						);
 						port 
 						(
 							--Outside world:
@@ -433,6 +430,8 @@ architecture architecture_Main of Main is
 							--External (async) uart data input pin
 							Rxd : in std_logic; 
 							Dbg1 : out std_logic; 
+							Dbg2 : out std_logic;
+							Dbg3 : out std_logic;
 							RxComplete : out std_logic;
 							--Read from fifo:
 							ReadFifo	: in std_logic;
@@ -446,12 +445,12 @@ architecture architecture_Main of Main is
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
-							FifoCount	: out std_logic_vector(DEPTH_BITS - 1 downto 0);
-							FifoReadAddr : out unsigned(DEPTH_BITS - 1 downto 0);
-							FifoWriteAddr : out unsigned(DEPTH_BITS - 1 downto 0);
-							FifoPeekAddr : in unsigned(DEPTH_BITS - 1 downto 0);
+							FifoCount	: out std_logic_vector(PeekRamDepth - 1 downto 0);
+							FifoReadAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							FifoWriteAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							FifoPeekAddr : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							FifoPeekData : out std_logic_vector(7 downto 0);
-							FifoMultiPopAddr : in unsigned(DEPTH_BITS - 1 downto 0);
+							FifoMultiPopAddr : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							FifoMultiPopStrobe : in std_logic--;		
 						);
 						end component;
@@ -551,6 +550,28 @@ architecture architecture_Main of Main is
 						);
 						end component;
 						
+						component CrcFifo is
+						generic (
+								DEPTH_BITS : natural := 10--;
+						);
+						port (
+						
+							--Globals
+							clk : in std_logic;
+							rst : in std_logic;
+							
+							FifoStartAddr : in std_logic_vector(DEPTH_BITS - 1 downto 0);
+							FifoEndAddr : in std_logic_vector(DEPTH_BITS - 1 downto 0);
+							FifoPeekAddr : out std_logic_vector(DEPTH_BITS - 1 downto 0);
+							FifoPeekData : in std_logic_vector(7 downto 0);
+							
+							StartCrc : in std_logic;
+							Crc : out std_logic_vector(31 downto 0);
+							CrcComplete : out std_logic--;
+							
+						);
+						end component;
+
 						component SRamSlaveBusPorts is
 						generic (
 							INT_ADDRESS_BITS : natural := 8;
@@ -713,11 +734,11 @@ architecture architecture_Main of Main is
 							Uart0TxFifoData : out std_logic_vector(7 downto 0);
 							Uart0TxFifoCount : in std_logic_vector(9 downto 0);
 							Uart0ClkDivider : out std_logic_vector(7 downto 0);
-							Uart0RxFifoPeekReadAddr : in unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0RxFifoPeekWriteAddr : in unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0RxFifoPeekPeekAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekReadAddr : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekWriteAddr : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekPeekAddr : out std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 							Uart0RxFifoPeekPeekData : in std_logic_vector(7 downto 0);
-							Uart0RxFifoPeekMultiPopAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekMultiPopAddr : out std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 							Uart0RxFifoPeekMultiPopStrobe : out std_logic;		
 							Uart0CrcStartAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
 							Uart0CrcEndAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
@@ -1237,17 +1258,17 @@ architecture architecture_Main of Main is
 			signal Txd0_i : std_logic;
 			signal Rxd0_i : std_logic;
 			signal UartRx0Dbg : std_logic;	
-			signal Uart0RxFifoPeekReadAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekWriteAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddr_i : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddrRegisterSpace : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddrCrcer : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekReadAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekWriteAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddrRegisterSpace : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddrCrcer : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 			signal Uart0RxFifoPeekPeekData : std_logic_vector(7 downto 0);
-			signal Uart0RxFifoPeekMultiPopAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekMultiPopAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 			signal Uart0RxFifoPeekMultiPopStrobe : std_logic;
-			signal Uart0CrcStartAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0CrcEndAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0CrcCurrentAddr : unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0CrcStartAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0CrcEndAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0CrcCurrentAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
 			signal Uart0DoCrc : std_logic;
 			signal Uart0CrcDone : std_logic;
 			signal Uart0Crc : std_logic_vector(31 downto 0);
@@ -2027,20 +2048,6 @@ begin
 	IBufRxd0 : IBufP3Ports port map(clk => UartClk, I => Rx0, O => Rxd0_i); --if you want to change the pin for this chip select, it's here
 	
 	RS422_Rx0 : UartRxFifoExtClkPeek
-	generic map
-	(
-		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
-		--~ BAUD_DIVIDER_BITS => 8--,
-		--~ BAUDRATE => BoardMasterClockFreq--,
-		--~ BAUDRATE => 8000000--,
-		--~ BAUDRATE => 4000000--,
-		--~ BAUDRATE => 2000000--,
-		--~ BAUDRATE => 1000000--,
-		--~ BAUDRATE => BoardMasterClockFreq / 16--, --9.216MHz
-		--~ BAUDRATE => BoardMasterClockFreq / 8192--,
-		--~ BAUDRATE => 115200--,
-	)
 	port map
 	(
 		clk => MasterClk,
@@ -2050,6 +2057,8 @@ begin
 		Rxd => Rxd0_i,
 		--~ Dbg1 => UartRx0Dbg,
 		Dbg1 => open,
+		Dbg2 => open,
+		Dbg3 => open,
 		RxComplete => open,
 		ReadFifo => ReadUart0,
 		LastHeaderEnd => Uart0LastHeaderEnd,
@@ -2077,15 +2086,16 @@ begin
 	port map
 	(
 		clk => MasterClk,
-		rst => Uart0DoCrc,
+		rst => Uart0FifoReset_i,
 		FifoStartAddr => Uart0CrcStartAddr,
 		FifoEndAddr => Uart0CrcEndAddr,
 		FifoPeekData => Uart0RxFifoPeekPeekData,
 		FifoPeekAddr => Uart0RxFifoPeekPeekAddrCrcer,
+		StartCrc => Uart0DoCrc,
 		Crc => Uart0Crc,
 		CrcComplete => Uart0CrcDone--,
 	);
-	
+			
 	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
 	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrCrcer when (Uart0CrcDone = '0') else Uart0RxFifoPeekPeekAddrRegisterSpace;
 			

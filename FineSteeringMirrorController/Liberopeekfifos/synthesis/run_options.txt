@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version T-2022.09M-SP2-1
 #--  Project file /home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/synthesis/run_options.txt
-#--  Written on Tue Jun  2 15:08:29 2026
+#--  Written on Thu Jun  4 17:07:07 2026
 
 
 #project files
@@ -22,10 +22,11 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FineSteeringMirr
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/DacDitherer.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd"
