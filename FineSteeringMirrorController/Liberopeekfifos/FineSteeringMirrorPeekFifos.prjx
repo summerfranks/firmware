@@ -90,13 +90,13 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/FineSteeringMirrorController/fpgapeekfifos/Main.vhd,hdl"
 STATE="utd"
-TIME="1780599608"
-SIZE="88801"
+TIME="1780617859"
+SIZE="88555"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/FineSteeringMirrorController/fpgapeekfifos/RegisterSpace.vhd,hdl"
 STATE="utd"
-TIME="1780439127"
-SIZE="42350"
+TIME="1780618017"
+SIZE="42406"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd,hdl"
 STATE="utd"
@@ -129,7 +129,7 @@ ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/CGraphTypes.vhd,hdl"
 LINKFILEROOT "./include/fpga"
 STATE="utd"
-TIME="1763669276"
+TIME="1780617392"
 SIZE="1318"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd,hdl"
@@ -145,7 +145,7 @@ SIZE="5226"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd,hdl"
 STATE="utd"
-TIME="1763765057"
+TIME="1780617933"
 SIZE="3480"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd,hdl"
@@ -275,7 +275,7 @@ ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 LINKFILEROOT "./include/fpga"
 STATE="utd"
-TIME="1780438104"
+TIME="1780617980"
 SIZE="2547"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd,hdl"
@@ -702,14 +702,14 @@ ENDFILE
 VALUE "<project>/../fpgapeekfifos/Main.vhd,hdl"
 LINKFILEROOT "<project>/../fpgapeekfifos"
 STATE="utd"
-TIME="1780599608"
-SIZE="88801"
+TIME="1780617859"
+SIZE="88555"
 ENDFILE
 VALUE "<project>/../fpgapeekfifos/RegisterSpace.vhd,hdl"
 LINKFILEROOT "<project>/../fpgapeekfifos"
 STATE="utd"
-TIME="1780439127"
-SIZE="42350"
+TIME="1780618017"
+SIZE="42406"
 ENDFILE
 VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf,actgen_cxf"
 STATE="utd"
@@ -1097,8 +1097,15 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>/component/work/FineSteeringMirror/FineSteeringMirror.cxf,actgen_cxf"
 STATE="utd"
-TIME="1780600025"
-SIZE="14760"
+TIME="1780600034"
+SIZE="14970"
+ENDFILE
+VALUE "<project>/component/work/FineSteeringMirror/FineSteeringMirror.v,hdl"
+STATE="utd"
+TIME="1780600033"
+SIZE="17442"
+PARENT="<project>/component/work/FineSteeringMirror/FineSteeringMirror.cxf"
+IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>/component/work/FineSteeringMirror_sb/CCC_0/FineSteeringMirror_sb_CCC_0_FCCC.cxf,actgen_cxf"
 STATE="utd"
@@ -1265,6 +1272,11 @@ STATE="utd"
 TIME="1763032577"
 SIZE="287"
 ENDFILE
+VALUE "<project>/synthesis/FineSteeringMirror.vm,syn_vm"
+STATE="utd"
+TIME="1780618045"
+SIZE="2385065"
+ENDFILE
 VALUE "<project>/synthesis/FineSteeringMirror_syn.prj,prj"
 STATE="utd"
 TIME="1763032575"
@@ -1275,17 +1287,12 @@ STATE="utd"
 TIME="1763032577"
 SIZE="4577"
 ENDFILE
-VALUE "<project>/synthesis/synwork/layer0.so,so"
-STATE="utd"
-TIME="1780599624"
-SIZE="154"
-ENDFILE
 ENDLIST
 LIST UsedFile
 ENDLIST
 LIST NewModulesInfo
 LIST "FineSteeringMirror::work"
-FILE "<project>/component/work/FineSteeringMirror/FineSteeringMirror.cxf,actgen_cxf"
+FILE "<project>/component/work/FineSteeringMirror/FineSteeringMirror.v,hdl"
 LIST SynthesisConstraints
 VALUE "<project>/constraint/user.sdc,sdc"
 ENDLIST
@@ -1295,6 +1302,68 @@ ENDLIST
 LIST PNRConstraints
 VALUE "<project>/constraint/user.sdc,sdc"
 VALUE "<project>/constraint/io/user.pdc,io_pdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 LIST "FineSteeringMirror_sb::work"
@@ -1612,6 +1681,68 @@ IS32BIT="1"
 EndProfile
 ENDLIST
 LIST ProjectState5.1
+LIST "FineSteeringMirror::work"
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSYNTHESIS(<project>/synthesis/FineSteeringMirror.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
 LIST "FineSteeringMirror_sb::work"
 LIST Impl1
 ideSTIMULUS=StateSuccess
@@ -1750,11 +1881,8 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;synthesis:synplify.log
-HDL;synthesis/FineSteeringMirror.srr;0
-HDL;/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpgapeekfifos/Main.vhd;0
-SmartDesign;FineSteeringMirror;0
-ACTIVEVIEW;FineSteeringMirror
+ReportsCurrentItem;Place and Route:FineSteeringMirror_layout_log.log
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
@@ -1892,7 +2020,7 @@ SUBBLOCK "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FA
 ENDLIST
 LIST "fifo_peek::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_peek.vhd","FALSE","FALSE"
 ENDLIST
-LIST "FineSteeringMirror::work","component/work/FineSteeringMirror/FineSteeringMirror.cxf","TRUE","FALSE"
+LIST "FineSteeringMirror::work","component/work/FineSteeringMirror/FineSteeringMirror.v","TRUE","FALSE"
 SUBBLOCK "FCCC_C0::work","component/work/FCCC_C0/FCCC_C0.v","TRUE","FALSE"
 SUBBLOCK "FineSteeringMirror_sb::work","component/work/FineSteeringMirror_sb/FineSteeringMirror_sb.v","TRUE","FALSE"
 SUBBLOCK "Main::work","${CGRAPH_FIRMWARE}/FineSteeringMirrorController/fpgapeekfifos/Main.vhd","FALSE","FALSE"

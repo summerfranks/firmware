@@ -65,6 +65,8 @@ extern uart_pinout_fpga FPGAUartPinoutUsb;
 //~ extern BinaryUart FpgaUartParser1;
 //~ extern BinaryUart FpgaUartParser0; //using this one for ascii rn...
 
+extern bool BISTModeEnabled;
+
 char Buffer[4096];
 
 int8_t VersionCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
@@ -345,13 +347,13 @@ int8_t FSMAdcsCommand(char const* Name, char const* Params, const size_t ParamsL
 
 int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
 {
-	size_t cycle = 0;
+	//~ size_t cycle = 0;
 	//~ unsigned long daca = 0;
-	int key = 0;
+	//~ int key = 0;
 	
-	while(true)
-	{
-		cycle++;
+	//~ while(true)
+	//~ {
+		//~ cycle++;
 		
 		//~ //Show current A/D values:
 		//~ {
@@ -390,7 +392,7 @@ int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen,
 		//~ }
 		
 		//Show the monitor A/D
-		{
+		//~ {
 			//~ size_t j = cycle % 12;
 			//~ MonitorAdc.Init();
 			//~ switch(j)
@@ -410,34 +412,52 @@ int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen,
 				//~ default : { }
 			//~ }
 			
-			if ((cycle % 256) > 0x40)
-			{
-				const uint32_t zero = 0UL;			
-				const uint32_t one = 1UL;
-				//~ *(uint32_t*)(FSM+108UL) = zero;
-				*(uint8_t*)(&FSM->MonitorAdcSpiCommandStatusRegister.all) = zero;
-				FSM->MonitorAdcSpiTransactionRegister = (uint32_t)(cycle % 256); 
-				uint32_t out = FSM->MonitorAdcSpiTransactionRegister; 
-				*(uint8_t*)(&FSM->MonitorAdcSpiCommandStatusRegister.all) = one;
-				formatf("ads1258(%4ld): 0x%4lX\n", cycle % 256, out & 0xFFFFUL);
-				delayus(200);
-			}
-		}
+			//~ if ((cycle % 256) > 0x40)
+			//~ {
+				//~ const uint32_t zero = 0UL;			
+				//~ const uint32_t one = 1UL;
+				//~ //*(uint32_t*)(FSM+108UL) = zero;
+				//~ *(uint8_t*)(&FSM->MonitorAdcSpiCommandStatusRegister.all) = zero;
+				//~ FSM->MonitorAdcSpiTransactionRegister = (uint32_t)(cycle % 256); 
+				//~ uint32_t out = FSM->MonitorAdcSpiTransactionRegister; 
+				//~ *(uint8_t*)(&FSM->MonitorAdcSpiCommandStatusRegister.all) = one;
+				//~ formatf("ads1258(%4ld): 0x%4lX\n", cycle % 256, out & 0xFFFFUL);
+				//~ delayus(200);
+			//~ }
+		//~ }
 		
 		//Quit on any keypress
-		{
+		//~ {
 			//~ if (0 != key) 
-			if (cycle > 1000)
-			{ 
-				fflush(stdin);
-				formatf("\n\nBIST: Keypress(%d); exiting.\n", key);
-				break; 
-			}			
-		}
+			//~ if (cycle > 1000)
+			//~ { 
+				//~ fflush(stdin);
+				//~ formatf("\n\nBIST: Keypress(%d); exiting.\n", key);
+				//~ break; 
+			//~ }			
+		//~ }
 
 		//~ DelayMs(10);
-	}
+	//~ }
 	
+	char onoff;
+    bool OnOff = false;
+
+	//Convert parameters
+    int8_t numfound = sscanf(Params, "[,\t ]%c", &onoff);
+    if (numfound >= 1)
+    {
+		if ( ('Y' == onoff) || ('y' == onoff) || ('T' == onoff) || ('t' == onoff) || ('1' == onoff) ) { OnOff = true; }
+		
+		formatf("\n\nBISTCommand: Enabled: %c.\n", OnOff?'Y':'N');
+		
+		BISTModeEnabled = OnOff;
+					
+		return(strlen(Params));
+    }
+	
+	formatf("\n\nBISTCommand: Enabled: %c.\n", BISTModeEnabled?'Y':'N');
+			
 	return(ParamsLen);
 }
 
