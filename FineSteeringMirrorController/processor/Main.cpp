@@ -35,8 +35,8 @@ extern CGraphFSMHardwareInterface* volatile FSM;
 #include "MonitorAdc.hpp"
 extern CGraphFSMMonitorAdc MonitorAdc;
 
-//~ bool BISTModeEnabled = false;
-bool BISTModeEnabled = true;
+bool BISTModeEnabled = false;
+//~ bool BISTModeEnabled = true;
 const int MaxLoops = 1024;
 
 //Enable this if malloc problems occur (!!we shouldn't be using malloc, but c-libraries sometimes link it in!!)
@@ -75,6 +75,8 @@ bool Process()
     bool Bored = true;
 	
 	MonitorAdc.Process();
+	
+	ProcessAllUarts();
 	
 	//Enable this if we need to debug ascii and binary on the same uart (note: madness ensues!)
 	//~ {

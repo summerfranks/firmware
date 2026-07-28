@@ -1,9 +1,9 @@
 #Build: Synplify Pro (R) T-2022.09M-SP2-1, Build 179R, Jun 27 2023
 #install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
 #OS: Linux 
-#Hostname: homework2
+#Hostname: homework
 
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:18 2026
 
 #Implementation: synthesis
 
@@ -16,10 +16,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -37,10 +37,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -83,7 +83,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:19 2026
 
 ###########################################################]
 ###########################################################[
@@ -96,10 +96,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -149,7 +149,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:19 2026
 
 ###########################################################]
 ###########################################################[
@@ -574,7 +574,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:20 2026
 
 ###########################################################]
 ###########################################################[
@@ -819,11 +819,11 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
 ###########################################################[
@@ -836,10 +836,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -859,7 +859,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
 
@@ -869,12 +869,12 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 45MB peak: 45MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 45MB peak: 45MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
 ###########################################################[
@@ -887,10 +887,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -904,12 +904,12 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Feb 17 16:47:21 2026
+# Mon Jul 27 15:15:24 2026
 
 ###########################################################]
 Premap Report
 
-# Tue Feb 17 16:47:21 2026
+# Mon Jul 27 15:15:24 2026
 
 
 Copyright (C) 1994-2022 Synopsys, Inc.
@@ -920,10 +920,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -1035,7 +1035,7 @@ Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:0
 @N: BN362 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":124:2:124:3|Removing sequential instance r_ack (in view: work.fifo_8_10_1_5(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist FineSteeringMirror 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 
 
@@ -1124,7 +1124,7 @@ Finished Pre Mapping Phase.
 @N: MO111 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/component/work/FineSteeringMirror/FineSteeringMirror.v":145:7:145:12|Tristate driver MosiXO (in view: work.FineSteeringMirror(verilog)) on net MosiXO (in view: work.FineSteeringMirror(verilog)) has its enable tied to GND.
 @N: BN225 |Writing default property annotation file /home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/synthesis/FineSteeringMirror.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 Encoding state machine sm0_state[6:0] (in view: work.CoreResetP_Z2_layer0(verilog))
 original code -> new code
@@ -1136,22 +1136,22 @@ original code -> new code
    101 -> 0100000
    110 -> 1000000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 295MB peak: 295MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 294MB peak: 294MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 295MB peak: 295MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 294MB peak: 294MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Tue Feb 17 16:47:22 2026
+Process took 0h:00m:01s realtime, 0h:00m:02s cputime
+# Mon Jul 27 15:15:26 2026
 
 ###########################################################]
 Map & Optimize Report
 
-# Tue Feb 17 16:47:22 2026
+# Mon Jul 27 15:15:26 2026
 
 
 Copyright (C) 1994-2022 Synopsys, Inc.
@@ -1162,10 +1162,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -1211,7 +1211,7 @@ Available hyper_sources - for debug and ip models
 	None Found
 
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 289MB peak: 289MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 289MB peak: 289MB)
 
 @N: MO231 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":57:2:57:3|Found counter in view:work.Main(architecture_main) instance DacDithererMaxA.DitherClk.ClkDiv[15:0] 
 @N: MO231 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":57:2:57:3|Found counter in view:work.Main(architecture_main) instance DacDithererMaxB.DitherClk.ClkDiv[15:0] 
@@ -1286,7 +1286,7 @@ Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00
 @N: MO231 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":68:2:68:3|Found counter in view:work.fifo_8_10_1_6(rtl) instance raddr_r[9:0] 
 @N: MO231 :"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":65:2:65:3|Found counter in view:work.PPSCountPorts_work_main_architecture_main_0layer1(ppscount) instance PPSAccum_i[31:0] 
 
-Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 295MB peak: 295MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 295MB peak: 295MB)
 
 @W: BN132 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":110:2:110:3|Removing instance Main_0.FSMDacsMax_i.Spi.DataToMosiD_i[3] because it is equivalent to instance Main_0.FSMDacsMax_i.Spi.DataToMosiD_i[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":110:2:110:3|Removing instance Main_0.FSMDacsMax_i.Spi.DataToMosiD_i[2] because it is equivalent to instance Main_0.FSMDacsMax_i.Spi.DataToMosiD_i[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -1305,32 +1305,32 @@ Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; M
 @W: BN132 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":110:2:110:3|Removing instance Main_0.FSMDacsMax_i.Spi.DataToMosiA_i[1] because it is equivalent to instance Main_0.FSMDacsMax_i.Spi.DataToMosiA_i[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @N: BN362 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":110:2:110:3|Removing sequential instance FSMDacsMax_i.Spi.DataToMosiA_i[0] (in view: work.Main(architecture_main)) because it does not drive other instances.
 
-Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 323MB peak: 323MB)
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 323MB peak: 323MB)
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 335MB peak: 335MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 335MB peak: 335MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 335MB peak: 335MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 335MB peak: 335MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 335MB peak: 335MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 335MB peak: 335MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 335MB peak: 335MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 335MB peak: 335MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 335MB peak: 335MB)
+Finished preparing to map (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 335MB peak: 335MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 335MB peak: 335MB)
+Finished technology mapping (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 335MB peak: 335MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:06s		    -5.63ns		4375 /      3075
-   2		0h:00m:06s		    -5.63ns		4324 /      3075
-   3		0h:00m:06s		    -5.63ns		4324 /      3075
+   1		0h:00m:14s		    -5.63ns		4375 /      3075
+   2		0h:00m:14s		    -5.63ns		4324 /      3075
+   3		0h:00m:14s		    -5.63ns		4324 /      3075
 @N: FX271 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":1698:1:1698:7|Replicating instance Main_0.ltc2378.m4 (in view: work.FineSteeringMirror(verilog)) with 108 loads 3 times to improve timing.
 @N: FX271 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":1698:1:1698:7|Replicating instance Main_0.ltc2378.m1 (in view: work.FineSteeringMirror(verilog)) with 197 loads 3 times to improve timing.
 @N: FX271 :"/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd":47:2:47:3|Replicating instance Main_0.IBufSarAdcnDrdyC.O (in view: work.FineSteeringMirror(verilog)) with 5 loads 1 time to improve timing.
@@ -1339,8 +1339,8 @@ Timing driven replication report
 Added 1 Registers via timing driven replication
 Added 9 LUTs via timing driven replication
 
-   4		0h:00m:08s		    -3.65ns		4334 /      3076
-   5		0h:00m:08s		    -2.62ns		4334 /      3076
+   4		0h:00m:18s		    -3.65ns		4334 /      3076
+   5		0h:00m:18s		    -2.62ns		4334 /      3076
 @N: FX271 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":360:4:360:5|Replicating instance Main_0.ltc2378.un14[24] (in view: work.FineSteeringMirror(verilog)) with 49 loads 3 times to improve timing.
 @N: FX271 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":360:4:360:5|Replicating instance Main_0.ltc2378.un13[24] (in view: work.FineSteeringMirror(verilog)) with 49 loads 3 times to improve timing.
 @N: FX271 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":360:4:360:5|Replicating instance Main_0.ltc2378.un15[24] (in view: work.FineSteeringMirror(verilog)) with 49 loads 3 times to improve timing.
@@ -1362,9 +1362,9 @@ Timing driven replication report
 Added 2 Registers via timing driven replication
 Added 3 LUTs via timing driven replication
 
-   6		0h:00m:10s		    -1.64ns		4375 /      3078
-   7		0h:00m:10s		    -1.39ns		4374 /      3078
-   8		0h:00m:10s		    -1.30ns		4375 /      3078
+   6		0h:00m:24s		    -1.64ns		4375 /      3078
+   7		0h:00m:25s		    -1.39ns		4374 /      3078
+   8		0h:00m:25s		    -1.30ns		4375 /      3078
 @N: FP130 |Promoting Net Main_0.shot_i_arst on CLKINT  I_724 
 @N: FP130 |Promoting Net Main_0.SpiRst_arst on CLKINT  I_725 
 @N: FP130 |Promoting Net Main_0.FSMDacsTi_i.SpiRst_arst on CLKINT  I_726 
@@ -1391,24 +1391,24 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 335MB peak: 335MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:26s; CPU Time elapsed 0h:00m:26s; Memory used current: 335MB peak: 335MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 337MB peak: 337MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 337MB peak: 337MB)
 
 @N: MT611 :|Automatically generated clock FineSteeringMirror_sb_FABOSC_0_OSC|N_RCOSC_25_50MHZ_CLKOUT_inferred_clock is not used and is being removed
 
-Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 337MB peak: 337MB)
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 337MB peak: 337MB)
 
 
-Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 337MB peak: 337MB)
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 337MB peak: 337MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 337MB peak: 337MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 337MB peak: 337MB)
 
 Writing Analyst data base /home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/synthesis/synwork/FineSteeringMirror_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 337MB peak: 337MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:29s; CPU Time elapsed 0h:00m:29s; Memory used current: 337MB peak: 337MB)
 
 Writing Verilog Simulation files
 @N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
@@ -1425,13 +1425,13 @@ Writing Verilog Simulation files
 @W: BW156 :|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
 @W: BW150 :|Clock FineSteeringMirror_sb_FABOSC_0_OSC|N_RCOSC_25_50MHZ_CLKOUT_inferred_clock in set_clock_groups command cannot be found and will not be forward annotated
 
-Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 337MB peak: 337MB)
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:31s; CPU Time elapsed 0h:00m:31s; Memory used current: 337MB peak: 337MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 337MB peak: 337MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:31s; CPU Time elapsed 0h:00m:31s; Memory used current: 337MB peak: 337MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 337MB peak: 337MB)
+Start final timing analysis (Real Time elapsed 0h:00m:32s; CPU Time elapsed 0h:00m:32s; Memory used current: 337MB peak: 337MB)
 
 @W: MT246 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/component/work/FineSteeringMirror_sb/CCC_0/FineSteeringMirror_sb_CCC_0_FCCC.v":20:36:20:43|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
 @W: MT420 |Found inferred clock FCCC_C0_FCCC_C0_0_FCCC|GL1_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net FCCC_C0_0.FCCC_C0_0.GL1_net.
@@ -1447,7 +1447,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Tue Feb 17 16:47:36 2026
+# Timing report written on Mon Jul 27 15:15:59 2026
 #
 
 
@@ -2961,10 +2961,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:13s; Memory used current: 337MB peak: 337MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:32s; CPU Time elapsed 0h:00m:32s; Memory used current: 337MB peak: 337MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:13s; Memory used current: 337MB peak: 337MB)
+Finished timing report (Real Time elapsed 0h:00m:32s; CPU Time elapsed 0h:00m:32s; Memory used current: 337MB peak: 337MB)
 
 ---------------------------------------
 Resource Usage Report for FineSteeringMirror 
@@ -3015,9 +3015,9 @@ Total number of LUTs after P&R:  5309 + 0 + 288 + 0 = 5597;
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 337MB peak: 337MB)
+At Mapper Exit (Real Time elapsed 0h:00m:32s; CPU Time elapsed 0h:00m:32s; Memory used current: 337MB peak: 337MB)
 
-Process took 0h:00m:14s realtime, 0h:00m:14s cputime
-# Tue Feb 17 16:47:36 2026
+Process took 0h:00m:32s realtime, 0h:00m:32s cputime
+# Mon Jul 27 15:15:59 2026
 
 ###########################################################]

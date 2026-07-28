@@ -1,4 +1,4 @@
-# Tue Feb 17 16:47:21 2026
+# Mon Jul 27 15:15:24 2026
 
 
 Copyright (C) 1994-2022 Synopsys, Inc.
@@ -9,10 +9,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -124,7 +124,7 @@ Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:0
 @N: BN362 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":124:2:124:3|Removing sequential instance r_ack (in view: work.fifo_8_10_1_5(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
 @N: FX1184 |Applying syn_allowed_resources blockrams=21 on top level netlist FineSteeringMirror 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 
 
@@ -213,7 +213,7 @@ Finished Pre Mapping Phase.
 @N: MO111 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/component/work/FineSteeringMirror/FineSteeringMirror.v":145:7:145:12|Tristate driver MosiXO (in view: work.FineSteeringMirror(verilog)) on net MosiXO (in view: work.FineSteeringMirror(verilog)) has its enable tied to GND.
 @N: BN225 |Writing default property annotation file /home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Libero/synthesis/FineSteeringMirror.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 Encoding state machine sm0_state[6:0] (in view: work.CoreResetP_Z2_layer0(verilog))
 original code -> new code
@@ -225,16 +225,16 @@ original code -> new code
    101 -> 0100000
    110 -> 1000000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 293MB peak: 293MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 293MB peak: 293MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 295MB peak: 295MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 294MB peak: 294MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 295MB peak: 295MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 294MB peak: 294MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Tue Feb 17 16:47:22 2026
+Process took 0h:00m:01s realtime, 0h:00m:02s cputime
+# Mon Jul 27 15:15:26 2026
 
 ###########################################################]

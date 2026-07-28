@@ -7,10 +7,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -28,10 +28,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -74,7 +74,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:19 2026
 
 ###########################################################]
 ###########################################################[
@@ -87,10 +87,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -140,7 +140,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:19 2026
 
 ###########################################################]
 ###########################################################[
@@ -565,7 +565,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:19 2026
+# Mon Jul 27 15:15:20 2026
 
 ###########################################################]
 ###########################################################[
@@ -810,11 +810,11 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 168MB peak: 168MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
 
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
 ###########################################################[
@@ -827,10 +827,10 @@ Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
-OS: Linux Mint 22.2
-Hostname: homework2
+OS: Linux Mint 22.3
+Hostname: homework
 max virtual memory: unlimited (bytes)
-max user processes: 190838
+max user processes: 126475
 max stack size: 8388608 (bytes)
 
 
@@ -850,7 +850,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
 
@@ -860,11 +860,11 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 45MB peak: 45MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 45MB peak: 45MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
 
 Process completed successfully.
-# Tue Feb 17 16:47:20 2026
+# Mon Jul 27 15:15:22 2026
 
 ###########################################################]
