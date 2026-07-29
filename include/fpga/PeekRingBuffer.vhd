@@ -36,16 +36,20 @@ entity PeekRingBuffer is
     -- Bus:
     DataStartAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
 	DataEndAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
-    PeekAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
-    PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
-    HeaderEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
-	FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
-    PayloadLen : out std_logic_vector(31 downto 0);
-	HeaderFooterPayloadLenMatches : out std_logic;
     ByteIn : in std_logic_vector(7 downto 0);
-    ByteOut : out std_logic_vector(7 downto 0);
     WriteReq : in std_logic;
-	PopReq : in std_logic;
+	PeekAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
+    ByteOut : out std_logic_vector(7 downto 0);
+    PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
+    PopReq : in std_logic;
+	HeaderFound : out std_logic;
+	FooterFound : out std_logic;
+	HeaderEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+	FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+    PayloadType : out std_logic_vector(15 downto 0);
+	PayloadLen : out std_logic_vector(15 downto 0);
+	PacketCrc : out std_logic_vector(31 downto 0);
+	CalcCrc : out std_logic_vector(31 downto 0);
 	Dbg1 : out std_logic;
 	Dbg2 : out std_logic;
 	Dbg3 : out std_logic;
@@ -237,7 +241,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		crc => CalcCrc_i--,
 	);
 
-	process (clk, rst)
+	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound)
   begin
   
 	Dbg2 <= LastWriteReq;

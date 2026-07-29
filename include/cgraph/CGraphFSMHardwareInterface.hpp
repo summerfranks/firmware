@@ -178,17 +178,17 @@ struct CGraphFSMHardwareInterface
 	UartStatusRegister UartStatusRegister0; //120; ro; what state are the uart(s) in?
 	uint32_t UartFifo0ReadData; //124; ro
     
-	uint32_t UartFifo1; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister1; //ro; what state are the uart(s) in?
-	uint32_t UartFifo1ReadData;
+	uint32_t UartFifo1; //128; rw; send or read bytes from uart(s)
+	UartStatusRegister UartStatusRegister1; //132; ro; what state are the uart(s) in?
+	uint32_t UartFifo1ReadData; //136
     
-	uint32_t UartFifo2; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister2; //ro; what state are the uart(s) in?
-	uint32_t UartFifo2ReadData;
+	uint32_t UartFifo2; //140; rw; send or read bytes from uart(s)
+	UartStatusRegister UartStatusRegister2; //144; ro; what state are the uart(s) in?
+	uint32_t UartFifo2ReadData; //148
     
-	uint32_t UartFifo3; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister3; //ro; what state are the uart(s) in?
-	uint32_t UartFifo3ReadData;
+	uint32_t UartFifo3; //152; rw; send or read bytes from uart(s)
+	UartStatusRegister UartStatusRegister3; //156; ro; what state are the uart(s) in?
+	uint32_t UartFifo3ReadData; //160
     
 	//~ uint32_t UartFifoLab; //rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegisterLab; //ro; what state are the uart(s) in?

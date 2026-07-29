@@ -57,10 +57,14 @@ entity UartRxFifoExtClkPeek is
 		FifoReadData : out std_logic_vector(7 downto 0);
 
 		--Packet decodes:
-		LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-		LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-		PayloadLen : out std_logic_vector(31 downto 0);
-		HeaderFooterPayloadLenMatches : out std_logic;
+		HeaderFound : out std_logic;
+		FooterFound : out std_logic;
+		HeaderEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+		FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+		PayloadType : out std_logic_vector(15 downto 0);
+		PayloadLen : out std_logic_vector(15 downto 0);
+		PacketCrc : out std_logic_vector(31 downto 0);
+		CalcCrc : out std_logic_vector(31 downto 0);
 		
 		--Fifo status:
 		FifoFull	: out std_logic;
@@ -96,16 +100,20 @@ architecture implementation of UartRxFifoExtClkPeek is
 			-- Bus:
 			DataStartAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
 			DataEndAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
-			PeekAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
-			PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
-			LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-			LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-			PayloadLen : out std_logic_vector(31 downto 0);
-			HeaderFooterPayloadLenMatches : out std_logic;
 			ByteIn : in std_logic_vector(7 downto 0);
-			ByteOut : out std_logic_vector(7 downto 0);
 			WriteReq : in std_logic;
+			PeekAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
+			ByteOut : out std_logic_vector(7 downto 0);
+			PopAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
 			PopReq : in std_logic;
+			HeaderFound : out std_logic;
+			FooterFound : out std_logic;
+			HeaderEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+			FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+			PayloadType : out std_logic_vector(15 downto 0);
+			PayloadLen : out std_logic_vector(15 downto 0);
+			PacketCrc : out std_logic_vector(31 downto 0);
+			CalcCrc : out std_logic_vector(31 downto 0);
 			Dbg1 : out std_logic;
 			Dbg2 : out std_logic;
 			Dbg3 : out std_logic;
@@ -180,10 +188,14 @@ begin
 		DataEndAddress => FifoWriteAddr,
 		PeekAddress => FifoPeekAddr,
 		PopAddress => FifoMultiPopAddr,
-		LastHeaderEnd => LastHeaderEnd,
-		LastFooterEnd => LastFooterEnd,
+		HeaderFound => HeaderFound,
+		FooterFound => FooterFound,
+		HeaderEndPos => HeaderEndPos,
+		FooterEndPos => FooterEndPos,
+		PayloadType => PayloadType,
 		PayloadLen => PayloadLen,
-		HeaderFooterPayloadLenMatches => HeaderFooterPayloadLenMatches,
+		PacketCrc => PacketCrc,
+		CalcCrc => CalcCrc,
     	ByteIn => RxData,
 		ByteOut => FifoPeekData,
 		WriteReq => WriteFifo_i,

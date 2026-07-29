@@ -133,7 +133,15 @@ entity RegisterSpacePorts is
 		Uart0DoCrc : out std_logic;
 		Uart0CrcDone : in std_logic;
 		Uart0Crc : in std_logic_vector(31 downto 0);
-
+		Uart0HeaderFound : in std_logic;
+		Uart0FooterFound : in std_logic;
+		Uart0HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		Uart0FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		Uart0PayloadType : in std_logic_vector(15 downto 0);
+		Uart0PayloadLen : in std_logic_vector(15 downto 0);
+		Uart0PacketCrc : in std_logic_vector(31 downto 0);
+		Uart0CalcCrc : in std_logic_vector(31 downto 0);
+		
 		Uart1FifoReset : out std_logic;
 		ReadUart1 : out std_logic;
 		Uart1RxFifoFull : in std_logic;
@@ -882,7 +890,15 @@ begin
 								DataOut <= Uart0Crc;
 								
 								
-								
+										Uart0HeaderFound : in std_logic;
+		Uart0FooterFound : in std_logic;
+		Uart0HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		Uart0FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		Uart0PayloadType : in std_logic_vector(15 downto 0);
+		Uart0PayloadLen : in std_logic_vector(15 downto 0);
+		Uart0PacketCrc : in std_logic_vector(31 downto 0);
+		Uart0CalcCrc : in std_logic_vector(31 downto 0);
+
 							when others =>
 
 								DataOut <= x"BAADC0DE";

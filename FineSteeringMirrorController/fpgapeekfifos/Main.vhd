@@ -438,10 +438,14 @@ architecture architecture_Main of Main is
 							FifoReadAck : out std_logic;
 							FifoReadData : out std_logic_vector(7 downto 0);
 							--Packet decodes:
-							LastHeaderEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-							LastFooterEnd : out std_logic_vector(PeekRamDepth - 1 downto 0);
-							PayloadLen : out std_logic_vector(31 downto 0);
-							HeaderFooterPayloadLenMatches : out std_logic;
+							HeaderFound : out std_logic;
+							FooterFound : out std_logic;
+							HeaderEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadType : out std_logic_vector(15 downto 0);
+							PayloadLen : out std_logic_vector(15 downto 0);
+							PacketCrc : out std_logic_vector(31 downto 0);
+							CalcCrc : out std_logic_vector(31 downto 0);
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
@@ -746,7 +750,14 @@ architecture architecture_Main of Main is
 							Uart0DoCrc : out std_logic;
 							Uart0CrcDone : in std_logic;
 							Uart0Crc : in std_logic_vector(31 downto 0);
-
+							Uart0HeaderFound : in std_logic;
+							Uart0FooterFound : in std_logic;
+							Uart0HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0PayloadType : in std_logic_vector(15 downto 0);
+							Uart0PayloadLen : in std_logic_vector(15 downto 0);
+							Uart0PacketCrc : in std_logic_vector(31 downto 0);
+							Uart0CalcCrc : in std_logic_vector(31 downto 0);
 							Uart1FifoReset : out std_logic;
 							ReadUart1 : out std_logic;
 							Uart1RxFifoFull : in std_logic;
@@ -1276,7 +1287,15 @@ architecture architecture_Main of Main is
 			signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0PayloadLen : std_logic_vector(31 downto 0);
 			signal Uart0HeaderFooterPayloadLenMatches : std_logic;
-			
+			signal Uart0HeaderFound : std_logic;
+			signal Uart0FooterFound : std_logic;
+			signal Uart0HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0PayloadType : std_logic_vector(15 downto 0);
+			signal Uart0PayloadLen : std_logic_vector(15 downto 0);
+			signal Uart0PacketCrc : std_logic_vector(31 downto 0);
+			signal Uart0CalcCrc : std_logic_vector(31 downto 0);
+
 			signal Uart1FifoReset : std_logic;
 			signal Uart1FifoReset_i : std_logic;
 			signal ReadUart1 : std_logic;
@@ -1578,7 +1597,14 @@ begin
 		Uart0DoCrc => Uart0DoCrc,
 		Uart0CrcDone => Uart0CrcDone,
 		Uart0Crc => Uart0Crc,
-
+		Uart0HeaderFound => Uart0HeaderFound,
+		Uart0FooterFound => Uart0FooterFound,
+		Uart0HeaderEndPos => Uart0HeaderEndPos,
+		Uart0FooterEndPos => Uart0FooterEndPos,
+		Uart0PayloadType => Uart0PayloadType,
+		Uart0PayloadLen => Uart0PayloadLen,
+		Uart0PacketCrc => Uart0PacketCrc,
+		Uart0CalcCrc => Uart0CalcCrc,
 
 		Uart1FifoReset => Uart1FifoReset,
 		ReadUart1 => ReadUart1,
@@ -2070,6 +2096,14 @@ begin
 		FifoReadData => Uart0RxFifoData,
 		FifoCount => Uart0RxFifoCount,
 		FifoReadAck => open,
+		HeaderFound => Uart0HeaderFound,
+		FooterFound => Uart0FooterFound,
+		HeaderEndPos => Uart0HeaderEndPos,
+		FooterEndPos => Uart0FooterEndPos,
+		PayloadType => Uart0PayloadType,
+		PayloadLen => Uart0PayloadLen,
+		PacketCrc => Uart0PacketCrc,
+		CalcCrc => Uart0CalcCrc,
 		FifoReadAddr => Uart0RxFifoPeekReadAddr,
 		FifoWriteAddr => Uart0RxFifoPeekWriteAddr,
 		FifoPeekAddr => Uart0RxFifoPeekPeekAddr_i,
