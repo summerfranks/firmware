@@ -124,6 +124,13 @@ const Cmd AsciiCmds[] =
         "\"MonitorSerial < 0 | 1 | 2 | 3 > <Y | N>\": Show/hide incoming serial bytes.",
         MonitorSerialCommand
     ),
+	
+	
+	Cmd(
+        "FPGAPARSER",
+        "\"FpgaParser\": Debug Fpga Parsing Pipeline.",
+        FpgaParserCommand
+    ),
 };
 
 //Calculate the number of commands instanciated in the system - links with CmdSystem.cpp.o

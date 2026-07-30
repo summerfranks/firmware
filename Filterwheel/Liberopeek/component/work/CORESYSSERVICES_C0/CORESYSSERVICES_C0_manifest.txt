@@ -1,0 +1,25 @@
+Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
+
+Date      :  Tue Jul 30 11:36:27 2024
+Project   :  /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero
+Component :  CORESYSSERVICES_C0
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_AHBLMasterIF.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_CmdDec.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_FSMCtrl.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_UserIF.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.v
+
+Stimulus files for all Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/wave.do
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/runall.do
+
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v
+

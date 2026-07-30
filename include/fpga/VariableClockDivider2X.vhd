@@ -27,7 +27,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.NUMERIC_STD.all;
 
-entity VariableClockDividerPorts is
+entity VariableClockDivider2XPorts is
 	generic (
 		WIDTH_BITS : natural := 8;
 		DIVOUT_RST_STATE : std_logic := '0'--;
@@ -40,9 +40,9 @@ entity VariableClockDividerPorts is
 		terminal_count : in std_logic_vector(WIDTH_BITS - 1 downto 0); --a t/c of zero results in clko = clki / 2
 		clko : out std_logic
 	);
-end VariableClockDividerPorts;
+end VariableClockDivider2XPorts;
 
-architecture VariableClockDivider of VariableClockDividerPorts is
+architecture VariableClockDivider2X of VariableClockDivider2XPorts is
 
 	signal ClkDiv : natural range 0 to ((2**WIDTH_BITS) - 1);
 	signal clko_i : std_logic;	
@@ -90,4 +90,4 @@ begin
 
 	end process;
 
-end VariableClockDivider;
+end VariableClockDivider2X;

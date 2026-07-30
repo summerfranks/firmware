@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>Filterwheel</header>
+  <drc>
+    <status>/home/summer/microchip/Libero_SoC_v2023.2/Libero/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin Filterwheel_sb_0:AMBA_SLAVE_0</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/Filterwheel/pins/Filterwheel_sb_0:AMBA_SLAVE_0</crossprobe>
+  </drc>
+</drcreport>

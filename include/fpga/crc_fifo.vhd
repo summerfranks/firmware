@@ -94,7 +94,7 @@ begin
 	FifoPeekAddr <= FifoPeekAddr_i;
 	CrcComplete <= CrcComplete_i;
 	
-	process (clk, rst)
+	process (clk, rst, FifoStartAddr)
 	begin
 	
 		if (rst = '1') then 

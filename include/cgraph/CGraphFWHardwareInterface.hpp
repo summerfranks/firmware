@@ -249,6 +249,13 @@ struct CGraphFWHardwareInterface
 	CGraphCrcCurrentAddr Uart0CrcCurrentAddr;
 	uint32_t Uart0Crc;
 	
+	uint32_t Uart0HeaderEndPos;
+	uint32_t Uart0FooterEndPos;
+	uint32_t Uart0PayloadType;
+	uint32_t Uart0PayloadLen;
+	uint32_t Uart0PacketCrc;
+	uint32_t Uart0CalcCrc;
+	
 } __attribute__((__packed__));
 
 extern CGraphFWHardwareInterface* volatile FW;

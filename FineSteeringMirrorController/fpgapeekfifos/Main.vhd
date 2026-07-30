@@ -758,6 +758,7 @@ architecture architecture_Main of Main is
 							Uart0PayloadLen : in std_logic_vector(15 downto 0);
 							Uart0PacketCrc : in std_logic_vector(31 downto 0);
 							Uart0CalcCrc : in std_logic_vector(31 downto 0);
+							
 							Uart1FifoReset : out std_logic;
 							ReadUart1 : out std_logic;
 							Uart1RxFifoFull : in std_logic;

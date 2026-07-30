@@ -96,7 +96,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	
 	component FieldLatcher is
 	  generic (
-			NumBytes : natural := 4;
+			NumBytes : natural := 4--;
 	  );
 	  port (
 			clk : in std_logic;
@@ -128,16 +128,22 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	signal LastPopReq : std_logic;
 	signal LastWriteReq : std_logic;
 
-	signal HeaderFound : std_logic;
-	signal FooterFound : std_logic;
+	--~ signal HeaderFound : std_logic;
+	--~ signal FooterFound : std_logic;
 	signal LastHeaderFound : std_logic;
 	signal LastFooterFound : std_logic;
-	signal HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
-	signal FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
+	--~ signal HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
+	--~ signal FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
 	
-	signal PayloadType : std_logic_vector(15 downto 0);
-	signal PayloadLen : std_logic_vector(15 downto 0);
+	--~ signal PayloadType : std_logic_vector(15 downto 0);
+	--~ signal PayloadLen : std_logic_vector(15 downto 0);
+	signal CalcCrc_i : std_logic_vector(31 downto 0);
 	signal CRC : std_logic_vector(31 downto 0);
+	
+	signal LatchPayloadType : std_logic;
+	signal LatchPayloadLen : std_logic;
+	signal LatchCrc : std_logic;	
+	signal CrcRst : std_logic;
 	
   begin
   
@@ -269,7 +275,6 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		WriteAddress <= (others => '0');
 		HeaderEndPos <= (others => '0');
 		FooterEndPos <= (others => '0');
-		PayloadLen <= x"00000000";
         
     else
       if ( (clk'event) and (clk = '1') ) then
@@ -281,8 +286,15 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	  
         if ( (LastPopReq = '0') and (PopReq = '1') ) then
 		
-            DataStartAddress_i <= PopAddress;
+			--~ --Do a pop
+            --~ DataStartAddress_i <= PopAddress;
         
+			--Instead let's just clear the whole damn buffer for now since we don't know how to wrap anyway!
+			DataStartAddress_i <= (others => '0');
+			WriteAddress <= (others => '0');
+			HeaderEndPos <= (others => '0');
+			FooterEndPos <= (others => '0');
+			
 		end if;
 
         if ( (LastWriteReq = '0') and (WriteReq = '1') ) then
@@ -292,7 +304,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			if (WriteAddress < ( (2**PeekRamDepth) - 1) ) then
 		
 				WriteAddress <= WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
-				--~ WriteAddress <= WriteAddress + "0000000001";
+				--~ WriteAddress <= WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
 				
 			else --wrap
 			
@@ -301,8 +313,8 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			end if;
 			
 			--If we wrap footer or header, clear!
-			if (HeaderEndPos = WriteAddress + "0000000001") then HeaderEndPos <= (others => '0'); end if;			
-			if (FooterEndPos = WriteAddress + "0000000001") then FooterEndPos <= (others => '0'); end if;
+			if (HeaderEndPos = WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth))) then HeaderEndPos <= (others => '0'); end if;			
+			if (FooterEndPos = WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth))) then FooterEndPos <= (others => '0'); end if;
 			
 			--Grab the payload len?
 			
@@ -310,15 +322,15 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			if (WriteAddress = HeaderEndPos + 4) then LatchPayloadLen <= '1'; else LatchPayloadLen <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
 			
-			if (WriteAddress >= HeaderEndPos) then
+			--~ if (WriteAddress >= HeaderEndPos) then
 			
-				if (WriteAddress = (HeaderEndPos + 3)) then PayloadLen <= MaybePayloadLen; end if;
+				--~ if (WriteAddress = (HeaderEndPos + 3)) then PayloadLen <= MaybePayloadLen; end if;
 			
-			else
+			--~ else
 
-				if (WriteAddress = (HeaderEndPos + 3 - (2**PeekRamDepth))) then PayloadLen <= MaybePayloadLen; end if; --!!!this calc is WRONG!!! Needs to WRAP correctly...
+				--~ if (WriteAddress = (HeaderEndPos + 3 - (2**PeekRamDepth))) then PayloadLen <= MaybePayloadLen; end if; --!!!this calc is WRONG!!! Needs to WRAP correctly...
 			
-			end if;
+			--~ end if;
 			
 		else
 		
@@ -327,8 +339,8 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		end if;
 
 		--Update on the edge of found; can't put this on the writereq edge, because the flag will toggle on the next clock after, not synchrounously!
-		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then HeaderEndPos <= WriteAddress - "0000000001"; CrcRst <= '1'; else CrcRst <= 0; end if;
-		if ( (LastFooterFound = '0') and (FooterFound = '1') ) then FooterEndPos <= WriteAddress - "0000000001"; end if;
+		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then HeaderEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); CrcRst <= '1'; else CrcRst <= '0'; end if;
+		if ( (LastFooterFound = '0') and (FooterFound = '1') ) then FooterEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); end if;
 		
   	  end if;  
     end if;

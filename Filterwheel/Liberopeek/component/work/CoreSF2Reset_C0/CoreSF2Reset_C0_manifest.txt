@@ -1,0 +1,12 @@
+Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
+
+Date      :  Tue Jul 30 10:55:31 2024
+Project   :  /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero
+Component :  CoreSF2Reset_C0
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreSF2Reset/3.0.100/rtl/vlog/core/coresf2reset.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.v
+

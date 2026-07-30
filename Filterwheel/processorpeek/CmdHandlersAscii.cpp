@@ -498,6 +498,27 @@ int8_t MonitorSerialCommand(char const* Name, char const* Params, const size_t P
     return(strlen(Params));
 }
 
+int8_t FpgaParserCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
+{
+	char onoff;
+
+	//Convert parameters
+    int8_t numfound = sscanf(Params, "[,\t ]%c", &onoff);
+    if (numfound >= 1)
+	{
+	    bool OnOff = false;
+
+		if ( ('C' == onoff) || ('c' == onoff) || ('T' == onoff) || ('t' == onoff) || ('1' == onoff) ) { OnOff = true; }
+		
+		formatf("\n\nFpgaParserCommand: Clearing parser pipeline: %c.\n", OnOff?'Y':'N');
+		if (OnOff) { FW->Uart0RxFifoPeekMultiPopAddr = FW->Uart0RxFifoPeekWriteAddr; }
+	}
+
+	formatf("\n\nFpgaParserCommand: Pipeline: HeaderEnd(0x%lX), FooterEnd(0x%lX), PayloadType(0x%lX), PayloadLen(%lu), PacketCrc(0x%lX), CalcCrc(0x%lX)\n", (unsigned long)FW->Uart0HeaderEndPos, (unsigned long)FW->Uart0FooterEndPos, (unsigned long)FW->Uart0PayloadType, (unsigned long)FW->Uart0PayloadLen, (unsigned long)FW->Uart0PacketCrc, (unsigned long)FW->Uart0CalcCrc);
+
+	return(strlen(Params));
+}
+
 
 //EOF
 

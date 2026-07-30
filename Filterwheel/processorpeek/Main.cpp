@@ -164,10 +164,10 @@ bool Process()
 		//~ if (UsbUartBinary.remotedataready()) { FPGAUartPinoutUsb.putcqq(UsbUartBinary.remotegetcqq()); }
 	//~ }
 	
-    if (FpgaUartParser3.Process()) { Bored = false; }    
-	if (FpgaUartParser2.Process()) { Bored = false; }    
-	if (FpgaUartParser1.Process()) { Bored = false; }    
-	if (FpgaUartParser0.Process()) { Bored = false; }    
+    //~ if (FpgaUartParser3.Process()) { Bored = false; }    
+	//~ if (FpgaUartParser2.Process()) { Bored = false; }    
+	//~ if (FpgaUartParser1.Process()) { Bored = false; }    
+	//~ if (FpgaUartParser0.Process()) { Bored = false; }    
 	//~ if (FpgaUartParserUsb.Process()) { Bored = false; }    
 	if (DbgUartUsb.Process()) { Bored = false; }    
     //~ if (DbgUart485_0.Process()) { Bored = false; }
@@ -177,10 +177,10 @@ bool Process()
 
 void ProcessAllUarts()
 {
-	FpgaUartParser3.Process();
-	FpgaUartParser2.Process();
-	FpgaUartParser1.Process();
-	FpgaUartParser0.Process();
+	//~ FpgaUartParser3.Process();
+	//~ FpgaUartParser2.Process();
+	//~ FpgaUartParser1.Process();
+	//~ FpgaUartParser0.Process();
 	//~ FpgaUartParserUsb.Process();
 	DbgUartUsb.Process();
 	//~ DbgUart485_0.Process();
@@ -224,18 +224,19 @@ int main(int argc, char *argv[])
 	//~ formatf("\nOffset of UartFifoUsbReadData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, UartFifoUsbReadData), 172UL);
 	//~ formatf("\nOffset of Uart0RxFifoPeekReadAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekReadAddr), 332UL);
 	//~ formatf("\nOffset of BaudDividers: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, BaudDividers), 64UL);
-	formatf("\nOffset of Uart0RxFifoPeekPeekData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekData), 344UL);
-	formatf("\nOffset of Uart0RxFifoPeekPeekAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekAddr), 340UL);
+	//~ formatf("\nOffset of Uart0RxFifoPeekPeekData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekData), 344UL);
+	//~ formatf("\nOffset of Uart0RxFifoPeekPeekAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekAddr), 340UL);
+	formatf("\nOffset of Uart0CalcCrc: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0CalcCrc), 388UL);
 
 	//~ FpgaUartParser0.Init();
-	FpgaUartParser1.Init();
-	FpgaUartParser2.Init();
-	FpgaUartParser3.Init();
+	//~ FpgaUartParser1.Init();
+	//~ FpgaUartParser2.Init();
+	//~ FpgaUartParser3.Init();
 
-	FpgaUartParser0.Debug(true);
-	FpgaUartParser1.Debug(true);
-	FpgaUartParser2.Debug(true);
-	FpgaUartParser3.Debug(true);
+	//~ FpgaUartParser0.Debug(true);
+	//~ FpgaUartParser1.Debug(true);
+	//~ FpgaUartParser2.Debug(true);
+	//~ FpgaUartParser3.Debug(true);
 
 	DbgUartUsb.Init();
 	//~ DbgUart485_0.Init();

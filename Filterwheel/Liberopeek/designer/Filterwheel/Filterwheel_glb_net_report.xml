@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Global Net Report</title>
+<text>Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)</text>
+<text>Date: Thu Jul 30 15:47:37 2026
+</text>
+<section>
+<name>Global Nets Information</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> GB Location </cell>
+ <cell> Net Name </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>GB[0] </cell>
+ <cell>(218, 54)</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/GL0_INST/U0_YNn</cell>
+ <cell>2310</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
+ <cell>Main_0/UartGpsRxBitClockDiv/div_i_inferred_clock_RNIIMVC/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>GB[2] </cell>
+ <cell>(220, 54)</cell>
+ <cell>Main_0/RS422_Rx0/ClkSyncWrite/O_inferred_clock_RNIUE68/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>GB[3] </cell>
+ <cell>(221, 54)</cell>
+ <cell>Main_0/Uart1BitClockDiv/clko_i_inferred_clock_RNILRIF/U0_YNn</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>GB[4] </cell>
+ <cell>(222, 54)</cell>
+ <cell>Filterwheel_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>6</cell>
+ <cell>GB[5] </cell>
+ <cell>(223, 54)</cell>
+ <cell>Main_0/Uart3BitClockDiv/clko_i_inferred_clock_RNINTK/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>7</cell>
+ <cell>GB[6] </cell>
+ <cell>(224, 54)</cell>
+ <cell>Main_0/Uart0BitClockDiv/clko_i_inferred_clock_RNIKQ1F/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+</row>
+<row>
+ <cell>8</cell>
+ <cell>GB[7] </cell>
+ <cell>(225, 54)</cell>
+ <cell>Main_0/Uart2BitClockDiv/clko_i_inferred_clock_RNIMS3/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>I/O to GB Connections</name>
+<text>(none)</text>
+</section>
+<section>
+<name>Fabric to GB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> To </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>Main_0/UartGpsRxBitClockDiv/div_i:Q</cell>
+ <cell>(117, 28)</cell>
+ <cell>GB[1] </cell>
+ <cell>Main_0/UartGpsRxBitClockDiv/div_i_5</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>Main_0/RS422_Rx0/ClkSyncWrite/O:Q</cell>
+ <cell>(369, 13)</cell>
+ <cell>GB[2] </cell>
+ <cell>Main_0/RS422_Rx0/ClkSyncWrite/O_Z</cell>
+ <cell>ROUTED</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>Main_0/Uart1BitClockDiv/clko_i:Q</cell>
+ <cell>(249, 58)</cell>
+ <cell>GB[3] </cell>
+ <cell>Main_0/Uart1BitClockDiv/clko_i_Z</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>Main_0/Uart3BitClockDiv/clko_i:Q</cell>
+ <cell>(393, 40)</cell>
+ <cell>GB[5] </cell>
+ <cell>Main_0/Uart3BitClockDiv/clko_i_0</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>Main_0/Uart0BitClockDiv/clko_i:Q</cell>
+ <cell>(203, 58)</cell>
+ <cell>GB[6] </cell>
+ <cell>Main_0/Uart0BitClockDiv/clko_i_2</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>6</cell>
+ <cell>Main_0/Uart2BitClockDiv/clko_i:Q</cell>
+ <cell>(392, 25)</cell>
+ <cell>GB[7] </cell>
+ <cell>Main_0/Uart2BitClockDiv/clko_i_1</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>CCC to GB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> To </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>CCC-NE1 (390, 92)</cell>
+ <cell>GB[0] </cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/GL0_net</cell>
+ <cell>HARDWIRED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>CCC-NE0 (372, 92)</cell>
+ <cell>GB[4] </cell>
+ <cell>Filterwheel_sb_0/CCC_0/GL0_net</cell>
+ <cell>HARDWIRED</cell>
+ <cell>1</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>CCC Input Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> Port Name </cell>
+ <cell> Pin Number </cell>
+ <cell> I/O Function </cell>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> To (Pin Swapped for Back Annotation Only) </cell>
+ <cell> CCC Location </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>CLK0_PAD</cell>
+ <cell>44</cell>
+ <cell>MSIO102NB4/CCC_NE1_CLKI0</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/CLK0_PAD_INST/U_IOPAD:Y</cell>
+ <cell>(249, 1)</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:CLK0_PAD</cell>
+ <cell>CCC-NE1 (390, 92)</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/CLK0_PAD_net</cell>
+ <cell>HARDWIRED</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>-</cell>
+ <cell>-</cell>
+ <cell>-</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>(390, 92)</cell>
+ <cell>Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:CLK0</cell>
+ <cell>CCC-NE0 (372, 92)</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/GL0_net</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>Local Nets to RGB Connections</name>
+<text>(none)</text>
+</section>
+<section>
+<name>Global Nets to RGB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> Net Name </cell>
+ <cell> Fanout </cell>
+ <cell> </cell>
+ <cell> RGB Location </cell>
+ <cell> RGB Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>GB[0] </cell>
+ <cell>(218, 54)</cell>
+ <cell>FCCC_C0_0/FCCC_C0_0/GL0_INST/U0_YNn</cell>
+ <cell>2310</cell>
+ <cell>1</cell>
+ <cell>(218, 84)</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 87)</cell>
+ <cell>25</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 90)</cell>
+ <cell>3</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(219, 57)</cell>
+ <cell>105</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5</cell>
+ <cell>(219, 60)</cell>
+ <cell>22</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 54)</cell>
+ <cell>Main_0/UartGpsRxBitClockDiv/div_i_inferred_clock_RNIIMVC/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(218, 33)</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(219, 27)</cell>
+ <cell>20</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(219, 30)</cell>
+ <cell>10</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>GB[2] </cell>
+ <cell>(220, 54)</cell>
+ <cell>Main_0/RS422_Rx0/ClkSyncWrite/O_inferred_clock_RNIUE68/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(219, 18)</cell>
+ <cell>10</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(220, 12)</cell>
+ <cell>8</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(220, 15)</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(220, 21)</cell>
+ <cell>8</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>GB[3] </cell>
+ <cell>(221, 54)</cell>
+ <cell>Main_0/Uart1BitClockDiv/clko_i_inferred_clock_RNILRIF/U0_YNn</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(218, 57)</cell>
+ <cell>20</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 60)</cell>
+ <cell>8</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>GB[4] </cell>
+ <cell>(222, 54)</cell>
+ <cell>Filterwheel_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(218, 66)</cell>
+ <cell>9</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 75)</cell>
+ <cell>22</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 102)</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>6</cell>
+ <cell>GB[5] </cell>
+ <cell>(223, 54)</cell>
+ <cell>Main_0/Uart3BitClockDiv/clko_i_inferred_clock_RNINTK/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(218, 12)</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 15)</cell>
+ <cell>11</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 21)</cell>
+ <cell>9</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(218, 30)</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell>7</cell>
+ <cell>GB[6] </cell>
+ <cell>(224, 54)</cell>
+ <cell>Main_0/Uart0BitClockDiv/clko_i_inferred_clock_RNIKQ1F/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(219, 6)</cell>
+ <cell>13</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(219, 9)</cell>
+ <cell>7</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(221, 12)</cell>
+ <cell>12</cell>
+</row>
+<row>
+ <cell>8</cell>
+ <cell>GB[7] </cell>
+ <cell>(225, 54)</cell>
+ <cell>Main_0/Uart2BitClockDiv/clko_i_inferred_clock_RNIMS3/U0_YNn_GSouth</cell>
+ <cell>32</cell>
+ <cell>1</cell>
+ <cell>(218, 24)</cell>
+ <cell>11</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 27)</cell>
+ <cell>8</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 36)</cell>
+ <cell>7</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(218, 39)</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5</cell>
+ <cell>(218, 42)</cell>
+ <cell>4</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>Warning: Local Clock Nets</name>
+<text>The following clocks are routed using regular routing resources instead of dedicated global resources. Clocks using regular routing are more susceptible to Single Event Effects (SEEs) and have less predictable amounts of clock jitter versus the dedicated global resources. Microchip recommends using clock input and clock generation paths that maximize the usage of dedicated global routing resources, as well as promoting these signals to dedicated global resources. Refer to the RTG4 Clocking Resources User Guide and RTG4 Radiation-Mitigated Clock and Reset Network Usage Application Note for more information.
+</text>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> Driving Net </cell>
+ <cell> To </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_9:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_9_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_19_rs:CLK</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_7:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_7_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_17_rs:CLK</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>Main_0/Uart0TxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/Uart0TxBitClockDiv/div_i_0</cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx0/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>Main_0/UartUsbRxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/UartUsbRxBitClockDiv/div_i_6</cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/ClkDiv[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/ClkDiv[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/div_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:CLK</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>Main_0/Uart2TxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/Uart2TxBitClockDiv/div_i_2</cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx2/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell>6</cell>
+ <cell>Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ_FAB:CLKOUT</cell>
+ <cell>Filterwheel_sb_0/FABOSC_0/N_RCOSC_25_50MHZ_CLKINT</cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/ddr_settled:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif0_areset_n_rcosc:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif1_areset_n_rcosc:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif2_areset_n_rcosc_q1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/release_sdif2_core:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif3_areset_n_rcosc:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/release_sdif1_core:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/release_sdif0_core:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/release_sdif3_core:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif0_areset_n_rcosc_q1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif1_areset_n_rcosc_q1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc_q1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif3_areset_n_rcosc_q1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Filterwheel_sb_0/CORERESETP_0/sdif2_areset_n_rcosc:CLK</cell>
+</row>
+<row>
+ <cell>7</cell>
+ <cell>Main_0/ads1258/Spi/un1_rst_1:Y</cell>
+ <cell>Main_0/ads1258/Spi/un1_rst_1_Z</cell>
+ <cell>Main_0/ads1258/Spi/un1_rst_3_rs:CLK</cell>
+</row>
+<row>
+ <cell>8</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_10_rs:CLK</cell>
+</row>
+<row>
+ <cell>9</cell>
+ <cell>Main_0/UartGpsTxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/UartGpsTxBitClockDiv/div_i_3</cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell>10</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_4:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_4_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_14_rs:CLK</cell>
+</row>
+<row>
+ <cell>11</cell>
+ <cell>Main_0/ClkDac_i/Spi/N_1881_i:Y</cell>
+ <cell>Main_0/ClkDac_i/Spi/N_1881_i_Z</cell>
+ <cell>Main_0/ClkDac_i/Spi/un1_rst_2_rs:CLK</cell>
+</row>
+<row>
+ <cell>12</cell>
+ <cell>Main_0/ads1258/Spi/N_1725_i:Y</cell>
+ <cell>Main_0/ads1258/Spi/N_1725_i_Z</cell>
+ <cell>Main_0/ads1258/Spi/un1_rst_2_rs:CLK</cell>
+</row>
+<row>
+ <cell>13</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_1:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_1_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_11_rs:CLK</cell>
+</row>
+<row>
+ <cell>14</cell>
+ <cell>Main_0/Uart3TxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/Uart3TxBitClockDiv/div_i_1</cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS433_Tx3/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell>15</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_8:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_8_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_18_rs:CLK</cell>
+</row>
+<row>
+ <cell>16</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_3:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_3_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_13_rs:CLK</cell>
+</row>
+<row>
+ <cell>17</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_6:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_6_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_16_rs:CLK</cell>
+</row>
+<row>
+ <cell>18</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_2:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_2_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_12_rs:CLK</cell>
+</row>
+<row>
+ <cell>19</cell>
+ <cell>Main_0/Uart1TxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/Uart1TxBitClockDiv/div_i_Z</cell>
+ <cell>Main_0/RS422_Tx1/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS422_Tx1/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell>20</cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/div_i:Q</cell>
+ <cell>Main_0/UartUsbTxBitClockDiv/div_i_4</cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/O:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/Temp1:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[1]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[0]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/TxD:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[3]:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/Busy_i:CLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[2]:CLK</cell>
+</row>
+<row>
+ <cell>21</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_5:Y</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_5_Z</cell>
+ <cell>Main_0/RS422_Rx0_Crcer/un1_rst_15_rs:CLK</cell>
+</row>
+</table>
+</section>
+</doc>

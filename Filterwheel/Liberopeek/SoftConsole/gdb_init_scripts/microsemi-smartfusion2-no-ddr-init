@@ -1,0 +1,22 @@
+#==============================================================================
+# (c) Copyright 2015 Microsemi Corporation.  All rights reserved.
+#
+# microsemi-smartfusion2-no-ddr-init.txt
+#
+# SoftConsole debug initialization commands for configuring the external DDR 
+# memory. This is an empty place holder allowing the main target-gdbinit script
+# to call configure_external_ram without causing an error.
+#
+# SVN $Revision: 7372 $
+# SVN $Date: 2015-04-29 17:03:54 +0100 (Wed, 29 Apr 2015) $
+#==============================================================================
+
+#----------------------------------------
+# Configure the DDR memory controller
+#----------------------------------------
+
+define configure_external_ram
+
+printf "\nNo external RAM configuration \n"
+
+end

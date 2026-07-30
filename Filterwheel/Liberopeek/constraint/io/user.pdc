@@ -1,0 +1,635 @@
+# Microchip I/O Physical Design Constraints file
+
+# User I/O Constraints file 
+
+# Version: 2023.2 2023.2.0.10
+
+# Family: SmartFusion2 , Die: M2S025 , Package: 256 VF
+
+# Date generated: Thu Feb  8 14:13:10 2024 
+
+
+# 
+# User Locked I/O Bank Settings
+# 
+
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+
+# 
+# User Locked I/O settings
+# 
+
+
+## Clock
+
+set_io CLK0_PAD            \
+    -pinname 44      \
+    -fixed yes        \
+    -iostd LVCMOS33   \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+
+set_io nCsXO    \
+    -iostd LVCMOS33   \
+	-pinname 46      \
+    -fixed yes        \
+	-out_drive 2		\
+	-DIRECTION OUTPUT
+	
+set_io SckXO    \
+    -iostd LVCMOS33   \
+	-pinname 47      \
+    -fixed yes        \
+	-out_drive 2		\
+	-DIRECTION OUTPUT
+	
+set_io MosiXO    \
+    -iostd LVCMOS33   \
+	-pinname 48      \
+    -fixed yes        \
+	-out_drive 2		\
+	-DIRECTION OUTPUT
+
+
+
+
+## System
+
+set_io DEVRST_N       \
+    -pinname 72      \
+	-DIRECTION INPUT
+
+	#(Ux2Sel jumper)
+set_io INIT_DONE       \
+    -pinname 118      \
+	-iostd LVCMOS25   \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+
+
+## J-Dbg1
+
+#J-Dbg1_1_p1_L1 has weird drive issues
+
+#J-Dbg1_2_p3
+set_io PosSenseBit0B    \
+	-iostd LVCMOS33   \
+    -pinname 43      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-Dbg1_3_p5
+set_io PosSenseHomeB    \
+	-iostd LVCMOS33   \
+    -pinname 15      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-Dbg1_4_p7
+set_io PosSenseBit2A    \
+	-iostd LVCMOS33   \
+    -pinname 14      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-Dbg1_5_p9
+set_io PosSenseBit1A    \
+	-iostd LVCMOS33   \
+    -pinname 13      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-Dbg1_6_p11_J1 has weird drive issues due to being shared with buffer chip on J-SpiExt
+
+#J-Dbg1_7_p13
+set_io PosSenseBit0A    \
+	-iostd LVCMOS33   \
+    -pinname 10      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-Dbg1_8_p15
+set_io PosSenseHomeA    \
+	-iostd LVCMOS33   \
+    -pinname 9      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+
+
+##J-DM-DAC-A connects to J-SpiExt on FW board
+# These are seriously out of order on the FWI/Fv1.0Sch
+ 
+#J-SPI-EXT_p1_MisoExt - "FWI/Fv1.0Sch:A+'"
+set_io PosSenseBit1B    \
+	-iostd LVCMOS33   \
+    -pinname 57      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#J-SPI-EXT_p3_MosiExt - "FWI/Fv1.0Sch:Sens1B"
+set_io MotorDriveAMinus    \
+	-iostd LVCMOS33   \
+    -pinname 63      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-SPI-EXT_p5_SckExt - "FWI/Fv1.0Sch:A-"
+set_io MotorDriveAPlus    \
+	-iostd LVCMOS33   \
+    -pinname 61      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-SPI-EXT_p7_nCsExt - "FWI/Fv1.0Sch:A+"
+set_io MotorDriveAMinusPrime    \
+	-iostd LVCMOS33   \
+    -pinname 60      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-SPI-EXT_p9_DOutExt - "FWI/Fv1.0Sch:A-'"
+set_io MotorDriveAPlusPrime    \
+	-iostd LVCMOS33   \
+    -pinname 58      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-SPI-EXT_p11_DInExt - "FWI/Fv1.0Sch:Sens2B"
+set_io PosSenseBit2B    \
+	-iostd LVCMOS33   \
+    -pinname 56      \
+    -fixed yes        \
+	-RES_PULL UP      \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+	
+
+##J-DM-DAC-F connects to J-Dbg2 on FW board
+
+#J-DM-DAC-F_p6 - MosiDacsF
+set_io PosLEDEnA    \
+	-iostd LVCMOS33   \
+    -pinname 1      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-DM-DAC-F_p7 - SckDacsF
+set_io PosLEDEnB    \
+	-iostd LVCMOS33   \
+    -pinname 2      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-DM-DAC-F_p8 - nCsDacs4F
+set_io MotorDriveBPlusPrime    \
+	-iostd LVCMOS33   \
+    -pinname 3      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-DM-DAC-F_p9 - nCsDacs3F
+set_io MotorDriveBMinusPrime    \
+    -iostd LVCMOS33   \
+	-pinname 4      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#J-DM-DAC-F_p10 - nCsDacs2F
+set_io MotorDriveBMinus    \
+    -iostd LVCMOS33   \
+	-pinname 7      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#J-DM-DAC-F_p11 - nCsDacs1F
+set_io MotorDriveBPlus    \
+    -iostd LVCMOS33   \
+	-pinname 8      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+
+
+#RS-485 
+
+#Txd0
+set_io Txd0    \
+    -iostd LVCMOS33   \
+	-pinname 87      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+
+#Oe0
+set_io Oe0    \
+    -iostd LVCMOS33   \
+	-pinname 91      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#Rxd0
+set_io Rxd0    \
+	-iostd LVCMOS33   \
+    -pinname 100      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#Txd1
+set_io Txd1    \
+    -iostd LVCMOS33   \
+	-pinname 88      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+
+#Oe1
+	set_io Oe1    \
+    -iostd LVCMOS33   \
+	-pinname 92      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#Rxd1
+set_io Rxd1    \
+    -iostd LVCMOS33   \
+	-pinname 101      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#Txd2
+set_io Txd2    \
+    -iostd LVCMOS33   \
+	-pinname 89      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+
+#Oe2
+	set_io Oe2    \
+    -iostd LVCMOS33   \
+	-pinname 93      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#Rxd2
+set_io Rxd2    \
+    -iostd LVCMOS33   \
+	-pinname 102      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#Txd3
+set_io Txd3    \
+    -iostd LVCMOS33   \
+	-pinname 90      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+
+#Oe3
+	set_io Oe3    \
+    -iostd LVCMOS33   \
+	-pinname 94      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#Rxd3
+set_io Rxd3    \
+    -iostd LVCMOS33   \
+	-pinname 103      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+
+#RxdUsb
+set_io RxdUsb    \
+    -iostd LVCMOS33   \
+	-pinname 53      \
+    -fixed yes        \
+	-DIRECTION OUTPUT
+	#-out_drive 20		\
+	
+#TxdUsb
+set_io TxdUsb    \
+    -iostd LVCMOS33   \
+	-pinname 52      \
+    -fixed yes        \
+	-DIRECTION INPUT
+	#-RES_PULL UP \
+    #-SCHMITT_TRIGGER On \
+	
+#CtsUsb
+set_io CtsUsb    \
+    -iostd LVCMOS33   \
+	-pinname 55      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+
+#RxdGps
+set_io RxdGps    \
+    -iostd LVCMOS33   \
+	-pinname 64      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#PPS
+set_io PPS    \
+    -iostd LVCMOS33   \
+	-pinname 49      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+
+#TxdGps
+set_io TxdGps    \
+    -iostd LVCMOS33   \
+	-pinname 66      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+
+#Ux1SelJmp
+	set_io Ux1SelJmp    \
+    -iostd LVCMOS25   \
+	-pinname 117      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+
+#Monitor A/D
+	
+	set_io nCsMonAdc0    \
+    -iostd LVCMOS33   \
+	-pinname 21      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+	
+	set_io SckMonAdc0    \
+    -iostd LVCMOS33   \
+	-pinname 16      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+	
+	set_io MosiMonAdc0    \
+    -iostd LVCMOS33   \
+	-pinname 19      \
+    -fixed yes        \
+	-out_drive 20		\
+	-DIRECTION OUTPUT
+	
+	set_io MisoMonAdc0    \
+    -iostd LVCMOS33   \
+	-pinname 22      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+	set_io nDrdyMonAdc0    \
+    -iostd LVCMOS33   \
+	-pinname 20      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+    -DIRECTION INPUT
+	
+#Testpoints
+
+	set_io TP1    \
+    -iostd LVCMOS25   \
+	-pinname 38      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP2    \
+    -iostd LVCMOS25   \
+	-pinname 37      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP3    \
+    -iostd LVCMOS25   \
+	-pinname 36      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP4    \
+    -iostd LVCMOS25   \
+	-pinname 33      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP5    \
+    -iostd LVCMOS25   \
+	-pinname 32      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP6    \
+    -iostd LVCMOS25   \
+	-pinname 30      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP7    \
+    -iostd LVCMOS25   \
+	-pinname 29      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io TP8    \
+    -iostd LVCMOS25   \
+	-pinname 28      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#RGB Led
+	
+	set_io LedR    \
+    -iostd LVCMOS25   \
+	-pinname 27      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io LedG    \
+    -iostd LVCMOS25   \
+	-pinname 24      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	set_io LedB    \
+    -iostd LVCMOS25   \
+	-pinname 23      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+#Faults & Control
+
+	set_io PowernEn5V    \
+    -iostd LVCMOS25   \
+	-pinname 116      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+	
+	set_io nFaultClr5V    \
+    -iostd LVCMOS25   \
+	-pinname 115      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+	
+	set_io nFaultClr3V    \
+    -iostd LVCMOS25   \
+	-pinname 111      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+	
+	set_io nFaultClr1V    \
+    -iostd LVCMOS25   \
+	-pinname 110      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+	
+	set_io nPowerCycClr    \
+    -iostd LVCMOS25   \
+	-pinname 112      \
+    -fixed yes        \
+	-out_drive 4		\
+	-slew MEDIUM	\
+    -DIRECTION OUTPUT
+	
+	set_io Fault1V    \
+    -iostd LVCMOS33   \
+	-pinname 67      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+    -DIRECTION INPUT
+	
+	set_io Fault3V    \
+    -iostd LVCMOS33   \
+	-pinname 83      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+	set_io Fault5V    \
+    -iostd LVCMOS33   \
+	-pinname 81      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+	set_io PowerCycd    \
+    -iostd LVCMOS33   \
+	-pinname 85      \
+    -fixed yes        \
+	-SCHMITT_TRIGGER On \
+	-RES_PULL UP \
+    -DIRECTION INPUT
+	
+	set_io PowerSync    \
+    -iostd LVCMOS33   \
+	-pinname 82      \
+    -fixed yes        \
+	-out_drive 4		\
+	-DIRECTION OUTPUT
+	
+	
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
+# 
+
+
+#
+#Ports using Dedicated Pins
+
+#
+

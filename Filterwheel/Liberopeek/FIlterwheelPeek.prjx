@@ -1,0 +1,2000 @@
+KEY LIBERO "2023.2"
+KEY CAPTURE "2023.2.0.10"
+KEY DEFAULT_IMPORT_LOC "D:\Microsemiprj\RTAX_mult_test\RTAX2000S\multipliers\hdl"
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VERILOG"
+KEY VERILOGMODE "SYSTEMVERILOG"
+KEY VHDLMODE "VHDL2008"
+KEY SYSTEMVERILOGMFCU "FALSE"
+KEY UseConstraintFlowTechnology "TRUE"
+KEY VendorTechnology_Family "SmartFusion2"
+KEY VendorTechnology_Die "PA4M1000_N"
+KEY VendorTechnology_Package "tq144"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.2"
+KEY VendorTechnology_PART_RANGE "IND"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE "100_MS"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY "PLL_SUPPLY_33"
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "0"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "PA4M1000_N"
+KEY VendorTechnology_TEMPR "IND"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.2_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "IND"
+KEY ProjectLocation "/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek"
+KEY ProjectDescription "Filterwheel firmware."
+KEY UseRootLocationForLinkedFiles "TRUE"
+KEY RootLocationENVForLinkedFiles "CGRAPH_FIRMWARE"
+KEY RootLocationForLinkedFiles "/home/summer/projects/CGraph/firmware"
+KEY GlobalIncludePaths "${CGRAPH_FIRMWARE}/include;"
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY MemoryMapDrcSeverity "FALSE"
+KEY LossOfDataDRCSeverity "TRUE"
+KEY IdWidthMismatchDRCSeverity "TRUE"
+KEY SimulationType "VERILOG"
+KEY Vendor "Actel"
+KEY ActiveRoot "Filterwheel::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+VALUE="Impl2",NUM=2
+VALUE="Impl3",NUM=3
+VALUE="Impl4",NUM=4
+CURREV=4
+ENDLIST
+LIST LIBRARIES
+COREAHBLITE_LIB
+COREAHBLSRAM_OBF_LIB
+COREAPB3_LIB
+CORESYSSERVICES_LIB
+ENDLIST
+LIST LIBRARY_COREAHBLITE_LIB
+ALIAS=../component/Actel/DirectCore/CoreAHBLite/5.2.100/mti/user_vlog/COREAHBLITE_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST LIBRARY_COREAHBLSRAM_OBF_LIB
+ALIAS=COREAHBLSRAM_OBF_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST LIBRARY_COREAPB3_LIB
+ALIAS=COREAPB3_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST LIBRARY_CORESYSSERVICES_LIB
+ALIAS=CORESYSSERVICES_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
+LIST GlobalIncludeFileList
+ENDLIST
+LIST FileManager
+VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/BuildNumber.vhd,hdl"
+STATE="utd"
+TIME="1763032304"
+SIZE="1186"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
+STATE="utd"
+TIME="1785446567"
+SIZE="98135"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
+STATE="utd"
+TIME="1785447264"
+SIZE="53053"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd,hdl"
+STATE="utd"
+TIME="1763032479"
+SIZE="5936"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258accumulator.vhd,hdl"
+STATE="utd"
+TIME="1763032479"
+SIZE="14443"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/CGraphTypes.vhd,hdl"
+STATE="utd"
+TIME="1780617392"
+SIZE="1318"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd,hdl"
+STATE="utd"
+TIME="1771366191"
+SIZE="2001"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd,hdl"
+STATE="utd"
+TIME="1785442732"
+SIZE="2072"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd,hdl"
+STATE="utd"
+TIME="1763765542"
+SIZE="5226"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd,hdl"
+STATE="utd"
+TIME="1785445178"
+SIZE="3495"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd,hdl"
+STATE="utd"
+TIME="1763766487"
+SIZE="2540"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd,hdl"
+STATE="utd"
+TIME="1785447889"
+SIZE="2651"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd,hdl"
+STATE="utd"
+TIME="1771371958"
+SIZE="3326"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/fifo_gen_tb.vhd,hdl"
+STATE="utd"
+TIME="1763032479"
+SIZE="2462"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotor.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="3265"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotorDriver.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="5106"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd,hdl"
+STATE="utd"
+TIME="1771371982"
+SIZE="3532"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="1410"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="1527"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="1611"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/IOBufP1.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="1525"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/IOBufP3.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="1783"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd,hdl"
+STATE="utd"
+TIME="1771366070"
+SIZE="2261"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
+STATE="utd"
+TIME="1780617980"
+SIZE="2547"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd,hdl"
+STATE="utd"
+TIME="1763139239"
+SIZE="2039"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
+STATE="utd"
+TIME="1785445546"
+SIZE="9255"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="3831"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PPSCount.vhd,hdl"
+STATE="utd"
+TIME="1771366320"
+SIZE="3323"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/RtcCounter.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="4923"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiDac.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="6109"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiDacTrio.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="6370"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiDevice.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="5461"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiDeviceDual.vhd,hdl"
+STATE="utd"
+TIME="1770334960"
+SIZE="6256"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiExtBus.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="5415"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiExtBusAddrTx.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="4589"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="5186"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="7002"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxExtClk.vhd,hdl"
+STATE="utd"
+TIME="1771365010"
+SIZE="2706"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClk.vhd,hdl"
+STATE="utd"
+TIME="1771365472"
+SIZE="4214"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd,hdl"
+STATE="utd"
+TIME="1785283166"
+SIZE="6025"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="4948"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxParity.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="3347"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxRaw.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="6188"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd,hdl"
+STATE="utd"
+TIME="1771366370"
+SIZE="3185"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTxFifo.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="7527"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd,hdl"
+STATE="utd"
+TIME="1771366350"
+SIZE="7279"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoParity.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="7732"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTxParity.vhd,hdl"
+STATE="utd"
+TIME="1763032478"
+SIZE="2873"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider.vhd,hdl"
+STATE="utd"
+TIME="1771366217"
+SIZE="2446"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd,hdl"
+STATE="utd"
+TIME="1785442856"
+SIZE="2401"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/VariableOneShot.vhd,hdl"
+STATE="utd"
+TIME="1771366231"
+SIZE="2158"
+ENDFILE
+VALUE "<project>/../../include/fpga/ads1258.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032479"
+SIZE="5936"
+ENDFILE
+VALUE "<project>/../../include/fpga/ads1258accumulator.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032479"
+SIZE="14443"
+ENDFILE
+VALUE "<project>/../../include/fpga/ClockDivider.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366191"
+SIZE="2001"
+ENDFILE
+VALUE "<project>/../../include/fpga/ClockDivider2X.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1785442732"
+SIZE="2072"
+ENDFILE
+VALUE "<project>/../../include/fpga/fifo_gen.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771371958"
+SIZE="3326"
+ENDFILE
+VALUE "<project>/../../include/fpga/fifo_gen_tb.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032479"
+SIZE="2462"
+ENDFILE
+VALUE "<project>/../../include/fpga/FourWireStepperMotor.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="3265"
+ENDFILE
+VALUE "<project>/../../include/fpga/FourWireStepperMotorDriver.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="5106"
+ENDFILE
+VALUE "<project>/../../include/fpga/gated_fifo.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771371982"
+SIZE="3532"
+ENDFILE
+VALUE "<project>/../../include/fpga/IBufP1.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1410"
+ENDFILE
+VALUE "<project>/../../include/fpga/IBufP2.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1527"
+ENDFILE
+VALUE "<project>/../../include/fpga/IBufP3.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1611"
+ENDFILE
+VALUE "<project>/../../include/fpga/IOBufP1.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1525"
+ENDFILE
+VALUE "<project>/../../include/fpga/IOBufP2.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1628"
+ENDFILE
+VALUE "<project>/../../include/fpga/IOBufP3.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="1783"
+ENDFILE
+VALUE "<project>/../../include/fpga/OneShot.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366070"
+SIZE="2261"
+ENDFILE
+VALUE "<project>/../../include/fpga/PhaseComparator.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="3831"
+ENDFILE
+VALUE "<project>/../../include/fpga/PPSCount.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366320"
+SIZE="3323"
+ENDFILE
+VALUE "<project>/../../include/fpga/RtcCounter.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="4923"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiDac.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="6109"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiDacTrio.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="6370"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiExtBus.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="5415"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiExtBusAddrTx.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="4589"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiMaster.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="5186"
+ENDFILE
+VALUE "<project>/../../include/fpga/SpiMasterTrio.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="7002"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartRxExtClk.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771365010"
+SIZE="2706"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartRxFifoExtClk.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771365472"
+SIZE="4214"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartRxFifoParity.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="4948"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartRxParity.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="3347"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartRxRaw.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="6188"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartTx.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366370"
+SIZE="3185"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartTxFifo.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="7527"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartTxFifoExtClk.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366350"
+SIZE="7279"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartTxFifoParity.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="7732"
+ENDFILE
+VALUE "<project>/../../include/fpga/UartTxParity.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1763032478"
+SIZE="2873"
+ENDFILE
+VALUE "<project>/../../include/fpga/VariableClockDivider.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366217"
+SIZE="2446"
+ENDFILE
+VALUE "<project>/../../include/fpga/VariableClockDivider2X.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1785442856"
+SIZE="2401"
+ENDFILE
+VALUE "<project>/../../include/fpga/VariableOneShot.vhd,hdl"
+LINKFILEROOT "<project>/../../include/fpga"
+STATE="utd"
+TIME="1771366231"
+SIZE="2158"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="2736"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/coreparameters.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="1239"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/mti/scripts/wave_user.do,do"
+STATE="utd"
+TIME="1763032273"
+SIZE="912"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="4636"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="9073"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="25129"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="36275"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="122456"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="29701"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="4465"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="5708"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v,tb_hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="23651"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+MODULE_UNDER_TEST="testbench"
+SIMULATION_TIME="-all"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreResetP/7.1.100/CoreResetP.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="584"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="65628"
+PARENT="<project>/component/Actel/DirectCore/CoreResetP/7.1.100/CoreResetP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="8822"
+PARENT="<project>/component/Actel/DirectCore/CoreResetP/7.1.100/CoreResetP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreSF2Reset/3.0.100/CoreSF2Reset.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="477"
+PARENT="<project>/component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.cxf"
+PARENT="<project>/component/work/CoreSF2Reset_C1/CoreSF2Reset_C1.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CoreSF2Reset/3.0.100/rtl/vlog/core/coresf2reset.v,hdl"
+STATE="utd"
+TIME="1763139239"
+SIZE="26267"
+PARENT="<project>/component/Actel/DirectCore/CoreSF2Reset/3.0.100/CoreSF2Reset.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/CORESYSSERVICES.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="1216"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_AHBLMasterIF.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="5318"
+LIBRARY="CORESYSSERVICES_LIB"
+PARENT="<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_CmdDec.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="135582"
+LIBRARY="CORESYSSERVICES_LIB"
+PARENT="<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_FSMCtrl.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="36527"
+LIBRARY="CORESYSSERVICES_LIB"
+PARENT="<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_UserIF.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="39500"
+LIBRARY="CORESYSSERVICES_LIB"
+PARENT="<project>/component/Actel/DirectCore/CORESYSSERVICES/3.2.102/CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SgCore/FCCC/2.0.201/FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="241"
+PARENT="<project>/component/work/FCCC_C0/FCCC_C0.cxf"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SgCore/OSC/2.0.101/OSC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032273"
+SIZE="684"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SgCore/OSC/2.0.101/osc_comps.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="924"
+PARENT="<project>/component/Actel/SgCore/OSC/2.0.101/OSC.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="SYNPLIFY7_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/SgCore/OSC/2.0.101/osc_comps_pre.v,hdl"
+STATE="utd"
+TIME="1763032273"
+SIZE="726"
+PARENT="<project>/component/Actel/SgCore/OSC/2.0.101/OSC.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="PRECISION_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS/1.1.500/MSS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="526"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_CC/1.0.100/MSS_CC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="252"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_CCC/1.0.100/MSS_CCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="253"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_CFGM/1.1.100/MSS_CFGM.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="254"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_CM3/1.0.200/MSS_CM3.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="253"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_DDRB/1.0.200/MSS_DDRB.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="254"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_EDAC/1.0.101/MSS_EDAC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="254"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_ENVM/1.0.101/MSS_ENVM.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="254"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_FIC32/1.0.100/MSS_FIC32.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="255"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_INTR/1.0.200/MSS_INTR.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="254"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_MMUART/1.0.100/MSS_MMUART.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="256"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_RESET/1.0.100/MSS_RESET.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="255"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_SECURITY/1.0.100/MSS_SECURITY.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="258"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/Actel/SmartFusion2MSS/MSS_SWITCH/1.0.101/MSS_SWITCH.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="256"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032276"
+SIZE="4062"
+ENDFILE
+VALUE "<project>/component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="5699"
+PARENT="<project>/component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.cxf"
+ENDFILE
+VALUE "<project>/component/work/CoreSF2Reset_C1/CoreSF2Reset_C1.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763139239"
+SIZE="4062"
+ENDFILE
+VALUE "<project>/component/work/CoreSF2Reset_C1/CoreSF2Reset_C1.v,hdl"
+STATE="utd"
+TIME="1763139239"
+SIZE="5699"
+PARENT="<project>/component/work/CoreSF2Reset_C1/CoreSF2Reset_C1.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032276"
+SIZE="13875"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.v,hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="17312"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v,tb_hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="3873"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032276"
+SIZE="1767"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/runall.do,do"
+STATE="utd"
+TIME="1763032276"
+SIZE="19"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/wave.do,do"
+STATE="utd"
+TIME="1763032276"
+SIZE="3983"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v,hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="33028"
+LIBRARY="CORESYSSERVICES_LIB"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v,tb_hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="26051"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v,tb_hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="25555"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v,tb_hdl"
+STATE="utd"
+TIME="1763032276"
+SIZE="32511"
+PARENT="<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES.cxf"
+ENDFILE
+VALUE "<project>/component/work/DESIGN_FIRMWARE/DESIGN_FIRMWARE.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="1500"
+ENDFILE
+VALUE "<project>/component/work/FCCC_C0/FCCC_C0.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="10230"
+ENDFILE
+VALUE "<project>/component/work/FCCC_C0/FCCC_C0.v,hdl"
+STATE="utd"
+TIME="1763032274"
+SIZE="6138"
+PARENT="<project>/component/work/FCCC_C0/FCCC_C0.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032274"
+SIZE="674"
+PARENT="<project>/component/work/FCCC_C0/FCCC_C0.cxf"
+ENDFILE
+VALUE "<project>/component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.v,hdl"
+STATE="utd"
+TIME="1763032274"
+SIZE="1830"
+PARENT="<project>/component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel/Filterwheel.cxf,actgen_cxf"
+STATE="utd"
+TIME="1785446185"
+SIZE="12693"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel/Filterwheel.v,hdl"
+STATE="utd"
+TIME="1785446184"
+SIZE="18141"
+PARENT="<project>/component/work/Filterwheel/Filterwheel.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032275"
+SIZE="679"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="1659"
+PARENT="<project>/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032275"
+SIZE="455"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="803"
+PARENT="<project>/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032275"
+SIZE="9211"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb/Filterwheel_sb.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="22407"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1763032275"
+SIZE="15518"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="44109"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_pre.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="54528"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="PRECISION_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_syn.v,hdl"
+STATE="utd"
+TIME="1763032275"
+SIZE="47497"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="SYNPLIFY7_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
+STATE="utd"
+TIME="1763032276"
+SIZE="3243"
+ENDFILE
+VALUE "<project>/constraint/io/user.pdc,io_pdc"
+STATE="utd"
+TIME="1763032276"
+SIZE="11217"
+ENDFILE
+VALUE "<project>/constraint/user.sdc,sdc"
+STATE="utd"
+TIME="1763032276"
+SIZE="2833"
+ENDFILE
+VALUE "<project>/simulation/bfmtovec_compile.tcl,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="1229"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+ENDFILE
+VALUE "<project>/simulation/CM3_compile_bfm.tcl,sim"
+STATE="utd"
+TIME="1763032292"
+SIZE="491"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/simulation/coreahblite_usertb_ahb_master0.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="25179"
+ENDFILE
+VALUE "<project>/simulation/coreahblite_usertb_ahb_master1.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="6016"
+ENDFILE
+VALUE "<project>/simulation/coreahblite_usertb_ahb_master2.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="6016"
+ENDFILE
+VALUE "<project>/simulation/coreahblite_usertb_ahb_master3.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="6016"
+ENDFILE
+VALUE "<project>/simulation/coreahblite_usertb_include.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="11816"
+ENDFILE
+VALUE "<project>/simulation/coreapb3_usertb_master.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="8016"
+PARENT="<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/CoreAPB3.cxf"
+ENDFILE
+VALUE "<project>/simulation/peripheral_init.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="8450"
+PARENT="<project>/component/Actel/SmartFusion2MSS/MSS/1.1.500/MSS.cxf"
+ENDFILE
+VALUE "<project>/simulation/subsystem.bfm,sim"
+STATE="utd"
+TIME="1785446184"
+SIZE="773"
+PARENT="<project>/component/work/Filterwheel/Filterwheel.cxf"
+PARENT="<project>/component/work/Filterwheel_sb/Filterwheel_sb.cxf"
+ENDFILE
+VALUE "<project>/simulation/test.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="710"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/simulation/user.bfm,sim"
+STATE="utd"
+TIME="1763032293"
+SIZE="532"
+PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
+ENDFILE
+VALUE "<project>/synthesis/Filterwheel.so,so"
+STATE="utd"
+TIME="1785447926"
+SIZE="251"
+ENDFILE
+VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
+STATE="utd"
+TIME="1785448001"
+SIZE="1552880"
+ENDFILE
+VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
+STATE="utd"
+TIME="1785447927"
+SIZE="7406"
+ENDFILE
+VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
+STATE="utd"
+TIME="1785447926"
+SIZE="7490"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "Filterwheel::work"
+FILE "<project>/component/work/Filterwheel/Filterwheel.v,hdl"
+LIST Other_Association
+VALUE "<project>/simulation/subsystem.bfm,sim"
+ENDLIST
+LIST SynthesisConstraints
+VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
+ENDLIST
+LIST TimingConstraints
+VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
+VALUE "<project>/constraint/user.sdc,sdc"
+ENDLIST
+LIST PNRConstraints
+VALUE "<project>/constraint/io/user.pdc,io_pdc"
+VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
+VALUE "<project>/constraint/user.sdc,sdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+VALUE "/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/synthesis/Filterwheel.vm,syn_vm"
+VALUE "<project>/synthesis/Filterwheel.edn,syn_edn"
+VALUE "<project>/synthesis/Filterwheel_sdc.sdc,syn_sdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.edn,palace_edn"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.gcf,palace_gcf"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.pdc,palace_pdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.sdc,palace_sdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.v,palace_hdl"
+VALUE "<project>/designer/impl4/Filterwheel.adb,adb"
+VALUE "<project>/designer/impl4/Filterwheel.fdb,fdb"
+VALUE "<project>/designer/impl4/Filterwheel.pdb,pdb"
+VALUE "<project>/designer/impl4/Filterwheel.stp,stp"
+VALUE "<project>/designer/impl4/Filterwheel_fp/Filterwheel.pro,pro"
+VALUE "<project>/synthesis/Filterwheel.v,syn_hdl"
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "Filterwheel_sb::work"
+FILE "<project>/component/work/Filterwheel_sb/Filterwheel_sb.v,hdl"
+LIST Other_Association
+VALUE "<project>/simulation/subsystem.bfm,sim"
+VALUE "<project>/simulation/bfmtovec_compile.tcl,sim"
+VALUE "<project>/simulation/coreapb3_usertb_master.bfm,sim"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/coreparameters.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/mti/scripts/wave_user.do,do"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/coreparameters.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "Filterwheel_sb_MSS::work"
+FILE "<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v,hdl"
+LIST Other_Association
+VALUE "<project>/simulation/CM3_compile_bfm.tcl,sim"
+VALUE "<project>/simulation/user.bfm,sim"
+VALUE "<project>/simulation/test.bfm,sim"
+VALUE "<project>/simulation/peripheral_init.bfm,sim"
+ENDLIST
+ENDLIST
+LIST "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVICES_LIB"
+FILE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v,hdl"
+LIST Other_Association
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/wave.do,do"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/runall.do,do"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+LIST Filterwheel_sb
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/coreparameters.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v,tb_hdl"
+ENDLIST
+LIST CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST Other_Association
+LIST Filterwheel
+VALUE "<project>/simulation/subsystem.bfm,sim"
+ENDLIST
+LIST Filterwheel_sb
+VALUE "<project>/simulation/subsystem.bfm,sim"
+VALUE "<project>/simulation/bfmtovec_compile.tcl,sim"
+VALUE "<project>/simulation/coreapb3_usertb_master.bfm,sim"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/coreparameters.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/Actel/DirectCore/CoreAPB3/4.1.100/mti/scripts/wave_user.do,do"
+ENDLIST
+LIST Filterwheel_sb_MSS
+VALUE "<project>/simulation/CM3_compile_bfm.tcl,sim"
+VALUE "<project>/simulation/user.bfm,sim"
+VALUE "<project>/simulation/test.bfm,sim"
+VALUE "<project>/simulation/peripheral_init.bfm,sim"
+ENDLIST
+LIST CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/coreparameters.v,tb_hdl"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/wave.do,do"
+VALUE "<project>/component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/mti/scripts/runall.do,do"
+ENDLIST
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1fs
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+OnDemandBuildDH=TRUE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=TRUE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=32
+AbortFlowOnPDCErrorsOn=FALSE
+AbortFlowOnSDCErrorsOn=FALSE
+AbortFlowOn3.3V_IO_ON=FALSE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME Pro"
+FUNCTION="Simulation"
+TOOL="ModelSim Pro Edition"
+LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/ModelSimPro/modeltech/linuxacoem/vsim"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/Identify/bin/identify_debugger"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "Filterwheel::work"
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+VALUE "/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/synthesis/Filterwheel.vm,syn_vm"
+VALUE "<project>/synthesis/Filterwheel.edn,syn_edn"
+VALUE "<project>/synthesis/Filterwheel_sdc.sdc,syn_sdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.edn,palace_edn"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.gcf,palace_gcf"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.pdc,palace_pdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.sdc,palace_sdc"
+VALUE "<project>/phy_synthesis/Filterwheel_palace.v,palace_hdl"
+VALUE "<project>/designer/impl4/Filterwheel.adb,adb"
+VALUE "<project>/designer/impl4/Filterwheel.fdb,fdb"
+VALUE "<project>/designer/impl4/Filterwheel.pdb,pdb"
+VALUE "<project>/designer/impl4/Filterwheel.stp,stp"
+VALUE "<project>/designer/impl4/Filterwheel_fp/Filterwheel.pro,pro"
+VALUE "<project>/synthesis/Filterwheel.v,syn_hdl"
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "Filterwheel_sb::work"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVICES_LIB"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Place and Route:Filterwheel_glb_net_report.xml
+StartPage;StartPage;0
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ads1258accumulator_pkg::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258accumulator.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ads1258accumulatorPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258accumulator.vhd","FALSE","FALSE"
+SUBBLOCK "ramb16_s36_s36::work","","FALSE","FALSE"
+ENDLIST
+LIST "ads1258Ports::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "BuildNumberPorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/BuildNumber.vhd","FALSE","FALSE"
+ENDLIST
+LIST "CGraphTypes::work","${CGRAPH_FIRMWARE}/include/fpga/CGraphTypes.vhd","FALSE","FALSE"
+ENDLIST
+LIST "coreresetp_pcie_hotreset::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSF2Reset::work","component/Actel/DirectCore/CoreSF2Reset/3.0.100/rtl/vlog/core/coresf2reset.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSF2Reset_C0::work","component/work/CoreSF2Reset_C0/CoreSF2Reset_C0.v","TRUE","FALSE"
+SUBBLOCK "CoreSF2Reset::work","component/Actel/DirectCore/CoreSF2Reset/3.0.100/rtl/vlog/core/coresf2reset.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSF2Reset_C1::work","component/work/CoreSF2Reset_C1/CoreSF2Reset_C1.v","TRUE","FALSE"
+SUBBLOCK "CoreSF2Reset::work","component/Actel/DirectCore/CoreSF2Reset/3.0.100/rtl/vlog/core/coresf2reset.v","FALSE","FALSE"
+ENDLIST
+LIST "CORESYSSERVICES_C0::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0.v","TRUE","FALSE"
+SUBBLOCK "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVICES_LIB","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v","FALSE","FALSE"
+ENDLIST
+LIST "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
+ENDLIST
+LIST "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
+ENDLIST
+LIST "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
+SUBBLOCK "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "CoreResetP::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v","FALSE","FALSE"
+SUBBLOCK "coreresetp_pcie_hotreset::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v","FALSE","FALSE"
+ENDLIST
+LIST "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
+ENDLIST
+LIST "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "FourWireStepperMotorDriverPorts::work","${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotorDriver.vhd","FALSE","FALSE"
+SUBBLOCK "FourWireStepperMotorPorts::work","${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotor.vhd","FALSE","FALSE"
+SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+ENDLIST
+LIST "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "MSS_010::work","component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
+ENDLIST
+LIST "RegisterSpacePorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiDacPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDac.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiDevicePorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDevice.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartRxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "FCCC_C0::work","component/work/FCCC_C0/FCCC_C0.v","TRUE","FALSE"
+SUBBLOCK "FCCC_C0_FCCC_C0_0_FCCC::work","component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "FCCC_C0_FCCC_C0_0_FCCC::work","component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
+ENDLIST
+LIST "fifo_gen_tb::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen_tb.vhd","FALSE","FALSE"
+SUBBLOCK "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "Filterwheel::work","component/work/Filterwheel/Filterwheel.v","TRUE","FALSE"
+SUBBLOCK "FCCC_C0::work","component/work/FCCC_C0/FCCC_C0.v","TRUE","FALSE"
+SUBBLOCK "Filterwheel_sb::work","component/work/Filterwheel_sb/Filterwheel_sb.v","TRUE","FALSE"
+SUBBLOCK "Main::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd","FALSE","FALSE"
+ENDLIST
+LIST "Filterwheel_sb::work","component/work/Filterwheel_sb/Filterwheel_sb.v","TRUE","FALSE"
+SUBBLOCK "Filterwheel_sb_CCC_0_FCCC::work","component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.v","FALSE","FALSE"
+SUBBLOCK "Filterwheel_sb_FABOSC_0_OSC::work","component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.v","FALSE","FALSE"
+SUBBLOCK "Filterwheel_sb_MSS::work","component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v","TRUE","FALSE"
+SUBBLOCK "CoreResetP::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v","FALSE","FALSE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v","FALSE","FALSE"
+ENDLIST
+LIST "Filterwheel_sb_CCC_0_FCCC::work","component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "Filterwheel_sb_FABOSC_0_OSC::work","component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.v","FALSE","FALSE"
+SUBBLOCK "RCOSC_25_50MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+SUBBLOCK "RCOSC_25_50MHZ::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "Filterwheel_sb_MSS::work","component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v","TRUE","FALSE"
+SUBBLOCK "MSS_010::work","component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "FourWireStepperMotorPorts::work","${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotor.vhd","FALSE","FALSE"
+ENDLIST
+LIST "IBufP1Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd","FALSE","FALSE"
+ENDLIST
+LIST "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+ENDLIST
+LIST "IBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd","FALSE","FALSE"
+ENDLIST
+LIST "iobuf::work","","FALSE","FALSE"
+ENDLIST
+LIST "IOBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IOBufP1.vhd","FALSE","FALSE"
+ENDLIST
+LIST "IOBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IOBufP3.vhd","FALSE","FALSE"
+SUBBLOCK "iobuf::work","","FALSE","FALSE"
+ENDLIST
+LIST "Main::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd","FALSE","FALSE"
+SUBBLOCK "BuildNumberPorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/BuildNumber.vhd","FALSE","FALSE"
+SUBBLOCK "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP1Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd","FALSE","FALSE"
+SUBBLOCK "PPSCountPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PPSCount.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxFifoExtClkPeek::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd","FALSE","FALSE"
+SUBBLOCK "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "VariableClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+SUBBLOCK "FourWireStepperMotorDriverPorts::work","${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotorDriver.vhd","FALSE","FALSE"
+SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+SUBBLOCK "RegisterSpacePorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd","FALSE","FALSE"
+SUBBLOCK "SpiDacPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDac.vhd","FALSE","FALSE"
+SUBBLOCK "SpiDevicePorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDevice.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PeekRingBuffer::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd","FALSE","FALSE"
+SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
+SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
+SUBBLOCK "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
+SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
+SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
+SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PhaseComparatorPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PPSCountPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PPSCount.vhd","FALSE","FALSE"
+ENDLIST
+LIST "ramb16_s36_s36::work","","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_1MHZ::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_1MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_25_50MHZ::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RCOSC_25_50MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "RtcCounterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/RtcCounter.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiDacTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDacTrio.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiDeviceDualPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDeviceDual.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterDualPorts::work","","FALSE","FALSE"
+ENDLIST
+LIST "SpiExtBusAddrTxPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiExtBusAddrTx.vhd","FALSE","FALSE"
+SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiExtBusPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiExtBus.vhd","FALSE","FALSE"
+SUBBLOCK "SpiMasterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMaster.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SpiMasterDualPorts::work","","FALSE","FALSE"
+ENDLIST
+LIST "UartRxExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxRaw::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxRaw.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartRxFifoExtClkPeek::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "PeekRingBuffer::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxExtClk.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartRxFifoParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartRxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxParity.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartRxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxParity.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartRxRaw::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxRaw.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTxFifo::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifo.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTxFifoParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoParity.vhd","FALSE","FALSE"
+SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
+SUBBLOCK "UartTxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxParity.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "UartTxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxParity.vhd","FALSE","FALSE"
+ENDLIST
+LIST "VariableClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd","FALSE","FALSE"
+ENDLIST
+LIST "VariableClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "VariableOneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableOneShot.vhd","FALSE","FALSE"
+ENDLIST
+LIST "XTLOSC::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "XTLOSC_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "comm_block::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/testbench.v","FALSE","TRUE"
+SUBBLOCK "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVICES_LIB","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v","FALSE","FALSE"
+SUBBLOCK "UserDriver::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v","FALSE","TRUE"
+SUBBLOCK "comm_block::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/comm_block.v","FALSE","TRUE"
+ENDLIST
+LIST "UserDriver::work","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/test/user/UserDriver.v","FALSE","TRUE"
+ENDLIST
+LIST "coreapb3_iaddr_reg::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v","FALSE","FALSE"
+ENDLIST
+LIST "COREAPB3_MUXPTOB3::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreAPB3::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v","FALSE","FALSE"
+SUBBLOCK "COREAPB3_MUXPTOB3::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v","FALSE","FALSE"
+SUBBLOCK "coreapb3_iaddr_reg::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v","FALSE","FALSE"
+ENDLIST
+LIST "BFM_APB::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v","FALSE","TRUE"
+SUBBLOCK "BFMA1l1OII::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v","FALSE","TRUE"
+SUBBLOCK "BFM_MAIN::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVE::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v","FALSE","TRUE"
+SUBBLOCK "BFM_APBSLAVEEXT::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVEEXT::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_MAIN::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFMA1l1OII::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_ahbtoapb.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/test/user/testbench.v","FALSE","TRUE"
+SUBBLOCK "BFM_APB::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apb.v","FALSE","TRUE"
+SUBBLOCK "BFM_APBSLAVE::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/amba_bfm/bfm_apbslave.v","FALSE","TRUE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSysServices_AHBLMasterIF::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_AHBLMasterIF.v","FALSE","FALSE"
+ENDLIST
+LIST "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVICES_LIB","component/work/CORESYSSERVICES_C0/CORESYSSERVICES_C0_0/rtl/vlog/core/CoreSysServices.v","FALSE","FALSE"
+SUBBLOCK "CoreSysServices_AHBLMasterIF::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_AHBLMasterIF.v","FALSE","FALSE"
+SUBBLOCK "CoreSysServices_CmdDec::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_CmdDec.v","FALSE","FALSE"
+SUBBLOCK "CoreSysServices_FSMCtrl::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_FSMCtrl.v","FALSE","FALSE"
+SUBBLOCK "CoreSysServices_UserIF::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_UserIF.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSysServices_CmdDec::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_CmdDec.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSysServices_FSMCtrl::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_FSMCtrl.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreSysServices_UserIF::CORESYSSERVICES_LIB","component/Actel/DirectCore/CORESYSSERVICES/3.2.102/rtl/vlog/core/CoreSysServices_UserIF.v","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+VALUE "constraint/io/user.pdc"
+VALUE "constraint/io/user1.pdc"
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+VALUE "constraint/Filterwheel_derived_constraints.sdc"
+VALUE "constraint/user.sdc"
+ENDLIST
+LIST FDCTabList
+ENDLIST

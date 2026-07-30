@@ -1,0 +1,110 @@
+#Build: Synplify Pro (R) T-2022.09M-SP2-1, Build 179R, Jun 27 2023
+#install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
+#OS: Linux 
+#Hostname: homework
+
+# Wed Apr 24 14:50:23 2024
+
+#Implementation: synthesis
+
+
+Copyright (C) 1994-2022 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: T-2022.09M-SP2-1
+Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
+OS: Linux Mint 21.1
+Hostname: homework
+max virtual memory: unlimited (bytes)
+max user processes: 126734
+max stack size: 8388608 (bytes)
+
+
+Implementation : synthesis
+Synopsys HDL Compiler, Version comp202209synp2, Build 179R, Built Jun 27 2023 09:29:53, @4799148
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2022 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: T-2022.09M-SP2-1
+Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
+OS: Linux Mint 21.1
+Hostname: homework
+max virtual memory: unlimited (bytes)
+max user processes: 126734
+max stack size: 8388608 (bytes)
+
+
+Implementation : synthesis
+Synopsys VHDL Compiler, Version comp202209synp2, Build 179R, Built Jun 27 2023 09:29:53, @4799148
+
+@N|Running in 64-bit mode
+@N|stack limit increased to max
+@N:"/home/summer/projects/CGraph/firmware/Filterwheel/fpga/Main.vhd":11:7:11:10|Top entity is set to Main.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/Filterwheel/fpga/BuildNumber.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IOBufP1.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/Filterwheel/fpga/RegisterSpace.vhd'.
+@E: CD565 :"/home/summer/projects/CGraph/firmware/Filterwheel/fpga/RegisterSpace.vhd":611:31:611:32|Duplicate case label detected 
+1 error parsing file /home/summer/projects/CGraph/firmware/Filterwheel/fpga/RegisterSpace.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd'.
+@N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":46:17:46:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ltc244x_types.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/ltc244x_types.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ltc244x_autoscan.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/ltc244x_autoscan.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator_types.vhd'.
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator_types.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator.vhd'.
+@N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator.vhd":95:17:95:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
+1 error parsing file /home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator.vhd
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/Filterwheel/fpga/Main.vhd'.
+@E: CD830 :"/home/summer/projects/CGraph/firmware/Filterwheel/fpga/Main.vhd":1101:55:1101:63|Expecting array for indexed/sliced name
+# Wed Apr 24 14:50:23 2024
+
+###########################################################]
+@E::VHDL compiler failed
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Apr 24 14:50:23 2024
+
+###########################################################]

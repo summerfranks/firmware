@@ -1,0 +1,48 @@
+Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
+
+Date      :  Thu May 23 17:02:49 2024
+Project   :  /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero
+Component :  Filterwheel_sb
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/Filterwheel_sb.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v
+
+HDL source files for Synopsys SynplifyPro Synthesis tool:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/SgCore/OSC/2.0.101/osc_comps.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_syn.v
+
+HDL source files for Mentor Precision Synthesis tool:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/SgCore/OSC/2.0.101/osc_comps_pre.v
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_pre.v
+
+Stimulus files for all Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/subsystem.bfm
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/subsystem.bfm
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/subsystem.bfm
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/CM3_compile_bfm.tcl
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/user.bfm
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/test.bfm
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/Actel/SmartFusion2MSS/MSS/1.1.500/peripheral_init.bfm
+
+Firmware files for all Software IDE tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/sys_config_mss_clocks.h
+
+Configuration files to be used for Programming:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/ENVM.cfg
+
+Configuration files to be used for all Simulation tools:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb_MSS/ENVM.cfg
+
+Constraint files:
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.sdc
+    /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.sdc

@@ -1,0 +1,266 @@
+#==============================================================================
+# (c) Copyright 2015 Microsemi Corporation.  All rights reserved.
+#
+# microsemi-cortex-m3-target-gdbinit.txt
+#
+# SoftConsole default debug initialization commands for Microsemi SmartFusion 
+# and SmartFusion2 Cortex-M3 debugging. 
+#
+# SVN $Revision: 7486 $
+# SVN $Date: 2015-06-25 10:15:56 +0100 (Thu, 25 Jun 2015) $
+#==============================================================================
+
+#----------------------------------------
+# Cortex-M3 register addresses & values
+#----------------------------------------
+
+# System Control Block (SCB) CPUID Base Register
+set $M3_SCB_CPUID       =   0xE000ED00
+
+# CPUID for r2p1 Cortex-M3 (i.e. the version used in SmartFusion2)
+set $M3_CPUID_R2P1      =   0x412FC231
+
+# System Control Block (SCB) Vector Table Offset Register (VTOR)
+set $M3_SCB_VTOR        =   0xE000ED08
+
+# Cache Controller Control Register
+set $M3_CC_CR           =   0x40038018
+
+# Software breakpoint instruction opcode
+set $M3_SW_BP           =   0xBE00
+
+#----------------------------------------
+# Common to SmartFusion and SmartFusion2
+#----------------------------------------
+
+# ESRAM base address
+set $ESRAM_BASE_ADDR    =   0x20000000
+
+# 16 Kbytes
+set $16KBYTES           =   0x4000
+
+#----------------------------------------
+# SmartFusion register addresses & values
+#----------------------------------------
+
+# EMC flash base address on SmartFusion A2F500-DEV-KIT board
+set $SF_EMC_FLASH_BASE_ADDR =   0x74000000
+
+# Watchdog enable register and disable key value
+set $SF_WDOG_ENABLE     =   0x40006010
+set $SF_WDOG_DISABLE_KEY=   0x4C6E55FA
+
+# Factory boot image vector table base address in ENVM spare pages
+set $SF_FACTORY_BOOT    =   0x60080000
+
+#----------------------------------------
+# SmartFusion2 register addresses & values
+#----------------------------------------
+
+# Watchdog must be disabled when debugging- in case set by hardware.
+set $SF2_WDOG_CR        =   0x4003806C
+set $SF2_WDOG_DISABLE   =   0
+echo \nDisabled watchdog\n
+# Warning: Watchdog must not be enabled by the firmware when using a  debugger.  
+# Either comment out or use a switch to ensure watchdog enable is compiled for a 
+# release build only.
+# See example below:
+# 	#if defined(NDEBUG)
+# 		SYSREG->WDOG_CR | = 1;
+#	#endif
+
+#------------------------------------------------------------------------------
+# zeroize-cpu-registers
+# Zeroize all CPU registers prior to debugging just for cleanliness
+#------------------------------------------------------------------------------
+
+define zeroize-cpu-registers
+    set $r0  = 0
+    set $r1  = 0
+    set $r2  = 0
+    set $r3  = 0
+    set $r4  = 0
+    set $r5  = 0
+    set $r6  = 0
+    set $r7  = 0
+    set $r8  = 0
+    set $r9  = 0
+    set $r10 = 0
+    set $r11 = 0
+    set $r12 = 0
+    set $r13 = 0
+    set $r14 = 0
+    set $r15 = 0
+end    
+
+
+#------------------------------------------------------------------------------
+# check_target_fpga
+#
+# Determine if we are talking to SmartFusion or SmartFusion2 - sets boolean 
+# $smartfusion flag to 0 for SmartFusion or 1 for SmartFusion2
+#
+# SmartFusion Cortex-M3 is r1p1 (or earlier for some early devices)
+# SmartFusion2 Cortex-M3 is r2p1
+# Cortex-M3 CPUID Base Register @ 0xE000ED00 gives version info as documented 
+# here:
+# http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0337i/Cihhbddh.html
+# CPUID value of 0x412FC231 indicates r2p1 i.e. SmartFusion2
+#------------------------------------------------------------------------------
+
+define check_target_fpga
+    set $smartfusion2 = (*$M3_SCB_CPUID == $M3_CPUID_R2P1)
+end
+
+#------------------------------------------------------------------------------
+# hook-load
+#
+# Target initialization required before program downloaded to target. This hook
+# executes automatically when the GDB load command is invoked just before it does 
+# its own work. See here for more on GDB user defined command hooks:
+# http://sourceware.org/gdb/current/onlinedocs/gdb/Hooks.html#Hooks 
+#------------------------------------------------------------------------------
+
+define hook-load
+
+    # Don't restrict memory access to just regions defined in linker script
+    set mem inaccessible-by-default off
+
+    # Zeroize all CPU registers
+    zeroize-cpu-registers
+    
+    # Make sure 16-bit Thumb mode breakpoint requests are always used
+    set arm fallback-mode thumb    
+
+    # Perform any necessary SmartFusion/SmartFusion2 specific initialization   
+    check_target_fpga
+    
+    # Which target...?
+    if !$smartfusion2
+    
+        # ... SmartFusion
+        
+        # Run the factory/system boot code first to ensure that MSS 
+        # configuration is applied to target. In order to do this we manually
+        # write a minimal program to ESRAM that comprises a minimal vector
+        # table (initial SP and initial PC) followed by a single software
+        # breakpoint instruction pointed to by the vector table's initial PC 
+        # value
+        echo \nRunning factory/system boot code to initialize target - ignore the SIGTRAP that follows...\n
+        
+        # Minimal program vector table & software breakpoint instruction
+        set *$ESRAM_BASE_ADDR = $ESRAM_BASE_ADDR + $16KBYTES
+        set *($ESRAM_BASE_ADDR + 4) = $ESRAM_BASE_ADDR + 9
+        set *($ESRAM_BASE_ADDR + 8) = $M3_SW_BP     
+
+        # Program Cortex-M3 VTOR (Vector Table Offset Register) so
+        # factory/system boot can vector to minimal software breakpoint program
+        set *$M3_SCB_VTOR = $ESRAM_BASE_ADDR
+        
+        # Initialize SP/PC to execute the factory/system boot code
+        set $sp = *$SF_FACTORY_BOOT
+        set $pc = *($SF_FACTORY_BOOT + 4)
+        
+        # Go - and stop as soon as software breakpoint is hit
+        cont
+
+    else
+      
+        # Disable cache in case it has been enabled by hardware. This is to allow loading and 
+        # debugging in external memory to work correctly
+	printf "\nDisabling Cache\n"
+        set *$M3_CC_CR = 0
+	# Warning: Cache must not be enabled by the firmware when using a debugger.  
+	# Either comment out or use a switch to ensure cache enable is compiled for a 
+	# release build only.
+	# See example below:
+	# 	#if defined(NDEBUG)
+	# 		SYSREG->CC_CR |= 1u;
+	#	#endif
+       
+    end
+
+end
+
+
+#------------------------------------------------------------------------------
+# hookpost-load
+# 
+# Target initialization required after program downloaded to target. This hook
+# executes automatically when the GDB load command is invoked just after it has 
+# done its own work. See here for more on GDB user defined command hooks:
+# http://sourceware.org/gdb/current/onlinedocs/gdb/Hooks.html#Hooks 
+#------------------------------------------------------------------------------
+
+define hookpost-load
+  
+    # Note: SmartFusion and SmartFusion2 CMSIS linker scripts define
+    # the symbol __vector_table_vma_base_address containing the VMA 
+    # (Virtual Memory Address or runtime memory address) of the program's
+    # vector table. Note that the VMA can differ from the LMA (Load 
+    # [time] Memory Address) due to code relocation due to memory space
+    # mirroring (e.g. ENVM @ 0x60000000 mirrored to 0x00000000) or 
+    # code copying.
+    
+    # Perform any necessary SmartFusion/SmartFusion2 specific initialization
+    check_target_fpga
+
+    # Which target...?
+    if $smartfusion2
+    
+        # ... SmartFusion2
+        
+        # Disable watchdog just in case not already disabled in MSS config
+        set *$SF2_WDOG_CR = $SF2_WDOG_DISABLE
+        
+    else
+    
+        # ... SmartFusion
+        
+        # Disable watchdog just in case not already disabled in MSS
+        # configuration applied by running the factory/system boot code earlier
+        set *$SF_WDOG_ENABLE = $SF_WDOG_DISABLE_KEY
+
+    end
+    
+    # Initialize SP and PC from program's vector table
+    set $sp = *((unsigned long *)&__vector_table_vma_base_address)
+    set $pc = *((unsigned long *)(&__vector_table_vma_base_address) + 1) 
+    
+    # Program VTOR to ensure that ISRs work while debugging
+    set *$M3_SCB_VTOR = &__vector_table_vma_base_address
+    
+    # Set temporary breakpoint at main()
+    
+    if ! $smartfusion2
+    
+        if ((unsigned long)main) >= $SF_EMC_FLASH_BASE_ADDR
+
+            # On A2F500-DEV-KIT board
+            # EMC flash is at 0x74000000 so if main() is in this region 
+            # (e.g. via debug-in-external-flash.ld linker script) don't set 
+            # a temporary breakpoint as neither software breakpoints (cannot
+            # poke to flash) nor hardware breakpoints (only functional below
+            # 0x20000000) work there.    
+            printf "\nAssuming that main() at 0x%08lx is in external flash so no temporary breakpoint set\n", main
+            printf "Program will start executing now and neither software nor hardware breakpoints will work in external flash\n\n"
+           
+        else
+
+            # SoftConsole knows to use hardware breakpoints for read only memory
+            # regions. Hardware breakpoints work below 0x20000000. Software 
+            # breakpoints work for any read-write memory.
+            tb main
+            
+        end
+        
+    else
+    
+        # TODO: add checks for SmartFusion2 external memory debug scenarios
+        # similar to the ones above for SmartFusion EMC
+    
+        tb main
+        
+    end
+    
+end

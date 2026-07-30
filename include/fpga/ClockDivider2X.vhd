@@ -27,7 +27,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.NUMERIC_STD.all;
 
-entity ClockDividerPorts is
+entity ClockDivider2XPorts is
 	generic (
 		CLOCK_DIVIDER : natural := 10;
 		DIVOUT_RST_STATE : std_logic := '0'--;
@@ -38,9 +38,9 @@ entity ClockDividerPorts is
 		rst : in std_logic;
 		div : out std_logic
 	);
-end ClockDividerPorts;
+end ClockDivider2XPorts;
 
-architecture ClockDivider of ClockDividerPorts is
+architecture ClockDivider2X of ClockDivider2XPorts is
 
 	signal ClkDiv : natural range 0 to (CLOCK_DIVIDER - 1);
 	signal div_i : std_logic;	
@@ -88,4 +88,4 @@ begin
 
 	end process;
 
-end ClockDivider;
+end ClockDivider2X;

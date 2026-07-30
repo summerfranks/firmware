@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<text>SmartTime Version 2023.2.0.10</text>
+<text>Microsemi Corporation - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
+Date: Thu Jul 30 15:47:05 2026 </text>
+<table>
+<header>
+</header>
+<row>
+ <cell>Design</cell>
+ <cell>Filterwheel</cell>
+</row>
+<row>
+ <cell>Family</cell>
+ <cell>SmartFusion2</cell>
+</row>
+<row>
+ <cell>Die</cell>
+ <cell>M2S010</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>144 TQ</cell>
+</row>
+<row>
+ <cell>Temperature Range</cell>
+ <cell>-40 - 100 C</cell>
+</row>
+<row>
+ <cell>Voltage Range</cell>
+ <cell>1.14 - 1.26 V</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>STD</cell>
+</row>
+</table>
+<text></text>
+<text></text>
+<section>
+<name>Coverage Summary</name>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>         5473</cell>
+ <cell>          189</cell>
+ <cell>         5662</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>         1183</cell>
+ <cell>          108</cell>
+ <cell>         1291</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>           15</cell>
+ <cell>           39</cell>
+ <cell>           54</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>         6671</cell>
+ <cell>          336</cell>
+ <cell>         7007</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>         5473</cell>
+ <cell>          189</cell>
+ <cell>         5662</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>         1183</cell>
+ <cell>          108</cell>
+ <cell>         1291</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>           15</cell>
+ <cell>           39</cell>
+ <cell>           54</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>         6671</cell>
+ <cell>          336</cell>
+ <cell>         7007</cell>
+</row>
+</table>
+<section>
+<name>Clock domain: </name>
+<text>VCXO</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>MasterClk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>         5173</cell>
+ <cell>           39</cell>
+ <cell>         5212</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>          991</cell>
+ <cell>            0</cell>
+ <cell>          991</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            9</cell>
+ <cell>           21</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>         6173</cell>
+ <cell>           60</cell>
+ <cell>         6233</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>         5173</cell>
+ <cell>           39</cell>
+ <cell>         5212</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>          991</cell>
+ <cell>            0</cell>
+ <cell>          991</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            9</cell>
+ <cell>           21</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>         6173</cell>
+ <cell>           60</cell>
+ <cell>         6233</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Max input delay constraint missing on ports:</text>
+<text>   </text>
+<list>
+ <item>Fault1V</item>
+ <item>Fault3V</item>
+ <item>Fault5V</item>
+ <item>MisoMonAdc0</item>
+ <item>PPS</item>
+ <item>PosSenseBit0A</item>
+ <item>PosSenseBit0B</item>
+ <item>PosSenseBit1A</item>
+ <item>PosSenseBit1B</item>
+ <item>PosSenseBit2A</item>
+ <item>PosSenseBit2B</item>
+ <item>PosSenseHomeA</item>
+ <item>PosSenseHomeB</item>
+ <item>PowerCycd</item>
+ <item>nDrdyMonAdc0</item>
+</list>
+<text></text>
+<text> - Min input delay constraint missing on ports:</text>
+<text>   </text>
+<list>
+ <item>Fault1V</item>
+ <item>Fault3V</item>
+ <item>Fault5V</item>
+ <item>MisoMonAdc0</item>
+ <item>PPS</item>
+ <item>PosSenseBit0A</item>
+ <item>PosSenseBit0B</item>
+ <item>PosSenseBit1A</item>
+ <item>PosSenseBit1B</item>
+ <item>PosSenseBit2A</item>
+ <item>PosSenseBit2B</item>
+ <item>PosSenseHomeA</item>
+ <item>PosSenseHomeB</item>
+ <item>PowerCycd</item>
+ <item>nDrdyMonAdc0</item>
+</list>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on ports:</text>
+<text>   </text>
+<list>
+ <item>LedG</item>
+ <item>MosiXO</item>
+ <item>Oe0</item>
+ <item>Oe1</item>
+ <item>Oe2</item>
+ <item>Oe3</item>
+ <item>PosLEDEnA</item>
+ <item>PosLEDEnB</item>
+ <item>SckXO</item>
+ <item>TP1</item>
+ <item>TP4</item>
+ <item>TP5</item>
+ <item>TP6</item>
+ <item>TP7</item>
+ <item>TP8</item>
+ <item>Ux1SelJmp</item>
+ <item>nCsXO</item>
+ <item>nFaultClr1V</item>
+ <item>nFaultClr3V</item>
+ <item>nFaultClr5V</item>
+ <item>nPowerCycClr</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on ports:</text>
+<text>   </text>
+<list>
+ <item>LedG</item>
+ <item>MosiXO</item>
+ <item>Oe0</item>
+ <item>Oe1</item>
+ <item>Oe2</item>
+ <item>Oe3</item>
+ <item>PosLEDEnA</item>
+ <item>PosLEDEnB</item>
+ <item>SckXO</item>
+ <item>TP1</item>
+ <item>TP4</item>
+ <item>TP5</item>
+ <item>TP6</item>
+ <item>TP7</item>
+ <item>TP8</item>
+ <item>Ux1SelJmp</item>
+ <item>nCsXO</item>
+ <item>nFaultClr1V</item>
+ <item>nFaultClr3V</item>
+ <item>nFaultClr5V</item>
+ <item>nPowerCycClr</item>
+</list>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/IBufMisoAdc/Temp1:D</item>
+ <item>Main_0/IBufPPS/Temp1:D</item>
+ <item>Main_0/IBufnDrdyAdc/Temp1:D</item>
+ <item>Main_0/LastPosSenseA[0]:D</item>
+ <item>Main_0/LastPosSenseA[1]:D</item>
+ <item>Main_0/LastPosSenseA[2]:D</item>
+ <item>Main_0/LastPosSenseA[3]:D</item>
+ <item>Main_0/LastPosSenseB[0]:D</item>
+ <item>Main_0/LastPosSenseB[1]:D</item>
+ <item>Main_0/LastPosSenseB[2]:D</item>
+ <item>Main_0/LastPosSenseB[3]:D</item>
+ <item>Main_0/LastPosSenseBit0A:D</item>
+ <item>Main_0/LastPosSenseBit0B:D</item>
+ <item>Main_0/LastPosSenseBit1A:D</item>
+ <item>Main_0/LastPosSenseBit1B:D</item>
+ <item>Main_0/LastPosSenseBit2A:D</item>
+ <item>Main_0/LastPosSenseBit2B:D</item>
+ <item>Main_0/LastPosSenseHomeA:D</item>
+ <item>Main_0/LastPosSenseHomeB:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/IBufTxInProgress_i/Temp1:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufTxInProgress_i/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/ClkSyncWrite/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[0]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[1]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[2]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[3]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[4]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[5]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[6]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[7]</item>
+ <item>Main_0/RxdUsb_RxUsb/ClkSyncWrite/Temp1:D</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[0]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[1]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[2]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[3]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[4]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[5]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[6]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[7]</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/IBufMisoAdc/Temp1:D</item>
+ <item>Main_0/IBufPPS/Temp1:D</item>
+ <item>Main_0/IBufnDrdyAdc/Temp1:D</item>
+ <item>Main_0/LastPosSenseA[0]:D</item>
+ <item>Main_0/LastPosSenseA[1]:D</item>
+ <item>Main_0/LastPosSenseA[2]:D</item>
+ <item>Main_0/LastPosSenseA[3]:D</item>
+ <item>Main_0/LastPosSenseB[0]:D</item>
+ <item>Main_0/LastPosSenseB[1]:D</item>
+ <item>Main_0/LastPosSenseB[2]:D</item>
+ <item>Main_0/LastPosSenseB[3]:D</item>
+ <item>Main_0/LastPosSenseBit0A:D</item>
+ <item>Main_0/LastPosSenseBit0B:D</item>
+ <item>Main_0/LastPosSenseBit1A:D</item>
+ <item>Main_0/LastPosSenseBit1B:D</item>
+ <item>Main_0/LastPosSenseBit2A:D</item>
+ <item>Main_0/LastPosSenseBit2B:D</item>
+ <item>Main_0/LastPosSenseHomeA:D</item>
+ <item>Main_0/LastPosSenseHomeB:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/IBufTxInProgress_i/Temp1:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufTxInProgress_i/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/ClkSyncWrite/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[0]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[1]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[2]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[3]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[4]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[5]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[6]</item>
+ <item>Main_0/RxdGps_RxGps/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[7]</item>
+ <item>Main_0/RxdUsb_RxUsb/ClkSyncWrite/Temp1:D</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[0]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[1]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[2]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[3]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[4]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[5]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[6]</item>
+ <item>Main_0/RxdUsb_RxUsb/UartFifo/fifo_i/ram_ram_0_0/INST_RAM1K18_IP:B_DIN[7]</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Filterwheel_sb_0/CCC_0/GL0</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           59</cell>
+ <cell>            0</cell>
+ <cell>           59</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           29</cell>
+ <cell>            2</cell>
+ <cell>           31</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           88</cell>
+ <cell>            3</cell>
+ <cell>           91</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           59</cell>
+ <cell>            0</cell>
+ <cell>           59</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           29</cell>
+ <cell>            2</cell>
+ <cell>           31</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           88</cell>
+ <cell>            3</cell>
+ <cell>           91</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>INIT_DONE</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>INIT_DONE</item>
+</list>
+<text></text>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Filterwheel_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
+ <item>Filterwheel_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Filterwheel_sb_0/CORERESETP_0/RESET_N_M2F_clk_base:ALn</item>
+ <item>Filterwheel_sb_0/CORERESETP_0/RESET_N_M2F_q1:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            5</cell>
+ <cell>            0</cell>
+ <cell>            5</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           15</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           20</cell>
+ <cell>            0</cell>
+ <cell>           20</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            5</cell>
+ <cell>            0</cell>
+ <cell>            5</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           15</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           20</cell>
+ <cell>            0</cell>
+ <cell>           20</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Main_0/RS422_Rx0/ClkSyncWrite/O:Q</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
+</list>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
+ <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart0clk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart0txclk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart1clk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart1txclk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart2clk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart2txclk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart3clk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           49</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>           30</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           79</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>uart3txclk</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>           10</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            7</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>           18</cell>
+ <cell>            0</cell>
+ <cell>           18</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Main_0/UartGpsRxBitClockDiv/div_i:Q</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdGps_RxGps/Uart/ClkSyncRxd/O:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/ClkSyncRxd/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[3]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[0]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[3]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[1]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[2]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/div_i:D</item>
+</list>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[3]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[0]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[3]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[1]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[2]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/div_i:ALn</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdGps_RxGps/Uart/ClkSyncRxd/O:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/ClkSyncRxd/Temp1:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:EN</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[3]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[0]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[1]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[2]:D</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[3]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[0]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[3]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[1]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[2]:D</item>
+ <item>Main_0/UartGpsTxBitClockDiv/div_i:D</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[4]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[5]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[6]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/DataO[7]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[4]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[5]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[6]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RReg[7]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/RxAv:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/bitpos[3]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[0]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[1]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[2]:ALn</item>
+ <item>Main_0/RxdGps_RxGps/Uart/Uart/samplecnt[3]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[0]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv[3]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[1]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/ClkDiv_Z[2]:ALn</item>
+ <item>Main_0/UartGpsTxBitClockDiv/div_i:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Main_0/UartGpsTxBitClockDiv/div_i:Q</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            1</cell>
+ <cell>           17</cell>
+ <cell>           18</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            1</cell>
+ <cell>           17</cell>
+ <cell>           18</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4GpsGps_TxGps/IBufStartTx/O:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/IBufStartTx/Temp1:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[0]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[1]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[2]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[3]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/Busy_i:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:EN</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/TxD:D</item>
+</list>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[0]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[1]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[2]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[3]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/Busy_i:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/TxD:ALn</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4GpsGps_TxGps/IBufStartTx/O:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/IBufStartTx/Temp1:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[0]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[1]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[2]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[3]:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/Busy_i:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:D</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:EN</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/TxD:D</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[0]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[1]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[2]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/BitCnt[3]:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/Busy_i:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/LastGo:ALn</item>
+ <item>Main_0/RS4GpsGps_TxGps/UartTxUart/TxD:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Main_0/UartUsbRxBitClockDiv/div_i:Q</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>           49</cell>
+ <cell>           49</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>           30</cell>
+ <cell>           30</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/O:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/Temp1:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[3]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[0]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[3]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[1]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[2]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/div_i:D</item>
+</list>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[3]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[0]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[3]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[1]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[2]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/div_i:ALn</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/O:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/ClkSyncRxd/Temp1:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:EN</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[3]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[0]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[1]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[2]:D</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[3]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[0]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[3]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[1]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[2]:D</item>
+ <item>Main_0/UartUsbTxBitClockDiv/div_i:D</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[4]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[5]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[6]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/DataO[7]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[4]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[5]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[6]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RReg[7]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/RxAv:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/bitpos[3]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[0]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[1]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[2]:ALn</item>
+ <item>Main_0/RxdUsb_RxUsb/Uart/Uart/samplecnt[3]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[0]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv[3]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[1]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/ClkDiv_Z[2]:ALn</item>
+ <item>Main_0/UartUsbTxBitClockDiv/div_i:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>Main_0/UartUsbTxBitClockDiv/div_i:Q</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+ <cell>            2</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            1</cell>
+ <cell>           18</cell>
+ <cell>           19</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>           10</cell>
+ <cell>           10</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            7</cell>
+ <cell>            7</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+ <cell>            2</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            1</cell>
+ <cell>           18</cell>
+ <cell>           19</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text> - Max output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>Ux1SelJmp</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>Ux1SelJmp</item>
+</list>
+<text></text>
+<text></text>
+<text> - Setup unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/O:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/Temp1:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[0]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[1]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[2]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[3]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/Busy_i:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:EN</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/TxD:D</item>
+</list>
+<text></text>
+<text> - Recovery unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[0]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[1]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[2]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[3]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/Busy_i:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/TxD:ALn</item>
+</list>
+<text></text>
+<text> - Hold unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/O:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/IBufStartTx/Temp1:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[0]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[1]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[2]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[3]:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/Busy_i:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:D</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:EN</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/TxD:D</item>
+</list>
+<text></text>
+<text> - Removal unconstrained for the following pins:</text>
+<text>   </text>
+<list>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[0]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[1]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[2]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/BitCnt[3]:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/Busy_i:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/LastGo:ALn</item>
+ <item>Main_0/RS4UsbUsb_TxUsb/UartTxUart/TxD:ALn</item>
+</list>
+<text></text>
+</section>
+</section>
+<section>
+<name>Clock domain: </name>
+<text>gated-clocks</text>
+<text></text>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Setup</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Recovery</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+ <cell>           15</cell>
+</row>
+<row>
+ <cell>Total Setup</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+ <cell>           15</cell>
+</row>
+<separator/>
+<row>
+ <cell>Hold</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Removal</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
+</row>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+ <cell>           15</cell>
+</row>
+<row>
+ <cell>Total Hold</cell>
+ <cell>            0</cell>
+ <cell>           15</cell>
+ <cell>           15</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Clock constraint is missing </text>
+<text></text>
+<text></text>
+</section>
+</section>
+<section>
+<name>Input to Output</name>
+<table>
+<header>
+ <cell>Type of check</cell>
+ <cell>Constrained</cell>
+ <cell>UnConstrained</cell>
+ <cell>Total</cell>
+</header>
+<row>
+ <cell>Output Setup</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+<separator/>
+<row>
+ <cell>Output Hold</cell>
+ <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
+</row>
+</table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text> - Max delay constraint missing on input port:</text>
+<text>   </text>
+<list>
+ <item>PosSenseBit2A</item>
+</list>
+<text></text>
+<text> - Min delay constraint missing on input port:</text>
+<text>   </text>
+<list>
+ <item>PosSenseBit2A</item>
+</list>
+<text></text>
+<text></text>
+<text> - Max delay constraint missing on output port:</text>
+<text>   </text>
+<list>
+ <item>LedB</item>
+</list>
+<text></text>
+<text> - Min delay constraint missing on output port:</text>
+<text>   </text>
+<list>
+ <item>LedB</item>
+</list>
+<text></text>
+<text></text>
+</section>
+</section>
+</section>
+</doc>

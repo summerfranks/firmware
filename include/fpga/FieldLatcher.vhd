@@ -30,7 +30,7 @@ use work.CGraphTypes.all;
 
 entity FieldLatcher is
   generic (
-		NumBytes : natural := 4;
+		NumBytes : natural := 4--;
   );
   port (
 		clk : in std_logic;
@@ -49,9 +49,8 @@ architecture FieldLatcherImplemenatation of FieldLatcher is
 	
 	signal LastWriteReq : std_logic;
 	signal LastLatch : std_logic;
-	signal FieldLatched_i : std_logic_vector((NumBytes * 8) - 1 downto 0)--;
+	signal FieldLatched_i : std_logic_vector((NumBytes * 8) - 1 downto 0);
 
-	
   begin
   process (clk, rst)
   begin
@@ -75,17 +74,16 @@ architecture FieldLatcherImplemenatation of FieldLatcher is
 			--~ FieldLatched_i(23 downto 16) <= FieldLatched_i(15 downto 8);
 			--~ FieldLatched_i(15 downto 8) <= FieldLatched_i(7 downto 0);
 			--~ FieldLatched_i(7 downto 0) <= ByteIn;
-
-			ByteShifter: for i in NumBytes downto 2 generate
-			begin
-				FieldLatched_i( (i * 8) - 1 downto (i - 1) * 8) <= FieldLatched_i( ((i - 1) * 8) - 1 downto (i - 2) * 8);
-			end generate;
+			
+			ByteShifter : for j in NumBytes downto 2 loop
+				FieldLatched_i( (j * 8) - 1 downto (j - 1) * 8) <= FieldLatched_i( ((j - 1) * 8) - 1 downto (j - 2) * 8);
+			end loop ByteShifter;
 
 			FieldLatched_i(7 downto 0) <= ByteIn;
 						
 		else
 		
-			if ( (LastLatch = '0') and (Latch = '1') ) then FieldLatched <= FieldLatched_i end if;
+			if ( (LastLatch = '0') and (Latch = '1') ) then FieldLatched <= FieldLatched_i; end if;
 			
 		end if;
 

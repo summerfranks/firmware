@@ -1,0 +1,44 @@
+# Netlist Viewer TCL File
+set_family -name SmartFusion2
+top_module -name Filterwheel
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/FCCC_C0/FCCC_C0_0/FCCC_C0_FCCC_C0_0_FCCC.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/FCCC_C0/FCCC_C0.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel_sb/CCC_0/Filterwheel_sb_CCC_0_FCCC.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/SgCore/OSC/2.0.101/osc_comps.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel_sb/FABOSC_0/Filterwheel_sb_FABOSC_0_OSC.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS_syn.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_slavearbiter.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_slavestage.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_defaultslavesm.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_addrdec.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_masterstage.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite_matrix4x16.v}
+addfile -view RTL -lib COREAHBLITE_LIB -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/Actel/DirectCore/CoreAHBLite/5.2.100/rtl/vlog/core_obfuscated/coreahblite.v}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel_sb/Filterwheel_sb.v}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/Filterwheel/fpga/BuildNumber.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/IOBufP1.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/Filterwheel/fpga/RegisterSpace.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/ltc244x_types.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/include/fpga/ltc244xaccumulator_types.vhd}
+addfile -view RTL -lib work -type VHDL -mode vhdl_2008 -name {/home/summer/projects/CGraph/firmware/Filterwheel/fpga/Main.vhd}
+addfile -view RTL -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/component/work/Filterwheel/Filterwheel.v}
+addfile -view HIER -lib work -type VLOG -mode system_verilog -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/synthesis/Filterwheel.vm}
+addfile -view FLAT -lib work -type AFL -mode NONE -name {/home/summer/projects/CGraph/firmware/Filterwheel/Libero/designer/Filterwheel/Filterwheel.afl}
