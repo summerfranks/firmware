@@ -25,7 +25,7 @@ IS_VIOLATION_REPORT,0
 MULTI_CORNER_REPORT_FLAG,0
 PATH_TRACING_ALGORITHM,1
 REPORT_ANALYSIS_TYPE,1
-REPORT_CLOCK_DOMAINS,CLK0_PAD FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0 Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0 Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ:CLKOUT Main_0/RS422_Rx0/ClkSyncWrite/O:Q Main_0/Uart0BitClockDiv/clko_i:Q Main_0/Uart0TxBitClockDiv/div_i:Q Main_0/Uart1BitClockDiv/clko_i:Q Main_0/Uart1TxBitClockDiv/div_i:Q Main_0/Uart2BitClockDiv/clko_i:Q Main_0/Uart2TxBitClockDiv/div_i:Q Main_0/Uart3BitClockDiv/clko_i:Q Main_0/Uart3TxBitClockDiv/div_i:Q Main_0/UartGpsRxBitClockDiv/div_i:Q Main_0/UartGpsTxBitClockDiv/div_i:Q Main_0/UartUsbRxBitClockDiv/div_i:Q Main_0/UartUsbTxBitClockDiv/div_i:Q 
+REPORT_CLOCK_DOMAINS,CLK0_PAD FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0 Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0 Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ:CLKOUT Main_0/Uart0BitClockDiv/clko_i:Q Main_0/Uart0TxBitClockDiv/div_i:Q Main_0/Uart1BitClockDiv/clko_i:Q Main_0/Uart1TxBitClockDiv/div_i:Q Main_0/Uart2BitClockDiv/clko_i:Q Main_0/Uart2TxBitClockDiv/div_i:Q Main_0/Uart3BitClockDiv/clko_i:Q Main_0/Uart3TxBitClockDiv/div_i:Q Main_0/UartGpsRxBitClockDiv/div_i:Q Main_0/UartGpsTxBitClockDiv/div_i:Q Main_0/UartUsbRxBitClockDiv/div_i:Q Main_0/UartUsbTxBitClockDiv/div_i:Q 
 REPORT_FORMAT,TEXT
 REPORT_MAX_EXPANDED_PATHS,1
 REPORT_MAX_PARALLEL_PATHS,1

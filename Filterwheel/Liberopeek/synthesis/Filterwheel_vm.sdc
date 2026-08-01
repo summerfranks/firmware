@@ -1,4 +1,4 @@
-# Written by Synplify Pro version map202209actsp2, Build 145R. Synopsys Run ID: sid1785451587 
+# Written by Synplify Pro version map202209actsp2, Build 145R. Synopsys Run ID: sid1785543352 
 # Top Level Design Parameters 
 
 # Clocks 
@@ -15,7 +15,6 @@ create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2
 create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock} [get_pins {Main_0/Uart1TxBitClockDiv/div_i/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock} [get_pins {Main_0/Uart1BitClockDiv/clko_i/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock} [get_pins {Main_0/Uart0TxBitClockDiv/div_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {IBufP2Ports_1|O_inferred_clock} [get_pins {Main_0/RS422_Rx0/ClkSyncWrite/O/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock} [get_pins {Main_0/Uart0BitClockDiv/clko_i/Q}] 
 
 # Virtual Clocks 
@@ -64,7 +63,6 @@ set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_w
 set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock}]
 set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {IBufP2Ports_1|O_inferred_clock}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock}]
 
 # syn_mode Attributes 

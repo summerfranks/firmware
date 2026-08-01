@@ -1883,10 +1883,10 @@ begin
 		--~ BaudDivider => Uart0ClkDivider,
 		Rxd => Rxd0_i,
 		--~ Dbg1 => UartRx0Dbg,
-		Dbg1 => open,
-		Dbg2 => open,
-		Dbg3 => open,
-		RxComplete => open,
+		Dbg1 => TP1,
+		Dbg2 => TP2,
+		Dbg3 => TP3,
+		RxComplete => TP4,
 		ReadFifo => ReadUart0,
 		--~ HeaderFooterPayloadLenMatches => Uart0HeaderFooterPayloadLenMatches,
 		FifoFull => Uart0RxFifoFull,
@@ -1937,12 +1937,12 @@ begin
 	LedG <= Uart0DoCrc;
 	--~ LedR <= not(Uart0RxFifoEmpty);
 	LedR <= '0';
-	TP1 <= Uart0CrcDone;
-	TP4 <= Uart0CrcCurrentAddr(0);
-	TP5 <= Uart0DoCrc;
-	TP6 <= Uart0Crc(0);
-	TP7 <= Uart0CrcStartAddr(0);
-	TP8 <= Uart0CrcEndAddr(0);
+	--~ TP1 <= Uart0CrcDone;
+	--~ TP4 <= Uart0CrcCurrentAddr(0);
+	TP5 <= Uart0HeaderFound;
+	TP6 <= Uart0FooterFound;
+	TP7 <= Uart0RxFifoPeekMultiPopStrobe;
+	TP8 <= Uart0PayloadType(0);
 	
 	RS422_Tx0 : UartTxFifoExtClk
 	generic map

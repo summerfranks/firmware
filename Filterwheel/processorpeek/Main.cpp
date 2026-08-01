@@ -123,7 +123,7 @@ extern "C"
 	//This code is to make "syscalls.c" replace vendor's "newlib_stubs.c" and make printf() and friends connect to a real serial port in our actual hardware! Only useful if we can compile our own code from makefile and replace vendor's "softconsole" version...
 	int stdio_hook_putc(int c) 
 	{ 
-		FPGAUartPinout0.putcqq(c); 
+		//~ FPGAUartPinout0.putcqq(c); 
 		FPGAUartPinoutUsb.putcqq(c);
 		return(c);
 	}

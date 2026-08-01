@@ -162,10 +162,14 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	HeaderFinder : PatternFinder
 	generic map 
 	(
-		Byte0 => x"1B",
-		Byte1 => x"AD",
-		Byte2 => x"BA",
-		Byte3 => x"BE"--,
+		--~ Byte0 => x"1B",
+		--~ Byte1 => x"AD",
+		--~ Byte2 => x"BA",
+		--~ Byte3 => x"BE"--,
+		Byte0 => x"BE",
+		Byte1 => x"BA",
+		Byte2 => x"AD",
+		Byte3 => x"1B"--,
 	)
 	port map
 	(
@@ -179,10 +183,14 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	FooterFinder : PatternFinder
 	generic map 
 	(
-		Byte0 => x"0A",
-		Byte1 => x"0F",
-		Byte2 => x"AD",
-		Byte3 => x"ED"--,
+		--~ Byte0 => x"0A",
+		--~ Byte1 => x"0F",
+		--~ Byte2 => x"AD",
+		--~ Byte3 => x"ED"--,
+		Byte0 => x"ED",
+		Byte1 => x"AD",
+		Byte2 => x"0F",
+		Byte3 => x"0A"--,
 	)
 	port map
 	(
@@ -250,8 +258,9 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound)
   begin
   
-	Dbg2 <= LastWriteReq;
-	Dbg3 <= WriteReq;
+	Dbg1 <= LatchCrc;
+	Dbg2 <= LatchPayloadType;
+	Dbg3 <= LatchPayloadLen;
   
 	DataStartAddress <= DataStartAddress_i;
 	DataEndAddress <= WriteAddress;
@@ -299,7 +308,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 
         if ( (LastWriteReq = '0') and (WriteReq = '1') ) then
 		
-			Dbg1 <= '1';
+			--~ Dbg1 <= '1';
 				
 			if (WriteAddress < ( (2**PeekRamDepth) - 1) ) then
 		
@@ -320,7 +329,10 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 			if (WriteAddress = HeaderEndPos + 2) then LatchPayloadType <= '1'; else LatchPayloadType <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4) then LatchPayloadLen <= '1'; else LatchPayloadLen <= '0'; end if;
-			if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
+			--~ if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
+			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
+			CalcCrc(31 downto 16) <= x"0000";
+			CalcCrc(15 downto 0) <= HeaderEndPos + 8 + PayloadLen; 
 			
 			--~ if (WriteAddress >= HeaderEndPos) then
 			
@@ -334,7 +346,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 		else
 		
-			Dbg1 <= '0';
+			--~ Dbg1 <= '0';
 			
 		end if;
 

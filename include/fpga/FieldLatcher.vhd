@@ -76,14 +76,27 @@ architecture FieldLatcherImplemenatation of FieldLatcher is
 			--~ FieldLatched_i(7 downto 0) <= ByteIn;
 			
 			ByteShifter : for j in NumBytes downto 2 loop
+				
 				FieldLatched_i( (j * 8) - 1 downto (j - 1) * 8) <= FieldLatched_i( ((j - 1) * 8) - 1 downto (j - 2) * 8);
+			
 			end loop ByteShifter;
 
 			FieldLatched_i(7 downto 0) <= ByteIn;
 						
 		else
 		
-			if ( (LastLatch = '0') and (Latch = '1') ) then FieldLatched <= FieldLatched_i; end if;
+			if ( (LastLatch = '0') and (Latch = '1') ) then 
+			
+				--FieldLatched <= FieldLatched_i; 
+				
+				--Our serial stream is byte-swapped:
+				OutputEndian : for k in NumBytes downto 1 loop
+				
+					FieldLatched( (k * 8) - 1 downto (k - 1) * 8) <= FieldLatched_i( (((NumBytes - k) + 1) * 8) - 1 downto (NumBytes - k) * 8);
+				
+				end loop OutputEndian;
+			
+			end if;
 			
 		end if;
 

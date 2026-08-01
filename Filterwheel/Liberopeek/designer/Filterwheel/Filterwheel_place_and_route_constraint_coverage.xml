@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 2023.2.0.10</text>
 <text>Microsemi Corporation - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Thu Jul 30 15:47:05 2026 </text>
+Date: Fri Jul 31 17:16:25 2026 </text>
 <table>
 <header>
 </header>
@@ -50,52 +50,52 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5473</cell>
- <cell>          189</cell>
- <cell>         5662</cell>
+ <cell>         5404</cell>
+ <cell>          157</cell>
+ <cell>         5561</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1183</cell>
- <cell>          108</cell>
- <cell>         1291</cell>
+ <cell>         1150</cell>
+ <cell>           76</cell>
+ <cell>         1226</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>           15</cell>
- <cell>           39</cell>
- <cell>           54</cell>
+ <cell>           40</cell>
+ <cell>           55</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6671</cell>
- <cell>          336</cell>
- <cell>         7007</cell>
+ <cell>         6569</cell>
+ <cell>          273</cell>
+ <cell>         6842</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5473</cell>
- <cell>          189</cell>
- <cell>         5662</cell>
+ <cell>         5404</cell>
+ <cell>          157</cell>
+ <cell>         5561</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1183</cell>
- <cell>          108</cell>
- <cell>         1291</cell>
+ <cell>         1150</cell>
+ <cell>           76</cell>
+ <cell>         1226</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>           15</cell>
- <cell>           39</cell>
- <cell>           54</cell>
+ <cell>           40</cell>
+ <cell>           55</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6671</cell>
- <cell>          336</cell>
- <cell>         7007</cell>
+ <cell>         6569</cell>
+ <cell>          273</cell>
+ <cell>         6842</cell>
 </row>
 </table>
 <section>
@@ -173,52 +173,52 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5173</cell>
+ <cell>         5104</cell>
  <cell>           39</cell>
- <cell>         5212</cell>
+ <cell>         5143</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>          991</cell>
+ <cell>          958</cell>
  <cell>            0</cell>
- <cell>          991</cell>
+ <cell>          958</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            9</cell>
- <cell>           21</cell>
- <cell>           30</cell>
+ <cell>           23</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6173</cell>
- <cell>           60</cell>
- <cell>         6233</cell>
+ <cell>         6071</cell>
+ <cell>           62</cell>
+ <cell>         6133</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5173</cell>
+ <cell>         5104</cell>
  <cell>           39</cell>
- <cell>         5212</cell>
+ <cell>         5143</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>          991</cell>
+ <cell>          958</cell>
  <cell>            0</cell>
- <cell>          991</cell>
+ <cell>          958</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            9</cell>
- <cell>           21</cell>
- <cell>           30</cell>
+ <cell>           23</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6173</cell>
- <cell>           60</cell>
- <cell>         6233</cell>
+ <cell>         6071</cell>
+ <cell>           62</cell>
+ <cell>         6133</cell>
 </row>
 </table>
 <section>
@@ -278,6 +278,8 @@ Date: Thu Jul 30 15:47:05 2026 </text>
  <item>PosLEDEnB</item>
  <item>SckXO</item>
  <item>TP1</item>
+ <item>TP2</item>
+ <item>TP3</item>
  <item>TP4</item>
  <item>TP5</item>
  <item>TP6</item>
@@ -304,6 +306,8 @@ Date: Thu Jul 30 15:47:05 2026 </text>
  <item>PosLEDEnB</item>
  <item>SckXO</item>
  <item>TP1</item>
+ <item>TP2</item>
+ <item>TP3</item>
  <item>TP4</item>
  <item>TP5</item>
  <item>TP6</item>
@@ -566,223 +570,6 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 </section>
 <section>
 <name>Clock domain: </name>
-<text>Main_0/RS422_Rx0/ClkSyncWrite/O:Q</text>
-<text></text>
-<table>
-<header>
- <cell>Type of check</cell>
- <cell>Constrained</cell>
- <cell>UnConstrained</cell>
- <cell>Total</cell>
-</header>
-<row>
- <cell>Setup</cell>
- <cell>            0</cell>
- <cell>           32</cell>
- <cell>           32</cell>
-</row>
-<row>
- <cell>Recovery</cell>
- <cell>            0</cell>
- <cell>           32</cell>
- <cell>           32</cell>
-</row>
-<row>
- <cell>Output Setup</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Total Setup</cell>
- <cell>            0</cell>
- <cell>           64</cell>
- <cell>           64</cell>
-</row>
-<separator/>
-<row>
- <cell>Hold</cell>
- <cell>            0</cell>
- <cell>           32</cell>
- <cell>           32</cell>
-</row>
-<row>
- <cell>Removal</cell>
- <cell>            0</cell>
- <cell>           32</cell>
- <cell>           32</cell>
-</row>
-<row>
- <cell>Output Hold</cell>
- <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
-</row>
-<row>
- <cell>Total Hold</cell>
- <cell>            0</cell>
- <cell>           64</cell>
- <cell>           64</cell>
-</row>
-</table>
-<section>
-<name>Enhancement Suggestions</name>
-<text></text>
-<text> - Clock constraint is missing </text>
-<text></text>
-<text></text>
-<text> - Setup unconstrained for the following pins:</text>
-<text>   </text>
-<list>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
-</list>
-<text></text>
-<text> - Recovery unconstrained for the following pins:</text>
-<text>   </text>
-<list>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
-</list>
-<text></text>
-<text> - Hold unconstrained for the following pins:</text>
-<text>   </text>
-<list>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
-</list>
-<text></text>
-<text> - Removal unconstrained for the following pins:</text>
-<text>   </text>
-<list>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[0]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[10]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[11]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[12]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[13]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[14]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[15]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[16]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[17]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[18]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[19]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[1]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[20]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[21]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[22]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[23]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[24]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[25]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[26]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[27]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[28]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[29]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[2]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[30]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[31]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[3]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[4]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[5]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[6]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
-</list>
-<text></text>
-</section>
-</section>
-<section>
-<name>Clock domain: </name>
 <text>uart0clk</text>
 <text></text>
 <table>
@@ -807,14 +594,14 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>           79</cell>
- <cell>            0</cell>
- <cell>           79</cell>
+ <cell>            1</cell>
+ <cell>           80</cell>
 </row>
 <separator/>
 <row>
@@ -832,16 +619,34 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>           79</cell>
- <cell>            0</cell>
- <cell>           79</cell>
+ <cell>            1</cell>
+ <cell>           80</cell>
 </row>
 </table>
+<section>
+<name>Enhancement Suggestions</name>
+<text></text>
+<text></text>
+<text> - Max output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP4</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP4</item>
+</list>
+<text></text>
+<text></text>
+</section>
 </section>
 <section>
 <name>Clock domain: </name>
@@ -2055,14 +1860,14 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>           15</cell>
- <cell>           15</cell>
+ <cell>           13</cell>
+ <cell>           13</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>            0</cell>
- <cell>           15</cell>
- <cell>           15</cell>
+ <cell>           13</cell>
+ <cell>           13</cell>
 </row>
 <separator/>
 <row>
@@ -2080,14 +1885,14 @@ Date: Thu Jul 30 15:47:05 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>           15</cell>
- <cell>           15</cell>
+ <cell>           13</cell>
+ <cell>           13</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>            0</cell>
- <cell>           15</cell>
- <cell>           15</cell>
+ <cell>           13</cell>
+ <cell>           13</cell>
 </row>
 </table>
 <section>

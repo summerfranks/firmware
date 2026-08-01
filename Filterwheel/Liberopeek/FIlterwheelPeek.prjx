@@ -88,8 +88,8 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1785446567"
-SIZE="98135"
+TIME="1785532598"
+SIZE="98160"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
@@ -138,8 +138,8 @@ SIZE="2540"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd,hdl"
 STATE="utd"
-TIME="1785447889"
-SIZE="2651"
+TIME="1785538710"
+SIZE="2942"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd,hdl"
 STATE="utd"
@@ -208,8 +208,8 @@ SIZE="2039"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1785445546"
-SIZE="9255"
+TIME="1785543342"
+SIZE="9929"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -1138,8 +1138,8 @@ SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
 STATE="utd"
-TIME="1785448001"
-SIZE="1552880"
+TIME="1785451609"
+SIZE="1542414"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
@@ -1150,6 +1150,11 @@ VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
 STATE="utd"
 TIME="1785447926"
 SIZE="7490"
+ENDFILE
+VALUE "<project>/synthesis/synwork/layer1.so,so"
+STATE="utd"
+TIME="1785542250"
+SIZE="154"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -1661,7 +1666,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Place and Route:Filterwheel_glb_net_report.xml
+ReportsCurrentItem;Run Programming Action:Filterwheel_PROGRAM.log
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST
@@ -1700,6 +1705,13 @@ SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FAL
 ENDLIST
 LIST "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
+ENDLIST
+LIST "DESIGN_FIRMWARE::work","component/work/DESIGN_FIRMWARE/DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
@@ -1868,6 +1880,16 @@ ENDLIST
 LIST "RCOSC_25_50MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "RtcCounterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/RtcCounter.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "SpiDacTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDacTrio.vhd","FALSE","FALSE"
 SUBBLOCK "SpiMasterTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd","FALSE","FALSE"

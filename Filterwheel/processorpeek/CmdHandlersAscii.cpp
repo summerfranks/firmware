@@ -503,7 +503,7 @@ int8_t FpgaParserCommand(char const* Name, char const* Params, const size_t Para
 	char onoff;
 
 	//Convert parameters
-    int8_t numfound = sscanf(Params, "[,\t ]%c", &onoff);
+    int8_t numfound = sscanf(Params, "%c", &onoff);
     if (numfound >= 1)
 	{
 	    bool OnOff = false;
@@ -514,7 +514,14 @@ int8_t FpgaParserCommand(char const* Name, char const* Params, const size_t Para
 		if (OnOff) { FW->Uart0RxFifoPeekMultiPopAddr = FW->Uart0RxFifoPeekWriteAddr; }
 	}
 
-	formatf("\n\nFpgaParserCommand: Pipeline: HeaderEnd(0x%lX), FooterEnd(0x%lX), PayloadType(0x%lX), PayloadLen(%lu), PacketCrc(0x%lX), CalcCrc(0x%lX)\n", (unsigned long)FW->Uart0HeaderEndPos, (unsigned long)FW->Uart0FooterEndPos, (unsigned long)FW->Uart0PayloadType, (unsigned long)FW->Uart0PayloadLen, (unsigned long)FW->Uart0PacketCrc, (unsigned long)FW->Uart0CalcCrc);
+	formatf("\n\nFpgaParserCommand: Buffer: ReadAddr(0x%lX), WriteAddr(0x%lX), PeekAddr(0x%lX), PeekData(%lu); ", (unsigned long)FW->Uart0RxFifoPeekReadAddr, (unsigned long)FW->Uart0RxFifoPeekWriteAddr, (unsigned long)FW->Uart0RxFifoPeekPeekAddr, (unsigned long)FW->Uart0RxFifoPeekPeekData);
+	for(size_t i = 0; i < 32; i++)
+	{
+		FW->Uart0RxFifoPeekPeekAddr = i;
+		uint8_t data = FW->Uart0RxFifoPeekPeekData;
+		formatf("%.2X:", data);
+	}
+	formatf("\nFpgaParserCommand: Pipeline: HeaderEnd(0x%lX), FooterEnd(0x%lX), PayloadType(0x%lX), PayloadLen(%lu), PacketCrc(0x%lX), CalcCrc(0x%lX)\n", (unsigned long)FW->Uart0HeaderEndPos, (unsigned long)FW->Uart0FooterEndPos, (unsigned long)FW->Uart0PayloadType, (unsigned long)FW->Uart0PayloadLen, (unsigned long)FW->Uart0PacketCrc, (unsigned long)FW->Uart0CalcCrc);
 
 	return(strlen(Params));
 }
