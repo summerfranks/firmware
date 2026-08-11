@@ -67,7 +67,7 @@ int8_t BinaryFSMDacsCommand(const uint32_t Name, char const* Params, const size_
 	if (ParamsLen >= (3 * sizeof(uint32_t)))
 	{
 		const uint32_t* DacSetpoints = (const uint32_t*)Params;
-		printf("\nBinaryFSMDacsCommand Setting to (0x%lX, 0x%lX, 0x%lX).\n\n", DacSetpoints[0], DacSetpoints[1], DacSetpoints[2]);
+		printf("\nBinaryFSMDacsCommand Setting to (0x%lX, 0x%lX, 0x%lX).\n\n", (unsigned long)DacSetpoints[0], (unsigned long)DacSetpoints[1], (unsigned long)DacSetpoints[2]);
 		FSM->DacASetpoint = DacSetpoints[0];
 		FSM->DacBSetpoint = DacSetpoints[1];
 		FSM->DacCSetpoint = DacSetpoints[2];		
@@ -76,7 +76,7 @@ int8_t BinaryFSMDacsCommand(const uint32_t Name, char const* Params, const size_
 	DacSetpoints[0] = FSM->DacASetpoint;
 	DacSetpoints[1] = FSM->DacBSetpoint;
 	DacSetpoints[2] = FSM->DacCSetpoint;	
-	printf("\nBinaryFSMDacsCommand  Replying (0x%lX, 0x%lX, 0x%lX)...\n\n", DacSetpoints[0], DacSetpoints[1], DacSetpoints[2]);
+	printf("\nBinaryFSMDacsCommand  Replying (0x%lX, 0x%lX, 0x%lX)...\n\n", (unsigned long)DacSetpoints[0], (unsigned long)DacSetpoints[1], (unsigned long)DacSetpoints[2]);
 	TxBinaryPacket(Argument, CGraphPayloadTypeFSMDacs, 0, DacSetpoints, 3 * sizeof(uint32_t));
 
     return(ParamsLen);

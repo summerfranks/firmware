@@ -7,16 +7,16 @@ GLOBAL THRESHOLD - 5000
 
 NET NAME                               CLOCK LOADS     ASYNC RST LOADS     DATA LOADS     TOTAL FANOUT     GLOBAL BUFFER PRESENT
 --------------------------------------------------------------------------------------------------------------------------------
-FCCC_C0_0_GL1                          3048            0                   0              3048             YES                  
-Main_0.UartClk0                        31              0                   0              31               YES                  
-Main_0.UartClk3                        31              0                   0              31               YES                  
-Main_0.UartClk1                        31              0                   0              31               YES                  
-Main_0.UartClk2                        31              0                   0              31               YES                  
+FCCC_C0_0_GL1                          3038            0                   0              3038             YES                  
+Main_0.UartClk0                        32              0                   0              32               YES                  
+Main_0.UartClk3                        32              0                   0              32               YES                  
+Main_0.UartClk1                        32              0                   0              32               YES                  
+Main_0.UartClk2                        32              0                   0              32               YES                  
 TP1_c                                  9               0                   1              10               YES                  
 Main_0.UartTxClk1                      9               0                   0              9                YES                  
 Main_0.UartTxClk0                      9               0                   0              9                YES                  
 Main_0.UartTxClk3                      9               0                   0              9                YES                  
-Main_0.BootupReset.shot_i_arst         0               1773                0              1773             YES                  
+Main_0.BootupReset.shot_i_arst         0               1769                0              1769             YES                  
 Main_0.SpiRst_arst                     0               187                 0              187              YES                  
 Main_0.FSMDacsTi_i.SpiRst_arst         0               135                 0              135              YES                  
 Main_0.Uart0FifoReset_i_i              0               133                 0              133              YES                  

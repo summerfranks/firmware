@@ -3,7 +3,7 @@
 @N|stack limit increased to max
 @N:"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":11:7:11:10|Top entity is set to Main.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/BuildNumber.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd'.
@@ -14,7 +14,8 @@
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd'.
 @N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":46:17:46:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd'.
@@ -145,7 +146,7 @@
 @N|stack limit increased to max
 @N:"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":11:7:11:10|Top entity is set to Main.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/BuildNumber.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd'.
@@ -156,7 +157,8 @@
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd'.
 @N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":46:17:46:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd'.
@@ -187,13 +189,13 @@
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":34:7:34:18|Synthesizing work.uartrxextclk.implementation.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":32:7:32:15|Synthesizing work.uartrxraw.behaviour.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":30:7:30:17|Synthesizing work.ibufp3ports.ibufp3.
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":30:7:30:23|Synthesizing work.clockdividerports.clockdivider.
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd":30:7:30:25|Synthesizing work.clockdivider2xports.clockdivider2x.
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:33|Synthesizing work.variableclockdivider2xports.variableclockdivider2x.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiDeviceDual.vhd":44:7:44:24|Synthesizing work.spidevicedualports.spidevicedual.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd":38:7:38:24|Synthesizing work.spimasterdualports.spimasterdual.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":40:7:40:27|Synthesizing work.ltc2378accumquadports.ltc2378accumquad.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":38:7:38:24|Synthesizing work.spimasterquadports.spimasterquad.
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiDacQuad.vhd":44:7:44:21|Synthesizing work.spidacquadports.spidacquad.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd":38:7:38:24|Synthesizing work.spimasterquadports.spimasterquad.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":30:7:30:18|Synthesizing work.oneshotports.oneshot.

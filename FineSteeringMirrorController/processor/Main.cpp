@@ -51,6 +51,10 @@ const int MaxLoops = 1024;
 //~ }
 //~ } mtracer;
 
+//Boilerplate to keep the compiler happy...
+void operator delete(void*) { }
+void operator delete(void*, unsigned int) { }
+
 extern "C"
 {	
 	unsigned long long fclk_for_delay_loops = 102000000;
@@ -68,6 +72,13 @@ extern "C"
     {
         putchar(c);
     }
+	
+	void __cxa_pure_virtual() { formatf("\n\n!!__cxa_pure_virtual()!!\n"); }
+	
+	#ifdef __clang__
+	FILE *const stdout = (FILE *const)0;
+	FILE *const stdin = (FILE *const)0;
+	#endif
 };
 
 bool Process()
@@ -116,7 +127,9 @@ int main(int argc, char *argv[])
     //~ setvbuf(stdout, NULL, _IONBF, 0);
 
     //~ if (argc > 2)
-
+	
+	for (size_t qq = 0; qq < 10000; qq++)
+	{
 	FPGAUartPinout0.putcqq('\n');
 	FPGAUartPinout0.putcqq('\n');
 	FPGAUartPinout0.putcqq('\n');
@@ -140,6 +153,7 @@ int main(int argc, char *argv[])
     FPGAUartPinout0.putcqq('S');
 	FPGAUartPinout0.putcqq('M');
 	FPGAUartPinout0.putcqq('\n');
+	}
 
 	formatf("\n\nESC-FSM: v%s.b%s; Offset of ControlRegister: 0x%.2lX, expected: 0x%.2lX.", GITVERSION, BUILDNUM, (unsigned long)offsetof(CGraphFSMHardwareInterface, ControlRegister), 32UL);
 	

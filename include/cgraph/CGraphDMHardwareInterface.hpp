@@ -26,13 +26,13 @@ union CGraphDMHardwareControlRegister
         uint16_t HighVoltageEnable : 1; //b0; Turn on the +150V supply
         uint16_t PowerEnable : 1; //b2; Turn on the secondary supplies
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphDMHardwareControlRegister() { all = 0; }
 
     //~ void formatf() const { ::formatf("CGraphDMHardwareControlRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphDMHardwareStatusRegister
 {
@@ -50,13 +50,13 @@ union CGraphDMHardwareStatusRegister
 		uint32_t V6Fault : 1; //b1; Overtemperature or overcurrent on first high voltage output driver
 		uint32_t V9Fault : 1; //b1; Overtemperature or overcurrent on first high voltage output driver
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphDMHardwareStatusRegister() { all = 0; }
 
     //~ void formatf() const { ::formatf("CGraphDMHardwareStatusRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (uint32_t)(all >> 32));  ::formatf("%.8lX)", (uint32_t)(all)); ::formatf(", NumAccums: %lu ", (uint32_t)NumAccums); ::formatf("(0x%lX)", (uint32_t)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 //union CGraphDMUartStatusRegister
 //{
@@ -74,14 +74,14 @@ union CGraphDMHardwareStatusRegister
 //		uint32_t UartTxFifoCountHi : 2;
 //		uint32_t reserved2 : 4;
 //
-//    } __attribute__((__packed__));
+//    } __attribute__((packed, aligned(4)));
 //
 //    CGraphDMUartStatusRegister() { all = 0; }
 //
 //    //~ void formatf() const { ::formatf("CGraphDMUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", UartRxFifoEmpty?'Y':'N', UartRxFifoFull?'Y':'N', UartTxFifoEmpty?'Y':'N', UartTxFifoFull?'Y':'N', UartRxFifoCount + (UartRxFifoCountHi << 8), UartTxFifoCount + (UartTxFifoCountHi << 8)); }
 //	void formatf() const { ::formatf("CGraphDMUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", UartRxFifoEmpty?'Y':'N', UartRxFifoFull?'Y':'N', UartTxFifoEmpty?'Y':'N', UartTxFifoFull?'Y':'N', UartRxFifoCount, UartTxFifoCount); }
 //
-//} __attribute__((__packed__));
+//} __attribute__((packed, aligned(4)));
 
 struct CGraphDMHardwareInterface
 {
@@ -159,14 +159,14 @@ struct CGraphDMHardwareInterface
 
     //~ void formatf() const { ::formatf("CGraphDMHardwareInterface: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (uint32_t)(all >> 32));  ::formatf("%.8lX)", (uint32_t)(all)); ::formatf(", NumAccums: %lu ", (uint32_t)NumAccums); ::formatf("(0x%lX)", (uint32_t)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 extern CGraphDMHardwareInterface* DM;
 
 struct CGraphDMRamInterface
 {
   uint32_t DacSetpoints[DMMaxControllerBoards][DMMDacsPerControllerBoard][DMActuatorsPerDac];
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 extern CGraphDMRamInterface* dRAM;
 

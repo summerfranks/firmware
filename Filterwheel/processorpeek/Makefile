@@ -24,6 +24,8 @@ CPPSRC = Filterwheel.cpp CmdTableAscii.cpp CmdHandlersAscii.cpp CmdTableBinary.c
 
 OPT = 0
 #~ OPT = s
+#llvm only: -Oz:
+#~ OPT = z 
 #~ OPT = 3
 RUN_MODE = RELEASE
 CFLAGS += -g
@@ -34,4 +36,5 @@ CFLAGS += -g
 
 FLASH_TOOL = OPENOCD
 
-include $(INCLUDE_LOCAL)/arm/GNUMakefile
+#~ include $(INCLUDE_LOCAL)/arm/GNUMakefile
+include $(INCLUDE_LOCAL)/arm/LLVMMakefile

@@ -315,11 +315,11 @@ const char TestMonitorAdcCmdString[] = "TESTMONITORADC";
 const char TestMonitorAdcHelp[] = "\"TestMonitorAdc\"; Show raw A/D counts...";
 int8_t TestMonitorAdcCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
 {
-	size_t cycle = 0;
+	//~ size_t cycle = 0;
 	//~ int key = 1;
 	
 	{
-		cycle++;
+		//~ cycle++;
 		
 		MonitorAdc.Init();
 		MonitorAdc.Dump();

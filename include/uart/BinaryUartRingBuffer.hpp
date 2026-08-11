@@ -70,7 +70,7 @@ struct BinaryUartRingBuffer// : IUartParser
      * @param verbose   Enable or disable verbose debug mode.
      * @param serialnum Optional initial serial number, defaulting to InvalidSerialNumber.
      */
-    BinaryUartRingBuffer(IArray& data, FpgaRingBufferCrcer& crcer, IPacket& packet, struct IBlockDevice& pinout, const BinaryCmd* cmds, const size_t numcmds, struct BinaryUartCallbacks& callbacks, const bool verbose = true, const uint64_t serialnum = InvalidSerialNumber)
+    BinaryUartRingBuffer(IArray& data, FpgaRingBufferCrcer& crcer, IPacket& packet, class IBlockDevice& pinout, const BinaryCmd* cmds, const size_t numcmds, struct BinaryUartCallbacks& callbacks, const bool verbose = true, const uint64_t serialnum = InvalidSerialNumber)
         :
         //~ Pinout(pinout),
         Data(data),

@@ -30,7 +30,7 @@
 		int64_t NumAccums : 16;
 		
 
-    //~ } __attribute__((__packed__));
+    //~ } __attribute__((packed, aligned(4)));
 
     //static const int32_t AdcFullScale = 0x7FFFFFFFL; //2^32 - 1; must divide accumulator by numaccums first obviously
 
@@ -41,7 +41,7 @@
     //~ void formatf() const { ::formatf("AdcAccumulator: Samples: %+10.0lf ", (double)Samples); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", Samples: %.8lX, reserved: %.8lX, NumAccums: %lu ", (unsigned long)Samples, (unsigned long)reserved, (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 	void formatf() const { ::formatf("AdcAccumulator: Samples: %+10.0lf ", (double)Samples); ::formatf(", Samples: %.8lX, reserved: %.8lX, NumAccums: %lu ", (unsigned long)Samples, (unsigned long)reserved, (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union AdcTimestamp
 {
@@ -51,13 +51,13 @@ union AdcTimestamp
         uint32_t SubsecondTicks : 27; //Max FPGA clock rate for 27b is 134,217,728Hz (134MHz) works well for our target speed of 103MHz.
         uint32_t UnixTimeLsbs: 5; //We'd really like a little more granularity, but it's only ambiguous every 32 seconds I think we can deal with that...
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     //~ AdcTimestamp() { all = 0; }
 
     //~ void formatf() const { ::formatf("AdcTimestamp: SubsecondTicks: %+10.0lf ", (double)SubsecondTicks); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union AdcFifo
 {
@@ -68,7 +68,7 @@ union AdcFifo
         AdcTimestamp Timestamp;
         //~ uint16_t NumSamplesInFifo; //this makes it 10 bytes instead of 8...which for some reason makes acessing uartstatusregister segfault
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     //~ static const int32_t AdcFullScale = 0x7FFFFFFFL; //2^32 - 1;
     //~ static const uint16_t FifoMaxDepth = 0x0FFFUL; //The FPGA doesn't actually have very much ram for fifos.
@@ -77,7 +77,7 @@ union AdcFifo
 
     //~ void formatf() const { ::formatf("AdcFifo: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union AdcConfigRegister 		
 {
@@ -87,13 +87,13 @@ union AdcConfigRegister
         uint16_t AdcClkDivider;
 		uint16_t AdcSamplesToAverage;
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     AdcConfigRegister() { all = 0; }
 
     void formatf() const { ::formatf("AdcConfigRegister: AdcClkDivider: %u (0x%4X), AdcSamplesToAverage %u (0x%4X)", AdcClkDivider, AdcClkDivider, AdcSamplesToAverage, AdcSamplesToAverage); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union AccumulatorConfigRegister 		
 {
@@ -103,13 +103,13 @@ union AccumulatorConfigRegister
         uint16_t ControlAdcMaxAccums;
 		uint16_t MonitorAdcMaxAccums;
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     AccumulatorConfigRegister() { all = 0; }
 
     void formatf() const { ::formatf("AccumulatorConfigRegister: ControlAdcMaxAccums: %u (0x%4X), MonitorAdcMaxAccums %u (0x%4X)", ControlAdcMaxAccums, ControlAdcMaxAccums, MonitorAdcMaxAccums, MonitorAdcMaxAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union DacConfigRegister 		
 {
@@ -119,13 +119,13 @@ union DacConfigRegister
         uint16_t DitherClkDivider;
 		uint16_t reserved;
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     DacConfigRegister() { all = 0; }
 
     void formatf() const { ::formatf("DacConfigRegister: DitherClkDivider: %u (0x%4X), reserved %u (0x%4X)", DitherClkDivider, DitherClkDivider, reserved, reserved); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphBaudDividers
 {
@@ -137,7 +137,7 @@ union CGraphBaudDividers
 		uint32_t Divider2 : 8;
 		uint32_t Divider3 : 8;
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphBaudDividers() { all = 0; }
 	
@@ -150,7 +150,7 @@ union CGraphBaudDividers
 		::formatf(", Divider3: %u ", (unsigned)Divider3);
 	}
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphMonitorAdcCommandStatusRegister
 {
@@ -161,13 +161,13 @@ union CGraphMonitorAdcCommandStatusRegister
         uint32_t TransactionComplete : 1; //Is the bus busy?
         uint32_t nDrdy : 1; //Samples ready?
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphMonitorAdcCommandStatusRegister() { all = 0; }
 
     void formatf() const { ::formatf("CGraphMonitorAdcCommandStatusRegister: FrameEnable:%c, TransactionComplete:%c, nDrdy:%c", FrameEnable?'1':'0', TransactionComplete?'1':'0', nDrdy?'1':'0'); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphDualMonitorAdcCommandStatusRegister
 {
@@ -179,13 +179,13 @@ union CGraphDualMonitorAdcCommandStatusRegister
         uint32_t nDrdy0 : 1; //Samples ready?
 		uint32_t nDrdy1 : 1; //Samples ready?
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphDualMonitorAdcCommandStatusRegister() { all = 0; }
 
     void formatf() const { ::formatf("CGraphDualMonitorAdcCommandStatusRegister: FrameEnable:%c, TransactionComplete:%c, nDrdy0:%c, nDrdy1:%c", FrameEnable?'1':'0', TransactionComplete?'1':'0', nDrdy0?'1':'0', nDrdy1?'1':'0'); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphCrcCurrentAddr
 {
@@ -195,7 +195,7 @@ union CGraphCrcCurrentAddr
         uint32_t CurrentAddr : 31;
 		uint32_t CrcComplete : 1;
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphCrcCurrentAddr() { all = 0; }
     CGraphCrcCurrentAddr(volatile CGraphCrcCurrentAddr& c) { all = c.all; }
@@ -209,7 +209,7 @@ union CGraphCrcCurrentAddr
 		::formatf(", CrcComplete: %c ", CrcComplete?'Y':'N');
 	}
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 struct FpgaRingBufferCrcer
 {

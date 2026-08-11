@@ -51,14 +51,14 @@ Finished optimization stage 1 on UartRxFifoExtClk (CPU Time 0h:00m:00s, Memory U
 Post processing for work.ibufp3ports.ibufp3
 Running optimization stage 1 on IBufP3Ports .......
 Finished optimization stage 1 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":30:7:30:23|Synthesizing work.clockdividerports.clockdivider.
-Post processing for work.clockdividerports.clockdivider
-Running optimization stage 1 on ClockDividerPorts .......
-Finished optimization stage 1 on ClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
-Post processing for work.variableclockdividerports.variableclockdivider
-Running optimization stage 1 on VariableClockDividerPorts .......
-Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 146MB peak: 146MB)
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd":30:7:30:25|Synthesizing work.clockdivider2xports.clockdivider2x.
+Post processing for work.clockdivider2xports.clockdivider2x
+Running optimization stage 1 on ClockDivider2XPorts .......
+Finished optimization stage 1 on ClockDivider2XPorts (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:33|Synthesizing work.variableclockdivider2xports.variableclockdivider2x.
+Post processing for work.variableclockdivider2xports.variableclockdivider2x
+Running optimization stage 1 on VariableClockDivider2XPorts .......
+Finished optimization stage 1 on VariableClockDivider2XPorts (CPU Time 0h:00m:00s, Memory Used current: 146MB peak: 146MB)
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiDeviceDual.vhd":44:7:44:24|Synthesizing work.spidevicedualports.spidevicedual.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd":38:7:38:24|Synthesizing work.spimasterdualports.spimasterdual.
 Post processing for work.spimasterdualports.spimasterdual
@@ -72,10 +72,10 @@ Finished optimization stage 1 on SpiDeviceDualPorts (CPU Time 0h:00m:00s, Memory
 Post processing for work.spimasterquadports.spimasterquad
 Running optimization stage 1 on SpiMasterQuadPorts .......
 Finished optimization stage 1 on SpiMasterQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 148MB peak: 148MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
 Post processing for work.variableclockdividerports.variableclockdivider
 Running optimization stage 1 on VariableClockDividerPorts .......
-Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 149MB peak: 149MB)
+Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 148MB peak: 148MB)
 Post processing for work.ltc2378accumquadports.ltc2378accumquad
 Running optimization stage 1 on Ltc2378AccumQuadPorts .......
 @W: CL169 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":357:3:357:4|Pruning unused register SamplesThisSecond_7(31 downto 0). Make sure that there are no unused intermediate registers.
@@ -161,48 +161,49 @@ Running optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_1
 Finished optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_1layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on SpiDacQuadPorts_102000000_2 .......
 Finished optimization stage 2 on SpiDacQuadPorts_102000000_2 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
-Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_1layer1 .......
-Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_1layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
+Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 .......
+@W: CL247 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":39:2:39:10|Input port bit 15 of rst_count(15 downto 0) is unused 
+Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_0layer1 .......
 Finished optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on Ltc2378AccumQuadPorts .......
-Finished optimization stage 2 on Ltc2378AccumQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on Ltc2378AccumQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
-Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
-Running optimization stage 2 on ClockDividerPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on ClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
+Running optimization stage 2 on VariableClockDivider2XPorts_work_main_architecture_main_0layer1 .......
+Finished optimization stage 2 on VariableClockDivider2XPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
+Running optimization stage 2 on ClockDivider2XPorts_work_main_architecture_main_0layer1 .......
+Finished optimization stage 2 on ClockDivider2XPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on IBufP3Ports .......
 @N: CL135 :"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":48:2:48:3|Found sequential shift O with address depth of 3 words and data bit width of 1.
-Finished optimization stage 2 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxRaw .......
-Finished optimization stage 2 on UartRxRaw (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxRaw (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxExtClk .......
-Finished optimization stage 2 on UartRxExtClk (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxExtClk (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxFifoExtClk_10 .......
-Finished optimization stage 2 on UartRxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on fifo_8_10 .......
-Finished optimization stage 2 on fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on gated_fifo_8_10 .......
-Finished optimization stage 2 on gated_fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on gated_fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartTx .......
-Finished optimization stage 2 on UartTx (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartTx (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartTxFifoExtClk_10 .......
-Finished optimization stage 2 on UartTxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartTxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on IBufP2Ports .......
-Finished optimization stage 2 on IBufP2Ports (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on IBufP2Ports (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on Main .......
 @N: CL159 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":74:1:74:11|Input RamBusLatch is unused.
-Finished optimization stage 2 on Main (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on Main (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 
 For a summary of runtime per design unit, please see file:
 ==========================================================

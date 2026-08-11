@@ -19,7 +19,9 @@
  * Vector table
  */
     .global     g_pfnVectors
-    .section    .isr_vector,"ax",%progbits    /* added "x" so appears in .lst file even though not executable code- to help in debug process */
+	/* added "x" so appears in .lst file even though not executable code- to help in debug process */
+    /* .section    .isr_vector,"ax",%progbits */
+	.section    .vector_table,"ax",%progbits    
     .type       g_pfnVectors, %object
     .size       g_pfnVectors, .-g_pfnVectors
     

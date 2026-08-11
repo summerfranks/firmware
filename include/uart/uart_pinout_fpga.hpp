@@ -40,7 +40,7 @@ private:
 	const uint32_t* ReadRequestRegister;
 	const uint32_t* ReadDataRegister;
 	uint32_t* WriteDataRegister;
-	const char MonitorPrefaceChar;
+	//~ const char MonitorPrefaceChar;
 	
 public:
 
@@ -50,8 +50,8 @@ public:
 		StatusRegister(statusregister),
 		ReadRequestRegister(readrequestregister),
 		ReadDataRegister(readdataregister),
-		WriteDataRegister(writedataregister),
-		MonitorPrefaceChar(monitorprefacechar)
+		WriteDataRegister(writedataregister)//,
+		//~ MonitorPrefaceChar(monitorprefacechar)
 	{ }
 	
 	virtual ~uart_pinout_fpga() { }

@@ -8,9 +8,9 @@ Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
 OS: Linux Mint 22.3
-Hostname: homework
+Hostname: homework2
 max virtual memory: unlimited (bytes)
-max user processes: 126475
+max user processes: 190996
 max stack size: 8388608 (bytes)
 
 
@@ -29,9 +29,9 @@ Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
 OS: Linux Mint 22.3
-Hostname: homework
+Hostname: homework2
 max virtual memory: unlimited (bytes)
-max user processes: 126475
+max user processes: 190996
 max stack size: 8388608 (bytes)
 
 
@@ -42,7 +42,7 @@ Synopsys VHDL Compiler, Version comp202209synp2, Build 179R, Built Jun 27 2023 0
 @N|stack limit increased to max
 @N:"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":11:7:11:10|Top entity is set to Main.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/BuildNumber.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd'.
@@ -53,7 +53,8 @@ Synopsys VHDL Compiler, Version comp202209synp2, Build 179R, Built Jun 27 2023 0
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd'.
 @N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":46:17:46:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd'.
@@ -74,7 +75,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 
 
 Process completed successfully.
-# Mon Jul 27 15:15:19 2026
+# Fri Aug  7 11:40:12 2026
 
 ###########################################################]
 ###########################################################[
@@ -88,9 +89,9 @@ Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
 OS: Linux Mint 22.3
-Hostname: homework
+Hostname: homework2
 max virtual memory: unlimited (bytes)
-max user processes: 126475
+max user processes: 190996
 max stack size: 8388608 (bytes)
 
 
@@ -140,7 +141,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Mon Jul 27 15:15:19 2026
+# Fri Aug  7 11:40:12 2026
 
 ###########################################################]
 ###########################################################[
@@ -565,14 +566,14 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 
 
 Process completed successfully.
-# Mon Jul 27 15:15:20 2026
+# Fri Aug  7 11:40:12 2026
 
 ###########################################################]
 ###########################################################[
 @N|stack limit increased to max
 @N:"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":11:7:11:10|Top entity is set to Main.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/BuildNumber.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd'.
@@ -583,7 +584,8 @@ Process completed successfully.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd'.
 @N: CD895 :"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":46:17:46:19|Setting attribute syn_ramstyle to "no_rw_check" on shared variable ram
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd'.
-@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd'.
+@N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd'.
 @N: CD140 :	| Using the VHDL 2008 Standard for file '/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd'.
@@ -651,14 +653,14 @@ Finished optimization stage 1 on UartRxFifoExtClk (CPU Time 0h:00m:00s, Memory U
 Post processing for work.ibufp3ports.ibufp3
 Running optimization stage 1 on IBufP3Ports .......
 Finished optimization stage 1 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":30:7:30:23|Synthesizing work.clockdividerports.clockdivider.
-Post processing for work.clockdividerports.clockdivider
-Running optimization stage 1 on ClockDividerPorts .......
-Finished optimization stage 1 on ClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
-Post processing for work.variableclockdividerports.variableclockdivider
-Running optimization stage 1 on VariableClockDividerPorts .......
-Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 146MB peak: 146MB)
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd":30:7:30:25|Synthesizing work.clockdivider2xports.clockdivider2x.
+Post processing for work.clockdivider2xports.clockdivider2x
+Running optimization stage 1 on ClockDivider2XPorts .......
+Finished optimization stage 1 on ClockDivider2XPorts (CPU Time 0h:00m:00s, Memory Used current: 145MB peak: 145MB)
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:33|Synthesizing work.variableclockdivider2xports.variableclockdivider2x.
+Post processing for work.variableclockdivider2xports.variableclockdivider2x
+Running optimization stage 1 on VariableClockDivider2XPorts .......
+Finished optimization stage 1 on VariableClockDivider2XPorts (CPU Time 0h:00m:00s, Memory Used current: 146MB peak: 146MB)
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiDeviceDual.vhd":44:7:44:24|Synthesizing work.spidevicedualports.spidevicedual.
 @N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd":38:7:38:24|Synthesizing work.spimasterdualports.spimasterdual.
 Post processing for work.spimasterdualports.spimasterdual
@@ -672,10 +674,10 @@ Finished optimization stage 1 on SpiDeviceDualPorts (CPU Time 0h:00m:00s, Memory
 Post processing for work.spimasterquadports.spimasterquad
 Running optimization stage 1 on SpiMasterQuadPorts .......
 Finished optimization stage 1 on SpiMasterQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 148MB peak: 148MB)
-@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
+@N: CD630 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":30:7:30:31|Synthesizing work.variableclockdividerports.variableclockdivider.
 Post processing for work.variableclockdividerports.variableclockdivider
 Running optimization stage 1 on VariableClockDividerPorts .......
-Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 149MB peak: 149MB)
+Finished optimization stage 1 on VariableClockDividerPorts (CPU Time 0h:00m:00s, Memory Used current: 148MB peak: 148MB)
 Post processing for work.ltc2378accumquadports.ltc2378accumquad
 Running optimization stage 1 on Ltc2378AccumQuadPorts .......
 @W: CL169 :"/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd":357:3:357:4|Pruning unused register SamplesThisSecond_7(31 downto 0). Make sure that there are no unused intermediate registers.
@@ -761,48 +763,49 @@ Running optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_1
 Finished optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_1layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on SpiDacQuadPorts_102000000_2 .......
 Finished optimization stage 2 on SpiDacQuadPorts_102000000_2 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
-Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_1layer1 .......
-Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_1layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
+Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 .......
+@W: CL247 :"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":39:2:39:10|Input port bit 15 of rst_count(15 downto 0) is unused 
+Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_0layer1 .......
 Finished optimization stage 2 on SpiMasterQuadPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 164MB peak: 164MB)
 Running optimization stage 2 on Ltc2378AccumQuadPorts .......
-Finished optimization stage 2 on Ltc2378AccumQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on Ltc2378AccumQuadPorts (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiMasterDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
-Running optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on VariableClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
-Running optimization stage 2 on ClockDividerPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on ClockDividerPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiDeviceDualPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
+Running optimization stage 2 on VariableClockDivider2XPorts_work_main_architecture_main_0layer1 .......
+Finished optimization stage 2 on VariableClockDivider2XPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
+Running optimization stage 2 on ClockDivider2XPorts_work_main_architecture_main_0layer1 .......
+Finished optimization stage 2 on ClockDivider2XPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on IBufP3Ports .......
 @N: CL135 :"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":48:2:48:3|Found sequential shift O with address depth of 3 words and data bit width of 1.
-Finished optimization stage 2 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on IBufP3Ports (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxRaw .......
-Finished optimization stage 2 on UartRxRaw (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxRaw (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxExtClk .......
-Finished optimization stage 2 on UartRxExtClk (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxExtClk (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartRxFifoExtClk_10 .......
-Finished optimization stage 2 on UartRxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartRxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on fifo_8_10 .......
-Finished optimization stage 2 on fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on gated_fifo_8_10 .......
-Finished optimization stage 2 on gated_fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on gated_fifo_8_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartTx .......
-Finished optimization stage 2 on UartTx (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartTx (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on UartTxFifoExtClk_10 .......
-Finished optimization stage 2 on UartTxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on UartTxFifoExtClk_10 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on PPSCountPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on IBufP2Ports .......
-Finished optimization stage 2 on IBufP2Ports (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on IBufP2Ports (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiMasterPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 .......
-Finished optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on SpiDacPorts_work_main_architecture_main_0layer1 (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 Running optimization stage 2 on Main .......
 @N: CL159 :"/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpga/Main.vhd":74:1:74:11|Input RamBusLatch is unused.
-Finished optimization stage 2 on Main (CPU Time 0h:00m:00s, Memory Used current: 168MB peak: 168MB)
+Finished optimization stage 2 on Main (CPU Time 0h:00m:00s, Memory Used current: 167MB peak: 167MB)
 
 For a summary of runtime per design unit, please see file:
 ==========================================================
@@ -810,11 +813,11 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 168MB peak: 168MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 167MB peak: 167MB)
 
 
 Process completed successfully.
-# Mon Jul 27 15:15:22 2026
+# Fri Aug  7 11:40:14 2026
 
 ###########################################################]
 ###########################################################[
@@ -828,9 +831,9 @@ Tool: Synplify Pro (R)
 Build: T-2022.09M-SP2-1
 Install: /home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro
 OS: Linux Mint 22.3
-Hostname: homework
+Hostname: homework2
 max virtual memory: unlimited (bytes)
-max user processes: 126475
+max user processes: 190996
 max stack size: 8388608 (bytes)
 
 
@@ -850,7 +853,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 27 15:15:22 2026
+# Fri Aug  7 11:40:14 2026
 
 ###########################################################]
 
@@ -860,11 +863,11 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 45MB peak: 45MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 45MB peak: 45MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 27 15:15:22 2026
+# Fri Aug  7 11:40:14 2026
 
 ###########################################################]

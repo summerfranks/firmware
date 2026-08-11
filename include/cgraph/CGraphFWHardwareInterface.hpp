@@ -50,7 +50,7 @@ union CGraphFWHardwareControlRegister
 		uint32_t Ux1SelJmp : 1; //b20; rw: jumper state
 		uint32_t Ux2SelJmp : 1; //b21; rw: jumper state
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphFWHardwareControlRegister() { all = 0; }
 
@@ -83,7 +83,7 @@ union CGraphFWHardwareControlRegister
 		::formatf(", Ux2SelJmp: %u ", (unsigned)Ux2SelJmp);
 	}
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphFWMotorControlStatusRegister
 {
@@ -93,13 +93,13 @@ union CGraphFWMotorControlStatusRegister
         int16_t SeekStep; //rw; move the motor to here
         int16_t CurrentStep; //ro; where is motor now (note: if <> SeekStep, motor is probably moving right now, unless ((CGraphFWHardwareControlRegister::MotorEnable == 0) || (CGraphFWHardwareControlRegister::ResetSteps == 1)) )
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphFWMotorControlStatusRegister() { all = 0; }
 
     void formatf() const { ::formatf("CGraphFWMotorControlStatusRegister: All: %.8lX ", (unsigned long)all); ::formatf(", SeekStep: %+d ", SeekStep);  ::formatf(", CurrentStep: %+d ", CurrentStep); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphFWPositionSenseRegister
 {
@@ -117,7 +117,7 @@ union CGraphFWPositionSenseRegister
 		uint32_t PosSenseA : 4; //b8-11; ro
 		uint32_t PosSenseB : 4; //b12-15; ro
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphFWPositionSenseRegister() { all = 0; }
 
@@ -136,7 +136,7 @@ union CGraphFWPositionSenseRegister
 		::formatf(", PosSenseA: 0x%.1X ", (unsigned)PosSenseB);
 	}
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphFWPositionStepRegister
 {
@@ -148,7 +148,7 @@ union CGraphFWPositionStepRegister
         int16_t OffStep;// : 16; //Word offset reliably crashes uC
 		uint16_t reserved2;// : 16;
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphFWPositionStepRegister() { all = 0; }
 	
@@ -162,7 +162,7 @@ union CGraphFWPositionStepRegister
 		::formatf(", MidStep: %d ", MidStep());
 	}
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 struct CGraphFWHardwareInterface
 {
@@ -256,7 +256,7 @@ struct CGraphFWHardwareInterface
 	uint32_t Uart0PacketCrc;
 	uint32_t Uart0CalcCrc;
 	
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 extern CGraphFWHardwareInterface* volatile FW;
 

@@ -78,7 +78,7 @@ struct BinaryUart : IUartParser
      * @param verbose   Enable or disable verbose debug mode.
      * @param serialnum Optional initial serial number, defaulting to InvalidSerialNumber.
      */
-    BinaryUart(struct IUart& pinout, struct IPacket& packet, const BinaryCmd* cmds, const size_t numcmds, struct BinaryUartCallbacks& callbacks, const bool verbose = true, const uint64_t serialnum = InvalidSerialNumber)
+    BinaryUart(class IUart& pinout, class IPacket& packet, const BinaryCmd* cmds, const size_t numcmds, struct BinaryUartCallbacks& callbacks, const bool verbose = true, const uint64_t serialnum = InvalidSerialNumber)
         :
 		IUartParser(pinout),
 		RxCount(RxCountInit),

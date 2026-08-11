@@ -1,33 +1,33 @@
 
 . Module name, SLE, CFG, ARI1, BUFFER, MACC, RAM1K18, RAM64X18, GLOBAL, IO
-. FineSteeringMirror, 3228, 2948, 2361, 0, 0, 8, 0, 23, 84
+. FineSteeringMirror, 3221, 2930, 2178, 0, 0, 8, 0, 23, 84
 .	. FCCC_C0, 0, 0, 0, 0, 0, 0, 0, 2, 1
 .	.	. FCCC_C0_FCCC_C0_0_FCCC, 0, 0, 0, 0, 0, 0, 0, 2, 1
 .	. FineSteeringMirror_sb, 0, 35, 0, 0, 0, 0, 0, 1, 0
 .	.	. CoreAPB3_Z1_layer0, 0, 2, 0, 0, 0, 0, 0, 0, 0
 .	.	. FineSteeringMirror_sb_CCC_0_FCCC, 0, 0, 0, 0, 0, 0, 0, 1, 0
 .	.	. FineSteeringMirror_sb_MSS, 0, 33, 0, 0, 0, 0, 0, 0, 0
-.	. Main, 3228, 2913, 2361, 0, 0, 8, 0, 20, 0
-.	.	. ClockDividerPorts_work_main_architecture_main_0layer1_0, 4, 2, 0, 0, 0, 0, 0, 1, 0
-.	.	. ClockDividerPorts_work_main_architecture_main_0layer1_1, 4, 2, 0, 0, 0, 0, 0, 1, 0
-.	.	. ClockDividerPorts_work_main_architecture_main_0layer1_2, 4, 2, 0, 0, 0, 0, 0, 1, 0
-.	.	. ClockDividerPorts_work_main_architecture_main_0layer1_3, 4, 2, 0, 0, 0, 0, 0, 1, 0
-.	.	. DacDitherer_24_16_16_0, 38, 15, 66, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_5, 17, 3, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_16_16_1, 38, 15, 66, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_6, 17, 3, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_16_16_3, 38, 20, 81, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_3, 17, 4, 64, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_16_16_4, 38, 15, 66, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_4, 17, 3, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_24_20_0, 42, 42, 69, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_1, 17, 3, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_24_20_1, 42, 42, 69, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_2, 17, 3, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_24_20_3, 42, 47, 69, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1, 17, 4, 49, 0, 0, 0, 0, 0, 0
-.	.	. DacDitherer_24_24_20_4, 42, 42, 69, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_0, 17, 3, 49, 0, 0, 0, 0, 0, 0
+.	. Main, 3221, 2895, 2178, 0, 0, 8, 0, 20, 0
+.	.	. ClockDivider2XPorts_work_main_architecture_main_0layer1_0, 5, 3, 0, 0, 0, 0, 0, 1, 0
+.	.	. ClockDivider2XPorts_work_main_architecture_main_0layer1_1, 5, 3, 0, 0, 0, 0, 0, 1, 0
+.	.	. ClockDivider2XPorts_work_main_architecture_main_0layer1_2, 5, 3, 0, 0, 0, 0, 0, 1, 0
+.	.	. ClockDivider2XPorts_work_main_architecture_main_0layer1_3, 5, 3, 0, 0, 0, 0, 0, 1, 0
+.	.	. DacDitherer_24_16_16_0, 37, 13, 49, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_5, 16, 1, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_16_16_1, 37, 17, 49, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_6, 16, 1, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_16_16_3, 37, 14, 49, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_3, 16, 2, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_16_16_4, 37, 13, 49, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_4, 16, 1, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_24_20_0, 41, 40, 52, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_1, 16, 1, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_24_20_1, 41, 36, 52, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_2, 16, 1, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_24_20_3, 41, 49, 52, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1, 16, 2, 32, 0, 0, 0, 0, 0, 0
+.	.	. DacDitherer_24_24_20_4, 41, 40, 52, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_0, 16, 1, 32, 0, 0, 0, 0, 0, 0
 .	.	. IBufP1Ports, 1, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP1Ports_0, 2, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP1Ports_1, 1, 0, 0, 0, 0, 0, 0, 0, 0
@@ -71,7 +71,7 @@
 .	.	. IBufP1Ports_8, 1, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP1Ports_9, 1, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP2Ports, 2, 0, 0, 0, 0, 0, 0, 0, 0
-.	.	. IBufP2Ports_1, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	. IBufP2Ports_1, 2, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP2Ports_10, 2, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP2Ports_11, 2, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP2Ports_12, 2, 0, 0, 0, 0, 0, 0, 0, 0
@@ -90,13 +90,13 @@
 .	.	. IBufP3Ports_7_0, 3, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP3Ports_7_1, 3, 0, 0, 0, 0, 0, 0, 0, 0
 .	.	. IBufP3Ports_7_2, 3, 0, 0, 0, 0, 0, 0, 0, 0
-.	.	. Ltc2378AccumQuadPorts, 889, 1189, 1077, 0, 0, 0, 0, 1, 0
+.	.	. Ltc2378AccumQuadPorts, 886, 1184, 1045, 0, 0, 0, 0, 1, 0
 .	.	.	. SpiMasterQuadPorts_work_main_architecture_main_0layer1, 111, 114, 0, 0, 0, 0, 0, 0, 0
-.	.	.	. VariableClockDividerPorts_work_main_architecture_main_1layer1_2_6, 49, 66, 64, 0, 0, 0, 0, 0, 0
+.	.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_2_6, 46, 61, 32, 0, 0, 0, 0, 0, 0
 .	.	. OneShotPorts_work_main_architecture_main_0layer1, 12, 6, 10, 0, 0, 0, 0, 1, 0
 .	.	. OneShotPorts_work_main_architecture_main_1layer1, 4, 4, 0, 0, 0, 0, 0, 0, 0
-.	.	. PPSCountPorts_work_main_architecture_main_0layer1, 67, 6, 64, 0, 0, 0, 0, 0, 0
-.	.	. RegisterSpacePorts_10, 339, 602, 172, 0, 0, 0, 0, 1, 0
+.	.	. PPSCountPorts_work_main_architecture_main_0layer1, 67, 8, 64, 0, 0, 0, 0, 0, 0
+.	.	. RegisterSpacePorts_10, 339, 601, 172, 0, 0, 0, 0, 1, 0
 .	.	. SpiDacPorts_work_main_architecture_main_0layer1, 73, 58, 19, 0, 0, 0, 0, 1, 0
 .	.	.	. SpiMasterPorts_work_main_architecture_main_0layer1, 53, 53, 19, 0, 0, 0, 0, 0, 0
 .	.	. SpiDacQuadPorts_102000000_2, 284, 74, 40, 0, 0, 0, 0, 1, 0
@@ -157,7 +157,7 @@
 .	.	.	. UartTx_0, 7, 14, 5, 0, 0, 0, 0, 0, 0
 .	.	.	. gated_fifo_8_10_1_0, 58, 37, 32, 0, 0, 1, 0, 0, 0
 .	.	.	.	. fifo_8_10_1_0, 53, 34, 32, 0, 0, 1, 0, 0, 0
-.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_0, 9, 3, 32, 0, 0, 0, 0, 1, 0
-.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_1, 9, 3, 32, 0, 0, 0, 0, 1, 0
-.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_2, 9, 3, 32, 0, 0, 0, 0, 1, 0
-.	.	. VariableClockDividerPorts_work_main_architecture_main_0layer1_3, 9, 3, 32, 0, 0, 0, 0, 1, 0
+.	.	. VariableClockDivider2XPorts_work_main_architecture_main_0layer1_0, 9, 3, 32, 0, 0, 0, 0, 1, 0
+.	.	. VariableClockDivider2XPorts_work_main_architecture_main_0layer1_1, 9, 3, 32, 0, 0, 0, 0, 1, 0
+.	.	. VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2, 9, 3, 32, 0, 0, 0, 0, 1, 0
+.	.	. VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3, 9, 3, 32, 0, 0, 0, 0, 1, 0

@@ -34,6 +34,8 @@ extern CGraphFWHardwareInterface* volatile FW;
 
 #include "uart/uart_pinout_fpga.hpp"
 
+#include "arm/smartfusion/CortexMFaults.hpp"
+
 struct FPGABinaryUartCallbacks : public BinaryUartCallbacks
 {
 	FPGABinaryUartCallbacks() { }
@@ -116,6 +118,10 @@ extern CGraphFWMonitorAdc MonitorAdc;
 //~ }
 //~ } mtracer;
 
+//Boilerplate to keep the compiler happy...
+void operator delete(void*) { }
+void operator delete(void*, unsigned int) { }
+
 extern "C"
 {	
 	unsigned long long fclk_for_delay_loops = 102000000;
@@ -141,6 +147,10 @@ extern "C"
     {
         putchar(c);
     }
+	
+	void __cxa_pure_virtual() { formatf("\n\n!!__cxa_pure_virtual()!!\n"); }
+	
+	FILE *const stdout = (FILE *const)0;
 };
 
 bool Process()
@@ -215,6 +225,12 @@ int main(int argc, char *argv[])
     FPGAUartPinoutUsb.putcqq('F');
     FPGAUartPinoutUsb.putcqq('W');
 	FPGAUartPinoutUsb.putcqq('\n');
+	
+	ConfigurationAndControlRegister ccr = *CCR;
+	ccr.formatf();
+	ccr.UnAlignedTrap = 0;
+	ccr.formatf();
+	*CCR = ccr;
 
 	//~ formatf("\n\nESC-FW: v%s.b%s; Offset of ControlRegister: 0x%.2lX, expected: 0x%.2lX.", GITVERSION, BUILDNUM, (unsigned long)offsetof(CGraphFWHardwareInterface, ControlRegister), 32UL);
 	

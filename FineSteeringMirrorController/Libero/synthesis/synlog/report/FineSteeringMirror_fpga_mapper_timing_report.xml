@@ -21,25 +21,25 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data>NA</data>
 </row>
 <row>
-<data>ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock</data>
+<data>ClockDivider2XPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>246.6 MHz</data>
 <data>5.945</data>
 </row>
 <row>
-<data>ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock</data>
+<data>ClockDivider2XPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>246.6 MHz</data>
 <data>5.945</data>
 </row>
 <row>
-<data>ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock</data>
+<data>ClockDivider2XPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>246.6 MHz</data>
 <data>5.945</data>
 </row>
 <row>
-<data>ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock</data>
+<data>ClockDivider2XPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>246.6 MHz</data>
 <data>5.945</data>
@@ -57,25 +57,25 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data>1.444</data>
 </row>
 <row>
-<data>VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock</data>
+<data>VariableClockDivider2XPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>183.2 MHz</data>
 <data>4.541</data>
 </row>
 <row>
-<data>VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock</data>
+<data>VariableClockDivider2XPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>183.2 MHz</data>
 <data>4.541</data>
 </row>
 <row>
-<data>VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock</data>
+<data>VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>183.2 MHz</data>
 <data>4.541</data>
 </row>
 <row>
-<data>VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock</data>
+<data>VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
 <data>183.2 MHz</data>
 <data>4.541</data>

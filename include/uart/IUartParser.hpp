@@ -34,7 +34,7 @@
 class IUartParser
 {
 public:
-	IUartParser(struct IUart& pinout) : Pinout(pinout) { }
+	IUartParser(class IUart& pinout) : Pinout(pinout) { }
 	virtual ~IUartParser() { }
 	
 	IUart& Pinout;

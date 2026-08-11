@@ -223,8 +223,10 @@ CFLAGS += -Wcast-qual
 #$(HOME) CONLYFLAGS += -Wmissing-declarations
 endif
 CFLAGS += -fno-use-cxa-atexit 
-#~ CFLAGS += -mno-unaligned-access
-CFLAGS += -munaligned-access
+
+#Basically either one of these you can still crash the piece of shit Cortex-Mxyz's....
+CFLAGS += -mno-unaligned-access
+#~ CFLAGS += -munaligned-access
 
 # flags only for C++ (arm-elf-g++)
 CPPFLAGS += -fno-rtti -fno-exceptions $(CPPSTANDARD)

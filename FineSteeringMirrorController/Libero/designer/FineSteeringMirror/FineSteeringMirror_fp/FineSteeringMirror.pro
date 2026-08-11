@@ -17,7 +17,7 @@
     <ProgrammingInterface>
         JTAGMode
     </ProgrammingInterface>
-    <programmer status="enable" type="FlashPro6" revision="UndefRev" connection="UndefConn">
+    <programmer status="enable" type="FlashPro6" revision="UndefRev" connection="usb1.1">
         <name>
             16B058E
         </name>

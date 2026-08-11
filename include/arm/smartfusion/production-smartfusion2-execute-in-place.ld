@@ -33,7 +33,7 @@
  * SVN $Date: 2015-06-08 20:28:07 +0530 (Mon, 08 Jun 2015) $
  */
 OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
-GROUP(-lc -lgcc -lm)
+/*GROUP(-lc -lm)*/
 OUTPUT_ARCH(arm)
 ENTRY(Reset_Handler)
 SEARCH_DIR(.)
@@ -75,6 +75,8 @@ PROVIDE (__main_stack_start = RAM_START_ADDRESS + RAM_SIZE);
 PROVIDE (__process_stack_start = __main_stack_start - MAIN_STACK_SIZE);
 PROVIDE (_estack = __main_stack_start);
 PROVIDE (__mirrored_nvm = 0);   /* Indicate to startup code that NVM is not mirrored to VMA address .text copy is required. */
+PROVIDE(__tls_base = 0);
+PROVIDE(__arm32_tls_tcb_offset = 0);
 
 /*
  * Remap instruction for startup code and debugger:
@@ -92,6 +94,7 @@ SECTIONS
     __vector_table_start = .;
     __vector_table_vma_base_address = .;
     KEEP(*(.isr_vector))
+	KEEP(*(.vector_table))
     . = ALIGN(0x10);
     _evector_table = .;
   } >rom
@@ -162,6 +165,7 @@ SECTIONS
     __data_load = LOADADDR(.data);
     _sidata = LOADADDR (.data);
     __data_start = .;
+	__data_source = .;
     _sdata = .;
     KEEP(*(.jcr))
     *(.got.plt) *(.got)
@@ -169,17 +173,20 @@ SECTIONS
     *(.data .data.* .gnu.linkonce.d.*)
     . = ALIGN(0x10);
     _edata = .;
+	__data_size = . - __data_source;
   } >ram AT>rom
 
   .bss : ALIGN(0x10)
   {
-    __bss_start__ = . ;
+    __bss_start__ = .;
+	__bss_start = .;
     _sbss = .;
     *(.shbss)
     *(.bss .bss.* .gnu.linkonce.b.*)
     *(COMMON)
     . = ALIGN(0x10);
     __bss_end__ = .;
+	__bss_size = . - __bss_start;
     _end = .;
     __end = _end;
     _ebss = .;
@@ -197,6 +204,7 @@ SECTIONS
   .stack : ALIGN(0x10)
   {
     __stack_start__ = .;
+	__stack = .;
     . += MAIN_STACK_SIZE;
     _estack = .;
   } >ram

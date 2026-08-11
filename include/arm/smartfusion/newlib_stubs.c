@@ -177,7 +177,8 @@ int _read(int file, char *ptr, int len)
  * example to a serial port for debugging, you should make your minimal write
  * capable of doing this.
  */
-int _write_r( void * reent, int file, char * ptr, int len )
+//~ int _write_r( void * reent, int file, char * ptr, int len )
+int _write( void * reent, int file, char * ptr, int len )
 {
 #ifdef MICROSEMI_STDIO_THRU_UART
     /*--------------------------------------------------------------------------
@@ -212,7 +213,7 @@ int _write_r( void * reent, int file, char * ptr, int len )
  */
 extern char _end;       /* Defined by the linker */
 extern char _eheap;     /* Defined by the linker */
-caddr_t _sbrk(int incr)
+void* _sbrk(int incr)
 {
     static char *heap_end;
     char *prev_heap_end;
@@ -235,7 +236,8 @@ caddr_t _sbrk(int incr)
          */
         if (heap_end + incr > stack_ptr)
         {
-          _write_r ((void *)0, 1, "Heap and stack collision\n", 25);
+          //~ _write_r ((void *)0, 1, "Heap and stack collision\n", 25);
+		  _write ((void *)0, 1, "Heap and stack collision\n", 25);
           _exit (1);
         }
     }
@@ -257,13 +259,14 @@ caddr_t _sbrk(int incr)
         top_of_heap = &_eheap;
         if(heap_end + incr  > top_of_heap)
         {
-          _write_r ((void *)0, 1, "Out of heap memory\n", 25);
+          //~ _write_r ((void *)0, 1, "Out of heap memory\n", 25);
+		  _write ((void *)0, 1, "Out of heap memory\n", 25);
           _exit (1);
         }
     }
   
     heap_end += incr;
-    return (caddr_t) prev_heap_end;
+    return (void*) prev_heap_end;
 }
 
 /*==============================================================================

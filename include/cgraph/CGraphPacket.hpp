@@ -47,7 +47,7 @@ struct CGraphPacketHeader
         ::printf("CGraphPacketHeader: StartToken: 0x%lX, PayloadType: %lu, PayloadLen: %lu", (long)PacketStartToken, (unsigned long)PayloadType, (unsigned long)PayloadLen);
     }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 static const uint32_t CGraphMagikPacketEndToken = 0x0A0FADEDUL; //\n(0a) goes in high-byte to terminate serial stream in le arch
 
@@ -60,7 +60,7 @@ struct CGraphPacketFooter
 
     //~ void formatf() const { ::formatf("CGraphPacketFooter: CRC: 0x%.8lX; PacketEndToken(0x%.8lX): 0x%.8lX", CRC32BZIP2, CGraphMagikPacketEndToken, PacketEndToken); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 
 class CGraphPacket: public IPacket
@@ -659,7 +659,7 @@ struct CGraphDMMappingPayload
 		uint8_t DacChannel; // 0 ... DMActuatorsPerDac - 1
 		uint8_t reserved; 
 		
-	} __attribute__((__packed__));
+	} __attribute__((packed, aligned(4)));
 	
     CGraphDMMappingPayload() : ControllerBoardIndex(0), DacIndex(0), DacChannel(0) { }
     CGraphDMMappingPayload(unsigned long bi, unsigned long di, unsigned long dc) : ControllerBoardIndex(bi), DacIndex(di), DacChannel(dc) { }
@@ -668,7 +668,7 @@ struct CGraphDMMappingPayload
     {
         ::printf("CGraphDMMappingPayload: ControllerBoardIndex: %lu, DacIndex: %lu, DacChannel: %lu", (unsigned long)ControllerBoardIndex, (unsigned long)DacIndex, (unsigned long)DacChannel);
     }
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 //May send multiple copies per packet; array of 1...N of the following:
 struct CGraphDMMappings

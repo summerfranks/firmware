@@ -92,7 +92,7 @@ template<uint16_t txbufferlenbytes, uint16_t rxbufferlenbytes> struct TerminalUa
 	uint16_t StrlenPrefix;
 	bool Verbose;
 	
-	TerminalUart(struct IUart& pinout, const Cmd* cmds, const size_t numcmds, const char* (*terminaluartprompt)() = 0, struct RTSCallback& rts = NoRTS, const char* prefix = NoPrefix, const uint16_t strlenprefix = 0, const bool verbose = true)
+	TerminalUart(class IUart& pinout, const Cmd* cmds, const size_t numcmds, const char* (*terminaluartprompt)() = 0, struct RTSCallback& rts = NoRTS, const char* prefix = NoPrefix, const uint16_t strlenprefix = 0, const bool verbose = true)
 		:
 			IUartParser(pinout),
 		    TxBuffer(),

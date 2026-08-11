@@ -57,7 +57,7 @@ union CGraphFSMHardwareControlRegister
 		uint32_t ChopRefState : 1; //b30;
 		uint32_t ChopAdcState : 1; //b31;
         
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphFSMHardwareControlRegister() { all = 0; }
 
@@ -131,7 +131,7 @@ union CGraphFSMHardwareControlRegister
 	ChopAdcState);
 	}
 
-}// __attribute__((__packed__));
+}// __attribute__((packed, aligned(4)));
 __attribute__((packed, aligned(4)));
 
 struct CGraphFSMHardwareInterface
@@ -221,7 +221,7 @@ struct CGraphFSMHardwareInterface
 	//While we're struggling with gcc trying to read 32b values as 3 unaligned bytes (and one aligned one) and crash the processor, this is our workaround:
 	void InititateLatchAdcs();
 
-}// __attribute__((__packed__)) __attribute__((__unaligned__));
+}// __attribute__((packed, aligned(4))) __attribute__((__unaligned__));
 __attribute__((packed, aligned(4)));
 
 extern CGraphFSMHardwareInterface* volatile FSM;

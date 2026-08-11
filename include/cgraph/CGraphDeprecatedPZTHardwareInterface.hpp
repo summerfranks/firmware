@@ -30,13 +30,13 @@ union CGraphPZTHardwareControlRegister
         uint16_t ChopperNonInverted : 1; //b6; Chopper polarity
         uint16_t AdcDownsampleRatio; //b16-31;  65535 = 16Hz; 1 = 1.04MHz
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphPZTHardwareControlRegister() { all = 0; }
 
     //~ void formatf() const { ::formatf("CGraphPZTHardwareControlRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphPZTHardwareStatusRegister
 {
@@ -48,13 +48,13 @@ union CGraphPZTHardwareStatusRegister
         uint32_t HVFaultB : 1; //b2; Overtemperature or overcurrent on second high voltage output driver
         uint32_t HVFaultC : 1; //b3; Overtemperature or overcurrent on third high voltage output driver
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphPZTHardwareStatusRegister() { all = 0; }
 
     //~ void formatf() const { ::formatf("CGraphPZTHardwareStatusRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (uint32_t)(all >> 32));  ::formatf("%.8lX)", (uint32_t)(all)); ::formatf(", NumAccums: %lu ", (uint32_t)NumAccums); ::formatf("(0x%lX)", (uint32_t)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 union CGraphPZTUartStatusRegister
 {
@@ -72,14 +72,14 @@ union CGraphPZTUartStatusRegister
 		uint32_t Uart2TxFifoCountHi : 2;
 		uint32_t reserved2 : 4;
 
-    } __attribute__((__packed__));
+    } __attribute__((packed, aligned(4)));
 
     CGraphPZTUartStatusRegister() { all = 0; }
 
     //~ void formatf() const { ::formatf("CGraphPZTUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", Uart2RxFifoEmpty?'Y':'N', Uart2RxFifoFull?'Y':'N', Uart2TxFifoEmpty?'Y':'N', Uart2TxFifoFull?'Y':'N', Uart2RxFifoCount + (Uart2RxFifoCountHi << 8), Uart2TxFifoCount + (Uart2TxFifoCountHi << 8)); }
 	void formatf() const { ::formatf("CGraphPZTUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", Uart2RxFifoEmpty?'Y':'N', Uart2RxFifoFull?'Y':'N', Uart2TxFifoEmpty?'Y':'N', Uart2TxFifoFull?'Y':'N', Uart2RxFifoCount, Uart2TxFifoCount); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 struct CGraphPZTHardwareInterface
 {
@@ -126,7 +126,7 @@ struct CGraphPZTHardwareInterface
 
     //~ void formatf() const { ::formatf("CGraphPZTHardwareInterface: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (uint32_t)(all >> 32));  ::formatf("%.8lX)", (uint32_t)(all)); ::formatf(", NumAccums: %lu ", (uint32_t)NumAccums); ::formatf("(0x%lX)", (uint32_t)NumAccums); }
 
-} __attribute__((__packed__));
+} __attribute__((packed, aligned(4)));
 
 class CGraphPZTProtoHardwareMmapper
 {

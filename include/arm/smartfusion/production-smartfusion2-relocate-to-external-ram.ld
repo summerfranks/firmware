@@ -33,7 +33,7 @@
  * SVN $Date: 2015-05-15 21:20:21 +0530 (Fri, 15 May 2015) $
  */
 OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
-GROUP(-lc -lgcc -lm)
+GROUP(-lc -lm)
 OUTPUT_ARCH(arm)
 ENTRY(Reset_Handler)
 SEARCH_DIR(.)

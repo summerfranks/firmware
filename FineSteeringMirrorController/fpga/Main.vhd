@@ -193,7 +193,7 @@ architecture architecture_Main of Main is
 						);
 						end component;
 	
-						component ClockDividerPorts is
+						component ClockDivider2XPorts is
 						generic (
 							CLOCK_DIVIDER : natural := 10;
 							DIVOUT_RST_STATE : std_logic := '0'--;
@@ -206,7 +206,7 @@ architecture architecture_Main of Main is
 						);
 						end component;
 						
-						component VariableClockDividerPorts is
+						component VariableClockDivider2XPorts is
 						generic (
 							WIDTH_BITS : natural := 8;
 							DIVOUT_RST_STATE : std_logic := '0'--;
@@ -1893,7 +1893,7 @@ begin
 		--~ RxData => Uart1Data
 	--~ );
 	
-	--~ Uart1TxClockDivider : ClockDividerPorts generic map(CLOCK_DIVIDER => 16, DIVOUT_RST_STATE => '0') port map(clk => Uart1Clkx16, rst => MasterReset, div => Uart1Clk);
+	--~ Uart1TxClockDivider2X : ClockDivider2XPorts generic map(CLOCK_DIVIDER => 16, DIVOUT_RST_STATE => '0') port map(clk => Uart1Clkx16, rst => MasterReset, div => Uart1Clk);
 	
 	--~ RS422_Tx1 : UartTx
 	--~ port map
@@ -1910,7 +1910,7 @@ begin
 
 	--Thirdly, the very NOT boring fifos (software)
 	
-	Uart0BitClockDiv : VariableClockDividerPorts
+	Uart0BitClockDiv : VariableClockDivider2XPorts
 	generic map
 	(
 		WIDTH_BITS => 8,
@@ -1925,7 +1925,7 @@ begin
 		terminal_count => Uart0ClkDivider,
 		clko => UartClk0
 	);
-	Uart0TxBitClockDiv : ClockDividerPorts
+	Uart0TxBitClockDiv : ClockDivider2XPorts
 	generic map
 	(
 		CLOCK_DIVIDER => 16,
@@ -2013,7 +2013,7 @@ begin
 	--Mux master reset (boot) and user reset (datamapper)
 	Uart0FifoReset_i <= MasterReset or Uart0FifoReset;
 	
-	Uart1BitClockDiv : VariableClockDividerPorts
+	Uart1BitClockDiv : VariableClockDivider2XPorts
 	generic map
 	(
 		WIDTH_BITS => 8,
@@ -2028,7 +2028,7 @@ begin
 		terminal_count => Uart1ClkDivider,
 		clko => UartClk1
 	);
-	Uart1TxBitClockDiv : ClockDividerPorts
+	Uart1TxBitClockDiv : ClockDivider2XPorts
 	generic map
 	(
 		CLOCK_DIVIDER => 16,
@@ -2110,7 +2110,7 @@ begin
 	--Mux master reset (boot) and user reset (datamapper)
 	Uart1FifoReset_i <= MasterReset or Uart1FifoReset;
 	
-	Uart2BitClockDiv : VariableClockDividerPorts
+	Uart2BitClockDiv : VariableClockDivider2XPorts
 	generic map
 	(
 		WIDTH_BITS => 8,
@@ -2125,7 +2125,7 @@ begin
 		terminal_count => Uart2ClkDivider,
 		clko => UartClk2
 	);
-	Uart2TxBitClockDiv : ClockDividerPorts
+	Uart2TxBitClockDiv : ClockDivider2XPorts
 	generic map
 	(
 		CLOCK_DIVIDER => 16,
@@ -2222,7 +2222,7 @@ begin
 	
 	
 	
-	Uart3BitClockDiv : VariableClockDividerPorts
+	Uart3BitClockDiv : VariableClockDivider2XPorts
 	generic map
 	(
 		WIDTH_BITS => 8,
@@ -2237,7 +2237,7 @@ begin
 		terminal_count => Uart3ClkDivider,
 		clko => UartClk3
 	);
-	Uart3TxBitClockDiv : ClockDividerPorts
+	Uart3TxBitClockDiv : ClockDivider2XPorts
 	generic map
 	(
 		CLOCK_DIVIDER => 16,
@@ -2469,7 +2469,7 @@ begin
 	----------------------------- Power Supplies ----------------------------------
 		
 	PowerSync <= '1';
-	--~ PowerSyncClockDivider : ClockDividerPorts generic map(CLOCK_DIVIDER => 96, DIVOUT_RST_STATE => '0') port map(clk => MasterClk, rst => MasterReset, div => PowerSync);
+	--~ PowerSyncClockDivider2X : ClockDivider2XPorts generic map(CLOCK_DIVIDER => 96, DIVOUT_RST_STATE => '0') port map(clk => MasterClk, rst => MasterReset, div => PowerSync);
 	
 	----------------------------- DEBUG IDEAS ----------------------------------
 	

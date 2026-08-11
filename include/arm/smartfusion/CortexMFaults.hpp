@@ -289,6 +289,39 @@
 	} __attribute__((__packed__));
 	
 	static const uint32_t ApplicationInterruptResetControlRegisterVectKey = 0x000005FAUL;
+	
+	union ConfigurationAndControlRegister
+	{
+		// "CCR": 0xE000ED14: 
+		// default: 0x00000200
+		// https://support.arm.com/documentation/dui0552/a/cortex-m3-peripherals/system-control-block/configuration-and-control-register?lang=en
+		// The CCR controls entry to Thread mode and enables:
+		// the handlers for NMI, hard fault and faults escalated by FAULTMASK to ignore BusFaults
+		// trapping of divide by zero and unaligned accesses
+		// access to the STIR by unprivileged software, see Software Trigger Interrupt Register.
+
+		uint32_t all;
+		
+		struct
+		{
+			uint32_t NonBaseThreadEnA : 1; // [0] Indicates how the processor enters Thread mode: 0 = processor can enter Thread mode only when no exception is active; 1 = processor can enter Thread mode from any level under the control of an EXC_RETURN value, see Exception return.
+			uint32_t UserSetMPend : 1; // [1] Enables unprivileged software access to the STIR, see Software Trigger Interrupt Register: 0 = disable1 = enable.
+			uint32_t reserved1 : 1; // [2]
+			uint32_t UnAlignedTrap : 1; // [3] Enables unaligned access traps: 0 = do not trap unaligned halfword and word accesses1 = trap unaligned halfword and word accesses; If this bit is set to 1, an unaligned access generates a UsageFault.; Unaligned LDM, STM, LDRD, and STRD instructions always fault irrespective of whether UNALIGN_TRP is set to 1.
+			uint32_t DivZeroTrap : 1; // [4] Enables faulting or halting when the processor executes an SDIV or UDIV instruction with a divisor of 0: 0 = do not trap divide by 0; 1 = trap divide by 0; When this bit is set to 0, a divide by zero returns a quotient of 0.
+			uint32_t reserved2 : 3; // [5:7]
+			uint32_t BusFaultHandleNMIGn : 1; // [8] Enables handlers with priority -1 or -2 to ignore data BusFaults caused by load and store instructions. This applies to the hard fault, NMI, and FAULTMASK escalated handlers: 0 = data bus faults caused by load and store instructions cause a lock-up; 1 = handlers running at priority -1 and -2 ignore data bus faults caused by load and store instructions.; Set this bit to 1 only when the handler and its data are in absolutely safe memory. The normal use of this bit is to probe system devices and bridges to detect control path problems and fix them.
+			uint32_t StackAlign : 1; // [9] Indicates stack alignment on exception entry: 0 = 4-byte aligned1 = 8-byte aligned; On exception entry, the processor uses bit[9] of the stacked PSR to indicate the stack alignment. On return from the exception it uses this stacked bit to restore the correct stack alignment.
+			//bits 10:31 reserved...
+			
+		} __attribute__((__packed__));
+		
+		ConfigurationAndControlRegister() : all(0)
+		{ }
+		
+		void formatf() const { ::formatf("ConfigurationAndControlRegister: all=0x%.8lX", (unsigned long)all); }
+			
+	} __attribute__((__packed__));
 
 	struct ContextStateFrame
 	{
@@ -319,5 +352,6 @@
 	//r/w:
 	static AuxillaryControlRegister* ACTLR __attribute__((__used__)) = reinterpret_cast<AuxillaryControlRegister*>(0xE000E008);
 	static ApplicationInterruptResetControlRegister* AIRCR __attribute__((__used__)) = reinterpret_cast<ApplicationInterruptResetControlRegister*>(0xE000ED0C);
+	static ConfigurationAndControlRegister* CCR __attribute__((__used__)) = reinterpret_cast<ConfigurationAndControlRegister*>(0xE000ED14);
 	
 //~ };
