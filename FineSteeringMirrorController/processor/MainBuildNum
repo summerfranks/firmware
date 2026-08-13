@@ -4,8 +4,8 @@
 //
 
 #pragma once
-static const unsigned int BuildNum = 215;
-static const time_t BuildTimeT = 1786133629;
-static const char BuildTimeStr[] = "Fri Aug  7 20:13:49 2026";
+static const unsigned int BuildNum = 225;
+static const time_t BuildTimeT = 1786650773;
+static const char BuildTimeStr[] = "Thu Aug 13 19:52:53 2026";
 
 //EOF

@@ -13,11 +13,11 @@
 
 #include "format/formatf.h"
 
-//~ union AdcAccumulator 		
-//~ {
-    //~ uint64_t all;
-    //~ struct 
-	struct AdcAccumulator
+union AdcAccumulator 		
+{
+    uint64_t all;
+    struct 
+	//~ struct AdcAccumulator
     {
         //~ int64_t Samples : 48;
 		//~ int64_t Samples : 32;
@@ -30,11 +30,12 @@
 		int64_t NumAccums : 16;
 		
 
-    //~ } __attribute__((packed, aligned(4)));
+    } __attribute__((packed, aligned(4)));
 
     //static const int32_t AdcFullScale = 0x7FFFFFFFL; //2^32 - 1; must divide accumulator by numaccums first obviously
 
     AdcAccumulator() { Samples = 0; reserved = 0; NumAccums = 0; }
+	AdcAccumulator(const uint64_t& a) { all = a; }
 	
 	void SetHiWord(const uint32_t& hi) { reserved = hi & 0xFFFFU; NumAccums = hi >> 16; }
 
@@ -53,7 +54,8 @@ union AdcTimestamp
 
     } __attribute__((packed, aligned(4)));
 
-    //~ AdcTimestamp() { all = 0; }
+    AdcTimestamp() { all = 0; }
+	AdcTimestamp(const uint32_t& a) { all = a; }
 
     //~ void formatf() const { ::formatf("AdcTimestamp: SubsecondTicks: %+10.0lf ", (double)SubsecondTicks); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
@@ -65,7 +67,8 @@ union AdcFifo
     struct 
     {
         int32_t Sample;
-        AdcTimestamp Timestamp;
+        //~ AdcTimestamp Timestamp;
+        uint32_t Timestamp;
         //~ uint16_t NumSamplesInFifo; //this makes it 10 bytes instead of 8...which for some reason makes acessing uartstatusregister segfault
 
     } __attribute__((packed, aligned(4)));
@@ -74,6 +77,7 @@ union AdcFifo
     //~ static const uint16_t FifoMaxDepth = 0x0FFFUL; //The FPGA doesn't actually have very much ram for fifos.
 
     AdcFifo() { all = 0; }
+	AdcFifo(const uint64_t& a) { all = a; }
 
     //~ void formatf() const { ::formatf("AdcFifo: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
@@ -90,6 +94,7 @@ union AdcConfigRegister
     } __attribute__((packed, aligned(4)));
 
     AdcConfigRegister() { all = 0; }
+	AdcConfigRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("AdcConfigRegister: AdcClkDivider: %u (0x%4X), AdcSamplesToAverage %u (0x%4X)", AdcClkDivider, AdcClkDivider, AdcSamplesToAverage, AdcSamplesToAverage); }
 
@@ -106,6 +111,7 @@ union AccumulatorConfigRegister
     } __attribute__((packed, aligned(4)));
 
     AccumulatorConfigRegister() { all = 0; }
+	AccumulatorConfigRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("AccumulatorConfigRegister: ControlAdcMaxAccums: %u (0x%4X), MonitorAdcMaxAccums %u (0x%4X)", ControlAdcMaxAccums, ControlAdcMaxAccums, MonitorAdcMaxAccums, MonitorAdcMaxAccums); }
 
@@ -122,6 +128,7 @@ union DacConfigRegister
     } __attribute__((packed, aligned(4)));
 
     DacConfigRegister() { all = 0; }
+	DacConfigRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("DacConfigRegister: DitherClkDivider: %u (0x%4X), reserved %u (0x%4X)", DitherClkDivider, DitherClkDivider, reserved, reserved); }
 
@@ -140,7 +147,8 @@ union CGraphBaudDividers
     } __attribute__((packed, aligned(4)));
 
     CGraphBaudDividers() { all = 0; }
-	
+	CGraphBaudDividers(const uint32_t& a) { all = a; }
+
 	void formatf() const 
 	{ 
 		::formatf("CGraphBaudDividers: All: %.4X ", all); 
@@ -164,6 +172,7 @@ union CGraphMonitorAdcCommandStatusRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphMonitorAdcCommandStatusRegister() { all = 0; }
+	CGraphMonitorAdcCommandStatusRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("CGraphMonitorAdcCommandStatusRegister: FrameEnable:%c, TransactionComplete:%c, nDrdy:%c", FrameEnable?'1':'0', TransactionComplete?'1':'0', nDrdy?'1':'0'); }
 
@@ -182,6 +191,7 @@ union CGraphDualMonitorAdcCommandStatusRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphDualMonitorAdcCommandStatusRegister() { all = 0; }
+	CGraphDualMonitorAdcCommandStatusRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("CGraphDualMonitorAdcCommandStatusRegister: FrameEnable:%c, TransactionComplete:%c, nDrdy0:%c, nDrdy1:%c", FrameEnable?'1':'0', TransactionComplete?'1':'0', nDrdy0?'1':'0', nDrdy1?'1':'0'); }
 
@@ -201,6 +211,7 @@ union CGraphCrcCurrentAddr
     CGraphCrcCurrentAddr(volatile CGraphCrcCurrentAddr& c) { all = c.all; }
 	CGraphCrcCurrentAddr& operator=(const CGraphCrcCurrentAddr& c)  { all = c.all; return(*this); }
 	//~ CGraphCrcCurrentAddr& operator=(volatile CGraphCrcCurrentAddr& c)  { all = c.all; return(*this); }
+	CGraphCrcCurrentAddr(const uint32_t& a) { all = a; }
 	
 	void formatf() const //note: using this function causes some major fuckery with the volatile qulifier in many places...
 	{ 

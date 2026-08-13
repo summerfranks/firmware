@@ -36,11 +36,11 @@ struct PinoutMonitorAdc
 	virtual ~PinoutMonitorAdc() { }
 	static uint8_t GetAdcReadChannel()								{ uint8_t val = *(((uint8_t*)FSM)+MonitorAdcFpgaAdcChannelAddr); return(val); }
 	static void SetAdcReadChannel(const uint8_t val) 					{ *(((uint8_t*)FSM)+MonitorAdcFpgaAdcChannelAddr) = (uint8_t)val; }
-	//~ old way to hopefully implement later: static void GetAdcSample(Ltc244xAccumulator& val) 				{ val = *((Ltc244xAccumulator*)(((uint8_t*)FSM)+MonitorAdcFpgaAdcSampleAddr)); }		
+	//~ old way to hopefully implement later: static void GetAdcSample(Ltc244xAccumulator& val) { val = *((Ltc244xAccumulator*)(((uint8_t*)FSM)+MonitorAdcFpgaAdcSampleAddr)); }		
 	
 	static const size_t spi_timeout = 100;
 	
-	static bool busy() { return(0 == (FSM->MonitorAdcSpiCommandStatusRegister.TransactionComplete) ); }
+	static bool busy() { return(0 == (CGraphDualMonitorAdcCommandStatusRegister(FSM->MonitorAdcSpiCommandStatusRegister).TransactionComplete) ); }
 	static void waitbusytimeout()
 	{
 		size_t i = 0;
@@ -53,7 +53,7 @@ struct PinoutMonitorAdc
 	}
 	
 	//~ static void enable(const bool en) { FSM->MonitorAdcSpiCommandStatusRegister.all = (uint32_t)en; }
-	static void enable(const bool en) { FSM->MonitorAdcSpiCommandStatusRegister.FrameEnable = en; } //If frame enable isn't in the zero offset byte this is gonna do a big ol memory protection fault, cause our compiler is stupid...
+	static void enable(const bool en) { CGraphDualMonitorAdcCommandStatusRegister fe; fe.FrameEnable = en; FSM->MonitorAdcSpiCommandStatusRegister = fe.all; } //If frame enable isn't in the zero offset byte this is gonna do a big ol memory protection fault, cause our compiler is stupid...
 	
 	static void transmit(const uint32_t val) 					
 	{ 
@@ -79,7 +79,7 @@ struct PinoutMonitorAdc
 	
 	static bool nDrdy() 				
 	{ 
-		return( (0 == (FSM->MonitorAdcSpiCommandStatusRegister.nDrdy0) ) || (0 == (FSM->MonitorAdcSpiCommandStatusRegister.nDrdy1) ) );
+		return( (0 == (CGraphDualMonitorAdcCommandStatusRegister(FSM->MonitorAdcSpiCommandStatusRegister).nDrdy0) ) || (0 == (CGraphDualMonitorAdcCommandStatusRegister(FSM->MonitorAdcSpiCommandStatusRegister).nDrdy1) ) );
 	}		
 	
 	static void setclkpolarity(const bool en) { } //handled by fpga

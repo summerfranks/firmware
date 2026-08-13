@@ -36,7 +36,8 @@ class uart_pinout_fpga : public IUart
 private:
 
 	bool monitor = false;
-	const UartStatusRegister* StatusRegister;
+	//~ const UartStatusRegister* StatusRegister;
+	const uint32_t* StatusRegister;
 	const uint32_t* ReadRequestRegister;
 	const uint32_t* ReadDataRegister;
 	uint32_t* WriteDataRegister;
@@ -44,7 +45,17 @@ private:
 	
 public:
 
-	uart_pinout_fpga(const UartStatusRegister* statusregister, const uint32_t* readrequestregister, const uint32_t* readdataregister, uint32_t* writedataregister, const char monitorprefacechar) : 
+	//~ uart_pinout_fpga(const UartStatusRegister* statusregister, const uint32_t* readrequestregister, const uint32_t* readdataregister, uint32_t* writedataregister, const char monitorprefacechar) : 
+		//~ IUart(),
+		//~ monitor(false),
+		//~ StatusRegister(statusregister),
+		//~ ReadRequestRegister(readrequestregister),
+		//~ ReadDataRegister(readdataregister),
+		//~ WriteDataRegister(writedataregister)//,
+		//~ //MonitorPrefaceChar(monitorprefacechar)
+	//~ { }
+
+	uart_pinout_fpga(const uint32_t* statusregister, const uint32_t* readrequestregister, const uint32_t* readdataregister, uint32_t* writedataregister, const char monitorprefacechar) : 
 		IUart(),
 		monitor(false),
 		StatusRegister(statusregister),
@@ -59,7 +70,8 @@ public:
 	virtual bool dataready() const override
 	{
 		if (NULL == StatusRegister) { return(false); }
-		return(0 == StatusRegister->RxFifoEmpty);
+		//~ return(0 == StatusRegister->RxFifoEmpty);
+		return(0 == UartStatusRegister(StatusRegister).RxFifoEmpty);
 	}
 
 	virtual char getcqq() override
@@ -98,7 +110,8 @@ public:
 	size_t depth() const
 	{
 		if (NULL == StatusRegister) { return(0); }
-		return(StatusRegister->RxFifoCount);
+		//~ return(StatusRegister->RxFifoCount);
+		return(UartStatusRegister(StatusRegister).RxFifoCount);
 	}
 
 	virtual void flushoutput() override { } // if (FW) { FW->UartTxStatusRegister = 0; } //Need to make tx & rx status registers seperate...

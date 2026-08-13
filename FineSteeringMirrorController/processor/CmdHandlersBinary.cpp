@@ -262,7 +262,7 @@ int8_t BinaryFSMHardwareConfigCommand(const uint32_t Name, char const* Params, c
 		printf("\nBinaryFSMHardwareConfigCommand Setting to:");
 		val->formatf();
 		printf(".\n\n");
-		FSM->ControlRegister = *val;
+		FSM->ControlRegister = (*val).all;
 	}
 	CGraphFSMHardwareControlRegister read = FSM->ControlRegister;
 	printf("\nBinaryFSMHardwareConfigCommand Replying:");
@@ -280,7 +280,7 @@ int8_t BinaryFSMAdcConfigCommand(const uint32_t Name, char const* Params, const 
 		printf("\nBinaryFSMAdcConfigCommand Setting to:");
 		val->formatf();
 		printf(".\n\n");
-		FSM->AdcConfig = *val;
+		FSM->AdcConfig = (*val).all;
 	}
 	AdcConfigRegister read = FSM->AdcConfig;
 	printf("\nBinaryFSMAdcConfigCommand Replying:");
@@ -298,7 +298,7 @@ int8_t BinaryFSMAccumConfigCommand(const uint32_t Name, char const* Params, cons
 		printf("\nBinaryFSMAccumConfigCommand Setting to:");
 		val->formatf();
 		printf(".\n\n");
-		FSM->AccumConfig = *val;
+		FSM->AccumConfig = (*val).all;
 	}
 	AccumulatorConfigRegister read = FSM->AccumConfig;
 	printf("\nBinaryFSMAccumConfigCommand Replying:");
@@ -316,7 +316,7 @@ int8_t BinaryFSMDacConfigCommand(const uint32_t Name, char const* Params, const 
 		printf("\nBinaryFSMDacConfigCommand Setting to:");
 		val->formatf();
 		printf(".\n\n");
-		FSM->DacConfig = *val;
+		FSM->DacConfig = (*val).all;
 	}
 	DacConfigRegister read = FSM->DacConfig;
 	printf("\nBinaryFSMDacConfigCommand Replying:");

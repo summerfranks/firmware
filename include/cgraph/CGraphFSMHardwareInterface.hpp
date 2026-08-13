@@ -60,6 +60,7 @@ union CGraphFSMHardwareControlRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphFSMHardwareControlRegister() { all = 0; }
+	CGraphFSMHardwareControlRegister(const uint32_t& a) { all = a; }
 
     void formatf() const 	
 	{ 
@@ -144,9 +145,12 @@ struct CGraphFSMHardwareInterface
 	uint32_t ClockTicksThisSecondAddr; //20; ro Running count of clock ticks since the start of the current second
     uint32_t ClockSteeringDacSetpoint; //24; rw; 
 	uint32_t reserved1; //28; PPSRtcPhaseCmpAddr
-	CGraphFSMHardwareControlRegister ControlRegister; //32; rw
-	AdcConfigRegister AdcConfig; //36
-	AccumulatorConfigRegister AccumConfig; //40; wo; Transfers AdcAccumulators to read registers so reads are atomic across channels & datawords
+	//~ CGraphFSMHardwareControlRegister ControlRegister; //32; rw
+	//~ AdcConfigRegister AdcConfig; //36
+	//~ AccumulatorConfigRegister AccumConfig; //40; wo; Transfers AdcAccumulators to read registers so reads are atomic across channels & datawords
+	uint32_t ControlRegister; //32; rw
+	uint32_t AdcConfig; //36
+	uint32_t AccumConfig; //40; wo; Transfers AdcAccumulators to read registers so reads are atomic across channels & datawords
     uint32_t DacASetpoint; //44; rw; First D/A; Zero = zero travel, DacFullScale = full scale travel
     uint32_t DacBSetpoint; //48; rw; Second D/A; Zero = zero travel, DacFullScale = full scale travel
     uint32_t DacCSetpoint; //52; rw; Third D/A; Zero = zero travel, DacFullScale = full scale travel
@@ -170,24 +174,30 @@ struct CGraphFSMHardwareInterface
 	int32_t MonitorAdcAccumulatorHiandNumAccums; //96; ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
 	uint32_t MonitorAdcReadChannel; //100; rw; which channel to read for MonitorA/D
 	uint32_t MonitorAdcSpiTransactionRegister; //104; rw
-	CGraphDualMonitorAdcCommandStatusRegister MonitorAdcSpiCommandStatusRegister; //108; 
+	//~ CGraphDualMonitorAdcCommandStatusRegister MonitorAdcSpiCommandStatusRegister; //108; 
+	uint32_t MonitorAdcSpiCommandStatusRegister; //108; 
 	
-	CGraphBaudDividers BaudDividers; //112; rw
+	//~ CGraphBaudDividers BaudDividers; //112; rw
+	uint32_t BaudDividers; //112; rw
 	
 	uint32_t UartFifo0; //116; rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister0; //120; ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister0; //120; ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister0; //120; ro; what state are the uart(s) in?
 	uint32_t UartFifo0ReadData; //124; ro
     
 	uint32_t UartFifo1; //128; rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister1; //132; ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister1; //132; ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister1; //120; ro; what state are the uart(s) in?
 	uint32_t UartFifo1ReadData; //136
     
 	uint32_t UartFifo2; //140; rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister2; //144; ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister2; //144; ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister2; //120; ro; what state are the uart(s) in?
 	uint32_t UartFifo2ReadData; //148
     
 	uint32_t UartFifo3; //152; rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister3; //156; ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister3; //156; ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister3; //120; ro; what state are the uart(s) in?
 	uint32_t UartFifo3ReadData; //160
     
 	//~ uint32_t UartFifoLab; //rw; send or read bytes from uart(s)
@@ -206,11 +216,13 @@ struct CGraphFSMHardwareInterface
 	uint32_t Uart0RxFifoPeekMultiPopAddr; //180
 	uint32_t Uart0CrcStartAddr; //184
 	uint32_t Uart0CrcEndAddr; //188
-	CGraphCrcCurrentAddr Uart0CrcCurrentAddr; //192
+	//~ CGraphCrcCurrentAddr Uart0CrcCurrentAddr; //192
+	uint32_t Uart0CrcCurrentAddr; //192
 	uint32_t Uart0Crc; //196
 	
 	uint32_t LatchAdcs; //200; wo; Transfers AdcAccumulators to read registers so reads are atomic across channels & datawords
-	DacConfigRegister DacConfig; //204; rw; configure D/A's
+	//~ DacConfigRegister DacConfig; //204; rw; configure D/A's
+	uint32_t DacConfig; //204; rw; configure D/A's
 
 	static const uint32_t DacFullScale; //2^20 - 1
     static const double DacDriverFullScaleOutputVoltage; //150 Volts, don't get your fingers near this thing!

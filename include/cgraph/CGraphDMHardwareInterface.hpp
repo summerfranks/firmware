@@ -29,6 +29,7 @@ union CGraphDMHardwareControlRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphDMHardwareControlRegister() { all = 0; }
+	CGraphDMHardwareControlRegister(const uint32_t& a) { all = a; }
 
     //~ void formatf() const { ::formatf("CGraphDMHardwareControlRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (unsigned long)(all >> 32));  ::formatf("%.8lX)", (unsigned long)(all)); ::formatf(", NumAccums: %lu ", (unsigned long)NumAccums); ::formatf("(0x%lX)", (unsigned long)NumAccums); }
 
@@ -53,6 +54,7 @@ union CGraphDMHardwareStatusRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphDMHardwareStatusRegister() { all = 0; }
+	CGraphDMHardwareStatusRegister(const uint32_t& a) { all = a; }
 
     //~ void formatf() const { ::formatf("CGraphDMHardwareStatusRegister: Sample: %+10.0lf ", (double)Sample); ::formatf("(0x%.8lX", (uint32_t)(all >> 32));  ::formatf("%.8lX)", (uint32_t)(all)); ::formatf(", NumAccums: %lu ", (uint32_t)NumAccums); ::formatf("(0x%lX)", (uint32_t)NumAccums); }
 
@@ -77,6 +79,7 @@ union CGraphDMHardwareStatusRegister
 //    } __attribute__((packed, aligned(4)));
 //
 //    CGraphDMUartStatusRegister() { all = 0; }
+//    CGraphDMUartStatusRegister(const uint32_t& a) { all = a; }
 //
 //    //~ void formatf() const { ::formatf("CGraphDMUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", UartRxFifoEmpty?'Y':'N', UartRxFifoFull?'Y':'N', UartTxFifoEmpty?'Y':'N', UartTxFifoFull?'Y':'N', UartRxFifoCount + (UartRxFifoCountHi << 8), UartTxFifoCount + (UartTxFifoCountHi << 8)); }
 //	void formatf() const { ::formatf("CGraphDMUartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", UartRxFifoEmpty?'Y':'N', UartRxFifoFull?'Y':'N', UartTxFifoEmpty?'Y':'N', UartTxFifoFull?'Y':'N', UartRxFifoCount, UartTxFifoCount); }
@@ -99,13 +102,19 @@ struct CGraphDMHardwareInterface
   uint32_t DacSetpointBdDAddr; // 44 either this way of setting Dac's or the flat model, below...
   uint32_t DacSetpointBdEAddr; // 48 either this way of setting Dac's or the flat model, below...
   uint32_t DacSetpointBdFAddr; // 52 either this way of setting Dac's or the flat model, below...
-  AdcAccumulator MonitorAdcAAccumulator; //ro; 56 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
-  AdcAccumulator MonitorAdcBAccumulator; //ro; 64 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
-  AdcAccumulator MonitorAdcCAccumulator; //ro; 72 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
-  AdcAccumulator MonitorAdcDAccumulator; //ro; 80 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  //~ AdcAccumulator MonitorAdcAAccumulator; //ro; 56 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  //~ AdcAccumulator MonitorAdcBAccumulator; //ro; 64 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  //~ AdcAccumulator MonitorAdcCAccumulator; //ro; 72 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  //~ AdcAccumulator MonitorAdcDAccumulator; //ro; 80 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  uint64_t MonitorAdcAAccumulator; //ro; 56 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  uint64_t MonitorAdcBAccumulator; //ro; 64 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  uint64_t MonitorAdcCAccumulator; //ro; 72 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+  uint64_t MonitorAdcDAccumulator; //ro; 80 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
 
-  CGraphDMHardwareControlRegister ControlRegister; //rw; 88 see definition above
-  CGraphDMHardwareStatusRegister StatusRegister;   //ro; 92 see definition above
+  //~ CGraphDMHardwareControlRegister ControlRegister; //rw; 88 see definition above
+  //~ CGraphDMHardwareStatusRegister StatusRegister;   //ro; 92 see definition above
+  uint32_t ControlRegister; //rw; 88 see definition above
+  uint32_t StatusRegister;   //ro; 92 see definition above
   //  int32_t PPSRtcPhaseComparator; //44 ro;
   //int32_t PPSAdcPhaseComparator; //48 ro;
   //AdcAccumulator MonitorAdc0Accumulator; //ro; 52 Monitor A/D samples for channel specififed in MonitorAdcReadChannel
@@ -124,18 +133,23 @@ struct CGraphDMHardwareInterface
   //uint32_t DMController4MonitorAdcReadChannel; //rw; which channel to read for MonitorA/D
   //AdcAccumulator DMController5MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
   //uint32_t DMController5MonitorAdcReadChannel; //rw; which channel to read for MonitorA/D
-  CGraphBaudDividers BaudDividers;  // ; 96 32 bits
+  //~ CGraphBaudDividers BaudDividers;  // ; 96 32 bits
+  uint32_t BaudDividers;  // ; 96 32 bits
   uint32_t UartFifo0; //rw; 100 send or read bytes from uart(s)
-  UartStatusRegister UartStatusRegister0; //ro; 104 what state are the uart(s) in?
+  //~ UartStatusRegister UartStatusRegister0; //ro; 104 what state are the uart(s) in?
+  uint32_t UartStatusRegister0; //ro; 104 what state are the uart(s) in?
   uint32_t UartFifo0ReadData; // 108
   uint32_t UartFifo1; //rw; 112 send or read bytes from uart(s)
-  UartStatusRegister UartStatusRegister1; //ro; 116 what state are the uart(s) in?
+  //~ UartStatusRegister UartStatusRegister1; //ro; 116 what state are the uart(s) in?
+  uint32_t UartStatusRegister1; //ro; 116 what state are the uart(s) in?
   uint32_t UartFifo1ReadData; // 120
   uint32_t UartFifo2; //rw; 124 send or read bytes from uart(s)
-  UartStatusRegister UartStatusRegister2; //ro; 128 what state are the uart(s) in?
+  //~ UartStatusRegister UartStatusRegister2; //ro; 128 what state are the uart(s) in?
+  uint32_t UartStatusRegister2; //ro; 128 what state are the uart(s) in?
   uint32_t UartFifo2ReadData; // 132
   uint32_t UartFifo3; //rw; 136 send or read bytes from uart(s)
-  UartStatusRegister UartStatusRegister3; //ro; 140 what state are the uart(s) in?
+  //~ UartStatusRegister UartStatusRegister3; //ro; 140 what state are the uart(s) in?
+  uint32_t UartStatusRegister3; //ro; 140 what state are the uart(s) in?
   uint32_t UartFifo3ReadData; // 144
 
   uint32_t StartMachine; // 148

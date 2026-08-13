@@ -28,6 +28,8 @@ union UartStatusRegister
     } __attribute__((__packed__));
 
     UartStatusRegister() { all = 0; }
+	UartStatusRegister(const uint32_t& a) { all = a; }
+	UartStatusRegister(const uint32_t* a) { all = *a; }
 
     //~ void formatf() const { ::formatf("UartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%u, TxC:%u", RxFifoEmpty?'Y':'N', RxFifoFull?'Y':'N', TxFifoEmpty?'Y':'N', TxFifoFull?'Y':'N', RxFifoCount + (RxFifoCountHi << 8), TxFifoCount + (TxFifoCountHi << 8)); }
 	void formatf() const { ::formatf("UartStatusRegister: RxE:%c, RxF:%c, TxE:%c, TxF:%c, RxC:%lu, TxC:%lu", RxFifoEmpty?'Y':'N', RxFifoFull?'Y':'N', TxFifoEmpty?'Y':'N', TxFifoFull?'Y':'N', RxFifoCount, TxFifoCount); }

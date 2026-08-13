@@ -738,6 +738,7 @@ int8_t UartCommand(char const* Name, char const* Params, const size_t ParamsLen,
 int8_t BaudDividersCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
 {
 	unsigned long A = 0, B = 0, C = 0, D = 0;
+	CGraphBaudDividers bd;
 	
 	if (NULL == FSM)
 	{
@@ -749,28 +750,31 @@ int8_t BaudDividersCommand(char const* Name, char const* Params, const size_t Pa
     int8_t numfound = sscanf(Params, "%lu,%lu,%lu,%lu", &A, &B, &C, &D);
     if (numfound >= 4)
     {
-		FSM->BaudDividers.Divider0 = A;
-		FSM->BaudDividers.Divider1 = B;
-		FSM->BaudDividers.Divider2 = C;
-		FSM->BaudDividers.Divider3 = D;
+		bd.Divider0 = A;
+		bd.Divider1 = B;
+		bd.Divider2 = C;
+		bd.Divider3 = D;
+		FSM->BaudDividers = bd.all;
 		formatf("\n\nBaudDividers: setting to: %lu, %lu, %lu, %lu.\n", A, B, C, D);
     }
 	else
 	{
 		if (numfound >= 1)
 		{
-			FSM->BaudDividers.Divider0 = A;
-			FSM->BaudDividers.Divider1 = A;
-			FSM->BaudDividers.Divider2 = A;
-			FSM->BaudDividers.Divider3 = A;
+			bd.Divider0 = A;
+			bd.Divider1 = A;
+			bd.Divider2 = A;
+			bd.Divider3 = A;
+			FSM->BaudDividers = bd.all;
 			formatf("\n\nBaudDividers: setting to: %lu, %lu, %lu, %lu.\n", A, A, A, A);
 		}
 	}
 	
-	A = FSM->BaudDividers.Divider0;
-	B = FSM->BaudDividers.Divider1;
-	C = FSM->BaudDividers.Divider2;
-	D = FSM->BaudDividers.Divider3;
+	bd = FSM->BaudDividers;
+	A = bd.Divider0;
+	B = bd.Divider1;
+	C = bd.Divider2;
+	D = bd.Divider3;
 	formatf("\n\nBaudDividers: current values: %lu, %lu, %lu, %lu.\n", A, B, C, D);
 	
 	//~ formatf("\nBaudDividers: (331 = 9600, 83 = 38400, 55 = 57600, 27 = 115200, 13 = 230400, 7 = 460800, 3 = 921600)\n");
@@ -818,7 +822,7 @@ int8_t ConfigAdcCommand(char const* Name, char const* Params, const size_t Param
 		formatf("\n\nConfigAdc: setting AdcConfig to: ");
 		cr.formatf();
 		formatf("\n");
-		FSM->AdcConfig = cr;
+		FSM->AdcConfig = cr.all;
     }
 	if (numfound >= 4)
     {
@@ -827,7 +831,7 @@ int8_t ConfigAdcCommand(char const* Name, char const* Params, const size_t Param
 		formatf("\n\nConfigAdc: setting AccumConfig to: ");
 		ar.formatf();
 		formatf("\n");
-		FSM->AccumConfig = ar;
+		FSM->AccumConfig = ar.all;
     }
 	
 	cr = FSM->AdcConfig;
@@ -944,7 +948,7 @@ int8_t ControlRegisterCommand(char const* Name, char const* Params, const size_t
 		cr.GlobalFaultInhibit = o16;
 		cr.nFaultsClr = o17;
 		
-		FSM->ControlRegister = cr;
+		FSM->ControlRegister = cr.all;
 	}		
 	
 	cr = FSM->ControlRegister;
@@ -978,7 +982,7 @@ int8_t SelectDacCommand(char const* Name, char const* Params, const size_t Param
 		
 		cr.DacSelectMaxti = OnOff;
 		
-		FSM->ControlRegister = cr;
+		FSM->ControlRegister = cr.all;
 		
 		formatf("\n\nSelectDac: %c ('%c').\n", OnOff?'1':'0', onoff);
 	}
@@ -1013,7 +1017,7 @@ int8_t SelectOutputCommand(char const* Name, char const* Params, const size_t Pa
 		if (OnOff) { cr.HVEn1 = 0; cr.HVEn2 = 1; }
 		else { cr.HVEn1 = 1; cr.HVEn2 = 0; }
 		
-		FSM->ControlRegister = cr;
+		FSM->ControlRegister = cr.all;
 		
 		formatf("\n\nSelectOutput: %c ('%c').\n", OnOff?'1':'0', onoff);
 	}
@@ -1067,7 +1071,7 @@ int8_t ConfigDacCommand(char const* Name, char const* Params, const size_t Param
 		formatf("\n\nConfigDacCommand: setting DacConfig to: ");
 		cr.formatf();
 		formatf("\n");
-		FSM->DacConfig = cr;
+		FSM->DacConfig = cr.all;
     }
 	
 	cr = FSM->DacConfig;

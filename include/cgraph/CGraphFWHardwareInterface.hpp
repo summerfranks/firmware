@@ -53,6 +53,7 @@ union CGraphFWHardwareControlRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphFWHardwareControlRegister() { all = 0; }
+	CGraphFWHardwareControlRegister(const uint32_t& a) { all = a; }
 
     void formatf() const 
 	{ 
@@ -96,6 +97,7 @@ union CGraphFWMotorControlStatusRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphFWMotorControlStatusRegister() { all = 0; }
+	CGraphFWMotorControlStatusRegister(const uint32_t& a) { all = a; }
 
     void formatf() const { ::formatf("CGraphFWMotorControlStatusRegister: All: %.8lX ", (unsigned long)all); ::formatf(", SeekStep: %+d ", SeekStep);  ::formatf(", CurrentStep: %+d ", CurrentStep); }
 
@@ -120,6 +122,7 @@ union CGraphFWPositionSenseRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphFWPositionSenseRegister() { all = 0; }
+	CGraphFWPositionSenseRegister(const uint32_t& a) { all = a; }
 
 	void formatf() const 
 	{ 
@@ -151,6 +154,7 @@ union CGraphFWPositionStepRegister
     } __attribute__((packed, aligned(4)));
 
     CGraphFWPositionStepRegister() { all = 0; }
+	CGraphFWPositionStepRegister(const uint64_t& a) { all = a; }
 	
 	int16_t MidStep() const { return(std::min(OnStep, OffStep) + (abs(OnStep - OffStep) / 2 )); }
 
@@ -176,68 +180,102 @@ struct CGraphFWHardwareInterface
     uint32_t ClockSteeringDacSetpoint; //rw; 
     int32_t PPSRtcPhaseComparator; //ro;
     
-	CGraphFWHardwareControlRegister ControlRegister; //rw; see definition above
-    CGraphFWMotorControlStatusRegister MotorControlStatus; //rw; motor settings
-	CGraphFWPositionSenseRegister PositionSensors; //ro; state of all the position sensor readouts
+	//~ CGraphFWHardwareControlRegister ControlRegister; //rw; see definition above
+    //~ CGraphFWMotorControlStatusRegister MotorControlStatus; //rw; motor settings
+	//~ CGraphFWPositionSenseRegister PositionSensors; //ro; state of all the position sensor readouts
+	uint32_t ControlRegister; //rw; see definition above
+    uint32_t MotorControlStatus; //rw; motor settings
+	uint32_t PositionSensors; //ro; state of all the position sensor readouts
     
-	AdcAccumulator MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+	//~ AdcAccumulator MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+	uint32_t MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
 	uint32_t MonitorAdcReadChannel; //rw; which channel to read for MonitorA/D
 	uint32_t MonitorAdcSpiTransactionRegister;
-	CGraphMonitorAdcCommandStatusRegister MonitorAdcSpiCommandStatusRegister;
+	//~ CGraphMonitorAdcCommandStatusRegister MonitorAdcSpiCommandStatusRegister;
+	uint32_t MonitorAdcSpiCommandStatusRegister;
 	
-	CGraphBaudDividers BaudDividers; //rw; clock dividers for the configurable serial ports (0-3 RS-485 only)
+	//~ CGraphBaudDividers BaudDividers; //rw; clock dividers for the configurable serial ports (0-3 RS-485 only)
+	uint32_t BaudDividers; //rw; clocks dividers for the configurable serial ports (0-3 RS-485 only)
 	
 	uint32_t UartFifo0; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister0; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister0; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister0; //ro; what state are the uart(s) in?
 	uint32_t UartFifo0ReadData;
     
 	uint32_t UartFifo1; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister1; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister1; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister1; //ro; what state are the uart(s) in?
 	uint32_t UartFifo1ReadData;
     
 	uint32_t UartFifo2; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister2; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister2; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister2; //ro; what state are the uart(s) in?
 	uint32_t UartFifo2ReadData;
     
 	uint32_t UartFifo3; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegister3; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegister3; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegister3; //ro; what state are the uart(s) in?
 	uint32_t UartFifo3ReadData;
     
 	uint32_t UartFifoUsb; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegisterUsb; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegisterUsb; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegisterUsb; //ro; what state are the uart(s) in?
 	uint32_t UartFifoUsbReadData;
     
 	uint32_t UartFifoGps; //rw; send or read bytes from uart(s)
-	UartStatusRegister UartStatusRegisterGps; //ro; what state are the uart(s) in?
+	//~ UartStatusRegister UartStatusRegisterGps; //ro; what state are the uart(s) in?
+	uint32_t UartStatusRegisterGps; //ro; what state are the uart(s) in?
 	uint32_t UartFifoGpsReadData;
     
-	CGraphFWPositionStepRegister PosDetHomeA; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetA0; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetA1; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetA2; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetHomeA; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetA0; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetA1; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetA2; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetHomeB; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetB0; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetB1; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDetB2; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet0A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet1A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet2A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet3A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet4A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet5A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet6A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet7A; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet0B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet1B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet2B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet3B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet4B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet5B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet6B; //ro; the step at which this signal toggled
+	//~ CGraphFWPositionStepRegister PosDet7B; //ro; the step at which this signal toggled
 	
-	CGraphFWPositionStepRegister PosDetHomeB; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetB0; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetB1; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDetB2; //ro; the step at which this signal toggled
-	
-	CGraphFWPositionStepRegister PosDet0A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet1A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet2A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet3A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet4A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet5A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet6A; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet7A; //ro; the step at which this signal toggled
-	
-	CGraphFWPositionStepRegister PosDet0B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet1B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet2B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet3B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet4B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet5B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet6B; //ro; the step at which this signal toggled
-	CGraphFWPositionStepRegister PosDet7B; //ro; the step at which this signal toggled
+	uint64_t PosDetHomeA; //ro; the step at which this signal toggled
+	uint64_t PosDetA0; //ro; the step at which this signal toggled
+	uint64_t PosDetA1; //ro; the step at which this signal toggled
+	uint64_t PosDetA2; //ro; the step at which this signal toggled
+	uint64_t PosDetHomeB; //ro; the step at which this signal toggled
+	uint64_t PosDetB0; //ro; the step at which this signal toggled
+	uint64_t PosDetB1; //ro; the step at which this signal toggled
+	uint64_t PosDetB2; //ro; the step at which this signal toggled
+	uint64_t PosDet0A; //ro; the step at which this signal toggled
+	uint64_t PosDet1A; //ro; the step at which this signal toggled
+	uint64_t PosDet2A; //ro; the step at which this signal toggled
+	uint64_t PosDet3A; //ro; the step at which this signal toggled
+	uint64_t PosDet4A; //ro; the step at which this signal toggled
+	uint64_t PosDet5A; //ro; the step at which this signal toggled
+	uint64_t PosDet6A; //ro; the step at which this signal toggled
+	uint64_t PosDet7A; //ro; the step at which this signal toggled
+	uint64_t PosDet0B; //ro; the step at which this signal toggled
+	uint64_t PosDet1B; //ro; the step at which this signal toggled
+	uint64_t PosDet2B; //ro; the step at which this signal toggled
+	uint64_t PosDet3B; //ro; the step at which this signal toggled
+	uint64_t PosDet4B; //ro; the step at which this signal toggled
+	uint64_t PosDet5B; //ro; the step at which this signal toggled
+	uint64_t PosDet6B; //ro; the step at which this signal toggled
+	uint64_t PosDet7B; //ro; the step at which this signal toggled
 	
 	uint32_t Uart0RxFifoPeekReadAddr;
 	uint32_t Uart0RxFifoPeekWriteAddr;
@@ -246,7 +284,8 @@ struct CGraphFWHardwareInterface
 	uint32_t Uart0RxFifoPeekMultiPopAddr;
 	uint32_t Uart0CrcStartAddr;
 	uint32_t Uart0CrcEndAddr;
-	CGraphCrcCurrentAddr Uart0CrcCurrentAddr;
+	//~ CGraphCrcCurrentAddr Uart0CrcCurrentAddr;
+	uint32_t Uart0CrcCurrentAddr;
 	uint32_t Uart0Crc;
 	
 	uint32_t Uart0HeaderEndPos;
