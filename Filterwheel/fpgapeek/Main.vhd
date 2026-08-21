@@ -441,6 +441,7 @@ architecture architecture_Main of Main is
 							PayloadLen : out std_logic_vector(15 downto 0);
 							PacketCrc : out std_logic_vector(31 downto 0);
 							CalcCrc : out std_logic_vector(31 downto 0);
+							PacketFound : in std_logic;
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
@@ -647,6 +648,9 @@ architecture architecture_Main of Main is
 							Ux1SelJmp : out std_logic;
 							Ux2SelJmp : out std_logic;
 							
+							--Testing
+							FilterwheelPos : in std_logic_vector(3 downto 0);
+							
 							--Motor
 							MotorEnable : out std_logic;
 							--~ MotorSeekStep : out std_logic_vector(15 downto 0);
@@ -848,6 +852,32 @@ architecture architecture_Main of Main is
 							WriteClkDac : out std_logic;
 							ClkDacReadback : in std_logic_vector(15 downto 0)--;
 						);
+						end component;
+						
+						component PacketDecoder is
+						  port (
+							clk : in std_logic;
+							rst : in std_logic;
+								
+							-- Bus:
+							PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							PeekRamByteOut : in std_logic_vector(7 downto 0);
+							Decoding : out std_logic;
+
+							--Packet 
+							PacketFound : in std_logic;
+							HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadType : in std_logic_vector(15 downto 0);
+							PayloadLen : in std_logic_vector(15 downto 0);
+							
+							--Outputs
+							FilterwheelPos : out std_logic_vector(3 downto 0);
+							--~ MoveFilterwheel : out std_logic;
+							
+							Dbg1 : out std_logic;
+							Dbg2 : out std_logic;
+							Dbg3 : out std_logic--;
+						  );
 						end component;
 						
 						--~ component ads1258Ports is
@@ -1136,6 +1166,9 @@ architecture architecture_Main of Main is
 			signal Uart0FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0PacketCrc : std_logic_vector(31 downto 0);
 			signal Uart0CalcCrc : std_logic_vector(31 downto 0);
+			signal Uart0PacketFound : std_logic;
+			signal Uart0RxFifoPeekAddrPacketDecoder : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0PacketDecoding : std_logic;
 			
 			signal Uart1FifoReset : std_logic;
 			signal Uart1FifoReset_i : std_logic;
@@ -1254,6 +1287,8 @@ architecture architecture_Main of Main is
 			signal MisoXO_i : std_logic;
 			
 		-- Positioning System - Led's and Optodetectors
+		
+		signal FilterwheelPos : std_logic_vector(3 downto 0);
 		
 		signal PosSenseHomeA_i : std_logic := '0';
 		signal PosSenseBit0A_i : std_logic := '0';
@@ -1507,6 +1542,9 @@ begin
 		Ux1SelJmp => open,
 		Ux2SelJmp => open,
 				
+		--Testing
+		FilterwheelPos => FilterwheelPos,
+		
 		--Motor
 		MotorEnable => MotorEnable,        
 		MotorSeekStep => MotorSeekStep,    
@@ -1902,6 +1940,7 @@ begin
 		PayloadLen => Uart0PayloadLen,
 		PacketCrc => Uart0PacketCrc,
 		CalcCrc => Uart0CalcCrc,
+		PacketFound => Uart0PacketFound,
 		FifoReadAddr => Uart0RxFifoPeekReadAddr,
 		FifoWriteAddr => Uart0RxFifoPeekWriteAddr,
 		FifoPeekAddr => Uart0RxFifoPeekPeekAddr_i,
@@ -1930,9 +1969,25 @@ begin
 	-- !!May want to add Uart0CrcCurrentAddr functionality for debug...
 	
 	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
-	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrCrcer when (Uart0CrcDone = '0') else Uart0RxFifoPeekPeekAddrRegisterSpace;
-			
-
+	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrCrcer when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	
+	PacketDecoder0 : PacketDecoder
+	port map (
+		clk => MasterClk,
+		rst => Uart0FifoReset_i,
+		PeekRamAddress => Uart0RxFifoPeekAddrPacketDecoder,
+		PeekRamByteOut => Uart0RxFifoPeekPeekData,
+		Decoding => Uart0PacketDecoding,
+		PacketFound => Uart0PacketFound,
+		HeaderEndPos => Uart0HeaderEndPos,
+		PayloadType => Uart0PayloadType,
+		PayloadLen => Uart0PayloadLen,
+		FilterwheelPos => FilterwheelPos,
+		Dbg1 => open,
+		Dbg2 => open,
+		Dbg3 => open--,
+	);
+				
 	--~ LedG <= not(UartRx0Dbg);
 	LedG <= Uart0DoCrc;
 	--~ LedR <= not(Uart0RxFifoEmpty);

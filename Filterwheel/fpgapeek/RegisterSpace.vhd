@@ -55,6 +55,9 @@ entity RegisterSpacePorts is
 		Uart3OE : out std_logic;				
 		Ux1SelJmp : out std_logic;
 		Ux2SelJmp : out std_logic;
+		
+		--Testing
+		FilterwheelPos : in std_logic_vector(3 downto 0);
 				
 		--Motor
 		MotorEnable : out std_logic;
@@ -377,6 +380,8 @@ architecture RegisterSpace of RegisterSpacePorts is
 	constant Uart0PayloadLenAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(380, MAX_ADDRESS_BITS)); --17c
 	constant Uart0PacketCrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(384, MAX_ADDRESS_BITS)); --180
 	constant Uart0CalcCrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(388, MAX_ADDRESS_BITS)); --184
+	
+	constant FilterwheelPosAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(392, MAX_ADDRESS_BITS));
 	
 	--Control Signals
 	
@@ -940,6 +945,15 @@ begin
 							when Uart0CalcCrcAddr =>
 						
 								DataOut <= Uart0CalcCrc;
+								
+								
+								
+								
+							when FilterwheelPosAddr =>
+						
+								DataOut(3 downto 0) <= FilterwheelPos;
+								DataOut(31 downto 4) <= (others => '0');
+								
 								
 								
 								

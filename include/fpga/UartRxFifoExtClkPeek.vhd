@@ -114,6 +114,7 @@ architecture implementation of UartRxFifoExtClkPeek is
 			PayloadLen : out std_logic_vector(15 downto 0);
 			PacketCrc : out std_logic_vector(31 downto 0);
 			CalcCrc : out std_logic_vector(31 downto 0);
+			PacketFound : out std_logic;
 			Dbg1 : out std_logic;
 			Dbg2 : out std_logic;
 			Dbg3 : out std_logic;

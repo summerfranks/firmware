@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version T-2022.09M-SP2-1
 #--  Project file /home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/synthesis/Filterwheel_syn.prj
-#--  Written on Fri Jul 31 17:16:11 2026
+#--  Written on Thu Aug 20 17:06:05 2026
 
 
 #project files
@@ -27,7 +27,9 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBu
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/Filterwheel/fpgapeek/PacketDecoder.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/FieldLatcher.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PacketValidator.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PatternFinder.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd"

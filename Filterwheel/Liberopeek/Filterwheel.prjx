@@ -88,13 +88,18 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1785532598"
-SIZE="98160"
+TIME="1787270224"
+SIZE="99907"
+ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
+STATE="utd"
+TIME="1787269465"
+SIZE="4231"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
-TIME="1785447264"
-SIZE="53053"
+TIME="1787257302"
+SIZE="53440"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd,hdl"
 STATE="utd"
@@ -196,6 +201,11 @@ STATE="utd"
 TIME="1771366070"
 SIZE="2261"
 ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd,hdl"
+STATE="utd"
+TIME="1787160275"
+SIZE="2764"
+ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 STATE="utd"
 TIME="1780617980"
@@ -206,10 +216,15 @@ STATE="utd"
 TIME="1763139239"
 SIZE="2039"
 ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd,hdl"
+STATE="utd"
+TIME="1787160093"
+SIZE="2933"
+ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1785543342"
-SIZE="9929"
+TIME="1787250917"
+SIZE="10875"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -278,8 +293,8 @@ SIZE="4214"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd,hdl"
 STATE="utd"
-TIME="1785283166"
-SIZE="6025"
+TIME="1787253590"
+SIZE="6057"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd,hdl"
 STATE="utd"
@@ -1487,8 +1502,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1666,7 +1681,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Run Programming Action:Filterwheel_PROGRAM.log
+ReportsCurrentItem;Synthesize:Filterwheel_compile_netlist.log
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST
@@ -1705,6 +1720,13 @@ SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FAL
 ENDLIST
 LIST "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
+ENDLIST
+LIST "DESIGN_FIRMWARE::work","component/work/DESIGN_FIRMWARE/DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
@@ -1832,6 +1854,7 @@ SUBBLOCK "IBufP1Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd","FALSE
 SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd","FALSE","FALSE"
 SUBBLOCK "PPSCountPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PPSCount.vhd","FALSE","FALSE"
+SUBBLOCK "PacketDecoder::work","","FALSE","FALSE"
 SUBBLOCK "UartRxFifoExtClkPeek::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd","FALSE","FALSE"
 SUBBLOCK "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
 SUBBLOCK "VariableClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd","FALSE","FALSE"
@@ -1847,11 +1870,16 @@ SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivid
 SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
 SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
+LIST "PacketDecoder::work","","FALSE","FALSE"
+ENDLIST
+LIST "PacketValidator::work","","FALSE","FALSE"
+ENDLIST
 LIST "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 ENDLIST
 LIST "PeekRingBuffer::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd","FALSE","FALSE"
 SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
+SUBBLOCK "PacketValidator::work","","FALSE","FALSE"
 SUBBLOCK "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
@@ -1873,6 +1901,16 @@ ENDLIST
 LIST "RCOSC_25_50MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "RtcCounterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/RtcCounter.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "SpiDacTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDacTrio.vhd","FALSE","FALSE"
 SUBBLOCK "SpiMasterTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd","FALSE","FALSE"

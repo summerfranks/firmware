@@ -50,6 +50,7 @@ entity PeekRingBuffer is
 	PayloadLen : out std_logic_vector(15 downto 0);
 	PacketCrc : out std_logic_vector(31 downto 0);
 	CalcCrc : out std_logic_vector(31 downto 0);
+	PacketFound : out std_logic;
 	Dbg1 : out std_logic;
 	Dbg2 : out std_logic;
 	Dbg3 : out std_logic;
@@ -121,6 +122,26 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		crc : out std_logic_vector(31 downto 0)
 	
 	); end component;
+
+	component PacketValidator is
+	port (
+		clk : in std_logic;
+		rst : in std_logic;
+
+		PacketFound : out std_logic;
+		HeaderFound : in std_logic;
+		FooterFound : in std_logic;
+		HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		PayloadLen : in std_logic_vector(15 downto 0);
+		PacketCrc : in std_logic_vector(31 downto 0);
+		CalcCrc : in std_logic_vector(31 downto 0);
+
+		Dbg1 : out std_logic;
+		Dbg2 : out std_logic;
+		Dbg3 : out std_logic--;
+	);
+	end component;
 
 	signal DataStartAddress_i : std_logic_vector(PeekRamDepth - 1 downto 0);
 	signal WriteAddress : std_logic_vector(PeekRamDepth - 1 downto 0);
@@ -253,6 +274,24 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		rst => CrcRst,
 		data => ByteIn,
 		crc => CalcCrc_i--,
+	);
+
+	PacketValidator_i : PacketValidator
+	port map
+	(
+		clk => WriteReq,
+		rst => CrcRst,
+		PacketFound => PacketFound,
+		HeaderFound => HeaderFound,
+		FooterFound => FooterFound,
+		HeaderEndPos => HeaderEndPos,
+		FooterEndPos => FooterEndPos,
+		PayloadLen => PayloadLen,
+		PacketCrc => PacketCrc,
+		CalcCrc => CalcCrc_i,
+		Dbg1 => open,
+		Dbg2 => open,
+		Dbg3 => open--,
 	);
 
 	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound)
