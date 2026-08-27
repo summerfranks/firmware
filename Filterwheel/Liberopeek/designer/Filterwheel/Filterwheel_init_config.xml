@@ -3,7 +3,7 @@
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
 <text>Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)</text>
-<text>Date: Thu Aug 20 17:08:05 2026
+<text>Date: Thu Aug 27 15:34:54 2026
 </text>
 <section><name>FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -1281,7 +1281,7 @@
  <cell>SOFTRESET</cell>
  <cell>MMUART0_SOFTRESET</cell>
  <cell>INIT[357:357]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[25]</cell>
  <cell>1</cell>
 </row>
@@ -1457,7 +1457,7 @@
  <cell>M3_CONFIG</cell>
  <cell>M3_MPU_DISABLE</cell>
  <cell>INIT[405:405]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[45]</cell>
  <cell>1</cell>
 </row>
@@ -6449,7 +6449,7 @@
  <cell>IOMUXCELL_51_CONFIG</cell>
  <cell>MSS_IOMUXSEL2</cell>
  <cell>INIT[1380:1380]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[141]</cell>
  <cell>1</cell>
 </row>
@@ -6457,7 +6457,7 @@
  <cell>IOMUXCELL_51_CONFIG</cell>
  <cell>MSS_IOMUXSEL3</cell>
  <cell>INIT[1381:1381]</cell>
- <cell>1&apos;h1</cell>
+ <cell>1&apos;h0</cell>
  <cell>INIT[141]</cell>
  <cell>1</cell>
 </row>

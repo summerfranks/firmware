@@ -86,7 +86,7 @@ void FWHome()
 	HCR.PosLedsEnA = 1;
     HCR.PosLedsEnB = 1;
 	HCR.MotorEnable = 1;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	
 	//stabilize lights & sensors
 	delayms(SensorPowerOnDelayMs);
@@ -95,7 +95,7 @@ void FWHome()
 	CGraphFWMotorControlStatusRegister MCSR;
 	MCSR = FW->MotorControlStatus;
 	MCSR.SeekStep = 0;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 	
 	//Wait for it to move
 	for (i = 0; i < MotorFindHomeTimeoutMs; i++)
@@ -107,13 +107,13 @@ void FWHome()
 
 	//Clear step registers
 	HCR.ResetSteps = 1;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	HCR.ResetSteps = 0;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 
 	//Now go around all the way once
 	MCSR.SeekStep = MotorFindHomeSteps;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 	
 	//Wait for it to move
 	for (i = 0; i < MotorFindHomeTimeoutMs; i++)
@@ -128,7 +128,7 @@ void FWHome()
 	
 	//Backlash
 	MCSR.SeekStep = HomeStep - BacklashSteps;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 	
 	formatf("\nESC-FW: Attempting to move motor to: %d.", HomeStep - BacklashSteps);
 	
@@ -142,7 +142,7 @@ void FWHome()
 	
 	//Final resting place
 	MCSR.SeekStep = HomeStep;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 	
 	formatf("\nESC-FW: Attempting to move motor to: %d.", HomeStep);
 	
@@ -158,9 +158,9 @@ void FWHome()
 			
 	//Clear step registers (by definition home [filter #1] is now zero)
 	HCR.ResetSteps = 1;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	HCR.ResetSteps = 0;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	
 	CGraphFWPositionStepRegister HomeA = FW->PosDetHomeA;
 	CGraphFWPositionStepRegister HomeB = FW->PosDetHomeB;
@@ -177,7 +177,7 @@ void FWHome()
 	HCR.PosLedsEnA = 0;
     HCR.PosLedsEnB = 0;
 	HCR.MotorEnable = 0;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 }
 
 void FWSeekPosition(const uint32_t SeekPos)
@@ -207,7 +207,7 @@ void FWSeekPosition(const uint32_t SeekPos)
 	HCR.PosLedsEnA = 1;
     HCR.PosLedsEnB = 1;
 	HCR.MotorEnable = 1;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	
 	//stabilize lights & sensors
 	delayms(SensorPowerOnDelayMs);
@@ -219,7 +219,7 @@ void FWSeekPosition(const uint32_t SeekPos)
 	//Backlash
 	formatf("\nESC-FW: Attempting to move motor to: %d.", DestinationStep - BacklashSteps);
 	MCSR.SeekStep = DestinationStep - BacklashSteps;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 	
 	//Wait for it to move
 	for (i = 0; i < MotorFindHomeTimeoutMs; i++)
@@ -232,7 +232,7 @@ void FWSeekPosition(const uint32_t SeekPos)
 	//Final resting place
 	formatf("\nESC-FW: Attempting to move motor to: %d.", DestinationStep);
 	MCSR.SeekStep = DestinationStep;
-	FW->MotorControlStatus = MCSR;		
+	FW->MotorControlStatus = MCSR.all;		
 
 	//Wait for it to move
 	for (i = 0; i < MotorFindHomeTimeoutMs; i++)
@@ -251,7 +251,7 @@ void FWSeekPosition(const uint32_t SeekPos)
 	HCR.PosLedsEnA = 0;
     HCR.PosLedsEnB = 0;
 	HCR.MotorEnable = 0;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 }
 
 bool ValidateFWPosition()
@@ -282,7 +282,7 @@ bool ValidateFWPosition()
 	HCR.PosLedsEnA = 1;
     HCR.PosLedsEnB = 1;
 	HCR.MotorEnable = 0;
-	FW->ControlRegister = HCR;		
+	FW->ControlRegister = HCR.all;		
 	
 	//stabilize lights & sensors
 	delayms(SensorPowerOnDelayMs);

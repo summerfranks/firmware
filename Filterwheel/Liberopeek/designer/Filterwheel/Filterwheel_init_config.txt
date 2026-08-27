@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Thu Aug 20 17:08:05 2026
+Date: Thu Aug 27 15:34:54 2026
 
 FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -206,7 +206,7 @@ Filterwheel_sb_0/Filterwheel_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | SOFTRESET               | MAC_SOFTRESET               | INIT[354:354]   | 1'h1         | INIT[22]  | 1             |
 | SOFTRESET               | PDMA_SOFTRESET              | INIT[355:355]   | 1'h0         | INIT[23]  | 1             |
 | SOFTRESET               | TIMER_SOFTRESET             | INIT[356:356]   | 1'h0         | INIT[24]  | 1             |
-| SOFTRESET               | MMUART0_SOFTRESET           | INIT[357:357]   | 1'h0         | INIT[25]  | 1             |
+| SOFTRESET               | MMUART0_SOFTRESET           | INIT[357:357]   | 1'h1         | INIT[25]  | 1             |
 | SOFTRESET               | MMUART1_SOFTRESET           | INIT[358:358]   | 1'h1         | INIT[26]  | 1             |
 | SOFTRESET               | G4SPI0_SOFTRESET            | INIT[359:359]   | 1'h1         | INIT[27]  | 1             |
 | SOFTRESET               | G4SPI1_SOFTRESET            | INIT[360:360]   | 1'h1         | INIT[28]  | 1             |
@@ -228,7 +228,7 @@ Filterwheel_sb_0/Filterwheel_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | SOFTRESET               | MDDR_FIC64_SOFTRESET        | INIT[376:376]   | 1'h1         | INIT[44]  | 1             |
 | M3_CONFIG               | STCALIB250                  | INIT[402:377]   | 26'h2000000  | INIT[45]  | 1             |
 | M3_CONFIG               | STCLK_DIVISOR               | INIT[404:403]   | 2'b11        | INIT[45]  | 1             |
-| M3_CONFIG               | M3_MPU_DISABLE              | INIT[405:405]   | 1'h0         | INIT[45]  | 1             |
+| M3_CONFIG               | M3_MPU_DISABLE              | INIT[405:405]   | 1'h1         | INIT[45]  | 1             |
 | FAB_IF                  | FAB0_AHB_BYPASS             | INIT[406:406]   | 1'h0         | INIT[46]  | 1             |
 | FAB_IF                  | FAB1_AHB_BYPASS             | INIT[407:407]   | 1'h0         | INIT[46]  | 1             |
 | FAB_IF                  | FAB0_AHB_MODE               | INIT[408:408]   | 1'h0         | INIT[46]  | 1             |
@@ -852,8 +852,8 @@ Filterwheel_sb_0/Filterwheel_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP
 | IOMUXCELL_50_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1377:1377] | 1'h0         | INIT[140] | 1             |
 | IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL0               | INIT[1378:1378] | 1'h0         | INIT[141] | 1             |
 | IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL1               | INIT[1379:1379] | 1'h0         | INIT[141] | 1             |
-| IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL2               | INIT[1380:1380] | 1'h1         | INIT[141] | 1             |
-| IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL3               | INIT[1381:1381] | 1'h1         | INIT[141] | 1             |
+| IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL2               | INIT[1380:1380] | 1'h0         | INIT[141] | 1             |
+| IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL3               | INIT[1381:1381] | 1'h0         | INIT[141] | 1             |
 | IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1382:1382] | 1'h0         | INIT[141] | 1             |
 | IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1383:1383] | 1'h0         | INIT[141] | 1             |
 | IOMUXCELL_51_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1384:1384] | 1'h0         | INIT[141] | 1             |

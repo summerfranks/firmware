@@ -39,7 +39,7 @@ struct PinoutMonitorAdc
 	
 	static const size_t spi_timeout = 100;
 	
-	static bool busy() { return(0 == (FW->MonitorAdcSpiCommandStatusRegister.TransactionComplete) ); }
+	static bool busy() { CGraphMonitorAdcCommandStatusRegister ACSR; ACSR.all = FW->MonitorAdcSpiCommandStatusRegister; return(0 == (ACSR.TransactionComplete) ); }
 	static void waitbusytimeout()
 	{
 		size_t i = 0;
@@ -51,7 +51,7 @@ struct PinoutMonitorAdc
 		if (i >= spi_timeout - 2) { formatf("\nPinoutMonitorAdc: T/O."); }
 	}
 	
-	static void enable(const bool en) { FW->MonitorAdcSpiCommandStatusRegister.all = (uint32_t)en; }
+	static void enable(const bool en) { FW->MonitorAdcSpiCommandStatusRegister = (uint32_t)en; }
 	
 	static void transmit(const uint8_t val) 					
 	{ 
@@ -76,7 +76,8 @@ struct PinoutMonitorAdc
 	
 	static bool nDrdy() 				
 	{ 
-		return(0 == (FW->MonitorAdcSpiCommandStatusRegister.nDrdy) );
+		CGraphMonitorAdcCommandStatusRegister ACSR; ACSR.all = FW->MonitorAdcSpiCommandStatusRegister; 
+		return(0 == (ACSR.nDrdy) );
 	}		
 	
 	static void setclkpolarity(const bool en) { } //handled by fpga

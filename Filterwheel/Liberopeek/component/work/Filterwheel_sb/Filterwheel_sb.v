@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Thu May 23 17:02:49 2024
+// Created by SmartDesign Thu Aug 27 15:29:55 2026
 // Version: 2023.2 2023.2.0.10
 //////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,6 @@ module Filterwheel_sb(
     CLK0,
     DEVRST_N,
     FAB_RESET_N,
-    MMUART_0_RXD_F2M,
     // Outputs
     AMBA_SLAVE_0_PADDRS,
     AMBA_SLAVE_0_PENABLES,
@@ -24,7 +23,6 @@ module Filterwheel_sb(
     FIC_0_CLK,
     FIC_0_LOCK,
     INIT_DONE,
-    MMUART_0_TXD_M2F,
     MSS_READY,
     POWER_ON_RESET_N
 );
@@ -38,7 +36,6 @@ input         AMBA_SLAVE_0_PSLVERRS0;
 input         CLK0;
 input         DEVRST_N;
 input         FAB_RESET_N;
-input         MMUART_0_RXD_F2M;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
@@ -50,7 +47,6 @@ output        AMBA_SLAVE_0_PWRITES;
 output        FIC_0_CLK;
 output        FIC_0_LOCK;
 output        INIT_DONE;
-output        MMUART_0_TXD_M2F;
 output        MSS_READY;
 output        POWER_ON_RESET_N;
 //--------------------------------------------------------------------
@@ -82,8 +78,6 @@ wire          Filterwheel_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWRITE;
 wire          Filterwheel_sb_MSS_TMP_0_FIC_2_APB_M_PRESET_N;
 wire          Filterwheel_sb_MSS_TMP_0_MSS_RESET_N_M2F;
 wire          INIT_DONE_net_0;
-wire          MMUART_0_RXD_F2M;
-wire          MMUART_0_TXD_M2F_net_0;
 wire          MSS_READY_net_0;
 wire          POWER_ON_RESET_N_net_0;
 wire          POWER_ON_RESET_N_net_1;
@@ -96,7 +90,6 @@ wire   [31:0] AMBA_SLAVE_0_PWDATA_net_0;
 wire          FIC_0_CLK_net_1;
 wire          FIC_0_LOCK_net_1;
 wire          MSS_READY_net_1;
-wire          MMUART_0_TXD_M2F_net_1;
 //--------------------------------------------------------------------
 // TiedOff Nets
 //--------------------------------------------------------------------
@@ -178,8 +171,6 @@ assign FIC_0_LOCK_net_1           = FIC_0_LOCK_net_0;
 assign FIC_0_LOCK                 = FIC_0_LOCK_net_1;
 assign MSS_READY_net_1            = MSS_READY_net_0;
 assign MSS_READY                  = MSS_READY_net_1;
-assign MMUART_0_TXD_M2F_net_1     = MMUART_0_TXD_M2F_net_0;
-assign MMUART_0_TXD_M2F           = MMUART_0_TXD_M2F_net_1;
 //--------------------------------------------------------------------
 // Component instances
 //--------------------------------------------------------------------
@@ -431,7 +422,6 @@ Filterwheel_sb_FABOSC_0_OSC FABOSC_0(
 Filterwheel_sb_MSS Filterwheel_sb_MSS_0(
         // Inputs
         .MCCC_CLK_BASE          ( FIC_0_CLK_net_0 ),
-        .MMUART_0_RXD_F2M       ( MMUART_0_RXD_F2M ),
         .MCCC_CLK_BASE_PLL_LOCK ( FIC_0_LOCK_net_0 ),
         .MSS_RESET_N_F2M        ( CORERESETP_0_RESET_N_F2M ),
         .FIC_0_APB_M_PREADY     ( Filterwheel_sb_MSS_TMP_0_FIC_0_APB_MASTER_PREADY ),
@@ -441,7 +431,6 @@ Filterwheel_sb_MSS Filterwheel_sb_MSS_0(
         .FIC_0_APB_M_PRDATA     ( Filterwheel_sb_MSS_TMP_0_FIC_0_APB_MASTER_PRDATA ),
         .FIC_2_APB_M_PRDATA     ( FIC_2_APB_M_PRDATA_const_net_0 ), // tied to 32'h00000000 from definition
         // Outputs
-        .MMUART_0_TXD_M2F       ( MMUART_0_TXD_M2F_net_0 ),
         .MSS_RESET_N_M2F        ( Filterwheel_sb_MSS_TMP_0_MSS_RESET_N_M2F ),
         .FIC_0_APB_M_PSEL       ( Filterwheel_sb_MSS_TMP_0_FIC_0_APB_MASTER_PSELx ),
         .FIC_0_APB_M_PWRITE     ( Filterwheel_sb_MSS_TMP_0_FIC_0_APB_MASTER_PWRITE ),

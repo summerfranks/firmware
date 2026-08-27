@@ -212,6 +212,9 @@ union CGraphCrcCurrentAddr
 	CGraphCrcCurrentAddr& operator=(const CGraphCrcCurrentAddr& c)  { all = c.all; return(*this); }
 	//~ CGraphCrcCurrentAddr& operator=(volatile CGraphCrcCurrentAddr& c)  { all = c.all; return(*this); }
 	CGraphCrcCurrentAddr(const uint32_t& a) { all = a; }
+	CGraphCrcCurrentAddr(const uint32_t* a) { all = *a; }
+	CGraphCrcCurrentAddr(volatile uint32_t& a) { all = a; }
+	CGraphCrcCurrentAddr(volatile uint32_t* a) { all = *a; }
 	
 	void formatf() const //note: using this function causes some major fuckery with the volatile qulifier in many places...
 	{ 
@@ -224,7 +227,8 @@ union CGraphCrcCurrentAddr
 
 struct FpgaRingBufferCrcer
 {
-	FpgaRingBufferCrcer(volatile uint32_t* const crcstartaddr, volatile uint32_t* const crcendaddr, volatile CGraphCrcCurrentAddr* const crccurentaddr, volatile uint32_t* const crcresult) :
+	//~ FpgaRingBufferCrcer(volatile uint32_t* const crcstartaddr, volatile uint32_t* const crcendaddr, volatile CGraphCrcCurrentAddr* const crccurentaddr, volatile uint32_t* const crcresult) :
+	FpgaRingBufferCrcer(volatile uint32_t* const crcstartaddr, volatile uint32_t* const crcendaddr, volatile uint32_t* const crccurentaddr, volatile uint32_t* const crcresult) :
 		CrcStartAddr(crcstartaddr),
 		CrcEndAddr(crcendaddr),
 		CrcCurrentAddr(crccurentaddr),
@@ -235,7 +239,8 @@ struct FpgaRingBufferCrcer
 		
 		volatile uint32_t* const CrcStartAddr;
 		volatile uint32_t* const CrcEndAddr;
-		volatile CGraphCrcCurrentAddr* const CrcCurrentAddr;
+		//~ volatile CGraphCrcCurrentAddr* const CrcCurrentAddr;
+		volatile uint32_t* const CrcCurrentAddr;
 		volatile uint32_t* const CrcResult;
 	
 	void formatf() const //note: using this function causes some major fuckery with the volatile qulifier in many places...

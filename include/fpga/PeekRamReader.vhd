@@ -31,8 +31,8 @@ use work.CGraphTypes.all;
 entity PeekRamReader is
     generic 
 	(
-		NumBytes : natural := 4--,
-    )
+		NumBytes : natural := 4--;
+    );
     port 
 	(
 		clk : in std_logic;
@@ -54,7 +54,7 @@ architecture PeekRamReaderImplemenatation of PeekRamReader is
 	signal CurrentByte : natural range 0 to NumBytes;
 	signal LastStart : std_logic;
 	signal Done_i : std_logic;
-	signal DataOut_i : out std_logic_vector((NumBytes * 8) - 1 downto 0);
+	signal DataOut_i : std_logic_vector((NumBytes * 8) - 1 downto 0);
 	
   begin
   
@@ -71,8 +71,8 @@ architecture PeekRamReaderImplemenatation of PeekRamReader is
 		  
 			DataOut <= (others => '0');
 			CurrentByte <= NumBytes;
-			LastStart <= (others => '0');
-			Done_i <= (others => '1');
+			LastStart <= '0';
+			Done_i <= '1';
 			DataOut_i <= (others => '0');
 		
 		else
@@ -93,7 +93,7 @@ architecture PeekRamReaderImplemenatation of PeekRamReader is
 				
 					DataOut_i((((CurrentByte + 1) * 8) - 1) downto (CurrentByte * 8)) <= PeekRamByte;
 					CurrentByte <= CurrentByte + 1;
-					PeekRamAddress <= StartAddress + std_logic_vector(to_unsigned(CurrentByte + 1, PeekRamDepth))
+					PeekRamAddress <= StartAddress + std_logic_vector(to_unsigned(CurrentByte + 1, PeekRamDepth));
 					
 				else
 				

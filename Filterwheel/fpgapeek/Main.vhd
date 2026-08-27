@@ -1921,10 +1921,14 @@ begin
 		--~ BaudDivider => Uart0ClkDivider,
 		Rxd => Rxd0_i,
 		--~ Dbg1 => UartRx0Dbg,
-		Dbg1 => TP1,
-		Dbg2 => TP2,
-		Dbg3 => TP3,
-		RxComplete => TP4,
+		--~ Dbg1 => TP1,
+		--~ Dbg2 => TP2,
+		--~ Dbg3 => TP3,
+		--~ RxComplete => TP4,
+		Dbg1 => open,
+		Dbg2 => open,
+		Dbg3 => open,
+		RxComplete => open,
 		ReadFifo => ReadUart0,
 		--~ HeaderFooterPayloadLenMatches => Uart0HeaderFooterPayloadLenMatches,
 		FifoFull => Uart0RxFifoFull,
@@ -1994,10 +1998,10 @@ begin
 	LedR <= '0';
 	--~ TP1 <= Uart0CrcDone;
 	--~ TP4 <= Uart0CrcCurrentAddr(0);
-	TP5 <= Uart0HeaderFound;
-	TP6 <= Uart0FooterFound;
-	TP7 <= Uart0RxFifoPeekMultiPopStrobe;
-	TP8 <= Uart0PayloadType(0);
+	--~ TP5 <= Uart0HeaderFound;
+	--~ TP6 <= Uart0FooterFound;
+	--~ TP7 <= Uart0RxFifoPeekMultiPopStrobe;
+	--~ TP8 <= Uart0PayloadType(0);
 	
 	RS422_Tx0 : UartTxFifoExtClk
 	generic map
@@ -2493,8 +2497,14 @@ begin
 	--Mux master reset (boot) and user reset (datamapper)
 	UartUsbFifoReset_i <= MasterReset or UartUsbFifoReset;
 	
-	
-	
+	TP1 <= WriteUartUsb;
+	TP2 <= UartTxClkUsb;
+	TP3 <= UartUsbTxFifoData(0);
+	TP4 <= UartUsbTxFifoData(2);
+	TP5 <= UartUsbTxFifoData(3);
+	TP6 <= UartUsbTxFifoData(4);
+	TP7 <= UartUsbTxFifoData(5);
+	TP8 <= UartUsbTxFifoData(6);
 	
 	
 	--Gps is hardcoded to 9600 bps

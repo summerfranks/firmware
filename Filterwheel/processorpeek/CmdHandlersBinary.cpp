@@ -52,7 +52,7 @@ int8_t BinaryVersionCommand(const uint32_t Name, char const* Params, const size_
 		Version.FPGAFirmwareBuildNum = FW->FpgaFirmwareBuildNumber; 
 	}
     formatf("\nBinaryVersionCommand: Sending response (%u bytes): ", sizeof(CGraphVersionPayload));
-    Version.formatf();
+    CGraphVersionPayload(Version).formatf();
     formatf("\n");
     TxBinaryPacket(Argument, CGraphPayloadTypeVersion, 0, &Version, sizeof(CGraphVersionPayload));
     return(ParamsLen);
@@ -70,11 +70,11 @@ int8_t BinaryFWHardwareControlStatusCommand(const uint32_t Name, char const* Par
 		HCR->formatf();
 		formatf("\n");
 		
-		FW->ControlRegister = *HCR;	
+		FW->ControlRegister = (*HCR).all;	
 	}
 	
 	formatf("\nBinaryFWHardwareControlStatusCommand: Replying: ");
-	FW->ControlRegister.formatf();
+	CGraphFWHardwareControlRegister(FW->ControlRegister).formatf();
 	formatf("\n");
 		
 	TxBinaryPacket(Argument, CGraphPayloadTypeFWHardwareControlStatus, 0, &(FW->ControlRegister), sizeof(CGraphFWHardwareControlRegister));
@@ -94,11 +94,11 @@ int8_t BinaryFWMotorControlStatusCommand(const uint32_t Name, char const* Params
 		MCSR->formatf();
 		formatf("\n");
 		
-		FW->MotorControlStatus = *MCSR;	
+		FW->MotorControlStatus = (*MCSR).all;	
 	}
 	
 	formatf("\nBinaryFWMotorControlStatusCommand: Replying: ");
-	FW->MotorControlStatus.formatf();
+	CGraphFWMotorControlStatusRegister(FW->MotorControlStatus).formatf();
 	formatf("\n");
 		
 	TxBinaryPacket(Argument, CGraphPayloadTypeFWMotorControlStatus, 0, &(FW->MotorControlStatus), sizeof(CGraphFWMotorControlStatusRegister));
@@ -111,7 +111,7 @@ int8_t BinaryFWPositionSenseControlStatusCommand(const uint32_t Name, char const
 	formatf("\nBinaryFWPositionSenseControlStatusCommand: processing(%u)...\n\n", ParamsLen);
 	
 	formatf("\nBinaryFWPositionSenseControlStatusCommand: Replying: ");
-	FW->PositionSensors.formatf();
+	CGraphFWPositionSenseRegister(FW->PositionSensors).formatf();
 	formatf("\n");
 		
 	TxBinaryPacket(Argument, CGraphPayloadTypeFWPositionSenseControlStatus, 0, &(FW->PositionSensors), sizeof(CGraphFWPositionSenseRegister));
@@ -127,33 +127,33 @@ int8_t BinaryFWPositionStepsCommand(const uint32_t Name, char const* Params, con
 	
 	formatf("\nBinaryFWPositionStepsCommand: Replying: ");
 
-	formatf("\nPosDetHomeA: "); FW->PosDetHomeA.formatf(); PosSteps[0] = FW->PosDetHomeA.OnStep; PosSteps[1] = FW->PosDetHomeA.OffStep;
-	formatf("\nPosDetA0: "); FW->PosDetA0.formatf(); PosSteps[2] = FW->PosDetA0.OnStep; PosSteps[3] = FW->PosDetA0.OffStep;
-	formatf("\nPosDetA1: "); FW->PosDetA1.formatf(); PosSteps[4] = FW->PosDetA1.OnStep; PosSteps[5] = FW->PosDetA1.OffStep;
-	formatf("\nPosDetA2: "); FW->PosDetA2.formatf(); PosSteps[6] = FW->PosDetA2.OnStep; PosSteps[7] = FW->PosDetA2.OffStep;
+	formatf("\nPosDetHomeA: "); CGraphFWPositionStepRegister(FW->PosDetHomeA).formatf(); PosSteps[0] = CGraphFWPositionStepRegister(FW->PosDetHomeA).OnStep; PosSteps[1] = CGraphFWPositionStepRegister(FW->PosDetHomeA).OffStep;
+	formatf("\nPosDetA0: "); CGraphFWPositionStepRegister(FW->PosDetA0).formatf(); PosSteps[2] = CGraphFWPositionStepRegister(FW->PosDetA0).OnStep; PosSteps[3] = CGraphFWPositionStepRegister(FW->PosDetA0).OffStep;
+	formatf("\nPosDetA1: "); CGraphFWPositionStepRegister(FW->PosDetA1).formatf(); PosSteps[4] = CGraphFWPositionStepRegister(FW->PosDetA1).OnStep; PosSteps[5] = CGraphFWPositionStepRegister(FW->PosDetA1).OffStep;
+	formatf("\nPosDetA2: "); CGraphFWPositionStepRegister(FW->PosDetA2).formatf(); PosSteps[6] = CGraphFWPositionStepRegister(FW->PosDetA2).OnStep; PosSteps[7] = CGraphFWPositionStepRegister(FW->PosDetA2).OffStep;
 	
-	formatf("\nPosDetHomeB: "); FW->PosDetHomeB.formatf(); PosSteps[8] = FW->PosDetHomeB.OnStep; PosSteps[9] = FW->PosDetHomeB.OffStep;
-	formatf("\nPosDetB0: "); FW->PosDetB0.formatf(); PosSteps[10] = FW->PosDetB0.OnStep; PosSteps[11] = FW->PosDetB0.OffStep;
-	formatf("\nPosDetB1: "); FW->PosDetB1.formatf(); PosSteps[12] = FW->PosDetB1.OnStep; PosSteps[13] = FW->PosDetB1.OffStep;
-	formatf("\nPosDetB2: "); FW->PosDetB2.formatf(); PosSteps[14] = FW->PosDetB2.OnStep; PosSteps[15] = FW->PosDetB2.OffStep;
+	formatf("\nPosDetHomeB: "); CGraphFWPositionStepRegister(FW->PosDetHomeB).formatf(); PosSteps[8] = CGraphFWPositionStepRegister(FW->PosDetHomeB).OnStep; PosSteps[9] = CGraphFWPositionStepRegister(FW->PosDetHomeB).OffStep;
+	formatf("\nPosDetB0: "); CGraphFWPositionStepRegister(FW->PosDetB0).formatf(); PosSteps[10] = CGraphFWPositionStepRegister(FW->PosDetB0).OnStep; PosSteps[11] = CGraphFWPositionStepRegister(FW->PosDetB0).OffStep;
+	formatf("\nPosDetB1: "); CGraphFWPositionStepRegister(FW->PosDetB1).formatf(); PosSteps[12] = CGraphFWPositionStepRegister(FW->PosDetB1).OnStep; PosSteps[13] = CGraphFWPositionStepRegister(FW->PosDetB1).OffStep;
+	formatf("\nPosDetB2: "); CGraphFWPositionStepRegister(FW->PosDetB2).formatf(); PosSteps[14] = CGraphFWPositionStepRegister(FW->PosDetB2).OnStep; PosSteps[15] = CGraphFWPositionStepRegister(FW->PosDetB2).OffStep;
 	
-	formatf("\nPosDet0A: "); FW->PosDet0A.formatf(); PosSteps[16] = FW->PosDet0A.OnStep; PosSteps[17] = FW->PosDet0A.OffStep;
-	formatf("\nPosDet1A: "); FW->PosDet1A.formatf(); PosSteps[18] = FW->PosDet1A.OnStep; PosSteps[19] = FW->PosDet1A.OffStep;
-	formatf("\nPosDet2A: "); FW->PosDet2A.formatf(); PosSteps[20] = FW->PosDet2A.OnStep; PosSteps[21] = FW->PosDet2A.OffStep;
-	formatf("\nPosDet3A: "); FW->PosDet3A.formatf(); PosSteps[22] = FW->PosDet3A.OnStep; PosSteps[23] = FW->PosDet3A.OffStep;
-	formatf("\nPosDet4A: "); FW->PosDet4A.formatf(); PosSteps[24] = FW->PosDet4A.OnStep; PosSteps[25] = FW->PosDet4A.OffStep;
-	formatf("\nPosDet5A: "); FW->PosDet5A.formatf(); PosSteps[26] = FW->PosDet5A.OnStep; PosSteps[27] = FW->PosDet5A.OffStep;
-	formatf("\nPosDet6A: "); FW->PosDet6A.formatf(); PosSteps[28] = FW->PosDet6A.OnStep; PosSteps[29] = FW->PosDet6A.OffStep;
-	formatf("\nPosDet7A: "); FW->PosDet7A.formatf(); PosSteps[30] = FW->PosDet7A.OnStep; PosSteps[31] = FW->PosDet7A.OffStep;
+	formatf("\nPosDet0A: "); CGraphFWPositionStepRegister(FW->PosDet0A).formatf(); PosSteps[16] = CGraphFWPositionStepRegister(FW->PosDet0A).OnStep; PosSteps[17] = CGraphFWPositionStepRegister(FW->PosDet0A).OffStep;
+	formatf("\nPosDet1A: "); CGraphFWPositionStepRegister(FW->PosDet1A).formatf(); PosSteps[18] = CGraphFWPositionStepRegister(FW->PosDet1A).OnStep; PosSteps[19] = CGraphFWPositionStepRegister(FW->PosDet1A).OffStep;
+	formatf("\nPosDet2A: "); CGraphFWPositionStepRegister(FW->PosDet2A).formatf(); PosSteps[20] = CGraphFWPositionStepRegister(FW->PosDet2A).OnStep; PosSteps[21] = CGraphFWPositionStepRegister(FW->PosDet2A).OffStep;
+	formatf("\nPosDet3A: "); CGraphFWPositionStepRegister(FW->PosDet3A).formatf(); PosSteps[22] = CGraphFWPositionStepRegister(FW->PosDet3A).OnStep; PosSteps[23] = CGraphFWPositionStepRegister(FW->PosDet3A).OffStep;
+	formatf("\nPosDet4A: "); CGraphFWPositionStepRegister(FW->PosDet4A).formatf(); PosSteps[24] = CGraphFWPositionStepRegister(FW->PosDet4A).OnStep; PosSteps[25] = CGraphFWPositionStepRegister(FW->PosDet4A).OffStep;
+	formatf("\nPosDet5A: "); CGraphFWPositionStepRegister(FW->PosDet5A).formatf(); PosSteps[26] = CGraphFWPositionStepRegister(FW->PosDet5A).OnStep; PosSteps[27] = CGraphFWPositionStepRegister(FW->PosDet5A).OffStep;
+	formatf("\nPosDet6A: "); CGraphFWPositionStepRegister(FW->PosDet6A).formatf(); PosSteps[28] = CGraphFWPositionStepRegister(FW->PosDet6A).OnStep; PosSteps[29] = CGraphFWPositionStepRegister(FW->PosDet6A).OffStep;
+	formatf("\nPosDet7A: "); CGraphFWPositionStepRegister(FW->PosDet7A).formatf(); PosSteps[30] = CGraphFWPositionStepRegister(FW->PosDet7A).OnStep; PosSteps[31] = CGraphFWPositionStepRegister(FW->PosDet7A).OffStep;
 	
-	formatf("\nPosDet0B: "); FW->PosDet0B.formatf(); PosSteps[32] = FW->PosDet0B.OnStep; PosSteps[33] = FW->PosDet0B.OffStep;
-	formatf("\nPosDet1B: "); FW->PosDet1B.formatf(); PosSteps[34] = FW->PosDet1B.OnStep; PosSteps[35] = FW->PosDet1B.OffStep;
-	formatf("\nPosDet2B: "); FW->PosDet2B.formatf(); PosSteps[36] = FW->PosDet2B.OnStep; PosSteps[37] = FW->PosDet2B.OffStep;
-	formatf("\nPosDet3B: "); FW->PosDet3B.formatf(); PosSteps[38] = FW->PosDet3B.OnStep; PosSteps[39] = FW->PosDet3B.OffStep;
-	formatf("\nPosDet4B: "); FW->PosDet4B.formatf(); PosSteps[40] = FW->PosDet4B.OnStep; PosSteps[41] = FW->PosDet4B.OffStep;
-	formatf("\nPosDet5B: "); FW->PosDet5B.formatf(); PosSteps[42] = FW->PosDet5B.OnStep; PosSteps[43] = FW->PosDet5B.OffStep;
-	formatf("\nPosDet6B: "); FW->PosDet6B.formatf(); PosSteps[44] = FW->PosDet6B.OnStep; PosSteps[45] = FW->PosDet6B.OffStep;
-	formatf("\nPosDet7B: "); FW->PosDet7B.formatf(); PosSteps[46] = FW->PosDet7B.OnStep; PosSteps[47] = FW->PosDet7B.OffStep;
+	formatf("\nPosDet0B: "); CGraphFWPositionStepRegister(FW->PosDet0B).formatf(); PosSteps[32] = CGraphFWPositionStepRegister(FW->PosDet0B).OnStep; PosSteps[33] = CGraphFWPositionStepRegister(FW->PosDet0B).OffStep;
+	formatf("\nPosDet1B: "); CGraphFWPositionStepRegister(FW->PosDet1B).formatf(); PosSteps[34] = CGraphFWPositionStepRegister(FW->PosDet1B).OnStep; PosSteps[35] = CGraphFWPositionStepRegister(FW->PosDet1B).OffStep;
+	formatf("\nPosDet2B: "); CGraphFWPositionStepRegister(FW->PosDet2B).formatf(); PosSteps[36] = CGraphFWPositionStepRegister(FW->PosDet2B).OnStep; PosSteps[37] = CGraphFWPositionStepRegister(FW->PosDet2B).OffStep;
+	formatf("\nPosDet3B: "); CGraphFWPositionStepRegister(FW->PosDet3B).formatf(); PosSteps[38] = CGraphFWPositionStepRegister(FW->PosDet3B).OnStep; PosSteps[39] = CGraphFWPositionStepRegister(FW->PosDet3B).OffStep;
+	formatf("\nPosDet4B: "); CGraphFWPositionStepRegister(FW->PosDet4B).formatf(); PosSteps[40] = CGraphFWPositionStepRegister(FW->PosDet4B).OnStep; PosSteps[41] = CGraphFWPositionStepRegister(FW->PosDet4B).OffStep;
+	formatf("\nPosDet5B: "); CGraphFWPositionStepRegister(FW->PosDet5B).formatf(); PosSteps[42] = CGraphFWPositionStepRegister(FW->PosDet5B).OnStep; PosSteps[43] = CGraphFWPositionStepRegister(FW->PosDet5B).OffStep;
+	formatf("\nPosDet6B: "); CGraphFWPositionStepRegister(FW->PosDet6B).formatf(); PosSteps[44] = CGraphFWPositionStepRegister(FW->PosDet6B).OnStep; PosSteps[45] = CGraphFWPositionStepRegister(FW->PosDet6B).OffStep;
+	formatf("\nPosDet7B: "); CGraphFWPositionStepRegister(FW->PosDet7B).formatf(); PosSteps[46] = CGraphFWPositionStepRegister(FW->PosDet7B).OnStep; PosSteps[47] = CGraphFWPositionStepRegister(FW->PosDet7B).OffStep;
 	
 	TxBinaryPacket(Argument, CGraphPayloadTypeFWPositionSteps, 0, PosSteps, 48 * sizeof(uint16_t));
 

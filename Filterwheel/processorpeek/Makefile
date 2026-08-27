@@ -36,5 +36,5 @@ CFLAGS += -g
 
 FLASH_TOOL = OPENOCD
 
-#~ include $(INCLUDE_LOCAL)/arm/GNUMakefile
-include $(INCLUDE_LOCAL)/arm/LLVMMakefile
+include $(INCLUDE_LOCAL)/arm/GNUMakefile
+#~ include $(INCLUDE_LOCAL)/arm/LLVMMakefile

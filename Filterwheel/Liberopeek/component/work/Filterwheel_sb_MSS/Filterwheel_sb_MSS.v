@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Thu May 23 17:02:45 2024
+// Created by SmartDesign Thu Aug 27 15:29:53 2026
 // Version: 2023.2 2023.2.0.10
 //////////////////////////////////////////////////////////////////////
 
@@ -16,7 +16,6 @@ module Filterwheel_sb_MSS(
     FIC_2_APB_M_PSLVERR,
     MCCC_CLK_BASE,
     MCCC_CLK_BASE_PLL_LOCK,
-    MMUART_0_RXD_F2M,
     MSS_RESET_N_F2M,
     // Outputs
     FIC_0_APB_M_PADDR,
@@ -31,7 +30,6 @@ module Filterwheel_sb_MSS(
     FIC_2_APB_M_PSEL,
     FIC_2_APB_M_PWDATA,
     FIC_2_APB_M_PWRITE,
-    MMUART_0_TXD_M2F,
     MSS_RESET_N_M2F
 );
 
@@ -46,7 +44,6 @@ input         FIC_2_APB_M_PREADY;
 input         FIC_2_APB_M_PSLVERR;
 input         MCCC_CLK_BASE;
 input         MCCC_CLK_BASE_PLL_LOCK;
-input         MMUART_0_RXD_F2M;
 input         MSS_RESET_N_F2M;
 //--------------------------------------------------------------------
 // Output
@@ -63,7 +60,6 @@ output        FIC_2_APB_M_PRESET_N;
 output        FIC_2_APB_M_PSEL;
 output [31:0] FIC_2_APB_M_PWDATA;
 output        FIC_2_APB_M_PWRITE;
-output        MMUART_0_TXD_M2F;
 output        MSS_RESET_N_M2F;
 //--------------------------------------------------------------------
 // Nets
@@ -88,11 +84,8 @@ wire   [31:0] FIC_2_APB_MASTER_0_PWDATA;
 wire          FIC_2_APB_MASTER_0_PWRITE;
 wire          MCCC_CLK_BASE;
 wire          MCCC_CLK_BASE_PLL_LOCK;
-wire          MMUART_0_RXD_F2M;
-wire          MMUART_0_TXD_M2F_net_0;
 wire          MSS_RESET_N_F2M;
 wire          MSS_RESET_N_M2F_net_0;
-wire          MMUART_0_TXD_M2F_net_1;
 wire          MSS_RESET_N_M2F_net_1;
 wire          FIC_0_APB_MASTER_PSELx_net_0;
 wire          FIC_0_APB_MASTER_PWRITE_net_0;
@@ -183,8 +176,6 @@ assign MDDR_FABRIC_PWDATA_const_net_0  = 16'hFFFF;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
-assign MMUART_0_TXD_M2F_net_1           = MMUART_0_TXD_M2F_net_0;
-assign MMUART_0_TXD_M2F                 = MMUART_0_TXD_M2F_net_1;
 assign MSS_RESET_N_M2F_net_1            = MSS_RESET_N_M2F_net_0;
 assign MSS_RESET_N_M2F                  = MSS_RESET_N_M2F_net_1;
 assign FIC_0_APB_MASTER_PSELx_net_0     = FIC_0_APB_MASTER_PSELx;
@@ -218,7 +209,7 @@ assign FIC_2_APB_M_PWDATA[31:0]         = FIC_2_APB_MASTER_0_PWDATA_net_0;
 MSS_010 #( 
         .ACT_UBITS         ( 56'hFFFFFFFFFFFFFF ),
         .DDR_CLK_FREQ      ( 102.0 ),
-        .INIT              ( 1438'h00000000000000300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000F00000000F000000000000000000000000000000007FFFFFFFB000001007C33C000000006090C0208003FFFFE000000000000010000000000F01C000001FE5FC4010842108421000001FE34001FF80000004000000000200B1007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+        .INIT              ( 1438'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000F00000000F000000000000000000000000000000007FFFFFFFB000001007C33C000000006090C0208003FFFFE000000000000010000000000F03C000001FE5FE4010842108421000001FE34001FF80000004000000000200B1007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
         .MEMORYFILE        ( "ENVM_init.mem" ),
         .RTC_MAIN_XTL_FREQ ( 0.0 ),
         .RTC_MAIN_XTL_MODE ( "" ) )
@@ -306,7 +297,7 @@ MSS_ADLIB_INST(
         .MMUART0_DTR_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
         .MMUART0_RI_F2H_SCP                      ( VCC_net ), // tied to 1'b1 from definition
         .MMUART0_RTS_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
-        .MMUART0_RXD_F2H_SCP                     ( MMUART_0_RXD_F2M ),
+        .MMUART0_RXD_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
         .MMUART0_SCK_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
         .MMUART0_TXD_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
         .MMUART1_CTS_F2H_SCP                     ( VCC_net ), // tied to 1'b1 from definition
@@ -507,7 +498,7 @@ MSS_ADLIB_INST(
         .MMUART0_RXD_MGPIO28B_H2F_B              (  ),
         .MMUART0_SCK_MGPIO29B_H2F_A              (  ),
         .MMUART0_SCK_MGPIO29B_H2F_B              (  ),
-        .MMUART0_TXD_MGPIO27B_H2F_A              ( MMUART_0_TXD_M2F_net_0 ),
+        .MMUART0_TXD_MGPIO27B_H2F_A              (  ),
         .MMUART0_TXD_MGPIO27B_H2F_B              (  ),
         .MMUART1_DTR_MGPIO12B_H2F_A              (  ),
         .MMUART1_RTS_MGPIO11B_H2F_A              (  ),

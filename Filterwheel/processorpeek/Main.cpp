@@ -150,7 +150,10 @@ extern "C"
 	
 	void __cxa_pure_virtual() { formatf("\n\n!!__cxa_pure_virtual()!!\n"); }
 	
+	#ifdef __clang__
 	FILE *const stdout = (FILE *const)0;
+	FILE *const stdin = (FILE *const)0;
+	#endif
 };
 
 bool Process()
@@ -226,11 +229,11 @@ int main(int argc, char *argv[])
     FPGAUartPinoutUsb.putcqq('W');
 	FPGAUartPinoutUsb.putcqq('\n');
 	
-	ConfigurationAndControlRegister ccr = *CCR;
-	ccr.formatf();
-	ccr.UnAlignedTrap = 0;
-	ccr.formatf();
-	*CCR = ccr;
+	//~ ConfigurationAndControlRegister ccr = *CCR;
+	//~ ccr.formatf();
+	//~ ccr.UnAlignedTrap = 0;
+	//~ ccr.formatf();
+	//~ *CCR = ccr;
 
 	//~ formatf("\n\nESC-FW: v%s.b%s; Offset of ControlRegister: 0x%.2lX, expected: 0x%.2lX.", GITVERSION, BUILDNUM, (unsigned long)offsetof(CGraphFWHardwareInterface, ControlRegister), 32UL);
 	
@@ -242,7 +245,7 @@ int main(int argc, char *argv[])
 	//~ formatf("\nOffset of BaudDividers: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, BaudDividers), 64UL);
 	//~ formatf("\nOffset of Uart0RxFifoPeekPeekData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekData), 344UL);
 	//~ formatf("\nOffset of Uart0RxFifoPeekPeekAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekAddr), 340UL);
-	formatf("\nOffset of Uart0CalcCrc: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0CalcCrc), 388UL);
+	//~ formatf("\nOffset of Uart0CalcCrc: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0CalcCrc), 388UL);
 
 	//~ FpgaUartParser0.Init();
 	//~ FpgaUartParser1.Init();
@@ -254,10 +257,10 @@ int main(int argc, char *argv[])
 	//~ FpgaUartParser2.Debug(true);
 	//~ FpgaUartParser3.Debug(true);
 
-	DbgUartUsb.Init();
+	//~ DbgUartUsb.Init();
 	//~ DbgUart485_0.Init();
 
-    DbgUartUsb.SetEcho(false);
+    //~ DbgUartUsb.SetEcho(false);
     //~ DbgUart485_0.SetEcho(false);
 	
 	//~ MonitorAdc.SetMonitor(true);
@@ -267,7 +270,9 @@ int main(int argc, char *argv[])
 	//~ uint8_t i = 0;
     while(true)
     {
-		Process();
+		//~ Process();
+		
+		FPGAUartPinoutUsb.putcqq('F');
     }
 
     return(0);

@@ -174,37 +174,37 @@ int8_t SensorStepsCommand(char const* Name, char const* Params, const size_t Par
 	
 	formatf("\n\nSensorStepsCommand: current values:\n");
 	
-	formatf("\nPosDetHomeA: \t"); FW->PosDetHomeA.formatf();
-	formatf("\nPosDetA0:    \t"); FW->PosDetA0.formatf();
-	formatf("\nPosDetA1:    \t"); FW->PosDetA1.formatf();
-	formatf("\nPosDetA2:    \t"); FW->PosDetA2.formatf();
+	formatf("\nPosDetHomeA: \t"); CGraphFWPositionStepRegister(FW->PosDetHomeA).formatf();
+	formatf("\nPosDetA0:    \t"); CGraphFWPositionStepRegister(FW->PosDetA0).formatf();
+	formatf("\nPosDetA1:    \t"); CGraphFWPositionStepRegister(FW->PosDetA1).formatf();
+	formatf("\nPosDetA2:    \t"); CGraphFWPositionStepRegister(FW->PosDetA2).formatf();
 	
-	formatf("\nPosDetHomeB: \t"); FW->PosDetHomeB.formatf();
-	formatf("\nPosDetB0:    \t"); FW->PosDetB0.formatf();
-	formatf("\nPosDetB1:    \t"); FW->PosDetB1.formatf();
-	formatf("\nPosDetB2:    \t"); FW->PosDetB2.formatf();
-	
-	for(size_t i = 0; i < 4096; i++) { ProcessAllUarts(); }
-	formatf("\n");
-	formatf("\nPosDet0A: "); FW->PosDet0A.formatf();
-	formatf("\nPosDet1A: "); FW->PosDet1A.formatf();
-	formatf("\nPosDet2A: "); FW->PosDet2A.formatf();
-	formatf("\nPosDet3A: "); FW->PosDet3A.formatf();
-	formatf("\nPosDet4A: "); FW->PosDet4A.formatf();
-	formatf("\nPosDet5A: "); FW->PosDet5A.formatf();
-	formatf("\nPosDet6A: "); FW->PosDet6A.formatf();
-	formatf("\nPosDet7A: "); FW->PosDet7A.formatf();
+	formatf("\nPosDetHomeB: \t"); CGraphFWPositionStepRegister(FW->PosDetHomeB).formatf();
+	formatf("\nPosDetB0:    \t"); CGraphFWPositionStepRegister(FW->PosDetB0).formatf();
+	formatf("\nPosDetB1:    \t"); CGraphFWPositionStepRegister(FW->PosDetB1).formatf();
+	formatf("\nPosDetB2:    \t"); CGraphFWPositionStepRegister(FW->PosDetB2).formatf();
 	
 	for(size_t i = 0; i < 4096; i++) { ProcessAllUarts(); }
 	formatf("\n");
-	formatf("\nPosDet0B: "); FW->PosDet0B.formatf();
-	formatf("\nPosDet1B: "); FW->PosDet1B.formatf();
-	formatf("\nPosDet2B: "); FW->PosDet2B.formatf();
-	formatf("\nPosDet3B: "); FW->PosDet3B.formatf();
-	formatf("\nPosDet4B: "); FW->PosDet4B.formatf();
-	formatf("\nPosDet5B: "); FW->PosDet5B.formatf();
-	formatf("\nPosDet6B: "); FW->PosDet6B.formatf();
-	formatf("\nPosDet7B: "); FW->PosDet7B.formatf();
+	formatf("\nPosDet0A: "); CGraphFWPositionStepRegister(FW->PosDet0A).formatf();
+	formatf("\nPosDet1A: "); CGraphFWPositionStepRegister(FW->PosDet1A).formatf();
+	formatf("\nPosDet2A: "); CGraphFWPositionStepRegister(FW->PosDet2A).formatf();
+	formatf("\nPosDet3A: "); CGraphFWPositionStepRegister(FW->PosDet3A).formatf();
+	formatf("\nPosDet4A: "); CGraphFWPositionStepRegister(FW->PosDet4A).formatf();
+	formatf("\nPosDet5A: "); CGraphFWPositionStepRegister(FW->PosDet5A).formatf();
+	formatf("\nPosDet6A: "); CGraphFWPositionStepRegister(FW->PosDet6A).formatf();
+	formatf("\nPosDet7A: "); CGraphFWPositionStepRegister(FW->PosDet7A).formatf();
+	
+	for(size_t i = 0; i < 4096; i++) { ProcessAllUarts(); }
+	formatf("\n");
+	formatf("\nPosDet0B: "); CGraphFWPositionStepRegister(FW->PosDet0B).formatf();
+	formatf("\nPosDet1B: "); CGraphFWPositionStepRegister(FW->PosDet1B).formatf();
+	formatf("\nPosDet2B: "); CGraphFWPositionStepRegister(FW->PosDet2B).formatf();
+	formatf("\nPosDet3B: "); CGraphFWPositionStepRegister(FW->PosDet3B).formatf();
+	formatf("\nPosDet4B: "); CGraphFWPositionStepRegister(FW->PosDet4B).formatf();
+	formatf("\nPosDet5B: "); CGraphFWPositionStepRegister(FW->PosDet5B).formatf();
+	formatf("\nPosDet6B: "); CGraphFWPositionStepRegister(FW->PosDet6B).formatf();
+	formatf("\nPosDet7B: "); CGraphFWPositionStepRegister(FW->PosDet7B).formatf();
 	
 	return(ParamsLen);	
 }
@@ -230,10 +230,10 @@ int8_t MotorCommand(char const* Name, char const* Params, const size_t ParamsLen
 		HCR.PosLedsEnA = 1;
 		HCR.PosLedsEnB = 1;
 		HCR.MotorEnable = 1;
-		FW->ControlRegister = HCR;		
+		FW->ControlRegister = HCR.all;		
 		
 		MCSR.SeekStep = SeekStep;
-		FW->MotorControlStatus = MCSR;		
+		FW->MotorControlStatus = MCSR.all;		
 		
 		//Wait for it to move
 		for (size_t i = 0; i < MotorFindHomeTimeoutMs; i++)
@@ -255,7 +255,7 @@ int8_t MotorCommand(char const* Name, char const* Params, const size_t ParamsLen
 		HCR.PosLedsEnA = 0;
 		HCR.PosLedsEnB = 0;
 		HCR.MotorEnable = 0;
-		FW->ControlRegister = HCR;		
+		FW->ControlRegister = HCR.all;		
     }
 	
 	MCSR = FW->MotorControlStatus;
@@ -401,7 +401,7 @@ int8_t BaudDividersCommand(char const* Name, char const* Params, const size_t Pa
 		iDividers.Divider2 = C;
 		iDividers.Divider3 = D;
 		formatf("\n\nBaudDividers: setting to: %lu, %lu, %lu, %lu.\n", A, B, C, D);
-		FW->BaudDividers = iDividers;
+		FW->BaudDividers = iDividers.all;
     }
 	else
 	{
@@ -412,7 +412,7 @@ int8_t BaudDividersCommand(char const* Name, char const* Params, const size_t Pa
 			iDividers.Divider2 = A;
 			iDividers.Divider3 = A;
 			formatf("\n\nBaudDividers: setting to: %lu, %lu, %lu, %lu.\n", A, A, A, A);
-			FW->BaudDividers = iDividers;
+			FW->BaudDividers = iDividers.all;
 		}
 	}
 

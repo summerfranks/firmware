@@ -25,6 +25,7 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBu
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRamReader.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/Filterwheel/fpgapeek/PacketDecoder.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/FieldLatcher.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PacketValidator.vhd"

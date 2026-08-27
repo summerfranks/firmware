@@ -417,7 +417,8 @@ public:
 		size_t crctimeout = 0;
 		for (crctimeout = 0; crctimeout < (3 * sizeof(CGraphPacketHeader) + payloadlen + sizeof(CGraphPacketFooter)); crctimeout++)
 		{
-			volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
+			//~ volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
+			volatile CGraphCrcCurrentAddr CrcStatus(FpgaCrc.CrcCurrentAddr);
 			if ( (CrcStatus.CurrentAddr == CrcEndPos) || (CrcStatus.CrcComplete == 1) ) { break; }
 		}		
 		volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;

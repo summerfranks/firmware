@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Thu Jul 30 14:16:24 2026
+// Created by SmartDesign Thu Aug 27 15:32:06 2026
 // Version: 2023.2 2023.2.0.10
 //////////////////////////////////////////////////////////////////////
 
@@ -289,13 +289,13 @@ wire   [31:0]  AMBA_SLAVE_0_PADDRS_net_0;
 //--------------------------------------------------------------------
 // TiedOff Nets
 //--------------------------------------------------------------------
-wire           GND_net;
 wire           VCC_net;
+wire           GND_net;
 //--------------------------------------------------------------------
 // Constant assignments
 //--------------------------------------------------------------------
-assign GND_net = 1'b0;
 assign VCC_net = 1'b1;
+assign GND_net = 1'b0;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
@@ -410,25 +410,23 @@ FCCC_C0 FCCC_C0_0(
 //--------Filterwheel_sb
 Filterwheel_sb Filterwheel_sb_0(
         // Inputs
-        .FAB_RESET_N            ( VCC_net ), // tied to 1'b1 from definition
+        .FAB_RESET_N            ( VCC_net ),
+        .AMBA_SLAVE_0_PRDATAS0  ( Main_0_RamBusDataOut ),
         .AMBA_SLAVE_0_PREADYS0  ( Main_0_RamBusAck ),
         .AMBA_SLAVE_0_PSLVERRS0 ( GND_net ),
         .DEVRST_N               ( DEVRST_N ),
         .CLK0                   ( FCCC_C0_0_GL0 ),
-        .MMUART_0_RXD_F2M       ( VCC_net ),
-        .AMBA_SLAVE_0_PRDATAS0  ( Main_0_RamBusDataOut ),
         // Outputs
         .POWER_ON_RESET_N       (  ),
         .INIT_DONE              ( INIT_DONE_net_0 ),
+        .AMBA_SLAVE_0_PADDRS    ( AMBA_SLAVE_0_PADDRS_net_0 ),
         .AMBA_SLAVE_0_PSELS0    ( Filterwheel_sb_0_AMBA_SLAVE_0_PSELS0 ),
         .AMBA_SLAVE_0_PENABLES  ( Filterwheel_sb_0_AMBA_SLAVE_0_PENABLES ),
         .AMBA_SLAVE_0_PWRITES   ( Filterwheel_sb_0_AMBA_SLAVE_0_PWRITES ),
+        .AMBA_SLAVE_0_PWDATAS   ( Filterwheel_sb_0_AMBA_SLAVE_0_PWDATAS ),
         .FIC_0_CLK              (  ),
         .FIC_0_LOCK             (  ),
-        .MSS_READY              (  ),
-        .MMUART_0_TXD_M2F       (  ),
-        .AMBA_SLAVE_0_PADDRS    ( AMBA_SLAVE_0_PADDRS_net_0 ),
-        .AMBA_SLAVE_0_PWDATAS   ( Filterwheel_sb_0_AMBA_SLAVE_0_PWDATAS ) 
+        .MSS_READY              (  ) 
         );
 
 //--------Main

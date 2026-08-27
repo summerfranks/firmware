@@ -76,7 +76,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		clk : in std_logic;
 		rst : in std_logic;
 		PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
-		PeekRamByteOut : in std_logic_vector(7 downto 0);
+		PeekRamByte : in std_logic_vector(7 downto 0);
 		StartAddress : in std_logic_vector(PeekRamDepth - 1 downto 0);
 		Start : in std_logic;
 		Done : out std_logic;
@@ -96,7 +96,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		clk => clk,
 		rst => rst,
 		PeekRamAddress => PeekRamAddress,
-		PeekRamByteOut => PeekRamByteOut,
+		PeekRamByte => PeekRamByteOut,
 		StartAddress => U32_0StartAddress,
 		Start => U32_0Start,
 		Done => U32_0Done,

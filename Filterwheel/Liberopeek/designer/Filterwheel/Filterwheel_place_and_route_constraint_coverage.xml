@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 2023.2.0.10</text>
 <text>Microsemi Corporation - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Thu Aug 20 17:06:26 2026 </text>
+Date: Thu Aug 27 15:32:56 2026 </text>
 <table>
 <header>
 </header>
@@ -594,14 +594,14 @@ Date: Thu Aug 20 17:06:26 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>           79</cell>
- <cell>            1</cell>
- <cell>           80</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
 </row>
 <separator/>
 <row>
@@ -619,34 +619,16 @@ Date: Thu Aug 20 17:06:26 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>           79</cell>
- <cell>            1</cell>
- <cell>           80</cell>
+ <cell>            0</cell>
+ <cell>           79</cell>
 </row>
 </table>
-<section>
-<name>Enhancement Suggestions</name>
-<text></text>
-<text></text>
-<text> - Max output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP4</item>
-</list>
-<text></text>
-<text> - Min output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP4</item>
-</list>
-<text></text>
-<text></text>
-</section>
 </section>
 <section>
 <name>Clock domain: </name>
@@ -1478,14 +1460,14 @@ Date: Thu Aug 20 17:06:26 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>            0</cell>
- <cell>           79</cell>
- <cell>           79</cell>
+ <cell>           80</cell>
+ <cell>           80</cell>
 </row>
 <separator/>
 <row>
@@ -1503,20 +1485,32 @@ Date: Thu Aug 20 17:06:26 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>            0</cell>
- <cell>           79</cell>
- <cell>           79</cell>
+ <cell>           80</cell>
+ <cell>           80</cell>
 </row>
 </table>
 <section>
 <name>Enhancement Suggestions</name>
 <text></text>
 <text> - Clock constraint is missing </text>
+<text></text>
+<text> - Max output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP2</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP2</item>
+</list>
 <text></text>
 <text></text>
 <text> - Setup unconstrained for the following pins:</text>
