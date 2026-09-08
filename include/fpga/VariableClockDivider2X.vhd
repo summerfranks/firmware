@@ -74,7 +74,8 @@ begin
 
 				end if;
 				
-				if (ClkDiv < ( (shift_right(unsigned(terminal_count),1)) - 1)) then
+				if (ClkDiv < ( (shift_right(unsigned(terminal_count),1)))) or 
+					(ClkDiv >= terminal_count) then
 						
 						clko_i <= DIVOUT_RST_STATE;
 						

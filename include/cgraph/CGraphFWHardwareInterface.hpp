@@ -170,57 +170,58 @@ union CGraphFWPositionStepRegister
 
 struct CGraphFWHardwareInterface
 {
-    uint32_t DeviceSerialNumber; //ro; FPGA manufacturer hardcoded device UUID
-    uint32_t FpgaFirmwareBuildNumber; //ro; Auto-incremented firmware UUID
+    uint32_t DeviceSerialNumber; //0: ro; FPGA manufacturer hardcoded device UUID
+    uint32_t FpgaFirmwareBuildNumber; //4: ro; Auto-incremented firmware UUID
     
-	uint32_t UnixSeconds; //rw; equivalent to time_t for 32b systems; low order bits of time_t on 64b systems; write to set/initialize FPGA clock
-    uint32_t IdealTicksPerSecond; //ro; Target clock speed of FPGA device, approx 100M; likely 14.7456M * 7 = 103,219,200.
-    uint32_t ActualTicksLastSecond; //ro; Count of clock ticks for entire last second; equal to IdealTicksPerSecond unless clock was set or GPS PPS signal is present
-	uint32_t ClockTicksThisSecondAddr; //ro Running count of clock ticks since the start of the current second
-    uint32_t ClockSteeringDacSetpoint; //rw; 
-    int32_t PPSRtcPhaseComparator; //ro;
+	uint32_t UnixSeconds; //8: rw; equivalent to time_t for 32b systems; low order bits of time_t on 64b systems; write to set/initialize FPGA clock
+    uint32_t IdealTicksPerSecond; //12/0C: ro; Target clock speed of FPGA device, approx 100M; likely 14.7456M * 7 = 103,219,200.
+    uint32_t ActualTicksLastSecond; //16/10: ro; Count of clock ticks for entire last second; equal to IdealTicksPerSecond unless clock was set or GPS PPS signal is present
+	uint32_t ClockTicksThisSecondAddr; //20/14: ro; Running count of clock ticks since the start of the current second
+    uint32_t ClockSteeringDacSetpoint; //24/18: rw; 
+    int32_t PPSRtcPhaseComparator; //28/1C: ro;
     
 	//~ CGraphFWHardwareControlRegister ControlRegister; //rw; see definition above
     //~ CGraphFWMotorControlStatusRegister MotorControlStatus; //rw; motor settings
 	//~ CGraphFWPositionSenseRegister PositionSensors; //ro; state of all the position sensor readouts
-	uint32_t ControlRegister; //rw; see definition above
-    uint32_t MotorControlStatus; //rw; motor settings
-	uint32_t PositionSensors; //ro; state of all the position sensor readouts
+	uint32_t ControlRegister; //32/20: rw; see definition above
+    uint32_t MotorControlStatus; //36/24: rw; motor settings
+	uint32_t PositionSensors; //40/28: ro; state of all the position sensor readouts
     
 	//~ AdcAccumulator MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
-	uint32_t MonitorAdcAccumulator; //ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
-	uint32_t MonitorAdcReadChannel; //rw; which channel to read for MonitorA/D
-	uint32_t MonitorAdcSpiTransactionRegister;
+	uint32_t MonitorAdcSample; //44/2C: ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+	uint32_t MonitorAdcAccumulator; //48/30: ro; Monitor A/D samples for channel specififed in MonitorAdcReadChannel
+	uint32_t MonitorAdcReadChannel; //52/34: rw; which channel to read for MonitorA/D
+	uint32_t MonitorAdcSpiTransactionRegister; //56/38:
 	//~ CGraphMonitorAdcCommandStatusRegister MonitorAdcSpiCommandStatusRegister;
-	uint32_t MonitorAdcSpiCommandStatusRegister;
+	uint32_t MonitorAdcSpiCommandStatusRegister; //60/3C:
 	
 	//~ CGraphBaudDividers BaudDividers; //rw; clock dividers for the configurable serial ports (0-3 RS-485 only)
-	uint32_t BaudDividers; //rw; clocks dividers for the configurable serial ports (0-3 RS-485 only)
+	uint32_t BaudDividers; //64/40: rw; clocks dividers for the configurable serial ports (0-3 RS-485 only)
 	
-	uint32_t UartFifo0; //rw; send or read bytes from uart(s)
+	uint32_t UartFifo0; //68/44: rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegister0; //ro; what state are the uart(s) in?
-	uint32_t UartStatusRegister0; //ro; what state are the uart(s) in?
-	uint32_t UartFifo0ReadData;
+	uint32_t UartStatusRegister0; //72/48: ro; what state are the uart(s) in?
+	uint32_t UartFifo0ReadData; //76/4C:
     
-	uint32_t UartFifo1; //rw; send or read bytes from uart(s)
+	uint32_t UartFifo1; //80/50: rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegister1; //ro; what state are the uart(s) in?
-	uint32_t UartStatusRegister1; //ro; what state are the uart(s) in?
-	uint32_t UartFifo1ReadData;
+	uint32_t UartStatusRegister1; //84/54: ro; what state are the uart(s) in?
+	uint32_t UartFifo1ReadData; //88/58:
     
-	uint32_t UartFifo2; //rw; send or read bytes from uart(s)
+	uint32_t UartFifo2; //92/58: rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegister2; //ro; what state are the uart(s) in?
-	uint32_t UartStatusRegister2; //ro; what state are the uart(s) in?
-	uint32_t UartFifo2ReadData;
+	uint32_t UartStatusRegister2; //96/5C: ro; what state are the uart(s) in?
+	uint32_t UartFifo2ReadData; //100/60:
     
-	uint32_t UartFifo3; //rw; send or read bytes from uart(s)
+	uint32_t UartFifo3; //104/60: rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegister3; //ro; what state are the uart(s) in?
-	uint32_t UartStatusRegister3; //ro; what state are the uart(s) in?
-	uint32_t UartFifo3ReadData;
+	uint32_t UartStatusRegister3; //108/64: ro; what state are the uart(s) in?
+	uint32_t UartFifo3ReadData; //112/68:
     
-	uint32_t UartFifoUsb; //rw; send or read bytes from uart(s)
+	uint32_t UartFifoUsb; //116/6C: rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegisterUsb; //ro; what state are the uart(s) in?
-	uint32_t UartStatusRegisterUsb; //ro; what state are the uart(s) in?
-	uint32_t UartFifoUsbReadData;
+	uint32_t UartStatusRegisterUsb; //120/70: ro; what state are the uart(s) in?
+	uint32_t UartFifoUsbReadData; //124/74:
     
 	uint32_t UartFifoGps; //rw; send or read bytes from uart(s)
 	//~ UartStatusRegister UartStatusRegisterGps; //ro; what state are the uart(s) in?

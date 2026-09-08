@@ -72,7 +72,7 @@ begin
 
 				end if;
 				
-				if (ClkDiv < ((CLOCK_DIVIDER / 2) - 1)) then
+				if (ClkDiv < ((CLOCK_DIVIDER / 2) - 1) or ClkDiv >= (CLOCK_DIVIDER - 1)) then
 				
 						div_i <= DIVOUT_RST_STATE;
 						

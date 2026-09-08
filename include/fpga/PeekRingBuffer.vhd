@@ -159,7 +159,6 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	--~ signal PayloadType : std_logic_vector(15 downto 0);
 	--~ signal PayloadLen : std_logic_vector(15 downto 0);
 	signal CalcCrc_i : std_logic_vector(31 downto 0);
-	signal CRC : std_logic_vector(31 downto 0);
 	
 	signal LatchPayloadType : std_logic;
 	signal LatchPayloadLen : std_logic;
@@ -294,7 +293,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		Dbg3 => open--,
 	);
 
-	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound)
+	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound, latchcrc, latchpayloadlen, latchpayloadtype)
   begin
   
 	Dbg1 <= LatchCrc;
@@ -319,11 +318,18 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
       
 		LastPopReq <= '0';
 		LastWriteReq <= '0';
+		LastHeaderFound <= '0';
+		LastFooterFound <= '0';
 		DataStartAddress_i <= (others => '0');
 		WriteAddress <= (others => '0');
 		HeaderEndPos <= (others => '0');
 		FooterEndPos <= (others => '0');
-        
+		CalcCrc <= (others => '0');
+		LatchPayloadType <= '0';
+		LatchPayloadLen <= '0';
+		LatchCrc <= '0';
+		CrcRst <= '0';
+	    
     else
       if ( (clk'event) and (clk = '1') ) then
 
@@ -368,10 +374,10 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 			if (WriteAddress = HeaderEndPos + 2) then LatchPayloadType <= '1'; else LatchPayloadType <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4) then LatchPayloadLen <= '1'; else LatchPayloadLen <= '0'; end if;
-			--~ if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
-			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
-			CalcCrc(31 downto 16) <= x"0000";
-			CalcCrc(15 downto 0) <= HeaderEndPos + 8 + PayloadLen; 
+			--~ if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
+			--~ CalcCrc(31 downto 16) <= x"0000";
+			--~ CalcCrc(15 downto 0) <= HeaderEndPos + 8 + PayloadLen; 
 			
 			--~ if (WriteAddress >= HeaderEndPos) then
 			

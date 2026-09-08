@@ -48,6 +48,7 @@ end UartRxRaw;
 architecture Behaviour of UartRxRaw is
   
   signal RReg    : std_logic_vector(7 downto 0); -- receive register  
+  signal RxDPrev : std_logic := '1';
   
 begin
   
@@ -64,14 +65,25 @@ begin
 		RxAv <= '0';
 		RReg <= x"00";
 		DataO <= x"00";
+		RxDPrev <= '1';
      elsif Rising_Edge(Clk) then
         if Enable = '1' then
            case BitPos is
               when 0 => -- idle
-				 if RxD = '0' then -- Start Bit
+				 if (RxDPrev = '1') and (RxD = '0') then -- Start bit falling edge
+                    RxAv <= '0';
                     SampleCnt := 0;
                     BitPos := 1;
 					--~ Start <= '1';
+                 end if;
+              when 1 => -- Start Bit
+                 if SampleCnt = 7 then
+                    if RxD = '0' then
+                    else
+                       BitPos := 0;   -- Glitch: abandon frame and return idle
+                    end if;
+                 elsif SampleCnt = 15 then
+                    BitPos := 2;
                  end if;
 			--~ parityimplementaion : if (PARITY) generate
 			  --~ when 10 => -- Parity
@@ -113,7 +125,7 @@ begin
            else
               sampleCnt := SampleCnt + 1;
            end if;
-           
+           RxDPrev <= RxD;
         end if;
      end if;
   end process;

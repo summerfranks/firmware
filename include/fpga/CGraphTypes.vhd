@@ -29,7 +29,7 @@ library work;
 
 package CGraphTypes is 
 
-	constant PeekRamDepth : integer := 10;
+	constant PeekRamDepth : integer := 11;
 
 	type PeekRamType is array(0 to (2**PeekRamDepth) - 1) of std_logic_vector(7 downto 0);
 	

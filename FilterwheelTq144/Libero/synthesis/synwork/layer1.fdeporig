@@ -15,46 +15,46 @@
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1763669276
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":1771366320
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd":1763765542
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd":1763766103
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd":1763765057
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd":1763766487
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1780617392
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd":1763139239
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd":1788894058
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1771365010
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":1788892907
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":1771366217
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":1771366191
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd":1785445178
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":1771366070
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd":1763669022
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1763032479
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1771371958
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1771371982
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd":1771365472
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd":1771366370
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd":1771366350
 #CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1763758271
 0 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/BuildNumber.vhd" vhdl
 1 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd" vhdl
 2 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd" vhdl
 3 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd" vhdl
 4 "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd" vhdl
-5 "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd" vhdl
-6 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd" vhdl
-7 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd" vhdl
-8 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd" vhdl
-9 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd" vhdl
-10 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd" vhdl
-11 "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd" vhdl
-12 "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd" vhdl
-13 "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd" vhdl
-14 "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd" vhdl
+5 "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd" vhdl
+6 "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd" vhdl
+7 "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd" vhdl
+8 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd" vhdl
+9 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd" vhdl
+10 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd" vhdl
+11 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd" vhdl
+12 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd" vhdl
+13 "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd" vhdl
+14 "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd" vhdl
 15 "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd" vhdl
 16 "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd" vhdl
 17 "/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd" vhdl
@@ -78,15 +78,15 @@
 4 -1
 5 -1
 6 5 
-7 6 5 
-8 -1
-9 2 8 
-10 9 2 7 5 
-11 -1
-12 -1
+7 -1
+8 7 
+9 8 6 7 
+10 -1
+11 2 10 
+12 11 2 9 7 
 13 -1
-14 13 
-15 14 
+14 -1
+15 6 
 16 -1
 17 -1
 18 17 16 
@@ -96,27 +96,27 @@
 22 20 
 23 -1
 24 23 
-25 9 2 24 
+25 11 2 24 
 26 -1
 27 24 2 26 
-28 0 17 2 1 19 3 22 11 12 10 15 27 25 4 21 18 5 
+28 0 17 2 1 19 3 22 13 14 12 15 27 25 4 21 18 7 
 
 # Dependency Lists (Users Of)
 0 28 
 1 28 
-2 28 27 25 10 9 
+2 28 27 25 12 11 
 3 28 
 4 28 
-5 28 10 7 6 
-6 7 
-7 10 
+5 6 
+6 15 9 
+7 28 12 9 8 
 8 9 
-9 25 10 
-10 28 
-11 28 
+9 12 
+10 11 
+11 25 12 
 12 28 
-13 14 
-14 15 
+13 28 
+14 28 
 15 28 
 16 18 
 17 28 18 
@@ -143,24 +143,24 @@ arch work ibufp3ports ibufp3 3
 module work ibufp3ports 3
 arch work ppscountports ppscount 4
 module work ppscountports 4
-arch work peekram peekramimplementation 6
-module work peekram 6
-arch work peekringbuffer peekringbufferimplemenatation 7
-module work peekringbuffer 7
-arch work uartrxraw behaviour 8
-module work uartrxraw 8
-arch work uartrxextclk implementation 9
-module work uartrxextclk 9
-arch work uartrxfifoextclkpeek implementation 10
-module work uartrxfifoextclkpeek 10
-arch work variableclockdividerports variableclockdivider 11
-module work variableclockdividerports 11
-arch work clockdividerports clockdivider 12
-module work clockdividerports 12
-arch work crc_byte behavioral 13
-module work crc_byte 13
-arch work crcstream implementation 14
-module work crcstream 14
+arch work crc_byte behavioral 5
+module work crc_byte 5
+arch work crcstream implementation 6
+module work crcstream 6
+arch work peekram peekramimplementation 8
+module work peekram 8
+arch work peekringbuffer peekringbufferimplemenatation 9
+module work peekringbuffer 9
+arch work uartrxraw behaviour 10
+module work uartrxraw 10
+arch work uartrxextclk implementation 11
+module work uartrxextclk 11
+arch work uartrxfifoextclkpeek implementation 12
+module work uartrxfifoextclkpeek 12
+arch work variableclockdividerports variableclockdivider 13
+module work variableclockdividerports 13
+arch work clockdividerports clockdivider 14
+module work clockdividerports 14
 arch work crcfifo implementation 15
 module work crcfifo 15
 arch work fourwiresteppermotorports fourwiresteppermotor 16
@@ -191,3 +191,6 @@ arch work main architecture_main 28
 module work main 28
 
 # Unbound Instances to File Association
+inst work peekringbuffer packetvalidator 9
+inst work peekringbuffer fieldlatcher 9
+inst work peekringbuffer patternfinder 9

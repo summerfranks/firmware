@@ -61,13 +61,14 @@ architecture rtl of gated_fifo_peek is
 	);
 	end component;
 
-	signal we_i : std_logic := '0';
-	signal re_i : std_logic := '0';
-	signal r_ack_i : std_logic := '0';
+	signal we_i : std_logic;
+	signal re_i : std_logic;
+	signal r_ack_i : std_logic;
 	--~ signal written : std_logic := '0';
 	--~ signal readed : std_logic := '0';
-	signal Last_wone_i : std_logic := '0';
-	signal Last_rone_i : std_logic := '0';
+	signal Last_wone_i : std_logic;
+	signal Last_rone_i : std_logic;
+	signal data_i_r : std_logic_vector(WIDTH_BITS - 1 downto 0);
 	
 
 begin
@@ -83,7 +84,7 @@ begin
 		clk => clk,
 		rst => rst,
 		we_i => we_i,
-		data_i => data_i,
+		data_i => data_i_r,
 		re_i => re_i,
 		full_o => full_o,
 		empty_o => empty_o,
@@ -110,7 +111,7 @@ begin
 			Last_wone_i <= '0';
 			Last_rone_i <= '0';
 			r_ack <= '0';
-		
+			data_i_r <= (others => '0');
 		else
 		
 			if ( (clk'event) and (clk = '1') ) then
@@ -199,6 +200,8 @@ begin
 						
 						we_i <= '1';
 						
+						data_i_r <= data_i;
+
 					else
 					
 						we_i <= '0';

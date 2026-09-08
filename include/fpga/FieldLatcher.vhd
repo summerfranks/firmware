@@ -60,6 +60,7 @@ architecture FieldLatcherImplemenatation of FieldLatcher is
 		LastWriteReq <= '0';
 		LastLatch <= '0';
 		FieldLatched_i <= (others => '0');
+		FieldLatched <= (others => '0');
 		
     else
 	
@@ -105,4 +106,3 @@ architecture FieldLatcherImplemenatation of FieldLatcher is
   end process;
 
 end FieldLatcherImplemenatation;
-

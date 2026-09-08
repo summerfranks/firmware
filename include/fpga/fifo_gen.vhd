@@ -42,8 +42,9 @@ architecture rtl of fifo is
 	-- Declare a RAM array data type
 	type ram_type is array (0 to DEPTH - 1) of std_logic_vector(WIDTH_BITS - 1 downto 0);
 	-- Shared variable to infer block ram
-	--~ shared variable RAM		: ram_type := (others => (others => '0'));
+	-- ~ shared variable RAM		: ram_type := (others => (others => '0'));
 	shared variable RAM		: ram_type;
+	-- signal RAM : ram_type;
 	-- Read/Write address pointers
 	signal raddr_r, waddr_r	: unsigned(DEPTH_BITS - 1 downto 0);
 	-- Async. counter change/Read/Write flag
@@ -56,38 +57,40 @@ architecture rtl of fifo is
 	signal full_r			: std_logic;
 	signal data_r			: std_logic_vector(WIDTH_BITS - 1 downto 0);
 begin
-	do_read <= re_i and not empty_r;
-	do_write <= we_i and not full_r;
+	do_read <= '1' when (re_i = '1' and empty_r = '0') else '0';
+	do_write <= '1' when (we_i = '1' and full_r = '0') else '0';
 	do_count <= '1' when do_read /= do_write else '0';
 	empty_o <= empty_r;
 	full_o <= full_r;
 	data_o <= data_r;
+	count_o <= std_logic_vector(to_unsigned(DEPTH - 1, DEPTH_BITS)) when full_r = '1'
+           else std_logic_vector(to_unsigned(counter_r, DEPTH_BITS));
 
 	update: process(rst, clk)
 	begin
 		if rst = '1' then
 			counter_r <= 0;
-			count_o <= (others => '0');
+			-- count_o <= (others => '0');
 			raddr_r <= (others => '0');
 			waddr_r <= (others => '0');
 			full_r <= '0';
 			empty_r <= '1';
 		elsif rising_edge(clk) then
 		
-			if (full_r = '0') then
-				count_o <= std_logic_vector(to_unsigned(counter_r, DEPTH_BITS));
-			else 
-				count_o <= std_logic_vector(to_unsigned((2**DEPTH_BITS) - 1, DEPTH_BITS));
-			end if;
+			-- if (full_r = '0') then
+			-- 	count_o <= std_logic_vector(to_unsigned(counter_r, DEPTH_BITS));
+			-- else 
+			-- 	count_o <= std_logic_vector(to_unsigned((2**DEPTH_BITS) - 1, DEPTH_BITS));
+			-- end if;
 				
-			if counter_r = 0 or (counter_r = 1 and do_read = '1' and 
+			if ((counter_r = 0) and (do_write = '0')) or (counter_r = 1 and do_read = '1' and 
 				do_write = '0') then
 				empty_r <= '1';
 			else
 				empty_r <= '0';
 			end if;
 
-			if counter_r = DEPTH or (counter_r = DEPTH - 1
+			if (counter_r = DEPTH and do_read = '0') or (counter_r = DEPTH - 1
 				and do_write = '1' and do_read = '0') then
 				full_r <= '1';
 			else
@@ -114,15 +117,18 @@ begin
 
 	dpram_porta: process(clk, do_write)
 	begin
-		if rising_edge(clk) and do_write = '1' then
-			RAM(to_integer(waddr_r)) := data_i;
-		end if;
+		   if rising_edge(clk) and do_write = '1' then
+			   RAM(to_integer(waddr_r)) := data_i;
+		   end if;
 	end process dpram_porta;
 
-	dpram_portb: process(clk, do_read)
+	dpram_portb: process(clk, rst)
 	begin
-		if rising_edge(clk) then
-			 if do_read = '1' then
+		if (rst = '1') then
+			data_r <= (others => '0');
+			r_ack <= '0';
+		elsif rising_edge(clk) then
+			if do_read = '1' then
 				data_r <= RAM(to_integer(raddr_r));
 				r_ack <= '1';
 			else

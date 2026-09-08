@@ -1,3 +1,12 @@
-@E: CD371 :"/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd":37:11:37:29|No matching overload for "+"
+@E: CD145 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":73:2:73:10|Formal, "fifocount", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1843:1:1843:9|Formal, "fifocount", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":76:2:76:13|Formal, "fiforeadaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1843:1:1843:9|Formal, "fiforeadaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":77:2:77:14|Formal, "fifowriteaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1843:1:1843:9|Formal, "fifowriteaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":78:2:78:13|Formal, "fifopeekaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1843:1:1843:9|Formal, "fifopeekaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":80:2:80:17|Formal, "fifomultipopaddr", and actual agree on type but not on size
+@E: CD145 :"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1843:1:1843:9|Formal, "fifomultipopaddr", and actual agree on type but not on size
 @E::Errors, while synthesis.
 

@@ -282,8 +282,8 @@ architecture RegisterSpace of RegisterSpacePorts is
 	constant MotorControlStatusAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(36, MAX_ADDRESS_BITS));
 	constant PosSensAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(40, MAX_ADDRESS_BITS));
 	
-	constant MonitorAdcSample : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(44, MAX_ADDRESS_BITS));
-	constant MonitorAdcReadChannel : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(52, MAX_ADDRESS_BITS));
+	constant MonitorAdcSampleAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(44, MAX_ADDRESS_BITS));
+	constant MonitorAdcReadChannelAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(52, MAX_ADDRESS_BITS));
 	constant MonitorAdcSpiXferAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(56, MAX_ADDRESS_BITS));
 	constant MonitorAdcSpiFrameEnableAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(60, MAX_ADDRESS_BITS));
 	
@@ -538,7 +538,7 @@ begin
 								--~ DataOut(31 downto 5) <= "000000000000000";
 					
 
-							when MonitorAdcReadChannel =>
+							when MonitorAdcReadChannelAddr =>
 
 								DataOut(4 downto 0) <= MonitorAdcChannelReadIndex_i;
 								DataOut(7 downto 5) <= "000";
@@ -1010,11 +1010,11 @@ begin
 								
 							--Monitor A/D
 
-							when MonitorAdcSample =>
+							when MonitorAdcSampleAddr =>
 
 								MonitorAdcReset <= '1';
 							
-							when MonitorAdcReadChannel =>
+							when MonitorAdcReadChannelAddr =>
 
 								ReadMonitorAdcSample <= '1';
 								MonitorAdcChannelReadIndex_i <= DataIn(4 downto 0);

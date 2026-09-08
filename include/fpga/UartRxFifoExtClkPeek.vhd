@@ -65,6 +65,7 @@ entity UartRxFifoExtClkPeek is
 		PayloadLen : out std_logic_vector(15 downto 0);
 		PacketCrc : out std_logic_vector(31 downto 0);
 		CalcCrc : out std_logic_vector(31 downto 0);
+		PacketFound : out std_logic;
 		
 		--Fifo status:
 		FifoFull	: out std_logic;
@@ -197,6 +198,7 @@ begin
 		PayloadLen => PayloadLen,
 		PacketCrc => PacketCrc,
 		CalcCrc => CalcCrc,
+		PacketFound => PacketFound,
     	ByteIn => RxData,
 		ByteOut => FifoPeekData,
 		WriteReq => WriteFifo_i,

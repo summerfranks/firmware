@@ -237,7 +237,9 @@ architecture architecture_Main of Main is
 						component SpiDacPorts is
 						generic (
 							MASTER_CLOCK_FREQHZ : natural := 100000000;
-							BIT_WIDTH : natural := 24--;
+							BIT_WIDTH : natural := 16;
+							CPOL : std_logic := '0'; --'standard' spi knob - inverts clock polarity (0 seems to be the standard, 1 less common)
+							CPHA : std_logic := '0'--; --'standard' spi knob - inverts clock phase (0 seems to be the standard, 1 less common)
 						);
 						port (
 						
@@ -251,11 +253,15 @@ architecture architecture_Main of Main is
 							Mosi : out  std_logic;
 							Miso : in  std_logic;
 							
+							--Debug
+							SpiRstOut : out std_logic;
+							SpiXferCompleteOut : out std_logic;
+
 							--Control signals
 							DacWriteOut : in std_logic_vector(BIT_WIDTH - 1 downto 0);
 							WriteDac : in std_logic;
-							DacReadback : out std_logic_vector(BIT_WIDTH - 1 downto 0)--;
-								
+							DacReadback : out std_logic_vector(BIT_WIDTH - 1 downto 0);
+							TransferComplete : out std_logic--;
 						); end component;
 						
 						component PPSCountPorts is
@@ -1065,7 +1071,7 @@ architecture architecture_Main of Main is
 
 		--FPGA internal
 		
-			signal rst_pulse : std_logic; --One shot reset generator
+			--~ signal rst_pulse : std_logic; --One shot reset generator
 			signal MasterReset : std_logic; --Our power-on-reset signal for everything
 			signal SerialNumber : std_logic_vector(31 downto 0); --This is a xilinx proprietary toy that we use as the serial number, it's supposed to be unique on each board
 			signal BuildNumber : std_logic_vector(31 downto 0); --How many attempts got us to this particular version of the firmware?
@@ -1145,21 +1151,20 @@ architecture architecture_Main of Main is
 			signal Uart0RxFifoPeekWriteAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekPeekAddrRegisterSpace : std_logic_vector(PeekRamDepth - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddrCrcer : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0CrcCurrentAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekPeekData : std_logic_vector(7 downto 0);
 			signal Uart0RxFifoPeekMultiPopAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekMultiPopStrobe : std_logic;
 			signal Uart0CrcStartAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0CrcEndAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
-			signal Uart0CrcCurrentAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0DoCrc : std_logic;
 			signal Uart0CrcDone : std_logic;
 			signal Uart0Crc : std_logic_vector(31 downto 0);
-			signal Uart0LastHeaderEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
-			signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
+			--~ signal Uart0LastHeaderEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
+			--~ signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0PayloadType : std_logic_vector(15 downto 0);
 			signal Uart0PayloadLen : std_logic_vector(15 downto 0);
-			signal Uart0HeaderFooterPayloadLenMatches : std_logic;
+			--~ signal Uart0HeaderFooterPayloadLenMatches : std_logic;
 			signal Uart0HeaderFound : std_logic;
 			signal Uart0FooterFound : std_logic;
 			signal Uart0HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
@@ -1657,7 +1662,7 @@ begin
 		Uart0RxFifoPeekMultiPopStrobe => Uart0RxFifoPeekMultiPopStrobe,
 		Uart0CrcStartAddr => Uart0CrcStartAddr,
 		Uart0CrcEndAddr => Uart0CrcEndAddr,
-		Uart0CrcCurrentAddr => Uart0RxFifoPeekPeekAddrCrcer,
+		Uart0CrcCurrentAddr => Uart0CrcCurrentAddr,
 		Uart0DoCrc => Uart0DoCrc,
 		Uart0CrcDone => Uart0CrcDone,
 		Uart0Crc => Uart0Crc,
@@ -1973,7 +1978,7 @@ begin
 	-- !!May want to add Uart0CrcCurrentAddr functionality for debug...
 	
 	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
-	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrCrcer when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
 	
 	PacketDecoder0 : PacketDecoder
 	port map (
@@ -2026,6 +2031,7 @@ begin
 		rst => Uart0FifoReset_i,
 		--~ BaudDivider => Uart0ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart0,
 		WriteData => Uart0TxFifoData,
@@ -2123,6 +2129,7 @@ begin
 		rst => Uart1FifoReset_i,
 		--~ BaudDivider => Uart1ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		WriteStrobe => WriteUart1,
 		WriteData => Uart1TxFifoData,
 		FifoFull => Uart1TxFifoFull,
@@ -2224,6 +2231,7 @@ begin
 		rst => Uart2FifoReset_i,
 		--~ BaudDivider => Uart2ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart2,
 		WriteData => Uart2TxFifoData,
@@ -2335,6 +2343,7 @@ begin
 		rst => Uart3FifoReset_i,
 		--~ BaudDivider => Uart3ClkDivider,
 		BitClockOut => open,
+		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
 		WriteStrobe => WriteUart3,
 		WriteData => Uart3TxFifoData,
@@ -2500,7 +2509,7 @@ begin
 	TP1 <= WriteUartUsb;
 	TP2 <= UartTxClkUsb;
 	TP3 <= UartUsbTxFifoData(0);
-	TP4 <= UartUsbTxFifoData(2);
+	TP4 <= UartUsbFifoReset_i;
 	TP5 <= UartUsbTxFifoData(3);
 	TP6 <= UartUsbTxFifoData(4);
 	TP7 <= UartUsbTxFifoData(5);
@@ -2699,6 +2708,8 @@ begin
 	(
 		MASTER_CLOCK_FREQHZ => BoardMasterClockFreq,
 		BIT_WIDTH => 16
+		--~ CPOL : std_logic := '0'; --'standard' spi knob - inverts clock polarity (0 seems to be the standard, 1 less common)
+		--~ CPHA : std_logic := '0'--; --'standard' spi knob - inverts clock phase (0 seems to be the standard, 1 less common)
 	)
 	port map 
 	(
@@ -2708,9 +2719,12 @@ begin
 		Sck => SckXO_i,
 		Mosi => MosiXO_i,
 		Miso => MisoXO_i,
+		SpiRstOut => open,
+		SpiXferCompleteOut => open,
 		DacWriteOut => ClkDacWrite,
 		WriteDac => WriteClkDac,
-		DacReadback => ClkDacReadback
+		DacReadback => ClkDacReadback,
+		TransferComplete => open--,
 	);
 
 	nCsXO <= nCsXO_i;

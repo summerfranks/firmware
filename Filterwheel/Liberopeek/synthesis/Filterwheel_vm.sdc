@@ -1,20 +1,21 @@
-# Written by Synplify Pro version map202209actsp2, Build 145R. Synopsys Run ID: sid1787869946 
+# Written by Synplify Pro version map202209actsp2, Build 145R. Synopsys Run ID: sid1788909638 
 # Top Level Design Parameters 
 
 # Clocks 
 create_clock -period 19.608 -waveform {0.000 9.804} -name {VCXO} [get_ports {CLK0_PAD}] 
 create_clock -period 20.000 -waveform {0.000 10.000} -name {Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT} [get_pins {Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock} [get_pins {Main_0/UartGpsTxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_0|ClkDiv_inferred_clock[3]} [get_pins {Main_0/UartGpsTxBitClockDiv/ClkDiv[3]/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_2layer1|div_i_inferred_clock} [get_pins {Main_0/UartGpsRxBitClockDiv/div_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock} [get_pins {Main_0/UartUsbTxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_1|ClkDiv_inferred_clock[3]} [get_pins {Main_0/UartUsbTxBitClockDiv/ClkDiv[3]/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_1layer1|div_i_inferred_clock} [get_pins {Main_0/UartUsbRxBitClockDiv/div_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock} [get_pins {Main_0/Uart3TxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_2|ClkDiv_inferred_clock[3]} [get_pins {Main_0/Uart3TxBitClockDiv/ClkDiv[3]/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock} [get_pins {Main_0/Uart3BitClockDiv/clko_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock} [get_pins {Main_0/Uart2TxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_3|ClkDiv_inferred_clock[3]} [get_pins {Main_0/Uart2TxBitClockDiv/ClkDiv[3]/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock} [get_pins {Main_0/Uart2BitClockDiv/clko_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock} [get_pins {Main_0/Uart1TxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|ClkDiv_inferred_clock[3]} [get_pins {Main_0/Uart1TxBitClockDiv/ClkDiv[3]/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock} [get_pins {Main_0/Uart1BitClockDiv/clko_i/Q}] 
-create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock} [get_pins {Main_0/Uart0TxBitClockDiv/div_i/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|ClkDiv_inferred_clock[3]} [get_pins {Main_0/Uart0TxBitClockDiv/ClkDiv[3]/Q}] 
+create_clock -period 10.000 -waveform {0.000 5.000} -name {IBufP2Ports_1|O_inferred_clock} [get_pins {Main_0/RS422_Rx0/ClkSyncWrite/O/Q}] 
 create_clock -period 10.000 -waveform {0.000 5.000} -name {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock} [get_pins {Main_0/Uart0BitClockDiv/clko_i/Q}] 
 
 # Virtual Clocks 
@@ -52,17 +53,18 @@ set_false_path -from [get_cells {Filterwheel_sb_0/CORERESETP_0/MSS_HPMS_READY_in
 # set_case Attributes 
 
 # Clock Delay Constraints 
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_0|ClkDiv_inferred_clock[3]}]
 set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_2layer1|div_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_1|ClkDiv_inferred_clock[3]}]
 set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_1layer1|div_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_2|ClkDiv_inferred_clock[3]}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_3|ClkDiv_inferred_clock[3]}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_4|ClkDiv_inferred_clock[3]}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock}]
-set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock}]
+set_clock_groups -asynchronous -group [get_clocks {ClockDivider2XPorts_work_main_architecture_main_0layer1_5|ClkDiv_inferred_clock[3]}]
+set_clock_groups -asynchronous -group [get_clocks {IBufP2Ports_1|O_inferred_clock}]
 set_clock_groups -asynchronous -group [get_clocks {VariableClockDivider2XPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock}]
 
 # syn_mode Attributes 

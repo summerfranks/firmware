@@ -14,30 +14,30 @@
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1763669276
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":1771366320
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd":1763765542
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1780617392
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":1771366217
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":1771366191
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":1771366070
 #CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd":1763669022
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1771371958
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd":1771366370
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd":1763766487
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd":1763766103
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd":1763765057
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd":1788894058
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1771365010
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":1788892907
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd":1785445178
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1763032479
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd":1763032478
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1771371982
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd":1771365472
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd":1771366350
 #CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1763758271
 @E8lFkRDCvMNH
 LDHs$NsRsIF	M
@@ -229,74 +229,91 @@ HbRk01s0N0OBsR
 -4Fbk0kB0Rs-OR4k
 F00bkROBsBbFlDCC0R
 -4ClM8FD8kCF
-l8CkDROBs1C0sNDl
-HNLssI$RF
-s	HkMb0DRO	
+l8CkDRszN0w)GH VFGD0B	CuC	H
+DLssN$FRIsH	
+M0bkR	ODRH4
+M0bkRDkO	
 R4HkMb0#Rs0
-R4HkMb0NR80UNR
-0FkbRk0ORsOdC.
-MF8l8CkD
-8lFkRDCz0Ns)HGwVGF 0	BDu	CC
-LDHs$NsRsIF	M
-HbRk0ORD	4M
-HbRk0k	ODRH4
-M0bkR0s#RH4
-M0bkR8)GRF4
-kk0b0LR7o44R
-0FkbRk07.LoRF4
-kk0b0LR7o4dR
-0FkbRk0)FGBlCbD04CR
-bHMk)0RCwN8HRVF4k
-F00bkRVwHFN)C8	qORF4
-kk0b0HRwVCF)NN870UNR
-0FkbRk0wFHVwDkDRF4
-kk0b0HRwVlF bR0$4k
-F00bkRVwHFkBFM40R4k
-F00bkRVwHFN)C88q8s4R4
-0FkbRk0wFHVW0sHC8q8s4R4
-bHMkw0RHuVFCqC	8R8s4F4
-kk0b0HRwVCFuCN	70UNR
-bHMkw0RHvVFkHD0uqFb8R8s4H4
-M0bkRVwHFDvk0FHubs10FRLC4M
+R4HkMb0GR)8
+R4Fbk0k70RLRo44k
+F00bkRo7L.
+R4Fbk0k70RLRod4k
+F00bkRB)GFDlbCR0C4M
+HbRk0)8CNwFHVRF4
+kk0b0HRwVCF)NO8q	
+R4Fbk0kw0RH)VFC7N8NR0NUk
+F00bkRN]C8wCsF8kMRF4
+kk0b0FRwFs0CwMFk8
+R4Fbk0k]0RCCN8s8 MuRF#4Fj
+kk0b0FRwFs0C uM8F4#Rjk
+F00bkR$uND8FNaC$bR
+4nFbk0ku0RNF$DNC8pMnR4
+0FkbRk0u	NOCs0BO.Rd
+0FkbRk0BONDBRsOdF.
+kk0b0NRuO0	CwMFk8
+R4Fbk0kw0RHwVFkRDD4k
+F00bkRVwHFb l04$R
+0FkbRk0wFHVBMFk0jR4
+0FkbRk0wFHV)8CNqs88R
+4jFbk0kw0RHWVFsCH0qs88R
+4jHkMb0HRwVCFuC8	q84sRjk
+F00bkRVwHFCuC	07NN
+RUHkMb0HRwVkFvDu0HF8bq84sRjM
+HbRk0wFHVv0kDHbuF1F0sL4CR
+8CMlkF8DlC
+FD8kCNRzsG0) BG0DD	
+HNLssI$RF
+s	HkMb0ORkD4	R
+bHMks0R#40R
+0FkbRk0z0NsBRD	4M
+HbRk0)RG84k
+F00bkRB)GFDlbCR0C4k
+F00bkR7)GNR0NUM
 C88lFk
-DClkF8DzCRN)s0G0 GB
-D	DsHLNRs$I	Fs
-bHMkO0RD4	R
-bHMkk0RORD	4M
-HbRk0sR#04k
-F00bkRszN0	BDRH4
-M0bkR8)GRF4
-kk0b0GR)BbFlDCC0RF4
-kk0b0GR)7NN0RCU
+DClkF8DuCRC)C	HAMokCVVsH
+DLssN$FRIsH	
+M0bkR	ODRH4
+M0bkR0s#RF4
+kk0b0NR700N1Nqs08C8s#4#Rjk
+F00bkR07NN8 Mqs88CR##4Hj
+M0bkR0A$CRQMUM
+HbRk0W0sHCJ)CRH4
+M0bkRCuC	8q8s#C#R
+4jFbk0kA0R$m0CkU0R
+bHMku0RF8bq8#sC#jR4
+bHMku0RFCb)J
+R4Fbk0k]0RCCN8skwFM48R
+0FkbRk0w0FFCFswkRM84k
+F00bkRN]C8 CsMF8u#jR4
+0FkbRk0w0FFCMs 8#uFR
+4jFbk0ku0RNF$DN$8ab4CRnk
+F00bkR$uND8FNpRCM4Fn
+kk0b0NRuO0	CBRsOdF.
+kk0b0NRBDsOBO.Rd
+0FkbRk0u	NOCF0wkRM84k
+F00bkRo7L4
+R4Fbk0k70RLRo.4k
+F00bkRo7Ld
+R4Fbk0k 0Rl$b0RF4
+kk0b0kRwD4DR
+0FkbRk0BMFk0jR4
+8CMlkF8DlC
+FD8kCCRuCN	)lH
+DLssN$FRIsH	
+M0bkR	ODRH4
+M0bkR0s#RH4
+M0bkRN)C88q8s#C#R
+4jHkMb0sRWHq0C8C8s#4#RjM
+HbRk0AC$0QUMR
+0FkbRk0AC$0mRk0UM
+HbRk0W0sHCJ)CRC4
 MF8l8CkD
-8lFkRDCu	CC)oHMAVkVCDs
-HNLssI$RF
-s	HkMb0DRO	
-R4HkMb0#Rs0
-R4Fbk0k70RN10N00Nsqs88CR##4F4
-kk0b0NR70MN 88q8s#C#R
-44HkMb0CRuC8	q8#sC#4R4
-bHMku0RF8bq8#sC#4R4
-bHMkA0R$Q0CM
-RUFbk0kA0R$m0CkU0R
-bHMkW0RsCH0)RCJ4M
-HbRk0u)FbC4JR
-0FkbRk074LoRF4
-kk0b0LR7o4.R
-0FkbRk07dLoRF4
-kk0b0lR bR0$4k
-F00bkRDwkD
-R4Fbk0kB0RF0kMR
-44ClM8FD8kCF
-l8CkDRCuC	l)N
-LDHs$NsRsIF	M
-HbRk0ORD	4M
-HbRk0sR#04M
-HbRk0)8CNqs88CR##4H4
-M0bkRHWs08Cq8#sC#4R4
-bHMkA0R$Q0CM
-RUFbk0kA0R$m0CkU0R
-bHMkW0RsCH0)RCJ4M
+8lFkRDCB1sO0NsClH
+DLssN$FRIsH	
+M0bkR	ODRH4
+M0bkR0s#RH4
+M0bkR08NN
+RUFbk0kO0RsdOR.M
 C88lFk
 DClkF8DzCRNas0GH
 DLssN$FRIsH	
@@ -563,12 +580,6 @@ kk0b0FRv0qFsvkHM#
 R4Fbk0kv0RFs0FAkuD#
 R4Fbk0kv0RFs0FAMvHk4#R
 8CMlkF8DlC
-FD8kCsROO$_L0DC
-HNLssI$RF
-s	HkMb0sROORQMdH.
-M0bkR08NN
-RUFbk0kO0RskOm0.Rd
-8CMlkF8DlC
 FD8kCDRBF7O	H8PHCFsus
 0#DsHLNRs$I	Fs
 sbNN0lCCBsRpimB_e7QQ)7 R0HMCsoC
@@ -595,6 +606,12 @@ M0bkRN MLRDC4M
 HbRk0)RG74k
 F00bkRq)GP
 R4Fbk0k70RNm0NRCU
+MF8l8CkD
+8lFkRDCO_sOLC$0
+LDHs$NsRsIF	M
+HbRk0OQsOM.Rd
+bHMk80RNR0NUk
+F00bkROOsmRk0dC.
 MF8l8CkD
 8lFkRDCuBu1F0kMu0Fs#H
 DLssN$FRIsb	

@@ -38,10 +38,9 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.NUMERIC_STD.all;
 
 entity CrcStream is
-	--~ generic (
-		--~ MASTER_CLOCK_FREQHZ : natural := 100000000;
-		--~ BIT_WIDTH : natural := 16;
-	--~ );
+	generic (
+		CRC_INIT_STATE : std_logic_vector(31 downto 0) := x"FFFFFFFF"
+	);
 	port (
 	
 		--Globals
@@ -83,8 +82,7 @@ begin
 	
 		if (rst = '1') then 
 		
-			CrcIn <= x"FFFFFFFF";
-			--~ CrcIn <= x"00000000";
+			CrcIn <= CRC_INIT_STATE;
 					
 		else
 			

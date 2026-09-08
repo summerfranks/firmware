@@ -152,7 +152,7 @@ extern "C"
 	
 	#ifdef __clang__
 	FILE *const stdout = (FILE *const)0;
-	FILE *const stdin = (FILE *const)0;
+	FILE *const stdin = (FILE *const)1;
 	#endif
 };
 
@@ -160,7 +160,7 @@ bool Process()
 {
     bool Bored = true;
 	
-	MonitorAdc.Process();
+	//~ MonitorAdc.Process();
 	
 	//Enable this if we need to debug ascii and binary on the same uart (note: madness ensues!)
 	//~ {
@@ -202,7 +202,7 @@ void ProcessAllUarts()
 int main(int argc, char *argv[])
 {	
     //Tell C lib (stdio.h) not to buffer output, so we can ditch all the fflush(stdout) calls...
-    //~ setvbuf(stdout, NULL, _IONBF, 0);
+    setvbuf(stdout, NULL, _IONBF, 0);
 
     //~ if (argc > 2)
 
@@ -235,9 +235,9 @@ int main(int argc, char *argv[])
 	//~ ccr.formatf();
 	//~ *CCR = ccr;
 
-	//~ formatf("\n\nESC-FW: v%s.b%s; Offset of ControlRegister: 0x%.2lX, expected: 0x%.2lX.", GITVERSION, BUILDNUM, (unsigned long)offsetof(CGraphFWHardwareInterface, ControlRegister), 32UL);
+	formatf("\n\nESC-FW: v%s.b%s; Offset of ControlRegister: 0x%.2lX, expected: 0x%.2lX.", GITVERSION, BUILDNUM, (unsigned long)offsetof(CGraphFWHardwareInterface, ControlRegister), 32UL);
 	
-	//~ ShowBuildParameters();
+	ShowBuildParameters();
 
 	//~ formatf("\nOffset of UartFifoUsb: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, UartFifoUsb), 116UL);
 	//~ formatf("\nOffset of UartFifoUsbReadData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, UartFifoUsbReadData), 172UL);
@@ -257,10 +257,10 @@ int main(int argc, char *argv[])
 	//~ FpgaUartParser2.Debug(true);
 	//~ FpgaUartParser3.Debug(true);
 
-	//~ DbgUartUsb.Init();
+	DbgUartUsb.Init();
 	//~ DbgUart485_0.Init();
 
-    //~ DbgUartUsb.SetEcho(false);
+    DbgUartUsb.SetEcho(false);
     //~ DbgUart485_0.SetEcho(false);
 	
 	//~ MonitorAdc.SetMonitor(true);
@@ -270,9 +270,9 @@ int main(int argc, char *argv[])
 	//~ uint8_t i = 0;
     while(true)
     {
-		//~ Process();
+		Process();
 		
-		FPGAUartPinoutUsb.putcqq('F');
+		//~ FPGAUartPinoutUsb.putcqq('F');
     }
 
     return(0);
