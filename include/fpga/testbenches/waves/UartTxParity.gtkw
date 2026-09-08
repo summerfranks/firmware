@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Mon Mar 30 22:26:16 2026
+[*]
+[dumpfile] "work/UartTxParity_tb.ghw"
+[dumpfile_mtime] "Mon Mar 30 22:22:07 2026"
+[dumpfile_size] 5593
+[savefile] "waves/UartTxParity.gtkw"
+[timestart] 1404700000
+[size] 1908 987
+[pos] -500 16
+*-25.000000 1505000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uarttxparity_tb.
+[treeopen] top.uarttxparity_tb.dut.
+[sst_width] 214
+[signals_width] 232
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+top.uarttxparity_tb.parity_even
+top.uarttxparity_tb.busy
+top.uarttxparity_tb.txd
+top.uarttxparity_tb.go
+top.uarttxparity_tb.rst
+top.uarttxparity_tb.clk
+@22
+#{top.uarttxparity_tb.test_name_display[1:80]} top.uarttxparity_tb.test_name_display[1] top.uarttxparity_tb.test_name_display[2] top.uarttxparity_tb.test_name_display[3] top.uarttxparity_tb.test_name_display[4] top.uarttxparity_tb.test_name_display[5] top.uarttxparity_tb.test_name_display[6] top.uarttxparity_tb.test_name_display[7] top.uarttxparity_tb.test_name_display[8] top.uarttxparity_tb.test_name_display[9] top.uarttxparity_tb.test_name_display[10] top.uarttxparity_tb.test_name_display[11] top.uarttxparity_tb.test_name_display[12] top.uarttxparity_tb.test_name_display[13] top.uarttxparity_tb.test_name_display[14] top.uarttxparity_tb.test_name_display[15] top.uarttxparity_tb.test_name_display[16] top.uarttxparity_tb.test_name_display[17] top.uarttxparity_tb.test_name_display[18] top.uarttxparity_tb.test_name_display[19] top.uarttxparity_tb.test_name_display[20] top.uarttxparity_tb.test_name_display[21] top.uarttxparity_tb.test_name_display[22] top.uarttxparity_tb.test_name_display[23] top.uarttxparity_tb.test_name_display[24] top.uarttxparity_tb.test_name_display[25] top.uarttxparity_tb.test_name_display[26] top.uarttxparity_tb.test_name_display[27] top.uarttxparity_tb.test_name_display[28] top.uarttxparity_tb.test_name_display[29] top.uarttxparity_tb.test_name_display[30] top.uarttxparity_tb.test_name_display[31] top.uarttxparity_tb.test_name_display[32] top.uarttxparity_tb.test_name_display[33] top.uarttxparity_tb.test_name_display[34] top.uarttxparity_tb.test_name_display[35] top.uarttxparity_tb.test_name_display[36] top.uarttxparity_tb.test_name_display[37] top.uarttxparity_tb.test_name_display[38] top.uarttxparity_tb.test_name_display[39] top.uarttxparity_tb.test_name_display[40] top.uarttxparity_tb.test_name_display[41] top.uarttxparity_tb.test_name_display[42] top.uarttxparity_tb.test_name_display[43] top.uarttxparity_tb.test_name_display[44] top.uarttxparity_tb.test_name_display[45] top.uarttxparity_tb.test_name_display[46] top.uarttxparity_tb.test_name_display[47] top.uarttxparity_tb.test_name_display[48] top.uarttxparity_tb.test_name_display[49] top.uarttxparity_tb.test_name_display[50] top.uarttxparity_tb.test_name_display[51] top.uarttxparity_tb.test_name_display[52] top.uarttxparity_tb.test_name_display[53] top.uarttxparity_tb.test_name_display[54] top.uarttxparity_tb.test_name_display[55] top.uarttxparity_tb.test_name_display[56] top.uarttxparity_tb.test_name_display[57] top.uarttxparity_tb.test_name_display[58] top.uarttxparity_tb.test_name_display[59] top.uarttxparity_tb.test_name_display[60] top.uarttxparity_tb.test_name_display[61] top.uarttxparity_tb.test_name_display[62] top.uarttxparity_tb.test_name_display[63] top.uarttxparity_tb.test_name_display[64] top.uarttxparity_tb.test_name_display[65] top.uarttxparity_tb.test_name_display[66] top.uarttxparity_tb.test_name_display[67] top.uarttxparity_tb.test_name_display[68] top.uarttxparity_tb.test_name_display[69] top.uarttxparity_tb.test_name_display[70] top.uarttxparity_tb.test_name_display[71] top.uarttxparity_tb.test_name_display[72] top.uarttxparity_tb.test_name_display[73] top.uarttxparity_tb.test_name_display[74] top.uarttxparity_tb.test_name_display[75] top.uarttxparity_tb.test_name_display[76] top.uarttxparity_tb.test_name_display[77] top.uarttxparity_tb.test_name_display[78] top.uarttxparity_tb.test_name_display[79] top.uarttxparity_tb.test_name_display[80]
+#{top.uarttxparity_tb.dut.bitcnt[3:0]} top.uarttxparity_tb.dut.bitcnt[3] top.uarttxparity_tb.dut.bitcnt[2] top.uarttxparity_tb.dut.bitcnt[1] top.uarttxparity_tb.dut.bitcnt[0]
+#{top.uarttxparity_tb.dut.data[7:0]} top.uarttxparity_tb.dut.data[7] top.uarttxparity_tb.dut.data[6] top.uarttxparity_tb.dut.data[5] top.uarttxparity_tb.dut.data[4] top.uarttxparity_tb.dut.data[3] top.uarttxparity_tb.dut.data[2] top.uarttxparity_tb.dut.data[1] top.uarttxparity_tb.dut.data[0]
+@28
+top.uarttxparity_tb.dut.lastgo
+@29
+top.uarttxparity_tb.dut.go
+[pattern_trace] 1
+[pattern_trace] 0

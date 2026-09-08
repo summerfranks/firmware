@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Mar  8 07:24:51 2026
+[*]
+[dumpfile] "work/ClockDivider_tb.ghw"
+[dumpfile_mtime] "Sun Mar  8 07:14:03 2026"
+[dumpfile_size] 40884
+[savefile] "waves/ClockDivider.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -72 -174
+*-27.000000 108700000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.clockdivider_tb.
+[sst_width] 214
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@28
+top.clockdivider_tb.rst
+top.clockdivider_tb.clk
+@420
+top.clockdivider_tb.dut_cfg3.clkdiv
+top.clockdivider_tb.dut_cfg2.clkdiv
+top.clockdivider_tb.dut_cfg1.clkdiv
+@22
+#{top.clockdivider_tb.test_name_display[1:40]} top.clockdivider_tb.test_name_display[1] top.clockdivider_tb.test_name_display[2] top.clockdivider_tb.test_name_display[3] top.clockdivider_tb.test_name_display[4] top.clockdivider_tb.test_name_display[5] top.clockdivider_tb.test_name_display[6] top.clockdivider_tb.test_name_display[7] top.clockdivider_tb.test_name_display[8] top.clockdivider_tb.test_name_display[9] top.clockdivider_tb.test_name_display[10] top.clockdivider_tb.test_name_display[11] top.clockdivider_tb.test_name_display[12] top.clockdivider_tb.test_name_display[13] top.clockdivider_tb.test_name_display[14] top.clockdivider_tb.test_name_display[15] top.clockdivider_tb.test_name_display[16] top.clockdivider_tb.test_name_display[17] top.clockdivider_tb.test_name_display[18] top.clockdivider_tb.test_name_display[19] top.clockdivider_tb.test_name_display[20] top.clockdivider_tb.test_name_display[21] top.clockdivider_tb.test_name_display[22] top.clockdivider_tb.test_name_display[23] top.clockdivider_tb.test_name_display[24] top.clockdivider_tb.test_name_display[25] top.clockdivider_tb.test_name_display[26] top.clockdivider_tb.test_name_display[27] top.clockdivider_tb.test_name_display[28] top.clockdivider_tb.test_name_display[29] top.clockdivider_tb.test_name_display[30] top.clockdivider_tb.test_name_display[31] top.clockdivider_tb.test_name_display[32] top.clockdivider_tb.test_name_display[33] top.clockdivider_tb.test_name_display[34] top.clockdivider_tb.test_name_display[35] top.clockdivider_tb.test_name_display[36] top.clockdivider_tb.test_name_display[37] top.clockdivider_tb.test_name_display[38] top.clockdivider_tb.test_name_display[39] top.clockdivider_tb.test_name_display[40]
+[pattern_trace] 1
+[pattern_trace] 0

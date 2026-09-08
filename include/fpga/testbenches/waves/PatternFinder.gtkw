@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Apr 12 18:23:27 2026
+[*]
+[dumpfile] "work/PatternFinder_tb.ghw"
+[dumpfile_mtime] "Sun Apr 12 18:19:43 2026"
+[dumpfile_size] 2377
+[savefile] "waves/PatternFinder.gtkw"
+[timestart] 0
+[size] 1908 987
+[pos] -336 -65
+*-24.000000 85000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.patternfinder_tb.
+[treeopen] top.patternfinder_tb.dut.
+[sst_width] 214
+[signals_width] 248
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+top.patternfinder_tb.dut.lastwritereq
+top.patternfinder_tb.dut.found
+top.patternfinder_tb.dut.writereq
+top.patternfinder_tb.dut.rst
+top.patternfinder_tb.dut.clk
+@22
+#{top.patternfinder_tb.test_name_display[1:80]} top.patternfinder_tb.test_name_display[1] top.patternfinder_tb.test_name_display[2] top.patternfinder_tb.test_name_display[3] top.patternfinder_tb.test_name_display[4] top.patternfinder_tb.test_name_display[5] top.patternfinder_tb.test_name_display[6] top.patternfinder_tb.test_name_display[7] top.patternfinder_tb.test_name_display[8] top.patternfinder_tb.test_name_display[9] top.patternfinder_tb.test_name_display[10] top.patternfinder_tb.test_name_display[11] top.patternfinder_tb.test_name_display[12] top.patternfinder_tb.test_name_display[13] top.patternfinder_tb.test_name_display[14] top.patternfinder_tb.test_name_display[15] top.patternfinder_tb.test_name_display[16] top.patternfinder_tb.test_name_display[17] top.patternfinder_tb.test_name_display[18] top.patternfinder_tb.test_name_display[19] top.patternfinder_tb.test_name_display[20] top.patternfinder_tb.test_name_display[21] top.patternfinder_tb.test_name_display[22] top.patternfinder_tb.test_name_display[23] top.patternfinder_tb.test_name_display[24] top.patternfinder_tb.test_name_display[25] top.patternfinder_tb.test_name_display[26] top.patternfinder_tb.test_name_display[27] top.patternfinder_tb.test_name_display[28] top.patternfinder_tb.test_name_display[29] top.patternfinder_tb.test_name_display[30] top.patternfinder_tb.test_name_display[31] top.patternfinder_tb.test_name_display[32] top.patternfinder_tb.test_name_display[33] top.patternfinder_tb.test_name_display[34] top.patternfinder_tb.test_name_display[35] top.patternfinder_tb.test_name_display[36] top.patternfinder_tb.test_name_display[37] top.patternfinder_tb.test_name_display[38] top.patternfinder_tb.test_name_display[39] top.patternfinder_tb.test_name_display[40] top.patternfinder_tb.test_name_display[41] top.patternfinder_tb.test_name_display[42] top.patternfinder_tb.test_name_display[43] top.patternfinder_tb.test_name_display[44] top.patternfinder_tb.test_name_display[45] top.patternfinder_tb.test_name_display[46] top.patternfinder_tb.test_name_display[47] top.patternfinder_tb.test_name_display[48] top.patternfinder_tb.test_name_display[49] top.patternfinder_tb.test_name_display[50] top.patternfinder_tb.test_name_display[51] top.patternfinder_tb.test_name_display[52] top.patternfinder_tb.test_name_display[53] top.patternfinder_tb.test_name_display[54] top.patternfinder_tb.test_name_display[55] top.patternfinder_tb.test_name_display[56] top.patternfinder_tb.test_name_display[57] top.patternfinder_tb.test_name_display[58] top.patternfinder_tb.test_name_display[59] top.patternfinder_tb.test_name_display[60] top.patternfinder_tb.test_name_display[61] top.patternfinder_tb.test_name_display[62] top.patternfinder_tb.test_name_display[63] top.patternfinder_tb.test_name_display[64] top.patternfinder_tb.test_name_display[65] top.patternfinder_tb.test_name_display[66] top.patternfinder_tb.test_name_display[67] top.patternfinder_tb.test_name_display[68] top.patternfinder_tb.test_name_display[69] top.patternfinder_tb.test_name_display[70] top.patternfinder_tb.test_name_display[71] top.patternfinder_tb.test_name_display[72] top.patternfinder_tb.test_name_display[73] top.patternfinder_tb.test_name_display[74] top.patternfinder_tb.test_name_display[75] top.patternfinder_tb.test_name_display[76] top.patternfinder_tb.test_name_display[77] top.patternfinder_tb.test_name_display[78] top.patternfinder_tb.test_name_display[79] top.patternfinder_tb.test_name_display[80]
+#{top.patternfinder_tb.bytein[7:0]} top.patternfinder_tb.bytein[7] top.patternfinder_tb.bytein[6] top.patternfinder_tb.bytein[5] top.patternfinder_tb.bytein[4] top.patternfinder_tb.bytein[3] top.patternfinder_tb.bytein[2] top.patternfinder_tb.bytein[1] top.patternfinder_tb.bytein[0]
+@28
+#{top.patternfinder_tb.dut.bytepos[1:0]} top.patternfinder_tb.dut.bytepos[1] top.patternfinder_tb.dut.bytepos[0]
+@23
+#{top.patternfinder_tb.dut.bytein[7:0]} top.patternfinder_tb.dut.bytein[7] top.patternfinder_tb.dut.bytein[6] top.patternfinder_tb.dut.bytein[5] top.patternfinder_tb.dut.bytein[4] top.patternfinder_tb.dut.bytein[3] top.patternfinder_tb.dut.bytein[2] top.patternfinder_tb.dut.bytein[1] top.patternfinder_tb.dut.bytein[0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Thu Jun 11 20:36:36 2026
+[*]
+[dumpfile] "work/UartRxFifoParity_tb.ghw"
+[dumpfile_mtime] "Thu Jun 11 20:22:25 2026"
+[dumpfile_size] 13981
+[savefile] "waves/UartRxFifoParity.gtkw"
+[timestart] 0
+[size] 1908 987
+[pos] -1 -1
+*-36.000000 297444660971 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uartrxfifoparity_tb.
+[treeopen] top.uartrxfifoparity_tb.dut.
+[treeopen] top.uartrxfifoparity_tb.dut.uart.
+[sst_width] 214
+[signals_width] 239
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@22
+#{top.uartrxfifoparity_tb.test_name_display[1:80]} top.uartrxfifoparity_tb.test_name_display[1] top.uartrxfifoparity_tb.test_name_display[2] top.uartrxfifoparity_tb.test_name_display[3] top.uartrxfifoparity_tb.test_name_display[4] top.uartrxfifoparity_tb.test_name_display[5] top.uartrxfifoparity_tb.test_name_display[6] top.uartrxfifoparity_tb.test_name_display[7] top.uartrxfifoparity_tb.test_name_display[8] top.uartrxfifoparity_tb.test_name_display[9] top.uartrxfifoparity_tb.test_name_display[10] top.uartrxfifoparity_tb.test_name_display[11] top.uartrxfifoparity_tb.test_name_display[12] top.uartrxfifoparity_tb.test_name_display[13] top.uartrxfifoparity_tb.test_name_display[14] top.uartrxfifoparity_tb.test_name_display[15] top.uartrxfifoparity_tb.test_name_display[16] top.uartrxfifoparity_tb.test_name_display[17] top.uartrxfifoparity_tb.test_name_display[18] top.uartrxfifoparity_tb.test_name_display[19] top.uartrxfifoparity_tb.test_name_display[20] top.uartrxfifoparity_tb.test_name_display[21] top.uartrxfifoparity_tb.test_name_display[22] top.uartrxfifoparity_tb.test_name_display[23] top.uartrxfifoparity_tb.test_name_display[24] top.uartrxfifoparity_tb.test_name_display[25] top.uartrxfifoparity_tb.test_name_display[26] top.uartrxfifoparity_tb.test_name_display[27] top.uartrxfifoparity_tb.test_name_display[28] top.uartrxfifoparity_tb.test_name_display[29] top.uartrxfifoparity_tb.test_name_display[30] top.uartrxfifoparity_tb.test_name_display[31] top.uartrxfifoparity_tb.test_name_display[32] top.uartrxfifoparity_tb.test_name_display[33] top.uartrxfifoparity_tb.test_name_display[34] top.uartrxfifoparity_tb.test_name_display[35] top.uartrxfifoparity_tb.test_name_display[36] top.uartrxfifoparity_tb.test_name_display[37] top.uartrxfifoparity_tb.test_name_display[38] top.uartrxfifoparity_tb.test_name_display[39] top.uartrxfifoparity_tb.test_name_display[40] top.uartrxfifoparity_tb.test_name_display[41] top.uartrxfifoparity_tb.test_name_display[42] top.uartrxfifoparity_tb.test_name_display[43] top.uartrxfifoparity_tb.test_name_display[44] top.uartrxfifoparity_tb.test_name_display[45] top.uartrxfifoparity_tb.test_name_display[46] top.uartrxfifoparity_tb.test_name_display[47] top.uartrxfifoparity_tb.test_name_display[48] top.uartrxfifoparity_tb.test_name_display[49] top.uartrxfifoparity_tb.test_name_display[50] top.uartrxfifoparity_tb.test_name_display[51] top.uartrxfifoparity_tb.test_name_display[52] top.uartrxfifoparity_tb.test_name_display[53] top.uartrxfifoparity_tb.test_name_display[54] top.uartrxfifoparity_tb.test_name_display[55] top.uartrxfifoparity_tb.test_name_display[56] top.uartrxfifoparity_tb.test_name_display[57] top.uartrxfifoparity_tb.test_name_display[58] top.uartrxfifoparity_tb.test_name_display[59] top.uartrxfifoparity_tb.test_name_display[60] top.uartrxfifoparity_tb.test_name_display[61] top.uartrxfifoparity_tb.test_name_display[62] top.uartrxfifoparity_tb.test_name_display[63] top.uartrxfifoparity_tb.test_name_display[64] top.uartrxfifoparity_tb.test_name_display[65] top.uartrxfifoparity_tb.test_name_display[66] top.uartrxfifoparity_tb.test_name_display[67] top.uartrxfifoparity_tb.test_name_display[68] top.uartrxfifoparity_tb.test_name_display[69] top.uartrxfifoparity_tb.test_name_display[70] top.uartrxfifoparity_tb.test_name_display[71] top.uartrxfifoparity_tb.test_name_display[72] top.uartrxfifoparity_tb.test_name_display[73] top.uartrxfifoparity_tb.test_name_display[74] top.uartrxfifoparity_tb.test_name_display[75] top.uartrxfifoparity_tb.test_name_display[76] top.uartrxfifoparity_tb.test_name_display[77] top.uartrxfifoparity_tb.test_name_display[78] top.uartrxfifoparity_tb.test_name_display[79] top.uartrxfifoparity_tb.test_name_display[80]
+#{top.uartrxfifoparity_tb.fifocount[9:0]} top.uartrxfifoparity_tb.fifocount[9] top.uartrxfifoparity_tb.fifocount[8] top.uartrxfifoparity_tb.fifocount[7] top.uartrxfifoparity_tb.fifocount[6] top.uartrxfifoparity_tb.fifocount[5] top.uartrxfifoparity_tb.fifocount[4] top.uartrxfifoparity_tb.fifocount[3] top.uartrxfifoparity_tb.fifocount[2] top.uartrxfifoparity_tb.fifocount[1] top.uartrxfifoparity_tb.fifocount[0]
+#{top.uartrxfifoparity_tb.fiforeaddata[7:0]} top.uartrxfifoparity_tb.fiforeaddata[7] top.uartrxfifoparity_tb.fiforeaddata[6] top.uartrxfifoparity_tb.fiforeaddata[5] top.uartrxfifoparity_tb.fiforeaddata[4] top.uartrxfifoparity_tb.fiforeaddata[3] top.uartrxfifoparity_tb.fiforeaddata[2] top.uartrxfifoparity_tb.fiforeaddata[1] top.uartrxfifoparity_tb.fiforeaddata[0]
+@200
+-
+@28
+top.uartrxfifoparity_tb.dut.writefifouart_i
+top.uartrxfifoparity_tb.dut.writefifo_i
+top.uartrxfifoparity_tb.dut.readfifo_i
+top.uartrxfifoparity_tb.dut.uartparityerr
+top.uartrxfifoparity_tb.dut.rxcomplete
+top.uartrxfifoparity_tb.dut.rxd_i
+top.uartrxfifoparity_tb.dut.uartbaudclkx16
+top.uartrxfifoparity_tb.dut.fifoempty
+top.uartrxfifoparity_tb.dut.fifofull
+top.uartrxfifoparity_tb.dut.fiforeadack
+top.uartrxfifoparity_tb.dut.readfifo
+top.uartrxfifoparity_tb.dut.rxd
+top.uartrxfifoparity_tb.dut.rst
+@29
+top.uartrxfifoparity_tb.bit_clk
+@28
+top.uartrxfifoparity_tb.dut.uclk
+top.uartrxfifoparity_tb.dut.clk
+@200
+-
+@28
+top.uartrxfifoparity_tb.dut.uartfifo.last_rone_i
+top.uartrxfifoparity_tb.dut.uartfifo.last_wone_i
+top.uartrxfifoparity_tb.dut.uartfifo.r_ack_i
+top.uartrxfifoparity_tb.dut.uartfifo.re_i
+top.uartrxfifoparity_tb.dut.uartfifo.we_i
+top.uartrxfifoparity_tb.dut.uartfifo.r_ack
+top.uartrxfifoparity_tb.dut.uartfifo.empty_o
+top.uartrxfifoparity_tb.dut.uartfifo.full_o
+top.uartrxfifoparity_tb.dut.uartfifo.rone_i
+top.uartrxfifoparity_tb.dut.uartfifo.wone_i
+top.uartrxfifoparity_tb.dut.uartfifo.rst
+top.uartrxfifoparity_tb.dut.uartfifo.clk
+@200
+-
+@28
+top.uartrxfifoparity_tb.dut.uart.parityerrfailed
+top.uartrxfifoparity_tb.dut.uart.paritybit
+top.uartrxfifoparity_tb.dut.uart.parityerr
+top.uartrxfifoparity_tb.dut.uart.rxav
+top.uartrxfifoparity_tb.dut.uart.rxd
+top.uartrxfifoparity_tb.dut.uart.enable
+top.uartrxfifoparity_tb.dut.uart.reset
+top.uartrxfifoparity_tb.dut.uart.clk
+[pattern_trace] 1
+[pattern_trace] 0

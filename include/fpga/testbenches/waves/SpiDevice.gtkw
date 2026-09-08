@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Thu Jun 18 21:08:19 2026
+[*]
+[dumpfile] "../work/SpiDevice_tb.ghw"
+[dumpfile_mtime] "Thu Jun 18 20:50:11 2026"
+[dumpfile_size] 79597
+[savefile] "SpiDevice.gtkw"
+[timestart] 1658000000
+[size] 1908 987
+[pos] -500 16
+*-28.000000 1885000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.spidevice_tb.
+[treeopen] top.spidevice_tb.dut_mode0.
+[treeopen] top.spidevice_tb.dut_mode0.spi.
+[sst_width] 214
+[signals_width] 235
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@23
+#{top.spidevice_tb.test_name_display[1:80]} top.spidevice_tb.test_name_display[1] top.spidevice_tb.test_name_display[2] top.spidevice_tb.test_name_display[3] top.spidevice_tb.test_name_display[4] top.spidevice_tb.test_name_display[5] top.spidevice_tb.test_name_display[6] top.spidevice_tb.test_name_display[7] top.spidevice_tb.test_name_display[8] top.spidevice_tb.test_name_display[9] top.spidevice_tb.test_name_display[10] top.spidevice_tb.test_name_display[11] top.spidevice_tb.test_name_display[12] top.spidevice_tb.test_name_display[13] top.spidevice_tb.test_name_display[14] top.spidevice_tb.test_name_display[15] top.spidevice_tb.test_name_display[16] top.spidevice_tb.test_name_display[17] top.spidevice_tb.test_name_display[18] top.spidevice_tb.test_name_display[19] top.spidevice_tb.test_name_display[20] top.spidevice_tb.test_name_display[21] top.spidevice_tb.test_name_display[22] top.spidevice_tb.test_name_display[23] top.spidevice_tb.test_name_display[24] top.spidevice_tb.test_name_display[25] top.spidevice_tb.test_name_display[26] top.spidevice_tb.test_name_display[27] top.spidevice_tb.test_name_display[28] top.spidevice_tb.test_name_display[29] top.spidevice_tb.test_name_display[30] top.spidevice_tb.test_name_display[31] top.spidevice_tb.test_name_display[32] top.spidevice_tb.test_name_display[33] top.spidevice_tb.test_name_display[34] top.spidevice_tb.test_name_display[35] top.spidevice_tb.test_name_display[36] top.spidevice_tb.test_name_display[37] top.spidevice_tb.test_name_display[38] top.spidevice_tb.test_name_display[39] top.spidevice_tb.test_name_display[40] top.spidevice_tb.test_name_display[41] top.spidevice_tb.test_name_display[42] top.spidevice_tb.test_name_display[43] top.spidevice_tb.test_name_display[44] top.spidevice_tb.test_name_display[45] top.spidevice_tb.test_name_display[46] top.spidevice_tb.test_name_display[47] top.spidevice_tb.test_name_display[48] top.spidevice_tb.test_name_display[49] top.spidevice_tb.test_name_display[50] top.spidevice_tb.test_name_display[51] top.spidevice_tb.test_name_display[52] top.spidevice_tb.test_name_display[53] top.spidevice_tb.test_name_display[54] top.spidevice_tb.test_name_display[55] top.spidevice_tb.test_name_display[56] top.spidevice_tb.test_name_display[57] top.spidevice_tb.test_name_display[58] top.spidevice_tb.test_name_display[59] top.spidevice_tb.test_name_display[60] top.spidevice_tb.test_name_display[61] top.spidevice_tb.test_name_display[62] top.spidevice_tb.test_name_display[63] top.spidevice_tb.test_name_display[64] top.spidevice_tb.test_name_display[65] top.spidevice_tb.test_name_display[66] top.spidevice_tb.test_name_display[67] top.spidevice_tb.test_name_display[68] top.spidevice_tb.test_name_display[69] top.spidevice_tb.test_name_display[70] top.spidevice_tb.test_name_display[71] top.spidevice_tb.test_name_display[72] top.spidevice_tb.test_name_display[73] top.spidevice_tb.test_name_display[74] top.spidevice_tb.test_name_display[75] top.spidevice_tb.test_name_display[76] top.spidevice_tb.test_name_display[77] top.spidevice_tb.test_name_display[78] top.spidevice_tb.test_name_display[79] top.spidevice_tb.test_name_display[80]
+@28
+top.spidevice_tb.dut_mode0.transferactuallycomplete
+top.spidevice_tb.dut_mode0.lasttransfer
+top.spidevice_tb.dut_mode0.lastspixfercomplete
+top.spidevice_tb.dut_mode0.spixfercomplete
+top.spidevice_tb.dut_mode0.spirst
+top.spidevice_tb.dut_mode0.transfercomplete
+top.spidevice_tb.dut_mode0.transfer
+top.spidevice_tb.dut_mode0.miso
+top.spidevice_tb.dut_mode0.mosi
+top.spidevice_tb.dut_mode0.sck
+top.spidevice_tb.dut_mode0.ncs
+top.spidevice_tb.dut_mode0.rst
+top.spidevice_tb.dut_mode0.clk
+@200
+-
+@28
+top.spidevice_tb.dut_mode0.spi.xfercomplete_i
+top.spidevice_tb.dut_mode0.spi.datatomosilatched
+top.spidevice_tb.dut_mode0.spi.mosi_i
+top.spidevice_tb.dut_mode0.spi.sck_i
+@420
+top.spidevice_tb.dut_mode0.spi.clkdiv
+top.spidevice_tb.dut_mode0.spi.spibitpos
+@28
+top.spidevice_tb.dut_mode0.spi.xfercomplete
+top.spidevice_tb.dut_mode0.spi.miso
+top.spidevice_tb.dut_mode0.spi.sck
+top.spidevice_tb.dut_mode0.spi.mosi
+top.spidevice_tb.dut_mode0.spi.rst
+top.spidevice_tb.dut_mode0.spi.clk
+[pattern_trace] 1
+[pattern_trace] 0

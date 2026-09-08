@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Mar 29 23:58:27 2026
+[*]
+[dumpfile] "work/crc_fifo_tb.ghw"
+[dumpfile_mtime] "Sun Mar 29 23:20:00 2026"
+[dumpfile_size] 4501
+[savefile] "waves/crc_fifo.gtkw"
+[timestart] 20210000
+[size] 1908 999
+[pos] -1 -1
+*-23.000000 57660000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.crc_fifo_tb.
+[treeopen] top.crc_fifo_tb.dut.
+[sst_width] 214
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@22
+#{top.crc_fifo_tb.test_name_display[1:80]} top.crc_fifo_tb.test_name_display[1] top.crc_fifo_tb.test_name_display[2] top.crc_fifo_tb.test_name_display[3] top.crc_fifo_tb.test_name_display[4] top.crc_fifo_tb.test_name_display[5] top.crc_fifo_tb.test_name_display[6] top.crc_fifo_tb.test_name_display[7] top.crc_fifo_tb.test_name_display[8] top.crc_fifo_tb.test_name_display[9] top.crc_fifo_tb.test_name_display[10] top.crc_fifo_tb.test_name_display[11] top.crc_fifo_tb.test_name_display[12] top.crc_fifo_tb.test_name_display[13] top.crc_fifo_tb.test_name_display[14] top.crc_fifo_tb.test_name_display[15] top.crc_fifo_tb.test_name_display[16] top.crc_fifo_tb.test_name_display[17] top.crc_fifo_tb.test_name_display[18] top.crc_fifo_tb.test_name_display[19] top.crc_fifo_tb.test_name_display[20] top.crc_fifo_tb.test_name_display[21] top.crc_fifo_tb.test_name_display[22] top.crc_fifo_tb.test_name_display[23] top.crc_fifo_tb.test_name_display[24] top.crc_fifo_tb.test_name_display[25] top.crc_fifo_tb.test_name_display[26] top.crc_fifo_tb.test_name_display[27] top.crc_fifo_tb.test_name_display[28] top.crc_fifo_tb.test_name_display[29] top.crc_fifo_tb.test_name_display[30] top.crc_fifo_tb.test_name_display[31] top.crc_fifo_tb.test_name_display[32] top.crc_fifo_tb.test_name_display[33] top.crc_fifo_tb.test_name_display[34] top.crc_fifo_tb.test_name_display[35] top.crc_fifo_tb.test_name_display[36] top.crc_fifo_tb.test_name_display[37] top.crc_fifo_tb.test_name_display[38] top.crc_fifo_tb.test_name_display[39] top.crc_fifo_tb.test_name_display[40] top.crc_fifo_tb.test_name_display[41] top.crc_fifo_tb.test_name_display[42] top.crc_fifo_tb.test_name_display[43] top.crc_fifo_tb.test_name_display[44] top.crc_fifo_tb.test_name_display[45] top.crc_fifo_tb.test_name_display[46] top.crc_fifo_tb.test_name_display[47] top.crc_fifo_tb.test_name_display[48] top.crc_fifo_tb.test_name_display[49] top.crc_fifo_tb.test_name_display[50] top.crc_fifo_tb.test_name_display[51] top.crc_fifo_tb.test_name_display[52] top.crc_fifo_tb.test_name_display[53] top.crc_fifo_tb.test_name_display[54] top.crc_fifo_tb.test_name_display[55] top.crc_fifo_tb.test_name_display[56] top.crc_fifo_tb.test_name_display[57] top.crc_fifo_tb.test_name_display[58] top.crc_fifo_tb.test_name_display[59] top.crc_fifo_tb.test_name_display[60] top.crc_fifo_tb.test_name_display[61] top.crc_fifo_tb.test_name_display[62] top.crc_fifo_tb.test_name_display[63] top.crc_fifo_tb.test_name_display[64] top.crc_fifo_tb.test_name_display[65] top.crc_fifo_tb.test_name_display[66] top.crc_fifo_tb.test_name_display[67] top.crc_fifo_tb.test_name_display[68] top.crc_fifo_tb.test_name_display[69] top.crc_fifo_tb.test_name_display[70] top.crc_fifo_tb.test_name_display[71] top.crc_fifo_tb.test_name_display[72] top.crc_fifo_tb.test_name_display[73] top.crc_fifo_tb.test_name_display[74] top.crc_fifo_tb.test_name_display[75] top.crc_fifo_tb.test_name_display[76] top.crc_fifo_tb.test_name_display[77] top.crc_fifo_tb.test_name_display[78] top.crc_fifo_tb.test_name_display[79] top.crc_fifo_tb.test_name_display[80]
+@28
+top.crc_fifo_tb.dut.crccomplete_i
+top.crc_fifo_tb.dut.laststartcrc
+top.crc_fifo_tb.dut.crccomplete
+top.crc_fifo_tb.dut.startcrc
+top.crc_fifo_tb.dut.rst
+top.crc_fifo_tb.dut.clk
+@22
+#{top.crc_fifo_tb.dut.fifopeekaddr_i[9:0]} top.crc_fifo_tb.dut.fifopeekaddr_i[9] top.crc_fifo_tb.dut.fifopeekaddr_i[8] top.crc_fifo_tb.dut.fifopeekaddr_i[7] top.crc_fifo_tb.dut.fifopeekaddr_i[6] top.crc_fifo_tb.dut.fifopeekaddr_i[5] top.crc_fifo_tb.dut.fifopeekaddr_i[4] top.crc_fifo_tb.dut.fifopeekaddr_i[3] top.crc_fifo_tb.dut.fifopeekaddr_i[2] top.crc_fifo_tb.dut.fifopeekaddr_i[1] top.crc_fifo_tb.dut.fifopeekaddr_i[0]
+#{top.crc_fifo_tb.dut.crcout[31:0]} top.crc_fifo_tb.dut.crcout[31] top.crc_fifo_tb.dut.crcout[30] top.crc_fifo_tb.dut.crcout[29] top.crc_fifo_tb.dut.crcout[28] top.crc_fifo_tb.dut.crcout[27] top.crc_fifo_tb.dut.crcout[26] top.crc_fifo_tb.dut.crcout[25] top.crc_fifo_tb.dut.crcout[24] top.crc_fifo_tb.dut.crcout[23] top.crc_fifo_tb.dut.crcout[22] top.crc_fifo_tb.dut.crcout[21] top.crc_fifo_tb.dut.crcout[20] top.crc_fifo_tb.dut.crcout[19] top.crc_fifo_tb.dut.crcout[18] top.crc_fifo_tb.dut.crcout[17] top.crc_fifo_tb.dut.crcout[16] top.crc_fifo_tb.dut.crcout[15] top.crc_fifo_tb.dut.crcout[14] top.crc_fifo_tb.dut.crcout[13] top.crc_fifo_tb.dut.crcout[12] top.crc_fifo_tb.dut.crcout[11] top.crc_fifo_tb.dut.crcout[10] top.crc_fifo_tb.dut.crcout[9] top.crc_fifo_tb.dut.crcout[8] top.crc_fifo_tb.dut.crcout[7] top.crc_fifo_tb.dut.crcout[6] top.crc_fifo_tb.dut.crcout[5] top.crc_fifo_tb.dut.crcout[4] top.crc_fifo_tb.dut.crcout[3] top.crc_fifo_tb.dut.crcout[2] top.crc_fifo_tb.dut.crcout[1] top.crc_fifo_tb.dut.crcout[0]
+#{top.crc_fifo_tb.dut.fifostartaddr[9:0]} top.crc_fifo_tb.dut.fifostartaddr[9] top.crc_fifo_tb.dut.fifostartaddr[8] top.crc_fifo_tb.dut.fifostartaddr[7] top.crc_fifo_tb.dut.fifostartaddr[6] top.crc_fifo_tb.dut.fifostartaddr[5] top.crc_fifo_tb.dut.fifostartaddr[4] top.crc_fifo_tb.dut.fifostartaddr[3] top.crc_fifo_tb.dut.fifostartaddr[2] top.crc_fifo_tb.dut.fifostartaddr[1] top.crc_fifo_tb.dut.fifostartaddr[0]
+#{top.crc_fifo_tb.dut.fifoendaddr[9:0]} top.crc_fifo_tb.dut.fifoendaddr[9] top.crc_fifo_tb.dut.fifoendaddr[8] top.crc_fifo_tb.dut.fifoendaddr[7] top.crc_fifo_tb.dut.fifoendaddr[6] top.crc_fifo_tb.dut.fifoendaddr[5] top.crc_fifo_tb.dut.fifoendaddr[4] top.crc_fifo_tb.dut.fifoendaddr[3] top.crc_fifo_tb.dut.fifoendaddr[2] top.crc_fifo_tb.dut.fifoendaddr[1] top.crc_fifo_tb.dut.fifoendaddr[0]
+#{top.crc_fifo_tb.dut.fifopeekdata[7:0]} top.crc_fifo_tb.dut.fifopeekdata[7] top.crc_fifo_tb.dut.fifopeekdata[6] top.crc_fifo_tb.dut.fifopeekdata[5] top.crc_fifo_tb.dut.fifopeekdata[4] top.crc_fifo_tb.dut.fifopeekdata[3] top.crc_fifo_tb.dut.fifopeekdata[2] top.crc_fifo_tb.dut.fifopeekdata[1] top.crc_fifo_tb.dut.fifopeekdata[0]
+@23
+#{top.crc_fifo_tb.crc[31:0]} top.crc_fifo_tb.crc[31] top.crc_fifo_tb.crc[30] top.crc_fifo_tb.crc[29] top.crc_fifo_tb.crc[28] top.crc_fifo_tb.crc[27] top.crc_fifo_tb.crc[26] top.crc_fifo_tb.crc[25] top.crc_fifo_tb.crc[24] top.crc_fifo_tb.crc[23] top.crc_fifo_tb.crc[22] top.crc_fifo_tb.crc[21] top.crc_fifo_tb.crc[20] top.crc_fifo_tb.crc[19] top.crc_fifo_tb.crc[18] top.crc_fifo_tb.crc[17] top.crc_fifo_tb.crc[16] top.crc_fifo_tb.crc[15] top.crc_fifo_tb.crc[14] top.crc_fifo_tb.crc[13] top.crc_fifo_tb.crc[12] top.crc_fifo_tb.crc[11] top.crc_fifo_tb.crc[10] top.crc_fifo_tb.crc[9] top.crc_fifo_tb.crc[8] top.crc_fifo_tb.crc[7] top.crc_fifo_tb.crc[6] top.crc_fifo_tb.crc[5] top.crc_fifo_tb.crc[4] top.crc_fifo_tb.crc[3] top.crc_fifo_tb.crc[2] top.crc_fifo_tb.crc[1] top.crc_fifo_tb.crc[0]
+[pattern_trace] 1
+[pattern_trace] 0

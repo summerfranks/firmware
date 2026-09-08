@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Apr 19 19:08:26 2026
+[*]
+[dumpfile] "work/UartRxFifoExtClk_tb.ghw"
+[dumpfile_mtime] "Sun Apr 19 19:00:51 2026"
+[dumpfile_size] 83032
+[savefile] "waves/UartRxFifoExtClk.gtkw"
+[timestart] 0
+[size] 1908 987
+[pos] -1 -1
+*-36.000000 325520833325 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uartrxfifoextclk_tb.
+[treeopen] top.uartrxfifoextclk_tb.dut.
+[sst_width] 214
+[signals_width] 229
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+top.uartrxfifoextclk_tb.fifoempty
+top.uartrxfifoextclk_tb.fifofull
+top.uartrxfifoextclk_tb.fiforeadack
+top.uartrxfifoextclk_tb.readfifo
+top.uartrxfifoextclk_tb.rxcomplete
+top.uartrxfifoextclk_tb.dbg1
+top.uartrxfifoextclk_tb.rxd
+top.uartrxfifoextclk_tb.rst
+top.uartrxfifoextclk_tb.bit_clk
+top.uartrxfifoextclk_tb.uclk
+top.uartrxfifoextclk_tb.clk
+@22
+#{top.uartrxfifoextclk_tb.test_name_display[1:80]} top.uartrxfifoextclk_tb.test_name_display[1] top.uartrxfifoextclk_tb.test_name_display[2] top.uartrxfifoextclk_tb.test_name_display[3] top.uartrxfifoextclk_tb.test_name_display[4] top.uartrxfifoextclk_tb.test_name_display[5] top.uartrxfifoextclk_tb.test_name_display[6] top.uartrxfifoextclk_tb.test_name_display[7] top.uartrxfifoextclk_tb.test_name_display[8] top.uartrxfifoextclk_tb.test_name_display[9] top.uartrxfifoextclk_tb.test_name_display[10] top.uartrxfifoextclk_tb.test_name_display[11] top.uartrxfifoextclk_tb.test_name_display[12] top.uartrxfifoextclk_tb.test_name_display[13] top.uartrxfifoextclk_tb.test_name_display[14] top.uartrxfifoextclk_tb.test_name_display[15] top.uartrxfifoextclk_tb.test_name_display[16] top.uartrxfifoextclk_tb.test_name_display[17] top.uartrxfifoextclk_tb.test_name_display[18] top.uartrxfifoextclk_tb.test_name_display[19] top.uartrxfifoextclk_tb.test_name_display[20] top.uartrxfifoextclk_tb.test_name_display[21] top.uartrxfifoextclk_tb.test_name_display[22] top.uartrxfifoextclk_tb.test_name_display[23] top.uartrxfifoextclk_tb.test_name_display[24] top.uartrxfifoextclk_tb.test_name_display[25] top.uartrxfifoextclk_tb.test_name_display[26] top.uartrxfifoextclk_tb.test_name_display[27] top.uartrxfifoextclk_tb.test_name_display[28] top.uartrxfifoextclk_tb.test_name_display[29] top.uartrxfifoextclk_tb.test_name_display[30] top.uartrxfifoextclk_tb.test_name_display[31] top.uartrxfifoextclk_tb.test_name_display[32] top.uartrxfifoextclk_tb.test_name_display[33] top.uartrxfifoextclk_tb.test_name_display[34] top.uartrxfifoextclk_tb.test_name_display[35] top.uartrxfifoextclk_tb.test_name_display[36] top.uartrxfifoextclk_tb.test_name_display[37] top.uartrxfifoextclk_tb.test_name_display[38] top.uartrxfifoextclk_tb.test_name_display[39] top.uartrxfifoextclk_tb.test_name_display[40] top.uartrxfifoextclk_tb.test_name_display[41] top.uartrxfifoextclk_tb.test_name_display[42] top.uartrxfifoextclk_tb.test_name_display[43] top.uartrxfifoextclk_tb.test_name_display[44] top.uartrxfifoextclk_tb.test_name_display[45] top.uartrxfifoextclk_tb.test_name_display[46] top.uartrxfifoextclk_tb.test_name_display[47] top.uartrxfifoextclk_tb.test_name_display[48] top.uartrxfifoextclk_tb.test_name_display[49] top.uartrxfifoextclk_tb.test_name_display[50] top.uartrxfifoextclk_tb.test_name_display[51] top.uartrxfifoextclk_tb.test_name_display[52] top.uartrxfifoextclk_tb.test_name_display[53] top.uartrxfifoextclk_tb.test_name_display[54] top.uartrxfifoextclk_tb.test_name_display[55] top.uartrxfifoextclk_tb.test_name_display[56] top.uartrxfifoextclk_tb.test_name_display[57] top.uartrxfifoextclk_tb.test_name_display[58] top.uartrxfifoextclk_tb.test_name_display[59] top.uartrxfifoextclk_tb.test_name_display[60] top.uartrxfifoextclk_tb.test_name_display[61] top.uartrxfifoextclk_tb.test_name_display[62] top.uartrxfifoextclk_tb.test_name_display[63] top.uartrxfifoextclk_tb.test_name_display[64] top.uartrxfifoextclk_tb.test_name_display[65] top.uartrxfifoextclk_tb.test_name_display[66] top.uartrxfifoextclk_tb.test_name_display[67] top.uartrxfifoextclk_tb.test_name_display[68] top.uartrxfifoextclk_tb.test_name_display[69] top.uartrxfifoextclk_tb.test_name_display[70] top.uartrxfifoextclk_tb.test_name_display[71] top.uartrxfifoextclk_tb.test_name_display[72] top.uartrxfifoextclk_tb.test_name_display[73] top.uartrxfifoextclk_tb.test_name_display[74] top.uartrxfifoextclk_tb.test_name_display[75] top.uartrxfifoextclk_tb.test_name_display[76] top.uartrxfifoextclk_tb.test_name_display[77] top.uartrxfifoextclk_tb.test_name_display[78] top.uartrxfifoextclk_tb.test_name_display[79] top.uartrxfifoextclk_tb.test_name_display[80]
+#{top.uartrxfifoextclk_tb.fifocount[9:0]} top.uartrxfifoextclk_tb.fifocount[9] top.uartrxfifoextclk_tb.fifocount[8] top.uartrxfifoextclk_tb.fifocount[7] top.uartrxfifoextclk_tb.fifocount[6] top.uartrxfifoextclk_tb.fifocount[5] top.uartrxfifoextclk_tb.fifocount[4] top.uartrxfifoextclk_tb.fifocount[3] top.uartrxfifoextclk_tb.fifocount[2] top.uartrxfifoextclk_tb.fifocount[1] top.uartrxfifoextclk_tb.fifocount[0]
+#{top.uartrxfifoextclk_tb.fiforeaddata[7:0]} top.uartrxfifoextclk_tb.fiforeaddata[7] top.uartrxfifoextclk_tb.fiforeaddata[6] top.uartrxfifoextclk_tb.fiforeaddata[5] top.uartrxfifoextclk_tb.fiforeaddata[4] top.uartrxfifoextclk_tb.fiforeaddata[3] top.uartrxfifoextclk_tb.fiforeaddata[2] top.uartrxfifoextclk_tb.fiforeaddata[1] top.uartrxfifoextclk_tb.fiforeaddata[0]
+@200
+-
+-fifo
+@28
+top.uartrxfifoextclk_tb.dut.uartfifo.last_rone_i
+top.uartrxfifoextclk_tb.dut.uartfifo.last_wone_i
+top.uartrxfifoextclk_tb.dut.uartfifo.r_ack_i
+top.uartrxfifoextclk_tb.dut.uartfifo.re_i
+top.uartrxfifoextclk_tb.dut.uartfifo.we_i
+top.uartrxfifoextclk_tb.dut.uartfifo.r_ack
+top.uartrxfifoextclk_tb.dut.uartfifo.empty_o
+top.uartrxfifoextclk_tb.dut.uartfifo.full_o
+top.uartrxfifoextclk_tb.dut.uartfifo.rone_i
+top.uartrxfifoextclk_tb.dut.uartfifo.wone_i
+top.uartrxfifoextclk_tb.dut.uartfifo.rst
+@29
+top.uartrxfifoextclk_tb.dut.uartfifo.clk
+@200
+-
+-uart
+@28
+top.uartrxfifoextclk_tb.dut.uart.rxd_i
+top.uartrxfifoextclk_tb.dut.uart.uartbaudclkx16
+top.uartrxfifoextclk_tb.dut.uart.rxcomplete
+top.uartrxfifoextclk_tb.dut.uart.rxd
+top.uartrxfifoextclk_tb.dut.uart.uartclk
+top.uartrxfifoextclk_tb.dut.uart.rst
+top.uartrxfifoextclk_tb.dut.uart.uclk
+@200
+-
+-clocksync
+@28
+top.uartrxfifoextclk_tb.dut.clksyncwrite.temp1
+top.uartrxfifoextclk_tb.dut.clksyncwrite.o
+top.uartrxfifoextclk_tb.dut.clksyncwrite.i
+top.uartrxfifoextclk_tb.dut.clksyncwrite.clk
+[pattern_trace] 1
+[pattern_trace] 0

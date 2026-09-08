@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Apr  7 04:16:52 2026
+[*]
+[dumpfile] "work/UartRxExtClk_tb.ghw"
+[dumpfile_mtime] "Tue Apr  7 04:14:22 2026"
+[dumpfile_size] 6666
+[savefile] "waves/UartRxExtClk.gtkw"
+[timestart] 0
+[size] 1908 999
+[pos] -1 -1
+*-31.000000 1900000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uartrxextclk_tb.
+[treeopen] top.uartrxextclk_tb.dut.
+[sst_width] 214
+[signals_width] 239
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@22
+#{top.uartrxextclk_tb.test_name_display[1:80]} top.uartrxextclk_tb.test_name_display[1] top.uartrxextclk_tb.test_name_display[2] top.uartrxextclk_tb.test_name_display[3] top.uartrxextclk_tb.test_name_display[4] top.uartrxextclk_tb.test_name_display[5] top.uartrxextclk_tb.test_name_display[6] top.uartrxextclk_tb.test_name_display[7] top.uartrxextclk_tb.test_name_display[8] top.uartrxextclk_tb.test_name_display[9] top.uartrxextclk_tb.test_name_display[10] top.uartrxextclk_tb.test_name_display[11] top.uartrxextclk_tb.test_name_display[12] top.uartrxextclk_tb.test_name_display[13] top.uartrxextclk_tb.test_name_display[14] top.uartrxextclk_tb.test_name_display[15] top.uartrxextclk_tb.test_name_display[16] top.uartrxextclk_tb.test_name_display[17] top.uartrxextclk_tb.test_name_display[18] top.uartrxextclk_tb.test_name_display[19] top.uartrxextclk_tb.test_name_display[20] top.uartrxextclk_tb.test_name_display[21] top.uartrxextclk_tb.test_name_display[22] top.uartrxextclk_tb.test_name_display[23] top.uartrxextclk_tb.test_name_display[24] top.uartrxextclk_tb.test_name_display[25] top.uartrxextclk_tb.test_name_display[26] top.uartrxextclk_tb.test_name_display[27] top.uartrxextclk_tb.test_name_display[28] top.uartrxextclk_tb.test_name_display[29] top.uartrxextclk_tb.test_name_display[30] top.uartrxextclk_tb.test_name_display[31] top.uartrxextclk_tb.test_name_display[32] top.uartrxextclk_tb.test_name_display[33] top.uartrxextclk_tb.test_name_display[34] top.uartrxextclk_tb.test_name_display[35] top.uartrxextclk_tb.test_name_display[36] top.uartrxextclk_tb.test_name_display[37] top.uartrxextclk_tb.test_name_display[38] top.uartrxextclk_tb.test_name_display[39] top.uartrxextclk_tb.test_name_display[40] top.uartrxextclk_tb.test_name_display[41] top.uartrxextclk_tb.test_name_display[42] top.uartrxextclk_tb.test_name_display[43] top.uartrxextclk_tb.test_name_display[44] top.uartrxextclk_tb.test_name_display[45] top.uartrxextclk_tb.test_name_display[46] top.uartrxextclk_tb.test_name_display[47] top.uartrxextclk_tb.test_name_display[48] top.uartrxextclk_tb.test_name_display[49] top.uartrxextclk_tb.test_name_display[50] top.uartrxextclk_tb.test_name_display[51] top.uartrxextclk_tb.test_name_display[52] top.uartrxextclk_tb.test_name_display[53] top.uartrxextclk_tb.test_name_display[54] top.uartrxextclk_tb.test_name_display[55] top.uartrxextclk_tb.test_name_display[56] top.uartrxextclk_tb.test_name_display[57] top.uartrxextclk_tb.test_name_display[58] top.uartrxextclk_tb.test_name_display[59] top.uartrxextclk_tb.test_name_display[60] top.uartrxextclk_tb.test_name_display[61] top.uartrxextclk_tb.test_name_display[62] top.uartrxextclk_tb.test_name_display[63] top.uartrxextclk_tb.test_name_display[64] top.uartrxextclk_tb.test_name_display[65] top.uartrxextclk_tb.test_name_display[66] top.uartrxextclk_tb.test_name_display[67] top.uartrxextclk_tb.test_name_display[68] top.uartrxextclk_tb.test_name_display[69] top.uartrxextclk_tb.test_name_display[70] top.uartrxextclk_tb.test_name_display[71] top.uartrxextclk_tb.test_name_display[72] top.uartrxextclk_tb.test_name_display[73] top.uartrxextclk_tb.test_name_display[74] top.uartrxextclk_tb.test_name_display[75] top.uartrxextclk_tb.test_name_display[76] top.uartrxextclk_tb.test_name_display[77] top.uartrxextclk_tb.test_name_display[78] top.uartrxextclk_tb.test_name_display[79] top.uartrxextclk_tb.test_name_display[80]
+#{top.uartrxextclk_tb.rxdata[7:0]} top.uartrxextclk_tb.rxdata[7] top.uartrxextclk_tb.rxdata[6] top.uartrxextclk_tb.rxdata[5] top.uartrxextclk_tb.rxdata[4] top.uartrxextclk_tb.rxdata[3] top.uartrxextclk_tb.rxdata[2] top.uartrxextclk_tb.rxdata[1] top.uartrxextclk_tb.rxdata[0]
+@28
+top.uartrxextclk_tb.dut.uartclk
+top.uartrxextclk_tb.dut.uartbaudclkx16
+top.uartrxextclk_tb.dut.rst
+top.uartrxextclk_tb.dut.uclk
+@29
+top.uartrxextclk_tb.dut.rxd_i
+[pattern_trace] 1
+[pattern_trace] 0

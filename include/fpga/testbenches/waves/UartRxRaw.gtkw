@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Mar 31 03:24:05 2026
+[*]
+[dumpfile] "work/UartRxRaw_tb.ghw"
+[dumpfile_mtime] "Tue Mar 31 03:21:41 2026"
+[dumpfile_size] 3971
+[savefile] "waves/UartRxRaw.gtkw"
+[timestart] 324000000
+[size] 1908 999
+[pos] -802 -19
+*-27.000000 490400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uartrxraw_tb.
+[treeopen] top.uartrxraw_tb.dut.
+[sst_width] 214
+[signals_width] 243
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@28
+top.uartrxraw_tb.rxav
+top.uartrxraw_tb.rxd
+top.uartrxraw_tb.enable
+top.uartrxraw_tb.rst
+top.uartrxraw_tb.clk
+@22
+#{top.uartrxraw_tb.test_name_display[1:80]} top.uartrxraw_tb.test_name_display[1] top.uartrxraw_tb.test_name_display[2] top.uartrxraw_tb.test_name_display[3] top.uartrxraw_tb.test_name_display[4] top.uartrxraw_tb.test_name_display[5] top.uartrxraw_tb.test_name_display[6] top.uartrxraw_tb.test_name_display[7] top.uartrxraw_tb.test_name_display[8] top.uartrxraw_tb.test_name_display[9] top.uartrxraw_tb.test_name_display[10] top.uartrxraw_tb.test_name_display[11] top.uartrxraw_tb.test_name_display[12] top.uartrxraw_tb.test_name_display[13] top.uartrxraw_tb.test_name_display[14] top.uartrxraw_tb.test_name_display[15] top.uartrxraw_tb.test_name_display[16] top.uartrxraw_tb.test_name_display[17] top.uartrxraw_tb.test_name_display[18] top.uartrxraw_tb.test_name_display[19] top.uartrxraw_tb.test_name_display[20] top.uartrxraw_tb.test_name_display[21] top.uartrxraw_tb.test_name_display[22] top.uartrxraw_tb.test_name_display[23] top.uartrxraw_tb.test_name_display[24] top.uartrxraw_tb.test_name_display[25] top.uartrxraw_tb.test_name_display[26] top.uartrxraw_tb.test_name_display[27] top.uartrxraw_tb.test_name_display[28] top.uartrxraw_tb.test_name_display[29] top.uartrxraw_tb.test_name_display[30] top.uartrxraw_tb.test_name_display[31] top.uartrxraw_tb.test_name_display[32] top.uartrxraw_tb.test_name_display[33] top.uartrxraw_tb.test_name_display[34] top.uartrxraw_tb.test_name_display[35] top.uartrxraw_tb.test_name_display[36] top.uartrxraw_tb.test_name_display[37] top.uartrxraw_tb.test_name_display[38] top.uartrxraw_tb.test_name_display[39] top.uartrxraw_tb.test_name_display[40] top.uartrxraw_tb.test_name_display[41] top.uartrxraw_tb.test_name_display[42] top.uartrxraw_tb.test_name_display[43] top.uartrxraw_tb.test_name_display[44] top.uartrxraw_tb.test_name_display[45] top.uartrxraw_tb.test_name_display[46] top.uartrxraw_tb.test_name_display[47] top.uartrxraw_tb.test_name_display[48] top.uartrxraw_tb.test_name_display[49] top.uartrxraw_tb.test_name_display[50] top.uartrxraw_tb.test_name_display[51] top.uartrxraw_tb.test_name_display[52] top.uartrxraw_tb.test_name_display[53] top.uartrxraw_tb.test_name_display[54] top.uartrxraw_tb.test_name_display[55] top.uartrxraw_tb.test_name_display[56] top.uartrxraw_tb.test_name_display[57] top.uartrxraw_tb.test_name_display[58] top.uartrxraw_tb.test_name_display[59] top.uartrxraw_tb.test_name_display[60] top.uartrxraw_tb.test_name_display[61] top.uartrxraw_tb.test_name_display[62] top.uartrxraw_tb.test_name_display[63] top.uartrxraw_tb.test_name_display[64] top.uartrxraw_tb.test_name_display[65] top.uartrxraw_tb.test_name_display[66] top.uartrxraw_tb.test_name_display[67] top.uartrxraw_tb.test_name_display[68] top.uartrxraw_tb.test_name_display[69] top.uartrxraw_tb.test_name_display[70] top.uartrxraw_tb.test_name_display[71] top.uartrxraw_tb.test_name_display[72] top.uartrxraw_tb.test_name_display[73] top.uartrxraw_tb.test_name_display[74] top.uartrxraw_tb.test_name_display[75] top.uartrxraw_tb.test_name_display[76] top.uartrxraw_tb.test_name_display[77] top.uartrxraw_tb.test_name_display[78] top.uartrxraw_tb.test_name_display[79] top.uartrxraw_tb.test_name_display[80]
+#{top.uartrxraw_tb.datao[7:0]} top.uartrxraw_tb.datao[7] top.uartrxraw_tb.datao[6] top.uartrxraw_tb.datao[5] top.uartrxraw_tb.datao[4] top.uartrxraw_tb.datao[3] top.uartrxraw_tb.datao[2] top.uartrxraw_tb.datao[1] top.uartrxraw_tb.datao[0]
+@29
+#{top.uartrxraw_tb.dut.rreg[7:0]} top.uartrxraw_tb.dut.rreg[7] top.uartrxraw_tb.dut.rreg[6] top.uartrxraw_tb.dut.rreg[5] top.uartrxraw_tb.dut.rreg[4] top.uartrxraw_tb.dut.rreg[3] top.uartrxraw_tb.dut.rreg[2] top.uartrxraw_tb.dut.rreg[1] top.uartrxraw_tb.dut.rreg[0]
+[pattern_trace] 1
+[pattern_trace] 0

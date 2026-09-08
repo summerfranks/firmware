@@ -1,0 +1,89 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue May 26 17:45:46 2026
+[*]
+[dumpfile] "(null)"
+[savefile] "waves/SpiMaster.gtkw"
+[timestart] 2707230000000
+[size] 1908 987
+[pos] 64 64
+*-34.000000 2760925000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.spimaster_tb.
+[sst_width] 254
+[signals_width] 261
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@22
+#{top.spimaster_tb.test_name_display[1:80]} top.spimaster_tb.test_name_display[1] top.spimaster_tb.test_name_display[2] top.spimaster_tb.test_name_display[3] top.spimaster_tb.test_name_display[4] top.spimaster_tb.test_name_display[5] top.spimaster_tb.test_name_display[6] top.spimaster_tb.test_name_display[7] top.spimaster_tb.test_name_display[8] top.spimaster_tb.test_name_display[9] top.spimaster_tb.test_name_display[10] top.spimaster_tb.test_name_display[11] top.spimaster_tb.test_name_display[12] top.spimaster_tb.test_name_display[13] top.spimaster_tb.test_name_display[14] top.spimaster_tb.test_name_display[15] top.spimaster_tb.test_name_display[16] top.spimaster_tb.test_name_display[17] top.spimaster_tb.test_name_display[18] top.spimaster_tb.test_name_display[19] top.spimaster_tb.test_name_display[20] top.spimaster_tb.test_name_display[21] top.spimaster_tb.test_name_display[22] top.spimaster_tb.test_name_display[23] top.spimaster_tb.test_name_display[24] top.spimaster_tb.test_name_display[25] top.spimaster_tb.test_name_display[26] top.spimaster_tb.test_name_display[27] top.spimaster_tb.test_name_display[28] top.spimaster_tb.test_name_display[29] top.spimaster_tb.test_name_display[30] top.spimaster_tb.test_name_display[31] top.spimaster_tb.test_name_display[32] top.spimaster_tb.test_name_display[33] top.spimaster_tb.test_name_display[34] top.spimaster_tb.test_name_display[35] top.spimaster_tb.test_name_display[36] top.spimaster_tb.test_name_display[37] top.spimaster_tb.test_name_display[38] top.spimaster_tb.test_name_display[39] top.spimaster_tb.test_name_display[40] top.spimaster_tb.test_name_display[41] top.spimaster_tb.test_name_display[42] top.spimaster_tb.test_name_display[43] top.spimaster_tb.test_name_display[44] top.spimaster_tb.test_name_display[45] top.spimaster_tb.test_name_display[46] top.spimaster_tb.test_name_display[47] top.spimaster_tb.test_name_display[48] top.spimaster_tb.test_name_display[49] top.spimaster_tb.test_name_display[50] top.spimaster_tb.test_name_display[51] top.spimaster_tb.test_name_display[52] top.spimaster_tb.test_name_display[53] top.spimaster_tb.test_name_display[54] top.spimaster_tb.test_name_display[55] top.spimaster_tb.test_name_display[56] top.spimaster_tb.test_name_display[57] top.spimaster_tb.test_name_display[58] top.spimaster_tb.test_name_display[59] top.spimaster_tb.test_name_display[60] top.spimaster_tb.test_name_display[61] top.spimaster_tb.test_name_display[62] top.spimaster_tb.test_name_display[63] top.spimaster_tb.test_name_display[64] top.spimaster_tb.test_name_display[65] top.spimaster_tb.test_name_display[66] top.spimaster_tb.test_name_display[67] top.spimaster_tb.test_name_display[68] top.spimaster_tb.test_name_display[69] top.spimaster_tb.test_name_display[70] top.spimaster_tb.test_name_display[71] top.spimaster_tb.test_name_display[72] top.spimaster_tb.test_name_display[73] top.spimaster_tb.test_name_display[74] top.spimaster_tb.test_name_display[75] top.spimaster_tb.test_name_display[76] top.spimaster_tb.test_name_display[77] top.spimaster_tb.test_name_display[78] top.spimaster_tb.test_name_display[79] top.spimaster_tb.test_name_display[80]
+@200
+-
+@28
+top.spimaster_tb.dut_mode0.xfercomplete_i
+top.spimaster_tb.dut_mode0.datatomosilatched
+top.spimaster_tb.dut_mode0.mosi_i
+top.spimaster_tb.dut_mode0.sck_i
+@420
+top.spimaster_tb.dut_mode0.clkdiv
+top.spimaster_tb.dut_mode0.spibitpos
+@28
+top.spimaster_tb.dut_mode0.xfercomplete
+top.spimaster_tb.dut_mode0.miso
+top.spimaster_tb.dut_mode0.sck
+top.spimaster_tb.dut_mode0.mosi
+top.spimaster_tb.dut_mode0.rst
+top.spimaster_tb.dut_mode0.clk
+@200
+-
+@28
+top.spimaster_tb.dut_mode2.xfercomplete_i
+top.spimaster_tb.dut_mode2.datatomosilatched
+top.spimaster_tb.dut_mode2.mosi_i
+top.spimaster_tb.dut_mode2.sck_i
+@420
+top.spimaster_tb.dut_mode2.clkdiv
+top.spimaster_tb.dut_mode2.spibitpos
+@29
+top.spimaster_tb.dut_mode2.xfercomplete
+@28
+top.spimaster_tb.dut_mode2.miso
+top.spimaster_tb.dut_mode2.sck
+top.spimaster_tb.dut_mode2.mosi
+top.spimaster_tb.dut_mode2.rst
+top.spimaster_tb.dut_mode2.clk
+@200
+-
+@28
+top.spimaster_tb.dut_mode1.xfercomplete_i
+top.spimaster_tb.dut_mode1.datatomosilatched
+top.spimaster_tb.dut_mode1.mosi_i
+top.spimaster_tb.dut_mode1.sck_i
+@420
+top.spimaster_tb.dut_mode1.clkdiv
+top.spimaster_tb.dut_mode1.spibitpos
+@28
+top.spimaster_tb.dut_mode1.xfercomplete
+top.spimaster_tb.dut_mode1.miso
+top.spimaster_tb.dut_mode1.sck
+top.spimaster_tb.dut_mode1.mosi
+top.spimaster_tb.dut_mode1.rst
+top.spimaster_tb.dut_mode1.clk
+@200
+-
+@28
+top.spimaster_tb.dut_mode3.xfercomplete_i
+top.spimaster_tb.dut_mode3.datatomosilatched
+top.spimaster_tb.dut_mode3.mosi_i
+top.spimaster_tb.dut_mode3.sck_i
+@420
+top.spimaster_tb.dut_mode3.clkdiv
+top.spimaster_tb.dut_mode3.spibitpos
+@28
+top.spimaster_tb.dut_mode3.xfercomplete
+top.spimaster_tb.dut_mode3.miso
+top.spimaster_tb.dut_mode3.sck
+top.spimaster_tb.dut_mode3.mosi
+top.spimaster_tb.dut_mode3.rst
+top.spimaster_tb.dut_mode3.clk
+[pattern_trace] 1
+[pattern_trace] 0

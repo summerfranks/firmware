@@ -1,0 +1,82 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Apr 15 21:53:45 2026
+[*]
+[dumpfile] "work/ClockDivider2X_tb.ghw"
+[dumpfile_mtime] "Wed Apr 15 21:50:40 2026"
+[dumpfile_size] 40954
+[savefile] "waves/ClockDivider2X.gtkw"
+[timestart] 5711100000
+[size] 1908 999
+[pos] -1 -1
+*-25.000000 5809400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.clockdivider2x_tb.
+[sst_width] 214
+[signals_width] 229
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@22
+#{top.clockdivider2x_tb.test_name_display[1:40]} top.clockdivider2x_tb.test_name_display[1] top.clockdivider2x_tb.test_name_display[2] top.clockdivider2x_tb.test_name_display[3] top.clockdivider2x_tb.test_name_display[4] top.clockdivider2x_tb.test_name_display[5] top.clockdivider2x_tb.test_name_display[6] top.clockdivider2x_tb.test_name_display[7] top.clockdivider2x_tb.test_name_display[8] top.clockdivider2x_tb.test_name_display[9] top.clockdivider2x_tb.test_name_display[10] top.clockdivider2x_tb.test_name_display[11] top.clockdivider2x_tb.test_name_display[12] top.clockdivider2x_tb.test_name_display[13] top.clockdivider2x_tb.test_name_display[14] top.clockdivider2x_tb.test_name_display[15] top.clockdivider2x_tb.test_name_display[16] top.clockdivider2x_tb.test_name_display[17] top.clockdivider2x_tb.test_name_display[18] top.clockdivider2x_tb.test_name_display[19] top.clockdivider2x_tb.test_name_display[20] top.clockdivider2x_tb.test_name_display[21] top.clockdivider2x_tb.test_name_display[22] top.clockdivider2x_tb.test_name_display[23] top.clockdivider2x_tb.test_name_display[24] top.clockdivider2x_tb.test_name_display[25] top.clockdivider2x_tb.test_name_display[26] top.clockdivider2x_tb.test_name_display[27] top.clockdivider2x_tb.test_name_display[28] top.clockdivider2x_tb.test_name_display[29] top.clockdivider2x_tb.test_name_display[30] top.clockdivider2x_tb.test_name_display[31] top.clockdivider2x_tb.test_name_display[32] top.clockdivider2x_tb.test_name_display[33] top.clockdivider2x_tb.test_name_display[34] top.clockdivider2x_tb.test_name_display[35] top.clockdivider2x_tb.test_name_display[36] top.clockdivider2x_tb.test_name_display[37] top.clockdivider2x_tb.test_name_display[38] top.clockdivider2x_tb.test_name_display[39] top.clockdivider2x_tb.test_name_display[40]
+@200
+-Divider: 10, Rst: 0
+@28
+top.clockdivider2x_tb.dut_cfg1.clk
+@420
+top.clockdivider2x_tb.dut_cfg1.clkdiv
+@28
+top.clockdivider2x_tb.dut_cfg1.div
+top.clockdivider2x_tb.dut_cfg1.div_i
+top.clockdivider2x_tb.dut_cfg1.rst
+@200
+-Divider: 6, Rst: 0
+@28
+top.clockdivider2x_tb.dut_cfg2.clk
+@420
+top.clockdivider2x_tb.dut_cfg2.clkdiv
+@28
+top.clockdivider2x_tb.dut_cfg2.div
+top.clockdivider2x_tb.dut_cfg2.div_i
+top.clockdivider2x_tb.dut_cfg2.rst
+@200
+-Divider: 10, Rst: 1
+@28
+top.clockdivider2x_tb.dut_cfg3.clk
+@420
+top.clockdivider2x_tb.dut_cfg3.clkdiv
+@28
+top.clockdivider2x_tb.dut_cfg3.div
+top.clockdivider2x_tb.dut_cfg3.div_i
+top.clockdivider2x_tb.dut_cfg3.rst
+@200
+-Divider: 5, 0
+@28
+top.clockdivider2x_tb.dut_cfg4.div_i
+@420
+top.clockdivider2x_tb.dut_cfg4.clkdiv
+@28
+top.clockdivider2x_tb.dut_cfg4.div
+top.clockdivider2x_tb.dut_cfg4.rst
+top.clockdivider2x_tb.dut_cfg4.clk
+@200
+-Divider: 1, Rst 0
+@28
+top.clockdivider2x_tb.dut_cfg5.div_i
+@420
+top.clockdivider2x_tb.dut_cfg5.clkdiv
+@28
+top.clockdivider2x_tb.dut_cfg5.div
+top.clockdivider2x_tb.dut_cfg5.rst
+top.clockdivider2x_tb.dut_cfg5.clk
+@200
+-Divider: 2, Rst: 0
+@29
+top.clockdivider2x_tb.dut_cfg6.div_i
+@421
+top.clockdivider2x_tb.dut_cfg6.clkdiv
+@29
+top.clockdivider2x_tb.dut_cfg6.div
+top.clockdivider2x_tb.dut_cfg6.rst
+top.clockdivider2x_tb.dut_cfg6.clk
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,97 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Mon Apr 20 16:50:16 2026
+[*]
+[dumpfile] "work/UartTxFifo_tb.ghw"
+[dumpfile_mtime] "Mon Apr 20 16:50:16 2026"
+[dumpfile_size] 87395159
+[savefile] "waves/UartTxFifo.gtkw"
+[timestart] 14580602000000
+[size] 1908 999
+[pos] -1 -1
+*-29.000000 14582566000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uarttxfifo_tb.
+[treeopen] top.uarttxfifo_tb.dut.
+[sst_width] 214
+[signals_width] 252
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@22
+#{top.uarttxfifo_tb.test_name_display[1:80]} top.uarttxfifo_tb.test_name_display[1] top.uarttxfifo_tb.test_name_display[2] top.uarttxfifo_tb.test_name_display[3] top.uarttxfifo_tb.test_name_display[4] top.uarttxfifo_tb.test_name_display[5] top.uarttxfifo_tb.test_name_display[6] top.uarttxfifo_tb.test_name_display[7] top.uarttxfifo_tb.test_name_display[8] top.uarttxfifo_tb.test_name_display[9] top.uarttxfifo_tb.test_name_display[10] top.uarttxfifo_tb.test_name_display[11] top.uarttxfifo_tb.test_name_display[12] top.uarttxfifo_tb.test_name_display[13] top.uarttxfifo_tb.test_name_display[14] top.uarttxfifo_tb.test_name_display[15] top.uarttxfifo_tb.test_name_display[16] top.uarttxfifo_tb.test_name_display[17] top.uarttxfifo_tb.test_name_display[18] top.uarttxfifo_tb.test_name_display[19] top.uarttxfifo_tb.test_name_display[20] top.uarttxfifo_tb.test_name_display[21] top.uarttxfifo_tb.test_name_display[22] top.uarttxfifo_tb.test_name_display[23] top.uarttxfifo_tb.test_name_display[24] top.uarttxfifo_tb.test_name_display[25] top.uarttxfifo_tb.test_name_display[26] top.uarttxfifo_tb.test_name_display[27] top.uarttxfifo_tb.test_name_display[28] top.uarttxfifo_tb.test_name_display[29] top.uarttxfifo_tb.test_name_display[30] top.uarttxfifo_tb.test_name_display[31] top.uarttxfifo_tb.test_name_display[32] top.uarttxfifo_tb.test_name_display[33] top.uarttxfifo_tb.test_name_display[34] top.uarttxfifo_tb.test_name_display[35] top.uarttxfifo_tb.test_name_display[36] top.uarttxfifo_tb.test_name_display[37] top.uarttxfifo_tb.test_name_display[38] top.uarttxfifo_tb.test_name_display[39] top.uarttxfifo_tb.test_name_display[40] top.uarttxfifo_tb.test_name_display[41] top.uarttxfifo_tb.test_name_display[42] top.uarttxfifo_tb.test_name_display[43] top.uarttxfifo_tb.test_name_display[44] top.uarttxfifo_tb.test_name_display[45] top.uarttxfifo_tb.test_name_display[46] top.uarttxfifo_tb.test_name_display[47] top.uarttxfifo_tb.test_name_display[48] top.uarttxfifo_tb.test_name_display[49] top.uarttxfifo_tb.test_name_display[50] top.uarttxfifo_tb.test_name_display[51] top.uarttxfifo_tb.test_name_display[52] top.uarttxfifo_tb.test_name_display[53] top.uarttxfifo_tb.test_name_display[54] top.uarttxfifo_tb.test_name_display[55] top.uarttxfifo_tb.test_name_display[56] top.uarttxfifo_tb.test_name_display[57] top.uarttxfifo_tb.test_name_display[58] top.uarttxfifo_tb.test_name_display[59] top.uarttxfifo_tb.test_name_display[60] top.uarttxfifo_tb.test_name_display[61] top.uarttxfifo_tb.test_name_display[62] top.uarttxfifo_tb.test_name_display[63] top.uarttxfifo_tb.test_name_display[64] top.uarttxfifo_tb.test_name_display[65] top.uarttxfifo_tb.test_name_display[66] top.uarttxfifo_tb.test_name_display[67] top.uarttxfifo_tb.test_name_display[68] top.uarttxfifo_tb.test_name_display[69] top.uarttxfifo_tb.test_name_display[70] top.uarttxfifo_tb.test_name_display[71] top.uarttxfifo_tb.test_name_display[72] top.uarttxfifo_tb.test_name_display[73] top.uarttxfifo_tb.test_name_display[74] top.uarttxfifo_tb.test_name_display[75] top.uarttxfifo_tb.test_name_display[76] top.uarttxfifo_tb.test_name_display[77] top.uarttxfifo_tb.test_name_display[78] top.uarttxfifo_tb.test_name_display[79] top.uarttxfifo_tb.test_name_display[80]
+@28
+#{top.uarttxfifo_tb.fifocount[2:0]} top.uarttxfifo_tb.fifocount[2] top.uarttxfifo_tb.fifocount[1] top.uarttxfifo_tb.fifocount[0]
+@22
+#{top.uarttxfifo_tb.writedata[7:0]} top.uarttxfifo_tb.writedata[7] top.uarttxfifo_tb.writedata[6] top.uarttxfifo_tb.writedata[5] top.uarttxfifo_tb.writedata[4] top.uarttxfifo_tb.writedata[3] top.uarttxfifo_tb.writedata[2] top.uarttxfifo_tb.writedata[1] top.uarttxfifo_tb.writedata[0]
+@200
+-
+-uart
+@28
+top.uarttxfifo_tb.dut.uarttxuart.busy_i
+top.uarttxfifo_tb.dut.uarttxuart.lastgo
+@420
+top.uarttxfifo_tb.dut.uarttxuart.bitcnt
+@28
+top.uarttxfifo_tb.dut.uarttxuart.busy
+top.uarttxfifo_tb.dut.uarttxuart.txd
+top.uarttxfifo_tb.dut.uarttxuart.go
+top.uarttxfifo_tb.dut.uarttxuart.reset
+top.uarttxfifo_tb.dut.uarttxuart.clk
+@200
+-
+-fifo
+@28
+top.uarttxfifo_tb.dut.uarttxfifoinst.last_rone_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.last_wone_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.r_ack_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.re_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.we_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.r_ack
+top.uarttxfifo_tb.dut.uarttxfifoinst.empty_o
+top.uarttxfifo_tb.dut.uarttxfifoinst.full_o
+top.uarttxfifo_tb.dut.uarttxfifoinst.rone_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.wone_i
+top.uarttxfifo_tb.dut.uarttxfifoinst.rst
+top.uarttxfifo_tb.dut.uarttxfifoinst.clk
+@200
+-
+-clock div
+@28
+top.uarttxfifo_tb.dut.bitclockdiv.div_i
+@420
+top.uarttxfifo_tb.dut.bitclockdiv.clkdiv
+@28
+top.uarttxfifo_tb.dut.bitclockdiv.div
+top.uarttxfifo_tb.dut.bitclockdiv.rst
+top.uarttxfifo_tb.dut.bitclockdiv.clk
+@200
+-
+-state
+@28
+top.uarttxfifo_tb.dut.cts_i
+@420
+top.uarttxfifo_tb.dut.currentstate
+top.uarttxfifo_tb.dut.nextstate
+@28
+top.uarttxfifo_tb.dut.txinprogress_i_i
+top.uarttxfifo_tb.dut.txinprogress_i
+@29
+top.uarttxfifo_tb.dut.starttx_i
+@28
+top.uarttxfifo_tb.dut.starttx
+top.uarttxfifo_tb.dut.bitclock
+top.uarttxfifo_tb.dut.fiforeadack
+top.uarttxfifo_tb.dut.readstrobe
+top.uarttxfifo_tb.dut.fifoempty_i
+top.uarttxfifo_tb.dut.txd
+top.uarttxfifo_tb.dut.cts
+top.uarttxfifo_tb.dut.txinprogress
+top.uarttxfifo_tb.dut.bitclockout
+top.uarttxfifo_tb.dut.fifoempty
+top.uarttxfifo_tb.dut.fifofull
+top.uarttxfifo_tb.dut.writestrobe
+top.uarttxfifo_tb.dut.rst
+top.uarttxfifo_tb.dut.uclk
+top.uarttxfifo_tb.dut.clk
+[pattern_trace] 1
+[pattern_trace] 0

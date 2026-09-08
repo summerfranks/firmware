@@ -1,0 +1,79 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Fri Apr 10 18:10:15 2026
+[*]
+[dumpfile] "work/UartRxFifoExtClkPeek_tb.ghw"
+[dumpfile_mtime] "Fri Apr 10 18:05:32 2026"
+[dumpfile_size] 106683
+[savefile] "waves/UartRxFifoExtClkPeek.gtkw"
+[timestart] 0
+[size] 1908 987
+[pos] -1 -1
+*-36.000000 325300000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uartrxfifoextclkpeek_tb.
+[treeopen] top.uartrxfifoextclkpeek_tb.dut.
+[sst_width] 214
+[signals_width] 233
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+top.uartrxfifoextclkpeek_tb.fifomultipopstrobe
+top.uartrxfifoextclkpeek_tb.fifoempty
+top.uartrxfifoextclkpeek_tb.fifofull
+top.uartrxfifoextclkpeek_tb.fiforeadack
+top.uartrxfifoextclkpeek_tb.readfifo
+top.uartrxfifoextclkpeek_tb.rxcomplete
+top.uartrxfifoextclkpeek_tb.dbg3
+top.uartrxfifoextclkpeek_tb.dbg2
+top.uartrxfifoextclkpeek_tb.dbg1
+top.uartrxfifoextclkpeek_tb.rxd
+top.uartrxfifoextclkpeek_tb.rst
+top.uartrxfifoextclkpeek_tb.bit_clk
+top.uartrxfifoextclkpeek_tb.uclk
+top.uartrxfifoextclkpeek_tb.clk
+@22
+#{top.uartrxfifoextclkpeek_tb.test_name_display[1:80]} top.uartrxfifoextclkpeek_tb.test_name_display[1] top.uartrxfifoextclkpeek_tb.test_name_display[2] top.uartrxfifoextclkpeek_tb.test_name_display[3] top.uartrxfifoextclkpeek_tb.test_name_display[4] top.uartrxfifoextclkpeek_tb.test_name_display[5] top.uartrxfifoextclkpeek_tb.test_name_display[6] top.uartrxfifoextclkpeek_tb.test_name_display[7] top.uartrxfifoextclkpeek_tb.test_name_display[8] top.uartrxfifoextclkpeek_tb.test_name_display[9] top.uartrxfifoextclkpeek_tb.test_name_display[10] top.uartrxfifoextclkpeek_tb.test_name_display[11] top.uartrxfifoextclkpeek_tb.test_name_display[12] top.uartrxfifoextclkpeek_tb.test_name_display[13] top.uartrxfifoextclkpeek_tb.test_name_display[14] top.uartrxfifoextclkpeek_tb.test_name_display[15] top.uartrxfifoextclkpeek_tb.test_name_display[16] top.uartrxfifoextclkpeek_tb.test_name_display[17] top.uartrxfifoextclkpeek_tb.test_name_display[18] top.uartrxfifoextclkpeek_tb.test_name_display[19] top.uartrxfifoextclkpeek_tb.test_name_display[20] top.uartrxfifoextclkpeek_tb.test_name_display[21] top.uartrxfifoextclkpeek_tb.test_name_display[22] top.uartrxfifoextclkpeek_tb.test_name_display[23] top.uartrxfifoextclkpeek_tb.test_name_display[24] top.uartrxfifoextclkpeek_tb.test_name_display[25] top.uartrxfifoextclkpeek_tb.test_name_display[26] top.uartrxfifoextclkpeek_tb.test_name_display[27] top.uartrxfifoextclkpeek_tb.test_name_display[28] top.uartrxfifoextclkpeek_tb.test_name_display[29] top.uartrxfifoextclkpeek_tb.test_name_display[30] top.uartrxfifoextclkpeek_tb.test_name_display[31] top.uartrxfifoextclkpeek_tb.test_name_display[32] top.uartrxfifoextclkpeek_tb.test_name_display[33] top.uartrxfifoextclkpeek_tb.test_name_display[34] top.uartrxfifoextclkpeek_tb.test_name_display[35] top.uartrxfifoextclkpeek_tb.test_name_display[36] top.uartrxfifoextclkpeek_tb.test_name_display[37] top.uartrxfifoextclkpeek_tb.test_name_display[38] top.uartrxfifoextclkpeek_tb.test_name_display[39] top.uartrxfifoextclkpeek_tb.test_name_display[40] top.uartrxfifoextclkpeek_tb.test_name_display[41] top.uartrxfifoextclkpeek_tb.test_name_display[42] top.uartrxfifoextclkpeek_tb.test_name_display[43] top.uartrxfifoextclkpeek_tb.test_name_display[44] top.uartrxfifoextclkpeek_tb.test_name_display[45] top.uartrxfifoextclkpeek_tb.test_name_display[46] top.uartrxfifoextclkpeek_tb.test_name_display[47] top.uartrxfifoextclkpeek_tb.test_name_display[48] top.uartrxfifoextclkpeek_tb.test_name_display[49] top.uartrxfifoextclkpeek_tb.test_name_display[50] top.uartrxfifoextclkpeek_tb.test_name_display[51] top.uartrxfifoextclkpeek_tb.test_name_display[52] top.uartrxfifoextclkpeek_tb.test_name_display[53] top.uartrxfifoextclkpeek_tb.test_name_display[54] top.uartrxfifoextclkpeek_tb.test_name_display[55] top.uartrxfifoextclkpeek_tb.test_name_display[56] top.uartrxfifoextclkpeek_tb.test_name_display[57] top.uartrxfifoextclkpeek_tb.test_name_display[58] top.uartrxfifoextclkpeek_tb.test_name_display[59] top.uartrxfifoextclkpeek_tb.test_name_display[60] top.uartrxfifoextclkpeek_tb.test_name_display[61] top.uartrxfifoextclkpeek_tb.test_name_display[62] top.uartrxfifoextclkpeek_tb.test_name_display[63] top.uartrxfifoextclkpeek_tb.test_name_display[64] top.uartrxfifoextclkpeek_tb.test_name_display[65] top.uartrxfifoextclkpeek_tb.test_name_display[66] top.uartrxfifoextclkpeek_tb.test_name_display[67] top.uartrxfifoextclkpeek_tb.test_name_display[68] top.uartrxfifoextclkpeek_tb.test_name_display[69] top.uartrxfifoextclkpeek_tb.test_name_display[70] top.uartrxfifoextclkpeek_tb.test_name_display[71] top.uartrxfifoextclkpeek_tb.test_name_display[72] top.uartrxfifoextclkpeek_tb.test_name_display[73] top.uartrxfifoextclkpeek_tb.test_name_display[74] top.uartrxfifoextclkpeek_tb.test_name_display[75] top.uartrxfifoextclkpeek_tb.test_name_display[76] top.uartrxfifoextclkpeek_tb.test_name_display[77] top.uartrxfifoextclkpeek_tb.test_name_display[78] top.uartrxfifoextclkpeek_tb.test_name_display[79] top.uartrxfifoextclkpeek_tb.test_name_display[80]
+#{top.uartrxfifoextclkpeek_tb.fifomultipopaddr[10:0]} top.uartrxfifoextclkpeek_tb.fifomultipopaddr[10] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[9] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[8] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[7] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[6] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[5] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[4] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[3] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[2] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[1] top.uartrxfifoextclkpeek_tb.fifomultipopaddr[0]
+#{top.uartrxfifoextclkpeek_tb.fifopeekdata[7:0]} top.uartrxfifoextclkpeek_tb.fifopeekdata[7] top.uartrxfifoextclkpeek_tb.fifopeekdata[6] top.uartrxfifoextclkpeek_tb.fifopeekdata[5] top.uartrxfifoextclkpeek_tb.fifopeekdata[4] top.uartrxfifoextclkpeek_tb.fifopeekdata[3] top.uartrxfifoextclkpeek_tb.fifopeekdata[2] top.uartrxfifoextclkpeek_tb.fifopeekdata[1] top.uartrxfifoextclkpeek_tb.fifopeekdata[0]
+#{top.uartrxfifoextclkpeek_tb.fifopeekaddr[10:0]} top.uartrxfifoextclkpeek_tb.fifopeekaddr[10] top.uartrxfifoextclkpeek_tb.fifopeekaddr[9] top.uartrxfifoextclkpeek_tb.fifopeekaddr[8] top.uartrxfifoextclkpeek_tb.fifopeekaddr[7] top.uartrxfifoextclkpeek_tb.fifopeekaddr[6] top.uartrxfifoextclkpeek_tb.fifopeekaddr[5] top.uartrxfifoextclkpeek_tb.fifopeekaddr[4] top.uartrxfifoextclkpeek_tb.fifopeekaddr[3] top.uartrxfifoextclkpeek_tb.fifopeekaddr[2] top.uartrxfifoextclkpeek_tb.fifopeekaddr[1] top.uartrxfifoextclkpeek_tb.fifopeekaddr[0]
+#{top.uartrxfifoextclkpeek_tb.fifowriteaddr[10:0]} top.uartrxfifoextclkpeek_tb.fifowriteaddr[10] top.uartrxfifoextclkpeek_tb.fifowriteaddr[9] top.uartrxfifoextclkpeek_tb.fifowriteaddr[8] top.uartrxfifoextclkpeek_tb.fifowriteaddr[7] top.uartrxfifoextclkpeek_tb.fifowriteaddr[6] top.uartrxfifoextclkpeek_tb.fifowriteaddr[5] top.uartrxfifoextclkpeek_tb.fifowriteaddr[4] top.uartrxfifoextclkpeek_tb.fifowriteaddr[3] top.uartrxfifoextclkpeek_tb.fifowriteaddr[2] top.uartrxfifoextclkpeek_tb.fifowriteaddr[1] top.uartrxfifoextclkpeek_tb.fifowriteaddr[0]
+#{top.uartrxfifoextclkpeek_tb.fiforeadaddr[10:0]} top.uartrxfifoextclkpeek_tb.fiforeadaddr[10] top.uartrxfifoextclkpeek_tb.fiforeadaddr[9] top.uartrxfifoextclkpeek_tb.fiforeadaddr[8] top.uartrxfifoextclkpeek_tb.fiforeadaddr[7] top.uartrxfifoextclkpeek_tb.fiforeadaddr[6] top.uartrxfifoextclkpeek_tb.fiforeadaddr[5] top.uartrxfifoextclkpeek_tb.fiforeadaddr[4] top.uartrxfifoextclkpeek_tb.fiforeadaddr[3] top.uartrxfifoextclkpeek_tb.fiforeadaddr[2] top.uartrxfifoextclkpeek_tb.fiforeadaddr[1] top.uartrxfifoextclkpeek_tb.fiforeadaddr[0]
+#{top.uartrxfifoextclkpeek_tb.fifocount[10:0]} top.uartrxfifoextclkpeek_tb.fifocount[10] top.uartrxfifoextclkpeek_tb.fifocount[9] top.uartrxfifoextclkpeek_tb.fifocount[8] top.uartrxfifoextclkpeek_tb.fifocount[7] top.uartrxfifoextclkpeek_tb.fifocount[6] top.uartrxfifoextclkpeek_tb.fifocount[5] top.uartrxfifoextclkpeek_tb.fifocount[4] top.uartrxfifoextclkpeek_tb.fifocount[3] top.uartrxfifoextclkpeek_tb.fifocount[2] top.uartrxfifoextclkpeek_tb.fifocount[1] top.uartrxfifoextclkpeek_tb.fifocount[0]
+#{top.uartrxfifoextclkpeek_tb.fiforeaddata[7:0]} top.uartrxfifoextclkpeek_tb.fiforeaddata[7] top.uartrxfifoextclkpeek_tb.fiforeaddata[6] top.uartrxfifoextclkpeek_tb.fiforeaddata[5] top.uartrxfifoextclkpeek_tb.fiforeaddata[4] top.uartrxfifoextclkpeek_tb.fiforeaddata[3] top.uartrxfifoextclkpeek_tb.fiforeaddata[2] top.uartrxfifoextclkpeek_tb.fiforeaddata[1] top.uartrxfifoextclkpeek_tb.fiforeaddata[0]
+@200
+-
+-peek ring buffer
+@28
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.lastwritereq
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.lastpopreq
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.full
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.empty
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.dbg3
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.dbg2
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.dbg1
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.popreq
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.writereq
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.rst
+top.uartrxfifoextclkpeek_tb.dut.uartfifo.clk
+@200
+-
+-uart
+@28
+top.uartrxfifoextclkpeek_tb.dut.uart.rxd_i
+top.uartrxfifoextclkpeek_tb.dut.uart.uartbaudclkx16
+top.uartrxfifoextclkpeek_tb.dut.uart.rxcomplete
+top.uartrxfifoextclkpeek_tb.dut.uart.rxd
+top.uartrxfifoextclkpeek_tb.dut.uart.uartclk
+top.uartrxfifoextclkpeek_tb.dut.uart.rst
+top.uartrxfifoextclkpeek_tb.dut.uart.uclk
+@200
+-
+-clksync
+@28
+top.uartrxfifoextclkpeek_tb.dut.clksyncwrite.temp1
+top.uartrxfifoextclkpeek_tb.dut.clksyncwrite.o
+top.uartrxfifoextclkpeek_tb.dut.clksyncwrite.i
+top.uartrxfifoextclkpeek_tb.dut.clksyncwrite.clk
+[pattern_trace] 1
+[pattern_trace] 0

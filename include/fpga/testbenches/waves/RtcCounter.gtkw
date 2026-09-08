@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Mar 14 00:07:29 2026
+[*]
+[dumpfile] "work/RtcCounter_tb.ghw"
+[dumpfile_mtime] "Fri Mar 13 23:36:26 2026"
+[dumpfile_size] 436775
+[savefile] "waves/RtcCounter.gtkw"
+[timestart] 1993028000000000
+[size] 1908 999
+[pos] -298 1
+*-40.000000 1999800000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.rtccounter_tb.
+[sst_width] 239
+[signals_width] 362
+[sst_expanded] 1
+[sst_vpaned_height] 292
+@28
+top.rtccounter_tb.dut.timewasset
+top.rtccounter_tb.dut.havepps
+top.rtccounter_tb.dut.lastpps
+@420
+top.rtccounter_tb.dut.clockdivider
+@28
+top.rtccounter_tb.dut.setchangedtime
+top.rtccounter_tb.dut.settime
+top.rtccounter_tb.dut.generatedpps
+top.rtccounter_tb.dut.generatepps
+top.rtccounter_tb.dut.sync
+top.rtccounter_tb.dut.ppsdetected
+top.rtccounter_tb.dut.pps
+top.rtccounter_tb.dut.rst
+top.rtccounter_tb.dut.clk
+@22
+#{top.rtccounter_tb.test_name_display[1:80]} top.rtccounter_tb.test_name_display[1] top.rtccounter_tb.test_name_display[2] top.rtccounter_tb.test_name_display[3] top.rtccounter_tb.test_name_display[4] top.rtccounter_tb.test_name_display[5] top.rtccounter_tb.test_name_display[6] top.rtccounter_tb.test_name_display[7] top.rtccounter_tb.test_name_display[8] top.rtccounter_tb.test_name_display[9] top.rtccounter_tb.test_name_display[10] top.rtccounter_tb.test_name_display[11] top.rtccounter_tb.test_name_display[12] top.rtccounter_tb.test_name_display[13] top.rtccounter_tb.test_name_display[14] top.rtccounter_tb.test_name_display[15] top.rtccounter_tb.test_name_display[16] top.rtccounter_tb.test_name_display[17] top.rtccounter_tb.test_name_display[18] top.rtccounter_tb.test_name_display[19] top.rtccounter_tb.test_name_display[20] top.rtccounter_tb.test_name_display[21] top.rtccounter_tb.test_name_display[22] top.rtccounter_tb.test_name_display[23] top.rtccounter_tb.test_name_display[24] top.rtccounter_tb.test_name_display[25] top.rtccounter_tb.test_name_display[26] top.rtccounter_tb.test_name_display[27] top.rtccounter_tb.test_name_display[28] top.rtccounter_tb.test_name_display[29] top.rtccounter_tb.test_name_display[30] top.rtccounter_tb.test_name_display[31] top.rtccounter_tb.test_name_display[32] top.rtccounter_tb.test_name_display[33] top.rtccounter_tb.test_name_display[34] top.rtccounter_tb.test_name_display[35] top.rtccounter_tb.test_name_display[36] top.rtccounter_tb.test_name_display[37] top.rtccounter_tb.test_name_display[38] top.rtccounter_tb.test_name_display[39] top.rtccounter_tb.test_name_display[40] top.rtccounter_tb.test_name_display[41] top.rtccounter_tb.test_name_display[42] top.rtccounter_tb.test_name_display[43] top.rtccounter_tb.test_name_display[44] top.rtccounter_tb.test_name_display[45] top.rtccounter_tb.test_name_display[46] top.rtccounter_tb.test_name_display[47] top.rtccounter_tb.test_name_display[48] top.rtccounter_tb.test_name_display[49] top.rtccounter_tb.test_name_display[50] top.rtccounter_tb.test_name_display[51] top.rtccounter_tb.test_name_display[52] top.rtccounter_tb.test_name_display[53] top.rtccounter_tb.test_name_display[54] top.rtccounter_tb.test_name_display[55] top.rtccounter_tb.test_name_display[56] top.rtccounter_tb.test_name_display[57] top.rtccounter_tb.test_name_display[58] top.rtccounter_tb.test_name_display[59] top.rtccounter_tb.test_name_display[60] top.rtccounter_tb.test_name_display[61] top.rtccounter_tb.test_name_display[62] top.rtccounter_tb.test_name_display[63] top.rtccounter_tb.test_name_display[64] top.rtccounter_tb.test_name_display[65] top.rtccounter_tb.test_name_display[66] top.rtccounter_tb.test_name_display[67] top.rtccounter_tb.test_name_display[68] top.rtccounter_tb.test_name_display[69] top.rtccounter_tb.test_name_display[70] top.rtccounter_tb.test_name_display[71] top.rtccounter_tb.test_name_display[72] top.rtccounter_tb.test_name_display[73] top.rtccounter_tb.test_name_display[74] top.rtccounter_tb.test_name_display[75] top.rtccounter_tb.test_name_display[76] top.rtccounter_tb.test_name_display[77] top.rtccounter_tb.test_name_display[78] top.rtccounter_tb.test_name_display[79] top.rtccounter_tb.test_name_display[80]
+#{top.rtccounter_tb.milliseconds[9:0]} top.rtccounter_tb.milliseconds[9] top.rtccounter_tb.milliseconds[8] top.rtccounter_tb.milliseconds[7] top.rtccounter_tb.milliseconds[6] top.rtccounter_tb.milliseconds[5] top.rtccounter_tb.milliseconds[4] top.rtccounter_tb.milliseconds[3] top.rtccounter_tb.milliseconds[2] top.rtccounter_tb.milliseconds[1] top.rtccounter_tb.milliseconds[0]
+#{top.rtccounter_tb.seconds[21:0]} top.rtccounter_tb.seconds[21] top.rtccounter_tb.seconds[20] top.rtccounter_tb.seconds[19] top.rtccounter_tb.seconds[18] top.rtccounter_tb.seconds[17] top.rtccounter_tb.seconds[16] top.rtccounter_tb.seconds[15] top.rtccounter_tb.seconds[14] top.rtccounter_tb.seconds[13] top.rtccounter_tb.seconds[12] top.rtccounter_tb.seconds[11] top.rtccounter_tb.seconds[10] top.rtccounter_tb.seconds[9] top.rtccounter_tb.seconds[8] top.rtccounter_tb.seconds[7] top.rtccounter_tb.seconds[6] top.rtccounter_tb.seconds[5] top.rtccounter_tb.seconds[4] top.rtccounter_tb.seconds[3] top.rtccounter_tb.seconds[2] top.rtccounter_tb.seconds[1] top.rtccounter_tb.seconds[0]
+#{top.rtccounter_tb.settimeseconds[21:0]} top.rtccounter_tb.settimeseconds[21] top.rtccounter_tb.settimeseconds[20] top.rtccounter_tb.settimeseconds[19] top.rtccounter_tb.settimeseconds[18] top.rtccounter_tb.settimeseconds[17] top.rtccounter_tb.settimeseconds[16] top.rtccounter_tb.settimeseconds[15] top.rtccounter_tb.settimeseconds[14] top.rtccounter_tb.settimeseconds[13] top.rtccounter_tb.settimeseconds[12] top.rtccounter_tb.settimeseconds[11] top.rtccounter_tb.settimeseconds[10] top.rtccounter_tb.settimeseconds[9] top.rtccounter_tb.settimeseconds[8] top.rtccounter_tb.settimeseconds[7] top.rtccounter_tb.settimeseconds[6] top.rtccounter_tb.settimeseconds[5] top.rtccounter_tb.settimeseconds[4] top.rtccounter_tb.settimeseconds[3] top.rtccounter_tb.settimeseconds[2] top.rtccounter_tb.settimeseconds[1] top.rtccounter_tb.settimeseconds[0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Apr 11 08:32:15 2026
+[*]
+[dumpfile] "work/PeekRingBuffer_tb.ghw"
+[dumpfile_mtime] "Sat Apr 11 08:30:00 2026"
+[dumpfile_size] 3148
+[savefile] "waves/PeekRingBuffer.gtkw"
+[timestart] 0
+[size] 1908 1023
+[pos] 0 -4
+*-24.000000 25000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.peekringbuffer_tb.
+[treeopen] top.peekringbuffer_tb.dut.
+[treeopen] top.peekringbuffer_tb.dut.peekram_i.
+[sst_width] 214
+[signals_width] 261
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+top.peekringbuffer_tb.full
+top.peekringbuffer_tb.empty
+top.peekringbuffer_tb.dbg3
+top.peekringbuffer_tb.dbg2
+top.peekringbuffer_tb.dbg1
+top.peekringbuffer_tb.popreq
+top.peekringbuffer_tb.writereq
+top.peekringbuffer_tb.rst
+top.peekringbuffer_tb.clk
+top.peekringbuffer_tb.dut.lastwritereq
+top.peekringbuffer_tb.dut.lastpopreq
+top.peekringbuffer_tb.dut.full
+top.peekringbuffer_tb.dut.empty
+top.peekringbuffer_tb.dut.dbg3
+top.peekringbuffer_tb.dut.dbg2
+top.peekringbuffer_tb.dut.dbg1
+top.peekringbuffer_tb.dut.popreq
+top.peekringbuffer_tb.dut.writereq
+@22
+#{top.peekringbuffer_tb.datastartaddress[10:0]} top.peekringbuffer_tb.datastartaddress[10] top.peekringbuffer_tb.datastartaddress[9] top.peekringbuffer_tb.datastartaddress[8] top.peekringbuffer_tb.datastartaddress[7] top.peekringbuffer_tb.datastartaddress[6] top.peekringbuffer_tb.datastartaddress[5] top.peekringbuffer_tb.datastartaddress[4] top.peekringbuffer_tb.datastartaddress[3] top.peekringbuffer_tb.datastartaddress[2] top.peekringbuffer_tb.datastartaddress[1] top.peekringbuffer_tb.datastartaddress[0]
+#{top.peekringbuffer_tb.dataendaddress[10:0]} top.peekringbuffer_tb.dataendaddress[10] top.peekringbuffer_tb.dataendaddress[9] top.peekringbuffer_tb.dataendaddress[8] top.peekringbuffer_tb.dataendaddress[7] top.peekringbuffer_tb.dataendaddress[6] top.peekringbuffer_tb.dataendaddress[5] top.peekringbuffer_tb.dataendaddress[4] top.peekringbuffer_tb.dataendaddress[3] top.peekringbuffer_tb.dataendaddress[2] top.peekringbuffer_tb.dataendaddress[1] top.peekringbuffer_tb.dataendaddress[0]
+#{top.peekringbuffer_tb.peekaddress[10:0]} top.peekringbuffer_tb.peekaddress[10] top.peekringbuffer_tb.peekaddress[9] top.peekringbuffer_tb.peekaddress[8] top.peekringbuffer_tb.peekaddress[7] top.peekringbuffer_tb.peekaddress[6] top.peekringbuffer_tb.peekaddress[5] top.peekringbuffer_tb.peekaddress[4] top.peekringbuffer_tb.peekaddress[3] top.peekringbuffer_tb.peekaddress[2] top.peekringbuffer_tb.peekaddress[1] top.peekringbuffer_tb.peekaddress[0]
+#{top.peekringbuffer_tb.popaddress[10:0]} top.peekringbuffer_tb.popaddress[10] top.peekringbuffer_tb.popaddress[9] top.peekringbuffer_tb.popaddress[8] top.peekringbuffer_tb.popaddress[7] top.peekringbuffer_tb.popaddress[6] top.peekringbuffer_tb.popaddress[5] top.peekringbuffer_tb.popaddress[4] top.peekringbuffer_tb.popaddress[3] top.peekringbuffer_tb.popaddress[2] top.peekringbuffer_tb.popaddress[1] top.peekringbuffer_tb.popaddress[0]
+#{top.peekringbuffer_tb.bytein[7:0]} top.peekringbuffer_tb.bytein[7] top.peekringbuffer_tb.bytein[6] top.peekringbuffer_tb.bytein[5] top.peekringbuffer_tb.bytein[4] top.peekringbuffer_tb.bytein[3] top.peekringbuffer_tb.bytein[2] top.peekringbuffer_tb.bytein[1] top.peekringbuffer_tb.bytein[0]
+#{top.peekringbuffer_tb.byteout[7:0]} top.peekringbuffer_tb.byteout[7] top.peekringbuffer_tb.byteout[6] top.peekringbuffer_tb.byteout[5] top.peekringbuffer_tb.byteout[4] top.peekringbuffer_tb.byteout[3] top.peekringbuffer_tb.byteout[2] top.peekringbuffer_tb.byteout[1] top.peekringbuffer_tb.byteout[0]
+#{top.peekringbuffer_tb.count[10:0]} top.peekringbuffer_tb.count[10] top.peekringbuffer_tb.count[9] top.peekringbuffer_tb.count[8] top.peekringbuffer_tb.count[7] top.peekringbuffer_tb.count[6] top.peekringbuffer_tb.count[5] top.peekringbuffer_tb.count[4] top.peekringbuffer_tb.count[3] top.peekringbuffer_tb.count[2] top.peekringbuffer_tb.count[1] top.peekringbuffer_tb.count[0]
+@23
+#{top.peekringbuffer_tb.dut.writeaddress[10:0]} top.peekringbuffer_tb.dut.writeaddress[10] top.peekringbuffer_tb.dut.writeaddress[9] top.peekringbuffer_tb.dut.writeaddress[8] top.peekringbuffer_tb.dut.writeaddress[7] top.peekringbuffer_tb.dut.writeaddress[6] top.peekringbuffer_tb.dut.writeaddress[5] top.peekringbuffer_tb.dut.writeaddress[4] top.peekringbuffer_tb.dut.writeaddress[3] top.peekringbuffer_tb.dut.writeaddress[2] top.peekringbuffer_tb.dut.writeaddress[1] top.peekringbuffer_tb.dut.writeaddress[0]
+@22
+#{top.peekringbuffer_tb.dut.datastartaddress_i[10:0]} top.peekringbuffer_tb.dut.datastartaddress_i[10] top.peekringbuffer_tb.dut.datastartaddress_i[9] top.peekringbuffer_tb.dut.datastartaddress_i[8] top.peekringbuffer_tb.dut.datastartaddress_i[7] top.peekringbuffer_tb.dut.datastartaddress_i[6] top.peekringbuffer_tb.dut.datastartaddress_i[5] top.peekringbuffer_tb.dut.datastartaddress_i[4] top.peekringbuffer_tb.dut.datastartaddress_i[3] top.peekringbuffer_tb.dut.datastartaddress_i[2] top.peekringbuffer_tb.dut.datastartaddress_i[1] top.peekringbuffer_tb.dut.datastartaddress_i[0]
+#{top.peekringbuffer_tb.test_name_display[1:80]} top.peekringbuffer_tb.test_name_display[1] top.peekringbuffer_tb.test_name_display[2] top.peekringbuffer_tb.test_name_display[3] top.peekringbuffer_tb.test_name_display[4] top.peekringbuffer_tb.test_name_display[5] top.peekringbuffer_tb.test_name_display[6] top.peekringbuffer_tb.test_name_display[7] top.peekringbuffer_tb.test_name_display[8] top.peekringbuffer_tb.test_name_display[9] top.peekringbuffer_tb.test_name_display[10] top.peekringbuffer_tb.test_name_display[11] top.peekringbuffer_tb.test_name_display[12] top.peekringbuffer_tb.test_name_display[13] top.peekringbuffer_tb.test_name_display[14] top.peekringbuffer_tb.test_name_display[15] top.peekringbuffer_tb.test_name_display[16] top.peekringbuffer_tb.test_name_display[17] top.peekringbuffer_tb.test_name_display[18] top.peekringbuffer_tb.test_name_display[19] top.peekringbuffer_tb.test_name_display[20] top.peekringbuffer_tb.test_name_display[21] top.peekringbuffer_tb.test_name_display[22] top.peekringbuffer_tb.test_name_display[23] top.peekringbuffer_tb.test_name_display[24] top.peekringbuffer_tb.test_name_display[25] top.peekringbuffer_tb.test_name_display[26] top.peekringbuffer_tb.test_name_display[27] top.peekringbuffer_tb.test_name_display[28] top.peekringbuffer_tb.test_name_display[29] top.peekringbuffer_tb.test_name_display[30] top.peekringbuffer_tb.test_name_display[31] top.peekringbuffer_tb.test_name_display[32] top.peekringbuffer_tb.test_name_display[33] top.peekringbuffer_tb.test_name_display[34] top.peekringbuffer_tb.test_name_display[35] top.peekringbuffer_tb.test_name_display[36] top.peekringbuffer_tb.test_name_display[37] top.peekringbuffer_tb.test_name_display[38] top.peekringbuffer_tb.test_name_display[39] top.peekringbuffer_tb.test_name_display[40] top.peekringbuffer_tb.test_name_display[41] top.peekringbuffer_tb.test_name_display[42] top.peekringbuffer_tb.test_name_display[43] top.peekringbuffer_tb.test_name_display[44] top.peekringbuffer_tb.test_name_display[45] top.peekringbuffer_tb.test_name_display[46] top.peekringbuffer_tb.test_name_display[47] top.peekringbuffer_tb.test_name_display[48] top.peekringbuffer_tb.test_name_display[49] top.peekringbuffer_tb.test_name_display[50] top.peekringbuffer_tb.test_name_display[51] top.peekringbuffer_tb.test_name_display[52] top.peekringbuffer_tb.test_name_display[53] top.peekringbuffer_tb.test_name_display[54] top.peekringbuffer_tb.test_name_display[55] top.peekringbuffer_tb.test_name_display[56] top.peekringbuffer_tb.test_name_display[57] top.peekringbuffer_tb.test_name_display[58] top.peekringbuffer_tb.test_name_display[59] top.peekringbuffer_tb.test_name_display[60] top.peekringbuffer_tb.test_name_display[61] top.peekringbuffer_tb.test_name_display[62] top.peekringbuffer_tb.test_name_display[63] top.peekringbuffer_tb.test_name_display[64] top.peekringbuffer_tb.test_name_display[65] top.peekringbuffer_tb.test_name_display[66] top.peekringbuffer_tb.test_name_display[67] top.peekringbuffer_tb.test_name_display[68] top.peekringbuffer_tb.test_name_display[69] top.peekringbuffer_tb.test_name_display[70] top.peekringbuffer_tb.test_name_display[71] top.peekringbuffer_tb.test_name_display[72] top.peekringbuffer_tb.test_name_display[73] top.peekringbuffer_tb.test_name_display[74] top.peekringbuffer_tb.test_name_display[75] top.peekringbuffer_tb.test_name_display[76] top.peekringbuffer_tb.test_name_display[77] top.peekringbuffer_tb.test_name_display[78] top.peekringbuffer_tb.test_name_display[79] top.peekringbuffer_tb.test_name_display[80]
+[pattern_trace] 1
+[pattern_trace] 0
