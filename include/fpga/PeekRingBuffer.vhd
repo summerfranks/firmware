@@ -150,8 +150,10 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	signal LastWriteReq : std_logic;
 
 	--~ signal HeaderFound : std_logic;
-	--~ signal FooterFound : std_logic;
+	--~ signal FooterFound_i : std_logic;
 	signal LastHeaderFound : std_logic;
+	signal FooterFound_i : std_logic;
+	signal FooterLatched : std_logic;	
 	signal LastFooterFound : std_logic;
 	--~ signal HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
 	--~ signal FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
@@ -218,7 +220,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		rst => rst,
 		ByteIn => ByteIn,
 		WriteReq => WriteReq,
-		Found => FooterFound--,
+		Found => FooterFound_i--,
 	);
 	
 	PayloadTypeLatcher : FieldLatcher
@@ -282,7 +284,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		rst => CrcRst,
 		PacketFound => PacketFound,
 		HeaderFound => HeaderFound,
-		FooterFound => FooterFound,
+		FooterFound => FooterLatched,
 		HeaderEndPos => HeaderEndPos,
 		FooterEndPos => FooterEndPos,
 		PayloadLen => PayloadLen,
@@ -293,12 +295,14 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		Dbg3 => open--,
 	);
 
-	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound, latchcrc, latchpayloadlen, latchpayloadtype)
+	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound_i, latchcrc, latchpayloadlen, latchpayloadtype)
   begin
   
 	Dbg1 <= LatchCrc;
 	Dbg2 <= LatchPayloadType;
 	Dbg3 <= LatchPayloadLen;
+	
+	FooterFound <= FooterLatched;
   
 	DataStartAddress <= DataStartAddress_i;
 	DataEndAddress <= WriteAddress;
@@ -320,6 +324,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		LastWriteReq <= '0';
 		LastHeaderFound <= '0';
 		LastFooterFound <= '0';
+		FooterLatched <= '0';
 		DataStartAddress_i <= (others => '0');
 		WriteAddress <= (others => '0');
 		HeaderEndPos <= (others => '0');
@@ -336,7 +341,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	    LastPopReq <= PopReq;
 	    LastWriteReq <= WriteReq;
 		LastHeaderFound <= HeaderFound;
-		LastFooterFound <= FooterFound;
+		LastFooterFound <= FooterFound_i;
 	  
         if ( (LastPopReq = '0') and (PopReq = '1') ) then
 		
@@ -396,8 +401,8 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		end if;
 
 		--Update on the edge of found; can't put this on the writereq edge, because the flag will toggle on the next clock after, not synchrounously!
-		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then HeaderEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); CrcRst <= '1'; else CrcRst <= '0'; end if;
-		if ( (LastFooterFound = '0') and (FooterFound = '1') ) then FooterEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); end if;
+		if ( (LastHeaderFound = '0') and (HeaderFound = '1') ) then HeaderEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); CrcRst <= '1'; else CrcRst <= '0'; FooterLatched <= '0'; end if;
+		if ( (LastFooterFound = '0') and (FooterFound_i = '1') ) then FooterEndPos <= WriteAddress - std_logic_vector(to_unsigned(1, PeekRamDepth)); FooterLatched <= '1'; end if;
 		
   	  end if;  
     end if;

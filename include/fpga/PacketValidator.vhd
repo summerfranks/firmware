@@ -61,9 +61,9 @@ architecture PacketValidatorImplemenatation of PacketValidator is
   	process (clk, rst, FooterFound)
 	  begin
 	  
-		--~ Dbg1 <= LatchCrc;
-		--~ Dbg2 <= LatchPayloadType;
-		--~ Dbg3 <= LatchPayloadLen;
+		Dbg1 <= FooterFound;
+		Dbg2 <= PacketFound;
+		Dbg3 <= '0';
 		
 		if (rst = '1') then
 		  
@@ -78,7 +78,7 @@ architecture PacketValidatorImplemenatation of PacketValidator is
 
 			if ( (LastFooterFound = '0') and (FooterFound = '1') ) then
 			
-				if ( (HeaderEndPos + std_logic_vector(to_unsigned(16, PeekRamDepth)) + PayloadLen) = FooterEndPos) then
+				if ( (HeaderEndPos + std_logic_vector(to_unsigned(8, PeekRamDepth)) + PayloadLen) = FooterEndPos) then
 				
 					--~ --Crc calc isn't right yet...if (PacketCrc = CalcCrc) then 
 

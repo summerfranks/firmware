@@ -235,6 +235,12 @@ const Cmd AsciiCmds[] =
         "\"(FWF)ilterselect\": Shortcut for previous command",
         FWFilterSelectCommand
     ),
+	
+	Cmd(
+        "FWT",
+        "\"(FWT)ilterTest\": FW Test command (debug only)",
+        FWFilterTestCommand
+    ),
 };
 
 //Calculate the number of commands instanciated in the system - links with CmdSystem.cpp.o

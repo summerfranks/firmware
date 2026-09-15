@@ -93,7 +93,8 @@ architecture PeekRamReaderImplemenatation of PeekRamReader is
 				
 					DataOut_i((((CurrentByte + 1) * 8) - 1) downto (CurrentByte * 8)) <= PeekRamByte;
 					CurrentByte <= CurrentByte + 1;
-					PeekRamAddress <= StartAddress + std_logic_vector(to_unsigned(CurrentByte + 1, PeekRamDepth));
+					--~ PeekRamAddress <= StartAddress + std_logic_vector(to_unsigned(CurrentByte + 1, PeekRamDepth)); --wtf even does this?? lol
+					PeekRamAddress <= PeekRamAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
 					
 				else
 				

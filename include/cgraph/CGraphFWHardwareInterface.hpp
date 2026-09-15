@@ -296,6 +296,18 @@ struct CGraphFWHardwareInterface
 	uint32_t Uart0PacketCrc;
 	uint32_t Uart0CalcCrc;
 	
+	uint32_t FilterwheelPos;
+	
+	uint32_t HeaderFound;
+	uint32_t FooterFound;
+	uint32_t HeaderEndPos;
+	uint32_t FooterEndPos;
+	uint32_t PayloadType;
+	uint32_t PayloadLen;
+	uint32_t PacketCrc;
+	uint32_t CalcCrc;
+	uint32_t PacketFound;
+
 } __attribute__((packed, aligned(4)));
 
 extern CGraphFWHardwareInterface* volatile FW;

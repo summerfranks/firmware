@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 2023.2.0.10</text>
 <text>Microsemi Corporation - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Tue Sep  8 16:21:11 2026 </text>
+Date: Tue Sep 15 15:55:05 2026 </text>
 <table>
 <header>
 </header>
@@ -50,15 +50,15 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5706</cell>
+ <cell>         5699</cell>
  <cell>          237</cell>
- <cell>         5943</cell>
+ <cell>         5936</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1305</cell>
+ <cell>         1306</cell>
  <cell>          138</cell>
- <cell>         1443</cell>
+ <cell>         1444</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -68,22 +68,22 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         7026</cell>
+ <cell>         7020</cell>
  <cell>          415</cell>
- <cell>         7441</cell>
+ <cell>         7435</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5706</cell>
+ <cell>         5699</cell>
  <cell>          237</cell>
- <cell>         5943</cell>
+ <cell>         5936</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1305</cell>
+ <cell>         1306</cell>
  <cell>          138</cell>
- <cell>         1443</cell>
+ <cell>         1444</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -93,9 +93,9 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         7026</cell>
+ <cell>         7020</cell>
  <cell>          415</cell>
- <cell>         7441</cell>
+ <cell>         7435</cell>
 </row>
 </table>
 <section>
@@ -173,15 +173,15 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5446</cell>
+ <cell>         5439</cell>
  <cell>           44</cell>
- <cell>         5490</cell>
+ <cell>         5483</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1141</cell>
+ <cell>         1142</cell>
  <cell>            0</cell>
- <cell>         1141</cell>
+ <cell>         1142</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -191,22 +191,22 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6596</cell>
+ <cell>         6590</cell>
  <cell>           67</cell>
- <cell>         6663</cell>
+ <cell>         6657</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5446</cell>
+ <cell>         5439</cell>
  <cell>           44</cell>
- <cell>         5490</cell>
+ <cell>         5483</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1141</cell>
+ <cell>         1142</cell>
  <cell>            0</cell>
- <cell>         1141</cell>
+ <cell>         1142</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -216,9 +216,9 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6596</cell>
+ <cell>         6590</cell>
  <cell>           67</cell>
- <cell>         6663</cell>
+ <cell>         6657</cell>
 </row>
 </table>
 <section>
@@ -604,14 +604,14 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>            0</cell>
- <cell>           69</cell>
- <cell>           69</cell>
+ <cell>           70</cell>
+ <cell>           70</cell>
 </row>
 <separator/>
 <row>
@@ -629,20 +629,32 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            0</cell>
- <cell>            0</cell>
+ <cell>            1</cell>
+ <cell>            1</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>            0</cell>
- <cell>           69</cell>
- <cell>           69</cell>
+ <cell>           70</cell>
+ <cell>           70</cell>
 </row>
 </table>
 <section>
 <name>Enhancement Suggestions</name>
 <text></text>
 <text> - Clock constraint is missing </text>
+<text></text>
+<text> - Max output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP4</item>
+</list>
+<text></text>
+<text> - Min output delay constraint missing on port:</text>
+<text>   </text>
+<list>
+ <item>TP4</item>
+</list>
 <text></text>
 <text></text>
 <text> - Setup unconstrained for the following pins:</text>
@@ -1941,14 +1953,14 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>            0</cell>
- <cell>           80</cell>
- <cell>           80</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
 </row>
 <separator/>
 <row>
@@ -1966,32 +1978,20 @@ Date: Tue Sep  8 16:21:11 2026 </text>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>            0</cell>
- <cell>           80</cell>
- <cell>           80</cell>
+ <cell>           79</cell>
+ <cell>           79</cell>
 </row>
 </table>
 <section>
 <name>Enhancement Suggestions</name>
 <text></text>
 <text> - Clock constraint is missing </text>
-<text></text>
-<text> - Max output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP2</item>
-</list>
-<text></text>
-<text> - Min output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP2</item>
-</list>
 <text></text>
 <text></text>
 <text> - Setup unconstrained for the following pins:</text>

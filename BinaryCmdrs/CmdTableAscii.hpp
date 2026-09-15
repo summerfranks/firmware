@@ -63,6 +63,7 @@ int8_t FWPositionSenseControlStatusCommand(char const* Name, char const* Params,
 int8_t FWPositionStepsCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument);
 int8_t FWTelemetryCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument);
 int8_t FWFilterSelectCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument);
+int8_t FWFilterTestCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument);
 
 ///The actual table (array) of commands for the system - links with CmdSystem.cpp.o
 extern const Cmd AsciiCmds[];

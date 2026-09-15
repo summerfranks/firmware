@@ -400,32 +400,33 @@ public:
             return(false);
         }
         
-		//Move fpga data to flat buffer to do crc:
-		//~ const size_t TwiceMaxPacketLen = 16384;
-		//~ uint8_t CRCBuf[TwiceMaxPacketLen];
-		//~ size_t crclen =  sizeof(CGraphPacketHeader) + payloadlen;
-		//~ Buffer.CopyToFlatBuffer(PacketStartPos, crclen, CRCBuf, TwiceMaxPacketLen);
-		//~ uint32_t CRC = CRC32BZIP2(CRCBuf, sizeof(CGraphPacketHeader) + payloadlen);
+		//~ //Move fpga data to flat buffer to do crc:
+		const size_t TwiceMaxPacketLen = 16384;
+		uint8_t CRCBuf[TwiceMaxPacketLen];
+		size_t crclen =  sizeof(CGraphPacketHeader) + payloadlen;
+		Buffer.CopyToFlatBuffer(PacketStartPos, crclen, CRCBuf, TwiceMaxPacketLen);
+		uint32_t CRC = CRC32BZIP2(CRCBuf, sizeof(CGraphPacketHeader) + payloadlen);
 		
-		//Naw, let's let the fpga do the crc instead!
-		int32_t CrcEndPos = PacketEndPos - sizeof(CGraphPacketFooter::CRC32BZIP2);
-		if (CrcEndPos < 0) { CrcEndPos = 0; }
-		if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): CRC: End: %u Start: %u .\n\r", CrcEndPos, PacketStartPos); }
-		*FpgaCrc.CrcStartAddr = PacketStartPos;
-		*FpgaCrc.CrcEndAddr = CrcEndPos;
+		//~ //Naw, let's let the fpga do the crc instead!
+		//~ int32_t CrcEndPos = PacketEndPos - sizeof(CGraphPacketFooter::CRC32BZIP2);
+		//~ if (CrcEndPos < 0) { CrcEndPos = 0; }
+		//~ if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): CRC: End: %u Start: %u .\n\r", CrcEndPos, PacketStartPos); }
+		//~ *FpgaCrc.CrcStartAddr = PacketStartPos;
+		//~ *FpgaCrc.CrcEndAddr = CrcEndPos;
 		
-		size_t crctimeout = 0;
-		for (crctimeout = 0; crctimeout < (3 * sizeof(CGraphPacketHeader) + payloadlen + sizeof(CGraphPacketFooter)); crctimeout++)
-		{
-			//~ volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
-			volatile CGraphCrcCurrentAddr CrcStatus(FpgaCrc.CrcCurrentAddr);
-			if ( (CrcStatus.CurrentAddr == CrcEndPos) || (CrcStatus.CrcComplete == 1) ) { break; }
-		}		
-		volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
-        if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): Calc'd CRC: 0x%lx (CrcCurrentAddr: 0x%lx), (timeout: %u).\n\r", (unsigned long)*FpgaCrc.CrcResult, CrcStatus.CurrentAddr, crctimeout); }
-		if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): CrcStartAddr: 0x%lx, CrcEndAddr: 0x%lx\n\r", (unsigned long)*FpgaCrc.CrcStartAddr, (unsigned long)*FpgaCrc.CrcEndAddr); }
+		//~ size_t crctimeout = 0;
+		//~ for (crctimeout = 0; crctimeout < (3 * sizeof(CGraphPacketHeader) + payloadlen + sizeof(CGraphPacketFooter)); crctimeout++)
+		//~ {
+			//~ //volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
+			//~ volatile CGraphCrcCurrentAddr CrcStatus(FpgaCrc.CrcCurrentAddr);
+			//~ if ( (CrcStatus.CurrentAddr == CrcEndPos) || (CrcStatus.CrcComplete == 1) ) { break; }
+		//~ }		
+		//~ volatile CGraphCrcCurrentAddr CrcStatus = *FpgaCrc.CrcCurrentAddr;
+        //~ if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): Calc'd CRC: 0x%lx (CrcCurrentAddr: 0x%lx), (timeout: %u).\n\r", (unsigned long)*FpgaCrc.CrcResult, CrcStatus.CurrentAddr, crctimeout); }
+		//~ if (dbg) { ::formatf("\n\nCGraphPacket::IsValid(): CrcStartAddr: 0x%lx, CrcEndAddr: 0x%lx\n\r", (unsigned long)*FpgaCrc.CrcStartAddr, (unsigned long)*FpgaCrc.CrcEndAddr); }
 		
-		if (*FpgaCrc.CrcResult != crc)
+		//~ if (*FpgaCrc.CrcResult != crc)
+		if (CRC != crc)
         {
             return(false);
         }
@@ -749,6 +750,7 @@ struct CGraphFWTelemetryPayload
 
 enum FWFilterSelectPositions { FW_MOVING = -1, FW_SUNSAFE = 0, FILTERWHEEL_ONE = 1, FILTERWHEEL_TWO = 2, FILTERWHEEL_THREE = 3, FILTERWHEEL_FOUR = 4, FILTERWHEEL_FIVE = 5, FILTERWHEEL_SIX = 6, FILTERWHEEL_SEVEN = 7, FILTERWHEEL_EIGHT = 8 };
 static const uint16_t CGraphPayloadTypeFWFilterSelect = 0x4006U; //Payload: uint32 (room to grow?) Read: Which filter is currently in position (1-8; 0 means the filterwheel is in transit to a new position); Write: move to the given filter (1-8)FILTERWHEEL_ONE = 1,
+static const uint16_t CGraphPayloadTypeFWFilterTest = 0x4007U; //Payload: uint32; testing only.
 
 
 #endif // _IPacket_H_

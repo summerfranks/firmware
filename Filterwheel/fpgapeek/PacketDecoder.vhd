@@ -56,7 +56,7 @@ end PacketDecoder;
 
 architecture PacketDecoderImplemenatation of PacketDecoder is
 
-	constant PayloadTypeFilterwheelPos : std_logic_vector(15 downto 0) := x"4006";
+	constant PayloadTypeFilterwheelPos : std_logic_vector(15 downto 0) := x"4007";
 
 	--~ signal LastHeaderFound : std_logic;
 	signal LastPacketFound : std_logic;
@@ -106,9 +106,9 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	process (clk, rst, PacketFound)
 	  begin
 	  
-		--~ Dbg1 <= LatchCrc;
-		--~ Dbg2 <= LatchPayloadType;
-		--~ Dbg3 <= LatchPayloadLen;
+		Dbg1 <= U32_0Start;
+		Dbg2 <= Decoding;
+		Dbg3 <= InPacket;
 		
 		if (rst = '1') then
 		  
@@ -132,26 +132,31 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 
 					when PayloadTypeFilterwheelPos =>
 					
-						if (U32_0Done = '0') then
+						if (U32_0Start = '0') then
 				
-							U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(4, PeekRamDepth));
+							U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(5, PeekRamDepth));
 							U32_0Start <= '1';
 							Decoding <= '1';
 							
 						else
-							
-							FilterwheelPos <= U32_0Out(3 downto 0);
-							U32_0Start <= '0';
-							InPacket <= '0';
-							Decoding <= '0';
+						
+							if (U32_0Done = '1') then
+								
+								FilterwheelPos <= U32_0Out(3 downto 0);
+								U32_0Start <= '0';
+								InPacket <= '0';
+								Decoding <= '0';
+								
+							end if;
 							
 						end if;
 
 					when others =>
 
-					--We just let the processor handle everything else...
-					InPacket <= '0';
-					Decoding <= '0';
+						--We just let the processor handle everything else...
+						U32_0Start <= '0';
+						InPacket <= '0';
+						Decoding <= '0';
 					
 				end case;
 			

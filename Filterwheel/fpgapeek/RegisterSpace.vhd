@@ -186,6 +186,16 @@ entity RegisterSpacePorts is
 		Uart0PacketCrc : in std_logic_vector(31 downto 0);
 		Uart0CalcCrc : in std_logic_vector(31 downto 0);
 		
+		HeaderFound : in std_logic;
+		FooterFound : in std_logic;
+		HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+		PayloadType : in std_logic_vector(15 downto 0);
+		PayloadLen : in std_logic_vector(15 downto 0);
+		PacketCrc : in std_logic_vector(31 downto 0);
+		CalcCrc : in std_logic_vector(31 downto 0);
+		PacketFound : in std_logic;
+		
 		Uart1FifoReset : out std_logic;
 		ReadUart1 : out std_logic;
 		Uart1RxFifoFull : in std_logic;
@@ -382,6 +392,15 @@ architecture RegisterSpace of RegisterSpacePorts is
 	constant Uart0CalcCrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(388, MAX_ADDRESS_BITS)); --184
 	
 	constant FilterwheelPosAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(392, MAX_ADDRESS_BITS));
+	constant HeaderFoundAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(396, MAX_ADDRESS_BITS));
+	constant FooterFoundAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(400, MAX_ADDRESS_BITS));
+	constant HeaderEndPosAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(404, MAX_ADDRESS_BITS));
+	constant FooterEndPosAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(408, MAX_ADDRESS_BITS));
+	constant PayloadTypeAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(412, MAX_ADDRESS_BITS));
+	constant PayloadLenAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(416, MAX_ADDRESS_BITS));
+	constant PacketCrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(420, MAX_ADDRESS_BITS));
+	constant CalcCrcAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(424, MAX_ADDRESS_BITS));
+	constant PacketFoundAddr : std_logic_vector(MAX_ADDRESS_BITS - 1 downto 0) := std_logic_vector(to_unsigned(428, MAX_ADDRESS_BITS));
 	
 	--Control Signals
 	
@@ -954,8 +973,51 @@ begin
 								DataOut(3 downto 0) <= FilterwheelPos;
 								DataOut(31 downto 4) <= (others => '0');
 								
+ 
+ 
+							when HeaderFoundAddr =>
+						
+								DataOut(0) <= HeaderFound;
+								DataOut(31 downto 1) <= (others => '0');
+							
+							when FooterFoundAddr =>
+						
+								DataOut(0) <= FooterFound;
+								DataOut(31 downto 1) <= (others => '0');
+							
+							when HeaderEndPosAddr =>
+						
+								DataOut(PeekRamDepth - 1 downto 0) <= HeaderEndPos;
+								DataOut(31 downto PeekRamDepth) <= (others => '0');
+							
+							when FooterEndPosAddr =>
+						
+								DataOut(PeekRamDepth - 1 downto 0) <= FooterEndPos;
+								DataOut(31 downto PeekRamDepth) <= (others => '0');
+							
+							when PayloadTypeAddr =>
+						
+								DataOut(15 downto 0) <= PayloadType;
+								DataOut(31 downto 16) <= (others => '0');
+							
+							when PayloadLenAddr =>
+						
+								DataOut(15 downto 0) <= PayloadLen;
+								DataOut(31 downto 16) <= (others => '0');
+							
+							when PacketCrcAddr =>
+						
+								DataOut <= PacketCrc;
+							
+							when CalcCrcAddr =>
+						
+								DataOut <= CalcCrc;
 								
-								
+							when PacketFoundAddr =>
+						
+								DataOut(0) <= PacketFound;
+								DataOut(31 downto 1) <= (others => '0');
+							
 								
 							when others =>
 

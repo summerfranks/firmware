@@ -257,6 +257,7 @@ struct BinaryUartRingBuffer// : IUartParser
 					if (debug) { ::formatf("\n\nBinaryUartRingBufferRingBuffer: PopMany(%d).\n\r", PacketStartPos); }
 			
 					//Ok, now we have to figure out how to remove the packet from the buffer...
+					
 					Data.PopMany(PacketStartPos);
 				}
 				else

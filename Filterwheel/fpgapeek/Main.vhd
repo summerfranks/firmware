@@ -783,6 +783,16 @@ architecture architecture_Main of Main is
 							Uart0PacketCrc : in std_logic_vector(31 downto 0);
 							Uart0CalcCrc : in std_logic_vector(31 downto 0);
 							
+							HeaderFound : in std_logic;
+							FooterFound : in std_logic;
+							HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadType : in std_logic_vector(15 downto 0);
+							PayloadLen : in std_logic_vector(15 downto 0);
+							PacketCrc : in std_logic_vector(31 downto 0);
+							CalcCrc : in std_logic_vector(31 downto 0);
+							PacketFound : in std_logic;
+							
 							Uart1FifoReset : out std_logic;
 							ReadUart1 : out std_logic;
 							Uart1RxFifoFull : in std_logic;
@@ -1675,6 +1685,16 @@ begin
 		Uart0PacketCrc => Uart0PacketCrc,
 		Uart0CalcCrc => Uart0CalcCrc,
 		
+		HeaderFound => Uart0HeaderFound,
+		FooterFound => Uart0FooterFound,
+		HeaderEndPos => Uart0HeaderEndPos,
+		FooterEndPos => Uart0FooterEndPos,
+		PayloadType => Uart0PayloadType,
+		PayloadLen => Uart0PayloadLen,
+		PacketCrc => Uart0PacketCrc,
+		CalcCrc => Uart0CalcCrc,
+		PacketFound => Uart0PacketFound,
+				
 		Uart1FifoReset => Uart1FifoReset,
 		ReadUart1 => ReadUart1,
 		Uart1RxFifoFull => Uart1RxFifoFull,
@@ -1996,7 +2016,24 @@ begin
 		Dbg2 => open,
 		Dbg3 => open--,
 	);
-				
+
+	TP1 <= Uart0HeaderEndPos(0);
+	TP2 <= Uart0HeaderEndPos(1);
+	TP3 <= Uart0PacketDecoding;
+	TP4 <= Uart0PacketFound;
+	TP5 <= Uart0FooterEndPos(0);
+	TP6 <= Uart0FooterEndPos(1);
+	TP7 <= Uart0FooterEndPos(2);
+	TP8 <= Uart0FooterEndPos(3);	
+	--~ LedG <= not(UartRx0Dbg);
+	--~ TP1 <= Uart0PacketFound;
+	--~ TP2 <= Uart0PacketDecoding;
+	--~ TP3 <= Uart0RxFifoPeekAddrPacketDecoder(0);
+	--~ TP4 <= Uart0HeaderEndPos(0);
+	--~ TP5 <= Uart0HeaderEndPos(1);
+	--~ TP6 <= Uart0HeaderEndPos(2);
+	--~ TP7 <= Uart0FooterFound;
+	--~ TP8 <= Uart0HeaderEndPos(3);	
 	--~ LedG <= not(UartRx0Dbg);
 	LedG <= Uart0DoCrc;
 	--~ LedR <= not(Uart0RxFifoEmpty);
@@ -2506,14 +2543,14 @@ begin
 	--Mux master reset (boot) and user reset (datamapper)
 	UartUsbFifoReset_i <= MasterReset or UartUsbFifoReset;
 	
-	TP1 <= WriteUartUsb;
-	TP2 <= UartTxClkUsb;
-	TP3 <= UartUsbTxFifoData(0);
-	TP4 <= UartUsbFifoReset_i;
-	TP5 <= UartUsbTxFifoData(3);
-	TP6 <= UartUsbTxFifoData(4);
-	TP7 <= UartUsbTxFifoData(5);
-	TP8 <= UartUsbTxFifoData(6);
+	--~ TP1 <= WriteUartUsb;
+	--~ TP2 <= UartTxClkUsb;
+	--~ TP3 <= UartUsbTxFifoData(0);
+	--~ TP4 <= UartUsbFifoReset_i;
+	--~ TP5 <= UartUsbTxFifoData(3);
+	--~ TP6 <= UartUsbTxFifoData(4);
+	--~ TP7 <= UartUsbTxFifoData(5);
+	--~ TP8 <= UartUsbTxFifoData(6);
 	
 	
 	--Gps is hardcoded to 9600 bps

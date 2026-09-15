@@ -365,16 +365,36 @@ int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen,
 		//~ CircularFifoFlattenedFpga FifoFlattener(&(FW->Uart0RxFifoPeekPeekAddr), (uint8_t*)&(FW->Uart0RxFifoPeekPeekData), &(FW->Uart0RxFifoPeekReadAddr), &(FW->Uart0RxFifoPeekWriteAddr), 1024, &(FW->Uart0RxFifoPeekMultiPopAddr));
 		//~ BinaryUartRingBuffer FpgaUartParser0(FifoFlattener, FpgaCrc0, FPGAUartProtocol, FPGAUartPinout0, BinaryCmds, NumBinaryCmds, BinaryPacketCallbacks, false);
 
-		::formatf("\n\nBISTCommand: :");
+		//~ ::formatf("\n\nBISTCommand: :");
+		//~ for(uint32_t i = 0; i < 64; i++)
+		//~ {
+			//~ FW->Uart0RxFifoPeekPeekAddr = i;
+			//~ uint32_t j = FW->Uart0RxFifoPeekPeekData;
+			//~ //uint32_t j = FW->Uart0RxFifoPeekPeekAddr;
+			//~ ::formatf("%02X:", j);
+		//~ }
+		//~ ::formatf("\n\n");
+		
+		::formatf("\n\nBISTCommand: FilterwheelPos: %u\n\n", FW->FilterwheelPos);
+		::formatf("\nBISTCommand: HeaderFound: %u", FW->HeaderFound);
+		::formatf("\nBISTCommand: FooterFound: %u", FW->FooterFound);
+		::formatf("\nBISTCommand: HeaderEndPos: %u", FW->HeaderEndPos);
+		::formatf("\nBISTCommand: FooterEndPos: %u", FW->FooterEndPos);
+		::formatf("\nBISTCommand: PayloadType: 0x%.4X", FW->PayloadType);
+		::formatf("\nBISTCommand: PayloadLen: %u", FW->PayloadLen);
+		::formatf("\nBISTCommand: PacketCrc: 0x%.8X", FW->PacketCrc);
+		::formatf("\nBISTCommand: CalcCrc: 0x%.8X", FW->CalcCrc);
+		::formatf("\nBISTCommand: PacketFound: %u\n\n", FW->PacketFound);
 		for(uint32_t i = 0; i < 64; i++)
 		{
 			FW->Uart0RxFifoPeekPeekAddr = i;
 			uint32_t j = FW->Uart0RxFifoPeekPeekData;
-			//~ uint32_t j = FW->Uart0RxFifoPeekPeekAddr;
+			//uint32_t j = FW->Uart0RxFifoPeekPeekAddr;
 			::formatf("%02X:", j);
 		}
 		::formatf("\n\n");
-
+		
+		FW->Uart0RxFifoPeekMultiPopAddr = 0;			
 	}
 	
 	return(ParamsLen);

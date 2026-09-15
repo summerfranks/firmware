@@ -112,3 +112,25 @@ int8_t FWFilterSelectCommand(char const* Name, char const* Params, const size_t 
 	TxBinaryPacket(&UartParser, CGraphPayloadTypeFWFilterSelect, 0, NULL, 0);
     return(ParamsLen);
 }
+
+int8_t FWFilterTestCommand(char const* Name, char const* Params, const size_t ParamsLen, const void* Argument)
+{
+    unsigned long A = 0;
+	uint32_t FilterSelect;
+	
+	//Convert parameters
+    int8_t numfound = sscanf(Params, "%lu", &A);
+    if (numfound >= 1)
+    {
+		FilterSelect = A;
+		TxBinaryPacket(&UartParser, CGraphPayloadTypeFWFilterTest, 0, &FilterSelect, sizeof(uint32_t));
+		
+		printf("\n\nFilterTestCommand: set to: %lu\n", A);
+		return(ParamsLen);
+    }
+
+	//No params? Just query it...
+	printf("\n\nFilterTestCommand: Querying...\n");
+	TxBinaryPacket(&UartParser, CGraphPayloadTypeFWFilterTest, 0, NULL, 0);
+    return(ParamsLen);
+}

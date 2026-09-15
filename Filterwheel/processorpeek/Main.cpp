@@ -246,13 +246,15 @@ int main(int argc, char *argv[])
 	//~ formatf("\nOffset of Uart0RxFifoPeekPeekData: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekData), 344UL);
 	//~ formatf("\nOffset of Uart0RxFifoPeekPeekAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0RxFifoPeekPeekAddr), 340UL);
 	//~ formatf("\nOffset of Uart0CalcCrc: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, Uart0CalcCrc), 388UL);
+	formatf("\nOffset of FilterwheelPos: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, FilterwheelPos), 392UL);
+	formatf("\nOffset of PacketFoundAddr: 0x%.2lX, expected: 0x%.2lX.", (unsigned long)offsetof(CGraphFWHardwareInterface, PacketFound), 428UL);
 
 	//~ FpgaUartParser0.Init();
 	//~ FpgaUartParser1.Init();
 	//~ FpgaUartParser2.Init();
 	//~ FpgaUartParser3.Init();
 
-	//~ FpgaUartParser0.Debug(true);
+	FpgaUartParser0.Debug(true);
 	//~ FpgaUartParser1.Debug(true);
 	//~ FpgaUartParser2.Debug(true);
 	//~ FpgaUartParser3.Debug(true);
@@ -271,8 +273,6 @@ int main(int argc, char *argv[])
     while(true)
     {
 		Process();
-		
-		//~ FPGAUartPinoutUsb.putcqq('F');
     }
 
     return(0);

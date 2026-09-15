@@ -88,18 +88,18 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1788893500"
-SIZE="100924"
+TIME="1789491792"
+SIZE="102273"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
 STATE="utd"
-TIME="1787865204"
-SIZE="4131"
+TIME="1789170477"
+SIZE="4130"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
-TIME="1788890233"
-SIZE="53460"
+TIME="1789161482"
+SIZE="56203"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd,hdl"
 STATE="utd"
@@ -113,7 +113,7 @@ SIZE="14443"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/CGraphTypes.vhd,hdl"
 STATE="utd"
-TIME="1780617392"
+TIME="1788908891"
 SIZE="1318"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd,hdl"
@@ -123,8 +123,8 @@ SIZE="2001"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd,hdl"
 STATE="utd"
-TIME="1785442732"
-SIZE="2072"
+TIME="1788908915"
+SIZE="2105"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd,hdl"
 STATE="utd"
@@ -133,13 +133,13 @@ SIZE="5226"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd,hdl"
 STATE="utd"
-TIME="1785445178"
-SIZE="3495"
+TIME="1788909380"
+SIZE="3733"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd,hdl"
 STATE="utd"
-TIME="1763766487"
-SIZE="2540"
+TIME="1788909394"
+SIZE="2487"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd,hdl"
 STATE="utd"
@@ -148,8 +148,8 @@ SIZE="2975"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd,hdl"
 STATE="utd"
-TIME="1771371958"
-SIZE="3326"
+TIME="1788909430"
+SIZE="3702"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/fifo_gen_tb.vhd,hdl"
 STATE="utd"
@@ -168,8 +168,8 @@ SIZE="5106"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd,hdl"
 STATE="utd"
-TIME="1771371982"
-SIZE="3532"
+TIME="1788909524"
+SIZE="3651"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd,hdl"
 STATE="utd"
@@ -203,8 +203,8 @@ SIZE="2261"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd,hdl"
 STATE="utd"
-TIME="1787270743"
-SIZE="2740"
+TIME="1789489481"
+SIZE="2714"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 STATE="utd"
@@ -223,8 +223,8 @@ SIZE="2907"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1788894058"
-SIZE="11051"
+TIME="1789169868"
+SIZE="11235"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -308,8 +308,8 @@ SIZE="3347"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxRaw.vhd,hdl"
 STATE="utd"
-TIME="1763032478"
-SIZE="6188"
+TIME="1788909228"
+SIZE="6673"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd,hdl"
 STATE="utd"
@@ -343,8 +343,8 @@ SIZE="2446"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd,hdl"
 STATE="utd"
-TIME="1785442856"
-SIZE="2401"
+TIME="1788909333"
+SIZE="2433"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/VariableOneShot.vhd,hdl"
 STATE="utd"
@@ -372,14 +372,14 @@ ENDFILE
 VALUE "<project>/../../include/fpga/ClockDivider2X.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
 STATE="utd"
-TIME="1785442732"
-SIZE="2072"
+TIME="1788908915"
+SIZE="2105"
 ENDFILE
 VALUE "<project>/../../include/fpga/fifo_gen.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
 STATE="utd"
-TIME="1771371958"
-SIZE="3326"
+TIME="1788909430"
+SIZE="3702"
 ENDFILE
 VALUE "<project>/../../include/fpga/fifo_gen_tb.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
@@ -402,8 +402,8 @@ ENDFILE
 VALUE "<project>/../../include/fpga/gated_fifo.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
 STATE="utd"
-TIME="1771371982"
-SIZE="3532"
+TIME="1788909524"
+SIZE="3651"
 ENDFILE
 VALUE "<project>/../../include/fpga/IBufP1.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
@@ -528,8 +528,8 @@ ENDFILE
 VALUE "<project>/../../include/fpga/UartRxRaw.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
 STATE="utd"
-TIME="1763032478"
-SIZE="6188"
+TIME="1788909228"
+SIZE="6673"
 ENDFILE
 VALUE "<project>/../../include/fpga/UartTx.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
@@ -570,8 +570,8 @@ ENDFILE
 VALUE "<project>/../../include/fpga/VariableClockDivider2X.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
 STATE="utd"
-TIME="1785442856"
-SIZE="2401"
+TIME="1788909333"
+SIZE="2433"
 ENDFILE
 VALUE "<project>/../../include/fpga/VariableOneShot.vhd,hdl"
 LINKFILEROOT "<project>/../../include/fpga"
@@ -1142,23 +1142,23 @@ PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.so,so"
 STATE="utd"
-TIME="1788892218"
+TIME="1789491821"
 SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
 STATE="ood"
-TIME="1788892217"
-SIZE="1523460"
+TIME="1789491821"
+SIZE="1647498"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
-TIME="1788892218"
+TIME="1789491822"
 SIZE="7796"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1788892217"
-SIZE="7267"
+TIME="1789491821"
+SIZE="7562"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -1460,8 +1460,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1640,9 +1640,6 @@ SUBBLOCK "CORESYSSERVICES_C0_CORESYSSERVICES_C0_0_CORESYSSERVICES::CORESYSSERVIC
 ENDLIST
 LIST "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
 ENDLIST
-LIST "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
-SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
-ENDLIST
 LIST "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
 ENDLIST
@@ -1652,6 +1649,9 @@ LIST "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd
 ENDLIST
 LIST "CoreResetP::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v","FALSE","FALSE"
 SUBBLOCK "coreresetp_pcie_hotreset::work","component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v","FALSE","FALSE"
+ENDLIST
+LIST "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
+SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 ENDLIST
 LIST "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 ENDLIST
@@ -1767,16 +1767,15 @@ SUBBLOCK "iobuf::work","","FALSE","FALSE"
 ENDLIST
 LIST "Main::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd","FALSE","FALSE"
 SUBBLOCK "BuildNumberPorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/BuildNumber.vhd","FALSE","FALSE"
-SUBBLOCK "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP1Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP1.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP3Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP3.vhd","FALSE","FALSE"
 SUBBLOCK "PPSCountPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PPSCount.vhd","FALSE","FALSE"
 SUBBLOCK "PacketDecoder::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd","FALSE","FALSE"
 SUBBLOCK "UartRxFifoExtClkPeek::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd","FALSE","FALSE"
-SUBBLOCK "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
 SUBBLOCK "VariableClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/VariableClockDivider2X.vhd","FALSE","FALSE"
 SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
+SUBBLOCK "CrcFifo::work","${CGRAPH_FIRMWARE}/include/fpga/crc_fifo.vhd","FALSE","FALSE"
 SUBBLOCK "FourWireStepperMotorDriverPorts::work","${CGRAPH_FIRMWARE}/include/fpga/FourWireStepperMotorDriver.vhd","FALSE","FALSE"
 SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FALSE","FALSE"
 SUBBLOCK "RegisterSpacePorts::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd","FALSE","FALSE"
@@ -1850,8 +1849,8 @@ ENDLIST
 LIST "UartRxFifoParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
 SUBBLOCK "UartRxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxParity.vhd","FALSE","FALSE"
-SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
 SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
 ENDLIST
 LIST "UartRxParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartRxParity.vhd","FALSE","FALSE"
 ENDLIST
@@ -1864,11 +1863,6 @@ SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE
 SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
 SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
 SUBBLOCK "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
-ENDLIST
-LIST "UartTxFifoExtClk::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoExtClk.vhd","FALSE","FALSE"
-SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
-SUBBLOCK "UartTx::work","${CGRAPH_FIRMWARE}/include/fpga/UartTx.vhd","FALSE","FALSE"
-SUBBLOCK "gated_fifo::work","${CGRAPH_FIRMWARE}/include/fpga/gated_fifo.vhd","FALSE","FALSE"
 ENDLIST
 LIST "UartTxFifoParity::work","${CGRAPH_FIRMWARE}/include/fpga/UartTxFifoParity.vhd","FALSE","FALSE"
 SUBBLOCK "IBufP2Ports::work","${CGRAPH_FIRMWARE}/include/fpga/IBufP2.vhd","FALSE","FALSE"
