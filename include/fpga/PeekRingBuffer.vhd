@@ -280,8 +280,10 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	PacketValidator_i : PacketValidator
 	port map
 	(
-		clk => WriteReq,
+		--~ clk => WriteReq,
 		rst => CrcRst,
+		clk => clk,
+		--~ rst => rst,
 		PacketFound => PacketFound,
 		HeaderFound => HeaderFound,
 		FooterFound => FooterLatched,
@@ -363,7 +365,6 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			if (WriteAddress < ( (2**PeekRamDepth) - 1) ) then
 		
 				WriteAddress <= WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
-				--~ WriteAddress <= WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
 				
 			else --wrap
 			
@@ -379,20 +380,12 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 			if (WriteAddress = HeaderEndPos + 2) then LatchPayloadType <= '1'; else LatchPayloadType <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4) then LatchPayloadLen <= '1'; else LatchPayloadLen <= '0'; end if;
-			--~ if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
-			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; CalcCrc <= CalcCrc_i; end if;
+			if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then CalcCrc <= CalcCrc_i; end if;
+			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
+			
+			--debug- copy other stuff into crc field so we can look at it:
 			--~ CalcCrc(31 downto 16) <= x"0000";
 			--~ CalcCrc(15 downto 0) <= HeaderEndPos + 8 + PayloadLen; 
-			
-			--~ if (WriteAddress >= HeaderEndPos) then
-			
-				--~ if (WriteAddress = (HeaderEndPos + 3)) then PayloadLen <= MaybePayloadLen; end if;
-			
-			--~ else
-
-				--~ if (WriteAddress = (HeaderEndPos + 3 - (2**PeekRamDepth))) then PayloadLen <= MaybePayloadLen; end if; --!!!this calc is WRONG!!! Needs to WRAP correctly...
-			
-			--~ end if;
 			
 		else
 		

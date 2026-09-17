@@ -88,18 +88,18 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1789491792"
-SIZE="102273"
+TIME="1789685067"
+SIZE="102681"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
 STATE="utd"
-TIME="1789170477"
-SIZE="4130"
+TIME="1789686354"
+SIZE="4645"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
-TIME="1789161482"
-SIZE="56203"
+TIME="1789685137"
+SIZE="56247"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd,hdl"
 STATE="utd"
@@ -203,8 +203,8 @@ SIZE="2261"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd,hdl"
 STATE="utd"
-TIME="1789489481"
-SIZE="2714"
+TIME="1789677609"
+SIZE="2772"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 STATE="utd"
@@ -218,13 +218,13 @@ SIZE="2039"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd,hdl"
 STATE="utd"
-TIME="1787865036"
-SIZE="2907"
+TIME="1789512536"
+SIZE="3026"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1789169868"
-SIZE="11235"
+TIME="1789682381"
+SIZE="10865"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -1142,22 +1142,22 @@ PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.so,so"
 STATE="utd"
-TIME="1789491821"
+TIME="1789687111"
 SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
-STATE="ood"
-TIME="1789491821"
-SIZE="1647498"
+STATE="utd"
+TIME="1789688876"
+SIZE="1685259"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
-TIME="1789491822"
+TIME="1789687111"
 SIZE="7796"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1789491821"
+TIME="1789687110"
 SIZE="7562"
 ENDFILE
 ENDLIST
@@ -1182,7 +1182,38 @@ VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
 VALUE "<project>/constraint/user.sdc,sdc"
 ENDLIST
 LIST ProjectState5.1
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 LIST Impl4
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1460,8 +1491,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1486,7 +1517,38 @@ EndProfile
 ENDLIST
 LIST ProjectState5.1
 LIST "Filterwheel::work"
+LIST Impl1
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 LIST Impl4
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1607,8 +1669,10 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Run Programming Action:Filterwheel_PROGRAM.log
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"

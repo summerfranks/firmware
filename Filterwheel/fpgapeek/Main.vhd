@@ -655,7 +655,7 @@ architecture architecture_Main of Main is
 							Ux2SelJmp : out std_logic;
 							
 							--Testing
-							FilterwheelPos : in std_logic_vector(3 downto 0);
+							FilterwheelPos : in std_logic_vector(31 downto 0);
 							
 							--Motor
 							MotorEnable : out std_logic;
@@ -887,7 +887,7 @@ architecture architecture_Main of Main is
 							PayloadLen : in std_logic_vector(15 downto 0);
 							
 							--Outputs
-							FilterwheelPos : out std_logic_vector(3 downto 0);
+							FilterwheelPos : out std_logic_vector(31 downto 0);
 							--~ MoveFilterwheel : out std_logic;
 							
 							Dbg1 : out std_logic;
@@ -1303,7 +1303,7 @@ architecture architecture_Main of Main is
 			
 		-- Positioning System - Led's and Optodetectors
 		
-		signal FilterwheelPos : std_logic_vector(3 downto 0);
+		signal FilterwheelPos : std_logic_vector(31 downto 0);
 		
 		signal PosSenseHomeA_i : std_logic := '0';
 		signal PosSenseBit0A_i : std_logic := '0';
@@ -1998,7 +1998,9 @@ begin
 	-- !!May want to add Uart0CrcCurrentAddr functionality for debug...
 	
 	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
-	Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekAddrPacketDecoder;
+	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
 	
 	PacketDecoder0 : PacketDecoder
 	port map (
@@ -2012,18 +2014,18 @@ begin
 		PayloadType => Uart0PayloadType,
 		PayloadLen => Uart0PayloadLen,
 		FilterwheelPos => FilterwheelPos,
-		Dbg1 => open,
+		Dbg1 => TP1,
 		Dbg2 => open,
-		Dbg3 => open--,
+		Dbg3 => TP7--,
 	);
 
-	TP1 <= Uart0HeaderEndPos(0);
+	--~ TP1 <= Uart0HeaderEndPos(0);
 	TP2 <= Uart0HeaderEndPos(1);
 	TP3 <= Uart0PacketDecoding;
 	TP4 <= Uart0PacketFound;
 	TP5 <= Uart0FooterEndPos(0);
 	TP6 <= Uart0FooterEndPos(1);
-	TP7 <= Uart0FooterEndPos(2);
+	--~ TP7 <= Uart0FooterEndPos(2);
 	TP8 <= Uart0FooterEndPos(3);	
 	--~ LedG <= not(UartRx0Dbg);
 	--~ TP1 <= Uart0PacketFound;

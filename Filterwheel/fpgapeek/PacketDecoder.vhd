@@ -45,7 +45,7 @@ entity PacketDecoder is
 	PayloadLen : in std_logic_vector(15 downto 0);
 	
 	--Outputs
-	FilterwheelPos : out std_logic_vector(3 downto 0);
+	FilterwheelPos : out std_logic_vector(31 downto 0);
 	--~ MoveFilterwheel : out std_logic;
 	
 	Dbg1 : out std_logic;
@@ -107,7 +107,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	  begin
 	  
 		Dbg1 <= U32_0Start;
-		Dbg2 <= Decoding;
+		Dbg2 <= U32_0Done;
 		Dbg3 <= InPacket;
 		
 		if (rst = '1') then
@@ -116,6 +116,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 			LastPacketFound <= '0';
 			InPacket <= '0';
 			U32_0StartAddress <= (others => '0');
+			FilterwheelPos <= (others => '0');
 			U32_0Start <= '0';
 			
 		else
@@ -124,43 +125,59 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 
 			LastPacketFound <= PacketFound;
 		  
-			if ( (LastPacketFound = '0') and (PacketFound = '1') ) then InPacket <= '1'; end if;
+			if ( (LastPacketFound = '0') and (PacketFound = '1') ) then 
 			
-			if (InPacket = '1') then
+				InPacket <= '1'; 
 			
 				case PayloadType is
 
 					when PayloadTypeFilterwheelPos =>
 					
-						if (U32_0Start = '0') then
-				
-							U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(5, PeekRamDepth));
-							U32_0Start <= '1';
-							Decoding <= '1';
-							
-						else
+						FilterwheelPos <= x"55555555";
+						U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(5, PeekRamDepth));
+						U32_0Start <= '1';
+						Decoding <= '1';
 						
-							if (U32_0Done = '1') then
-								
-								FilterwheelPos <= U32_0Out(3 downto 0);
-								U32_0Start <= '0';
-								InPacket <= '0';
-								Decoding <= '0';
-								
-							end if;
-							
-						end if;
-
 					when others =>
-
-						--We just let the processor handle everything else...
-						U32_0Start <= '0';
-						InPacket <= '0';
-						Decoding <= '0';
+					
+						FilterwheelPos <= x"AAAAAAAA";
 					
 				end case;
+				
+			else
+			
+				if (U32_0Start <= '1') and (U32_0Done = '1') then
+				
+					U32_0Start <= '0';
+					InPacket <= '0';
+					Decoding <= '0';
+					
+					case PayloadType is
+
+						when PayloadTypeFilterwheelPos =>
+							
+							--~ FilterwheelPos <= U32_0Out(3 downto 0);
+							--~ FilterwheelPos <= U32_0Out(31 downto 24);
+							FilterwheelPos <= U32_0Out;
+							
+						when others =>
+
+							--We just let the processor handle everything else...
+							FilterwheelPos <= x"FFFFFFFF";
+	
+					end case;
+					
+				end if;
 			
 			end if;
+			
+			if (PacketFound = '0') then --assumption is this is only zero after we just got a header, so plenty of time above to decode everything...
+			
+				U32_0Start <= '0';
+				InPacket <= '0';
+				Decoding <= '0';
+		
+			end if;  
 			
 		  end if;  
 		  

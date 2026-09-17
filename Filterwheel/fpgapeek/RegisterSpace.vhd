@@ -57,7 +57,7 @@ entity RegisterSpacePorts is
 		Ux2SelJmp : out std_logic;
 		
 		--Testing
-		FilterwheelPos : in std_logic_vector(3 downto 0);
+		FilterwheelPos : in std_logic_vector(31 downto 0);
 				
 		--Motor
 		MotorEnable : out std_logic;
@@ -970,8 +970,9 @@ begin
 								
 							when FilterwheelPosAddr =>
 						
-								DataOut(3 downto 0) <= FilterwheelPos;
-								DataOut(31 downto 4) <= (others => '0');
+								--~ DataOut(7 downto 0) <= FilterwheelPos;
+								--~ DataOut(31 downto 8) <= (others => '0');
+								DataOut <= FilterwheelPos;
 								
  
  

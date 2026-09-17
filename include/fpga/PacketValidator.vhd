@@ -78,7 +78,7 @@ architecture PacketValidatorImplemenatation of PacketValidator is
 
 			if ( (LastFooterFound = '0') and (FooterFound = '1') ) then
 			
-				if ( (HeaderEndPos + std_logic_vector(to_unsigned(8, PeekRamDepth)) + PayloadLen) = FooterEndPos) then
+				if ( (HeaderEndPos + std_logic_vector(to_unsigned(12, PeekRamDepth)) + PayloadLen) = FooterEndPos) then
 				
 					--~ --Crc calc isn't right yet...if (PacketCrc = CalcCrc) then 
 
@@ -86,15 +86,19 @@ architecture PacketValidatorImplemenatation of PacketValidator is
 					
 					--~ end if;
 					
-				end if;
-				
-			else
-			
-				if (LastFooterFound = '0') then 
+				else
 				
 					PacketFound <= '0'; 
 					
 				end if;
+				
+			else
+			
+				--~ if (LastFooterFound = '0') then 
+				
+					--~ PacketFound <= '0'; 
+					
+				--~ end if;
 			
 			end if;
 			

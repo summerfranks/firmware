@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version T-2022.09M-SP2-1
 #--  Project file /home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/synthesis/run_options.txt
-#--  Written on Tue Sep 15 15:54:35 2026
+#--  Written on Thu Sep 17 16:47:37 2026
 
 
 #project files

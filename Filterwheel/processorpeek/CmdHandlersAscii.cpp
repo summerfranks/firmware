@@ -375,7 +375,8 @@ int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen,
 		//~ }
 		//~ ::formatf("\n\n");
 		
-		::formatf("\n\nBISTCommand: FilterwheelPos: %u\n\n", FW->FilterwheelPos);
+		::formatf("\n\nBISTCommand: FilterwheelPos: 0x%.8X (%u)\n\n", FW->FilterwheelPos, FW->FilterwheelPos);
+		
 		::formatf("\nBISTCommand: HeaderFound: %u", FW->HeaderFound);
 		::formatf("\nBISTCommand: FooterFound: %u", FW->FooterFound);
 		::formatf("\nBISTCommand: HeaderEndPos: %u", FW->HeaderEndPos);
@@ -385,7 +386,9 @@ int8_t BISTCommand(char const* Name, char const* Params, const size_t ParamsLen,
 		::formatf("\nBISTCommand: PacketCrc: 0x%.8X", FW->PacketCrc);
 		::formatf("\nBISTCommand: CalcCrc: 0x%.8X", FW->CalcCrc);
 		::formatf("\nBISTCommand: PacketFound: %u\n\n", FW->PacketFound);
-		for(uint32_t i = 0; i < 64; i++)
+		
+		//~ for(uint32_t i = 0; i < 64; i++)
+		for(uint32_t i = 0; i < 20; i++)
 		{
 			FW->Uart0RxFifoPeekPeekAddr = i;
 			uint32_t j = FW->Uart0RxFifoPeekPeekData;

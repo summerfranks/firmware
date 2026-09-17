@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 2023.2.0.10</text>
 <text>Microsemi Corporation - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Tue Sep 15 15:55:05 2026 </text>
+Date: Thu Sep 17 16:48:10 2026 </text>
 <table>
 <header>
 </header>
@@ -50,52 +50,52 @@ Date: Tue Sep 15 15:55:05 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5699</cell>
- <cell>          237</cell>
- <cell>         5936</cell>
+ <cell>         5864</cell>
+ <cell>          233</cell>
+ <cell>         6097</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1306</cell>
- <cell>          138</cell>
- <cell>         1444</cell>
+ <cell>         1395</cell>
+ <cell>          136</cell>
+ <cell>         1531</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>           15</cell>
- <cell>           40</cell>
- <cell>           55</cell>
+ <cell>           39</cell>
+ <cell>           54</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         7020</cell>
- <cell>          415</cell>
- <cell>         7435</cell>
+ <cell>         7274</cell>
+ <cell>          408</cell>
+ <cell>         7682</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5699</cell>
- <cell>          237</cell>
- <cell>         5936</cell>
+ <cell>         5864</cell>
+ <cell>          233</cell>
+ <cell>         6097</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1306</cell>
- <cell>          138</cell>
- <cell>         1444</cell>
+ <cell>         1395</cell>
+ <cell>          136</cell>
+ <cell>         1531</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>           15</cell>
- <cell>           40</cell>
- <cell>           55</cell>
+ <cell>           39</cell>
+ <cell>           54</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         7020</cell>
- <cell>          415</cell>
- <cell>         7435</cell>
+ <cell>         7274</cell>
+ <cell>          408</cell>
+ <cell>         7682</cell>
 </row>
 </table>
 <section>
@@ -173,15 +173,15 @@ Date: Tue Sep 15 15:55:05 2026 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         5439</cell>
- <cell>           44</cell>
- <cell>         5483</cell>
+ <cell>         5604</cell>
+ <cell>           43</cell>
+ <cell>         5647</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1142</cell>
+ <cell>         1231</cell>
  <cell>            0</cell>
- <cell>         1142</cell>
+ <cell>         1231</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -191,22 +191,22 @@ Date: Tue Sep 15 15:55:05 2026 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6590</cell>
- <cell>           67</cell>
- <cell>         6657</cell>
+ <cell>         6844</cell>
+ <cell>           66</cell>
+ <cell>         6910</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         5439</cell>
- <cell>           44</cell>
- <cell>         5483</cell>
+ <cell>         5604</cell>
+ <cell>           43</cell>
+ <cell>         5647</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1142</cell>
+ <cell>         1231</cell>
  <cell>            0</cell>
- <cell>         1142</cell>
+ <cell>         1231</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -216,9 +216,9 @@ Date: Tue Sep 15 15:55:05 2026 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6590</cell>
- <cell>           67</cell>
- <cell>         6657</cell>
+ <cell>         6844</cell>
+ <cell>           66</cell>
+ <cell>         6910</cell>
 </row>
 </table>
 <section>
@@ -344,7 +344,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/LastPosSenseBit2B:D</item>
  <item>Main_0/LastPosSenseHomeA:D</item>
  <item>Main_0/LastPosSenseHomeB:D</item>
- <item>Main_0/PacketDecoder0/LastPacketFound:D</item>
  <item>Main_0/RS422_Tx0/IBufTxInProgress_i/Temp1:D</item>
  <item>Main_0/RS422_Tx1/IBufTxInProgress_i/Temp1:D</item>
  <item>Main_0/RS422_Tx2/IBufTxInProgress_i/Temp1:D</item>
@@ -393,7 +392,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/LastPosSenseBit2B:D</item>
  <item>Main_0/LastPosSenseHomeA:D</item>
  <item>Main_0/LastPosSenseHomeB:D</item>
- <item>Main_0/PacketDecoder0/LastPacketFound:D</item>
  <item>Main_0/RS422_Tx0/IBufTxInProgress_i/Temp1:D</item>
  <item>Main_0/RS422_Tx1/IBufTxInProgress_i/Temp1:D</item>
  <item>Main_0/RS422_Tx2/IBufTxInProgress_i/Temp1:D</item>
@@ -592,69 +590,57 @@ Date: Tue Sep 15 15:55:05 2026 </text>
 <row>
  <cell>Setup</cell>
  <cell>            0</cell>
- <cell>           35</cell>
- <cell>           35</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Recovery</cell>
  <cell>            0</cell>
- <cell>           34</cell>
- <cell>           34</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Setup</cell>
  <cell>            0</cell>
- <cell>           70</cell>
- <cell>           70</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
  <cell>            0</cell>
- <cell>           35</cell>
- <cell>           35</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Removal</cell>
  <cell>            0</cell>
- <cell>           34</cell>
- <cell>           34</cell>
+ <cell>           32</cell>
+ <cell>           32</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
  <cell>            0</cell>
- <cell>            1</cell>
- <cell>            1</cell>
+ <cell>            0</cell>
+ <cell>            0</cell>
 </row>
 <row>
  <cell>Total Hold</cell>
  <cell>            0</cell>
- <cell>           70</cell>
- <cell>           70</cell>
+ <cell>           64</cell>
+ <cell>           64</cell>
 </row>
 </table>
 <section>
 <name>Enhancement Suggestions</name>
 <text></text>
 <text> - Clock constraint is missing </text>
-<text></text>
-<text> - Max output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP4</item>
-</list>
-<text></text>
-<text> - Min output delay constraint missing on port:</text>
-<text>   </text>
-<list>
- <item>TP4</item>
-</list>
 <text></text>
 <text></text>
 <text> - Setup unconstrained for the following pins:</text>
@@ -692,9 +678,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/LastFooterFound:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:EN</item>
 </list>
 <text></text>
 <text> - Recovery unconstrained for the following pins:</text>
@@ -732,8 +715,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/LastFooterFound:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:ALn</item>
 </list>
 <text></text>
 <text> - Hold unconstrained for the following pins:</text>
@@ -771,9 +752,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:D</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:D</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/LastFooterFound:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:D</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:EN</item>
 </list>
 <text></text>
 <text> - Removal unconstrained for the following pins:</text>
@@ -811,8 +789,6 @@ Date: Tue Sep 15 15:55:05 2026 </text>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[7]:ALn</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[8]:ALn</item>
  <item>Main_0/RS422_Rx0/UartFifo/Crcer/CrcIn[9]:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/LastFooterFound:ALn</item>
- <item>Main_0/RS422_Rx0/UartFifo/PacketValidator_i/PacketFound:ALn</item>
 </list>
 <text></text>
 </section>
