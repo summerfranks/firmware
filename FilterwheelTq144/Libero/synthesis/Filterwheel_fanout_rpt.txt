@@ -7,31 +7,30 @@ GLOBAL THRESHOLD - 5000
 
 NET NAME                                                CLOCK LOADS     ASYNC RST LOADS     DATA LOADS     TOTAL FANOUT     GLOBAL BUFFER PRESENT
 -------------------------------------------------------------------------------------------------------------------------------------------------
-FCCC_C0_0_GL0                                           2198            0                   1              2199             YES                  
+FCCC_C0_0_GL0                                           2129            0                   1              2130             YES                  
+Filterwheel_sb_0.GL0_INST                               32              0                   0              32               YES                  
 Main_0.UartClk0                                         32              0                   0              32               YES                  
 Main_0.UartClk1                                         32              0                   0              32               YES                  
 Main_0.UartClk2                                         32              0                   0              32               YES                  
 Main_0.UartClk3                                         32              0                   0              32               YES                  
 Main_0.UartClkUsb                                       32              0                   0              32               YES                  
 Main_0.UartClkGps                                       32              0                   0              32               YES                  
-Filterwheel_sb_0.GL0_INST                               32              0                   0              32               YES                  
 Filterwheel_sb_0.FABOSC_0_RCOSC_25_50MHZ_O2F            15              0                   0              15               YES                  
-Main_0.UartTxClk1                                       9               0                   0              9                YES                  
-Main_0.UartTxClk3                                       9               0                   0              9                YES                  
 Main_0.UartTxClk0                                       9               0                   0              9                YES                  
-Main_0.UartTxClkGps                                     9               0                   0              9                YES                  
+Main_0.UartTxClk1                                       9               0                   0              9                YES                  
 Main_0.UartTxClk2                                       9               0                   0              9                YES                  
+Main_0.UartTxClk3                                       9               0                   0              9                YES                  
 Main_0.UartTxClkUsb                                     9               0                   0              9                YES                  
-Main_0.BootupReset.shot_i_arst                          0               164                 0              164              YES                  
-Main_0.Uart2FifoReset_i_i                               0               130                 0              130              YES                  
-Main_0.UartUsbFifoReset_i_i                             0               130                 0              130              YES                  
-Main_0.Uart3FifoReset_i_i                               0               130                 0              130              YES                  
-Main_0.Uart1FifoReset_i_i                               0               130                 0              130              YES                  
-Main_0.UartGpsFifoReset_i_i                             0               130                 0              130              YES                  
-Main_0.Uart0FifoReset_i_arst                            0               107                 0              107              YES                  
+Main_0.UartTxClkGps                                     9               0                   0              9                YES                  
+Main_0.BootupReset.shot_i_arst                          0               152                 0              152              YES                  
+Main_0.Uart0FifoReset_i_i                               0               138                 0              138              YES                  
+Main_0.UartUsbFifoReset_i_i                             0               138                 0              138              YES                  
+Main_0.Uart3FifoReset_i_i                               0               138                 0              138              YES                  
+Main_0.UartGpsFifoReset_i_i                             0               138                 0              138              YES                  
+Main_0.Uart2FifoReset_i_i                               0               138                 0              138              YES                  
+Main_0.Uart1FifoReset_i_i                               0               138                 0              138              YES                  
 Main_0.RegisterSpace.PPSCountReset_arst                 0               67                  0              67               YES                  
 Main_0.ClkDac_i.SpiRst_arst                             0               49                  0              49               YES                  
-Main_0.RS422_Rx0_Crcer.CrcComplete_i_arst               0               32                  0              32               YES                  
 Main_0.ads1258.SpiRst_arst                              0               29                  0              29               YES                  
 Main_0.StepperMotor.MotorStopped                        0               21                  0              21               YES                  
 Filterwheel_sb_0.CORERESETP_0.sm0_areset_n_clk_base     0               20                  0              20               YES                  

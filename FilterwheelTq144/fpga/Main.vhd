@@ -1585,19 +1585,6 @@ begin
 		Uart0TxFifoCount => Uart0TxFifoCount,
 		Uart0ClkDivider => Uart0ClkDivider,
 		
-		Uart0RxFifoPeekReadAddr => Uart0RxFifoPeekReadAddr,
-		Uart0RxFifoPeekWriteAddr => Uart0RxFifoPeekWriteAddr,
-		Uart0RxFifoPeekPeekAddr => Uart0RxFifoPeekPeekAddrRegisterSpace,
-		Uart0RxFifoPeekPeekData => Uart0RxFifoPeekPeekData,
-		Uart0RxFifoPeekMultiPopAddr => Uart0RxFifoPeekMultiPopAddr,
-		Uart0RxFifoPeekMultiPopStrobe => Uart0RxFifoPeekMultiPopStrobe,
-		Uart0CrcStartAddr => Uart0CrcStartAddr,
-		Uart0CrcEndAddr => Uart0CrcEndAddr,
-		Uart0CrcCurrentAddr => Uart0CrcCurrentAddr,
-		Uart0DoCrc => Uart0DoCrc,
-		Uart0CrcDone => Uart0CrcDone,
-		Uart0Crc => Uart0Crc,
-		
 		Uart1FifoReset => Uart1FifoReset,
 		ReadUart1 => ReadUart1,
 		Uart1RxFifoFull => Uart1RxFifoFull,
@@ -1840,69 +1827,41 @@ begin
 		
 	IBufRxd0 : IBufP3Ports port map(clk => UartClk, I => Rxd0, O => Rxd0_i); --if you want to change the pin for this chip select, it's here
 	
-	RS422_Rx0 : UartRxFifoExtClkPeek
+	RS422_Rx0 : UartRxFifoExtClk
+	generic map
+	(
+		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
+		FIFO_BITS => UART_FIFO_DEPTH_BITS--,
+		--~ BAUD_DIVIDER_BITS => 8--,
+		--~ BAUDRATE => 12500000--,
+		--~ BAUDRATE => 8000000--,
+		--~ BAUDRATE => BoardMasterClockFreq / 16--, --9.216MHz
+		--~ BAUDRATE => BoardMasterClockFreq / 8192--,
+		--~ BAUDRATE => 921600--,
+		--~ BAUDRATE => 460800--, --calcs show 460k is the fastest standard baudrate with a clean divisor...
+	)
 	port map
 	(
 		clk => MasterClk,
 		uclk => UartClk0,
 		rst => Uart0FifoReset_i,
-		--~ rst => '0',
-		--~ BaudDivider => Uart0ClkDivider,
+		--~ BaudDivider => Uart1ClkDivider,
 		Rxd => Rxd0_i,
-		Dbg1 => UartRx0Dbg,
-		Dbg2 => TP2,
-		Dbg3 => TP3,
-		--~ Dbg1 => open,
+		Dbg1 => open,
 		RxComplete => open,
 		ReadFifo => ReadUart0,
 		FifoFull => Uart0RxFifoFull,
 		FifoEmpty => Uart0RxFifoEmpty,
 		FifoReadData => Uart0RxFifoData,
 		FifoCount => Uart0RxFifoCount,
-		FifoReadAck => open,
-		FifoReadAddr => Uart0RxFifoPeekReadAddr,
-		FifoWriteAddr => Uart0RxFifoPeekWriteAddr,
-		FifoPeekAddr => Uart0RxFifoPeekPeekAddr_i,
-		FifoPeekData => Uart0RxFifoPeekPeekData,
-		FifoMultiPopAddr => Uart0RxFifoPeekMultiPopAddr,
-		FifoMultiPopStrobe => Uart0RxFifoPeekMultiPopStrobe--,
+		FifoReadAck => open--,		
 	);
 	
-	RS422_Rx0_Crcer : CrcFifo
-	generic map
-	(
-		DEPTH_BITS => UART_FIFO_DEPTH_BITS--,
-	)
-	port map
-	(
-		clk => MasterClk,
-		rst => Uart0FifoReset_i,
-		FifoStartAddr => Uart0CrcStartAddr,
-		FifoEndAddr => Uart0CrcEndAddr,
-		FifoPeekData => Uart0RxFifoPeekPeekData,
-		FifoPeekAddr => Uart0CrcCurrentAddr,
-		StartCrc => Uart0DoCrc,
-		Crc => Uart0Crc,
-		CrcComplete => Uart0CrcDone--,
-	);
-	-- !!May want to add Uart0CrcCurrentAddr functionality for debug...
-	
-	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
-	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrRegisterSpace;
-	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when ( (Uart0CrcDone = '0') and (Uart0DoCrc = '1') ) else Uart0RxFifoPeekPeekAddrRegisterSpace;
-	Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekPeekAddrRegisterSpace;
-
 	--~ LedG <= not(UartRx0Dbg);
-	LedG <= Uart0DoCrc;
+	--~ LedG <= Uart0DoCrc;
 	--~ LedR <= not(Uart0RxFifoEmpty);
 	LedR <= '0';
-	TP1 <= Uart0CrcDone;
-	TP4 <= Uart0CrcCurrentAddr(0);
-	TP5 <= Uart0DoCrc;
-	TP6 <= Uart0Crc(0);
-	TP7 <= Uart0CrcStartAddr(0);
-	TP8 <= Uart0CrcEndAddr(0);
-
+	LedG <= '0';
 	
 	RS422_Tx0 : UartTxFifoExtClk
 	generic map

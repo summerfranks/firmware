@@ -13,13 +13,13 @@ The file contains the job information from mapper to be displayed as part of the
 </job_status>
 <job_info>
 <info name="Notes">
-<data>106</data>
+<data>113</data>
 <report_link name="more">
 <data>/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synlog/report/Filterwheel_fpga_mapper_notes.txt</data>
 </report_link>
 </info>
 <info name="Warnings">
-<data>43</data>
+<data>49</data>
 <report_link name="more">
 <data>/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synlog/report/Filterwheel_fpga_mapper_warnings.txt</data>
 </report_link>
@@ -31,16 +31,16 @@ The file contains the job information from mapper to be displayed as part of the
 </report_link>
 </info>
 <info name="CPU Time">
-<data>0h:00m:20s</data>
+<data>0h:00m:14s</data>
 </info>
 <info name="Real Time">
-<data>0h:00m:20s</data>
+<data>0h:00m:14s</data>
 </info>
 <info name="Peak Memory">
-<data>410MB</data>
+<data>400MB</data>
 </info>
 <info name="Date &amp; Time">
-<data type="timestamp">1763766143</data>
+<data type="timestamp">1790705656</data>
 </info>
 </job_info>
 </job_run_status>

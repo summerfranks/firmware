@@ -1,44 +1,44 @@
 @P:  Worst Slack : 1.248
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Estimated Frequency : 255.0 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Estimated Frequency : 281.5 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Estimated Period : 3.921
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Estimated Period : 3.552
 @P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Slack : 6.079
-@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Estimated Frequency : 183.5 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock - Slack : 6.448
+@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Estimated Period : 5.448
+@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Estimated Period : 4.687
 @P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Slack : 4.552
-@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Estimated Frequency : 183.3 MHz
+@P:  ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock - Slack : 5.313
+@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Estimated Period : 5.457
+@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Estimated Period : 4.687
 @P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Requested Period : 10.000
-@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Slack : 4.543
+@P:  ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock - Slack : 5.313
 @P:  Filterwheel_sb_0/CCC_0/GL0 - Estimated Frequency : 116.9 MHz
 @P:  Filterwheel_sb_0/CCC_0/GL0 - Requested Frequency : 102.0 MHz
 @P:  Filterwheel_sb_0/CCC_0/GL0 - Estimated Period : 8.556
@@ -49,44 +49,44 @@
 @P:  Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT - Estimated Period : 1.225
 @P:  Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT - Requested Period : 20.000
 @P:  Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT - Slack : 18.775
-@P:  MasterClk - Estimated Frequency : 127.0 MHz
+@P:  MasterClk - Estimated Frequency : 133.9 MHz
 @P:  MasterClk - Requested Frequency : 102.0 MHz
-@P:  MasterClk - Estimated Period : 7.876
+@P:  MasterClk - Estimated Period : 7.470
 @P:  MasterClk - Requested Period : 9.804
-@P:  MasterClk - Slack : 1.928
+@P:  MasterClk - Slack : 2.333
 @P:  VCXO - Estimated Frequency : NA
 @P:  VCXO - Requested Frequency : 51.0 MHz
 @P:  VCXO - Estimated Period : NA
 @P:  VCXO - Requested Period : 19.608
 @P:  VCXO - Slack : NA
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Estimated Frequency : 183.5 MHz
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Estimated Period : 5.448
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Estimated Period : 4.687
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Requested Period : 10.000
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Slack : 4.552
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Estimated Frequency : 183.5 MHz
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock - Slack : 5.313
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Estimated Period : 5.448
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Estimated Period : 4.687
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Requested Period : 10.000
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Slack : 4.552
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Estimated Frequency : 183.2 MHz
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock - Slack : 5.313
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Estimated Period : 5.459
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Estimated Period : 4.687
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Requested Period : 10.000
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Slack : 4.541
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Estimated Frequency : 183.5 MHz
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock - Slack : 5.313
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Estimated Frequency : 213.4 MHz
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Estimated Period : 5.448
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Estimated Period : 4.687
 @P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Requested Period : 10.000
-@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Slack : 4.552
-@P:  System - Estimated Frequency : 177.3 MHz
+@P:  VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock - Slack : 5.313
+@P:  System - Estimated Frequency : 807.1 MHz
 @P:  System - Requested Frequency : 100.0 MHz
-@P:  System - Estimated Period : 5.639
+@P:  System - Estimated Period : 1.239
 @P:  System - Requested Period : 10.000
-@P:  System - Slack : 4.361
+@P:  System - Slack : 8.761
 @P: Filterwheel Part : m2s010vf400std
-@P: Filterwheel Register bits  : 2480 
+@P: Filterwheel Register bits  : 2400 
 @P: Filterwheel DSP Blocks  : 0
 @P: Filterwheel I/O primitives : 68
 @P: Filterwheel RAM1K18 :  12
-@P:  CPU Time : 0h:00m:20s
+@P:  CPU Time : 0h:00m:14s

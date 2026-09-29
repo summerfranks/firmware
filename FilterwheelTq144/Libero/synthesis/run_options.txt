@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version T-2022.09M-SP2-1
 #--  Project file /home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/run_options.txt
-#--  Written on Tue Sep  8 12:20:16 2026
+#--  Written on Tue Sep 29 11:13:57 2026
 
 
 #project files
@@ -23,17 +23,8 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBu
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd"
@@ -41,11 +32,14 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FilterwheelTq144
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd"
 add_file -verilog "/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/component/work/Filterwheel/Filterwheel.v"
 add_file -fpga_constraint "/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/designer/Filterwheel/synthesis.fdc"

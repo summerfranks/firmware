@@ -17,50 +17,50 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_0|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_1|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_2|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_3|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_4|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_0layer1_5|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>255.0 MHz</data>
-<data>6.079</data>
+<data>281.5 MHz</data>
+<data>6.448</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_1layer1|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.5 MHz</data>
-<data>4.552</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>ClockDividerPorts_work_main_architecture_main_2layer1|div_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.3 MHz</data>
-<data>4.543</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>Filterwheel_sb_0/CCC_0/GL0</data>
@@ -77,8 +77,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>MasterClk</data>
 <data>102.0 MHz</data>
-<data>127.0 MHz</data>
-<data>1.928</data>
+<data>133.9 MHz</data>
+<data>2.333</data>
 </row>
 <row>
 <data>VCXO</data>
@@ -89,31 +89,31 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>VariableClockDividerPorts_work_main_architecture_main_0layer1_0|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.5 MHz</data>
-<data>4.552</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>VariableClockDividerPorts_work_main_architecture_main_0layer1_1|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.5 MHz</data>
-<data>4.552</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>VariableClockDividerPorts_work_main_architecture_main_0layer1_2|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.2 MHz</data>
-<data>4.541</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>VariableClockDividerPorts_work_main_architecture_main_0layer1_3|clko_i_inferred_clock</data>
 <data>100.0 MHz</data>
-<data>183.5 MHz</data>
-<data>4.552</data>
+<data>213.4 MHz</data>
+<data>5.313</data>
 </row>
 <row>
 <data>System</data>
 <data>100.0 MHz</data>
-<data>177.3 MHz</data>
-<data>4.361</data>
+<data>807.1 MHz</data>
+<data>8.761</data>
 </row>
 </report_table>

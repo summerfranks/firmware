@@ -1,5 +1,5 @@
 #defaultlanguage:vhdl
-#OPTIONS:"|-mixedhdl|-top|work.Main|-mpparams|/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synwork/_mh_params|-layerid|1|-orig_srs|/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synwork/Filterwheel_comp.srs|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-actel|-work_is_curlib|1|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-work_is_curlib|1|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#OPTIONS:"|-mixedhdl|-top|work.Main|-mpparams|/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synwork/_mh_params|-layerid|1|-orig_srs|/home/summer/projects/CGraph/firmware/FilterwheelTq144/Libero/synthesis/synwork/Filterwheel_comp.srs|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-actel|-work_is_curlib|1|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-work_is_curlib|1|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
 #CUR:"/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/linux_a_64/c_vhdl":1763046396
 #CUR:"/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/lib/vhd2008/location.map":1763046355
 #CUR:"/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/lib/vhd2008/std.vhd":1763046355
@@ -16,59 +16,47 @@
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd":1771366320
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd":1763765542
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd":1763766487
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1780617392
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd":1763139239
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd":1788894058
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1771365010
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd":1788892907
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd":1771366217
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd":1771366191
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd":1785445178
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd":1771366070
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd":1763669022
+#CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd":1790705520
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd":1763032478
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd":1763032478
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1771371958
-#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1771371982
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd":1788909228
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd":1771365010
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd":1788909430
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd":1788909524
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd":1771365472
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd":1771366370
 #CUR:"/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd":1771366350
-#CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1763758271
+#CUR:"/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd":1788908891
+#CUR:"/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd":1790705632
 0 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/BuildNumber.vhd" vhdl
 1 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd" vhdl
 2 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd" vhdl
 3 "/home/summer/projects/CGraph/firmware/include/fpga/IBufP3.vhd" vhdl
 4 "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd" vhdl
-5 "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd" vhdl
-6 "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd" vhdl
-7 "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd" vhdl
-8 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd" vhdl
-9 "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd" vhdl
-10 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd" vhdl
-11 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd" vhdl
-12 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd" vhdl
-13 "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd" vhdl
-14 "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd" vhdl
-15 "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd" vhdl
-16 "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd" vhdl
-17 "/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd" vhdl
-18 "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd" vhdl
-19 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd" vhdl
-20 "/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd" vhdl
-21 "/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd" vhdl
-22 "/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd" vhdl
-23 "/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd" vhdl
-24 "/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd" vhdl
-25 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd" vhdl
-26 "/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd" vhdl
-27 "/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd" vhdl
-28 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd" vhdl
+5 "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd" vhdl
+6 "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd" vhdl
+7 "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotor.vhd" vhdl
+8 "/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd" vhdl
+9 "/home/summer/projects/CGraph/firmware/include/fpga/FourWireStepperMotorDriver.vhd" vhdl
+10 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/RegisterSpace.vhd" vhdl
+11 "/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd" vhdl
+12 "/home/summer/projects/CGraph/firmware/include/fpga/SpiDac.vhd" vhdl
+13 "/home/summer/projects/CGraph/firmware/include/fpga/SpiDevice.vhd" vhdl
+14 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd" vhdl
+15 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd" vhdl
+16 "/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd" vhdl
+17 "/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd" vhdl
+18 "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd" vhdl
+19 "/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd" vhdl
+20 "/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd" vhdl
+21 "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd" vhdl
+22 "/home/summer/projects/CGraph/firmware/FilterwheelTq144/fpga/Main.vhd" vhdl
 
 # Dependency Lists (Uses list)
 0 -1
@@ -77,60 +65,48 @@
 3 -1
 4 -1
 5 -1
-6 5 
+6 -1
 7 -1
-8 7 
-9 8 6 7 
+8 -1
+9 8 7 
 10 -1
-11 2 10 
-12 11 2 9 7 
-13 -1
+11 -1
+12 11 
+13 11 
 14 -1
-15 6 
+15 2 14 
 16 -1
-17 -1
-18 17 16 
+17 16 
+18 15 2 17 
 19 -1
-20 -1
-21 20 
-22 20 
-23 -1
-24 23 
-25 11 2 24 
-26 -1
-27 24 2 26 
-28 0 17 2 1 19 3 22 13 14 12 15 27 25 4 21 18 7 
+20 17 2 19 
+21 -1
+22 0 8 2 1 10 3 13 5 6 18 20 4 12 9 21 
 
 # Dependency Lists (Users Of)
-0 28 
-1 28 
-2 28 27 25 12 11 
-3 28 
-4 28 
-5 6 
-6 15 9 
-7 28 12 9 8 
-8 9 
-9 12 
-10 11 
-11 25 12 
-12 28 
-13 28 
-14 28 
-15 28 
-16 18 
-17 28 18 
-18 28 
-19 28 
-20 22 21 
-21 28 
-22 28 
-23 24 
-24 27 25 
-25 28 
-26 27 
-27 28 
-28 -1
+0 22 
+1 22 
+2 22 20 18 15 
+3 22 
+4 22 
+5 22 
+6 22 
+7 9 
+8 22 9 
+9 22 
+10 22 
+11 13 12 
+12 22 
+13 22 
+14 15 
+15 18 
+16 17 
+17 20 18 
+18 22 
+19 20 
+20 22 
+21 22 
+22 -1
 
 # Design Unit to File Association
 arch work buildnumberports buildnumber 0
@@ -143,54 +119,39 @@ arch work ibufp3ports ibufp3 3
 module work ibufp3ports 3
 arch work ppscountports ppscount 4
 module work ppscountports 4
-arch work crc_byte behavioral 5
-module work crc_byte 5
-arch work crcstream implementation 6
-module work crcstream 6
-arch work peekram peekramimplementation 8
-module work peekram 8
-arch work peekringbuffer peekringbufferimplemenatation 9
-module work peekringbuffer 9
-arch work uartrxraw behaviour 10
-module work uartrxraw 10
-arch work uartrxextclk implementation 11
-module work uartrxextclk 11
-arch work uartrxfifoextclkpeek implementation 12
-module work uartrxfifoextclkpeek 12
-arch work variableclockdividerports variableclockdivider 13
-module work variableclockdividerports 13
-arch work clockdividerports clockdivider 14
-module work clockdividerports 14
-arch work crcfifo implementation 15
-module work crcfifo 15
-arch work fourwiresteppermotorports fourwiresteppermotor 16
-module work fourwiresteppermotorports 16
-arch work oneshotports oneshot 17
-module work oneshotports 17
-arch work fourwiresteppermotordriverports fourwiresteppermotordriver 18
-module work fourwiresteppermotordriverports 18
-arch work registerspaceports registerspace 19
-module work registerspaceports 19
-arch work spimasterports spimaster 20
-module work spimasterports 20
-arch work spidacports spidac 21
-module work spidacports 21
-arch work spideviceports spidevice 22
-module work spideviceports 22
-arch work fifo rtl 23
-module work fifo 23
-arch work gated_fifo rtl 24
-module work gated_fifo 24
-arch work uartrxfifoextclk implementation 25
-module work uartrxfifoextclk 25
-arch work uarttx behaviour 26
-module work uarttx 26
-arch work uarttxfifoextclk implementation 27
-module work uarttxfifoextclk 27
-arch work main architecture_main 28
-module work main 28
+arch work variableclockdividerports variableclockdivider 5
+module work variableclockdividerports 5
+arch work clockdividerports clockdivider 6
+module work clockdividerports 6
+arch work fourwiresteppermotorports fourwiresteppermotor 7
+module work fourwiresteppermotorports 7
+arch work oneshotports oneshot 8
+module work oneshotports 8
+arch work fourwiresteppermotordriverports fourwiresteppermotordriver 9
+module work fourwiresteppermotordriverports 9
+arch work registerspaceports registerspace 10
+module work registerspaceports 10
+arch work spimasterports spimaster 11
+module work spimasterports 11
+arch work spidacports spidac 12
+module work spidacports 12
+arch work spideviceports spidevice 13
+module work spideviceports 13
+arch work uartrxraw behaviour 14
+module work uartrxraw 14
+arch work uartrxextclk implementation 15
+module work uartrxextclk 15
+arch work fifo rtl 16
+module work fifo 16
+arch work gated_fifo rtl 17
+module work gated_fifo 17
+arch work uartrxfifoextclk implementation 18
+module work uartrxfifoextclk 18
+arch work uarttx behaviour 19
+module work uarttx 19
+arch work uarttxfifoextclk implementation 20
+module work uarttxfifoextclk 20
+arch work main architecture_main 22
+module work main 22
 
 # Unbound Instances to File Association
-inst work peekringbuffer packetvalidator 9
-inst work peekringbuffer fieldlatcher 9
-inst work peekringbuffer patternfinder 9
