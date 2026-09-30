@@ -4,7 +4,7 @@ set max_timing_multi_corner [report \
     -analysis max \
     -multi_corner yes \
     -format   text \
-    {Filterwheel_timing_r29_s44.rpt}]
+    {Filterwheel_timing_r32_s59.rpt}]
 set max_timing_violations_multi_corner [report \
     -type     timing_violations \
     -analysis max \
@@ -12,7 +12,7 @@ set max_timing_violations_multi_corner [report \
     -format   text \
     -use_slack_threshold no \
     -max_paths 100 \
-    {Filterwheel_timing_violations_max_r29_s44.rpt}]
+    {Filterwheel_timing_violations_max_r32_s59.rpt}]
 set min_timing_violations_multi_corner [report \
     -type     timing_violations \
     -analysis min \
@@ -20,7 +20,7 @@ set min_timing_violations_multi_corner [report \
     -format   text \
     -use_slack_threshold no \
     -max_paths 100 \
-    {Filterwheel_timing_violations_min_r29_s44.rpt}]
+    {Filterwheel_timing_violations_min_r32_s59.rpt}]
 set has_violations {Filterwheel_has_violations}
 set fp [open $has_violations w]
 puts $fp "_max_timing_violations_multi_corner $max_timing_violations_multi_corner"

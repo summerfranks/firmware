@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microchip Technology Inc. - Microchip Libero Software Release v2023.2 SP1 (Version 2023.2.0.10)
-Date: Thu Sep 17 16:49:46 2026
+Date: Tue Sep 29 17:16:24 2026
 
 FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -90,13 +90,13 @@ Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 | FCCC_GPMUX1_CR    | SEL_GPMUX1[4:0]    | INIT[71:67]   | 5'h18 |
 | FCCC_GPMUX2_CR    | SEL_GPMUX2[4:0]    | INIT[76:72]   | 5'h18 |
 | FCCC_GPMUX3_CR    | SEL_GPMUX3[4:0]    | INIT[81:77]   | 5'h18 |
-| FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h7  |
+| FCCC_NGMUX0_CR0   | SELGL[4:0]         | INIT[86:82]   | 5'h18 |
 | FCCC_NGMUX0_CR1   | SELGL[9:5]         | INIT[91:87]   | 5'h18 |
 | FCCC_NGMUX1_CR0   | SELGL[14:10]       | INIT[96:92]   | 5'h18 |
 | FCCC_NGMUX1_CR1   | SELGL[19:15]       | INIT[101:97]  | 5'h18 |
 | FCCC_NGMUX2_CR0   | SELGL[24:20]       | INIT[106:102] | 5'h18 |
 | FCCC_NGMUX2_CR1   | SELGL[29:25]       | INIT[111:107] | 5'h18 |
-| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h18 |
+| FCCC_NGMUX3_CR0   | SELGL[34:30]       | INIT[116:112] | 5'h7  |
 | FCCC_NGMUX3_CR1   | SELGL[39:35]       | INIT[121:117] | 5'h18 |
 | FCCC_GPD0_SYNC_CR | RESET_GENEN[0]     | INIT[122:122] | 1'h0  |
 | FCCC_GPD1_SYNC_CR | RESET_GENEN[1]     | INIT[123:123] | 1'h0  |

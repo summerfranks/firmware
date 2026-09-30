@@ -67,6 +67,11 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	signal U32_0Done : std_logic;
 	signal U32_0Out : std_logic_vector(31 downto 0);
 	
+	type States is (Idle, WhichPacket, ReadingFilterwheelPos);
+	signal NextState : States := Idle;
+	signal CurrentState : States := Idle;
+
+	
 	component PeekRamReader is
 	generic
 	(
@@ -103,7 +108,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		DataOut => U32_0Out--,
 	);
 
-	process (clk, rst, PacketFound)
+	process (clk, rst, PacketFound, CurrentState)
 	  begin
 	  
 		Dbg1 <= U32_0Start;
@@ -112,6 +117,8 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		
 		if (rst = '1') then
 		  
+			CurrentState <= Idle;
+			NextState <= Idle;
 			Decoding <= '0';
 			LastPacketFound <= '0';
 			InPacket <= '0';
@@ -121,65 +128,70 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 			
 		else
 		
-		  if ( (clk'event) and (clk = '1') ) then
+			if ( (clk'event) and (clk = '1') ) then
+			  
+				CurrentState <= NextState;
+				
+				LastPacketFound <= PacketFound;
 
-			LastPacketFound <= PacketFound;
-		  
-			if ( (LastPacketFound = '0') and (PacketFound = '1') ) then 
-			
-				InPacket <= '1'; 
-			
-				case PayloadType is
-
-					when PayloadTypeFilterwheelPos =>
+				case CurrentState is
+				
+					when Idle =>
 					
-						FilterwheelPos <= x"55555555";
-						U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(5, PeekRamDepth));
-						U32_0Start <= '1';
-						Decoding <= '1';
+						Decoding <= '0';
+					
+						U32_0Start <= '0';
+					
+						if ( (LastPacketFound = '0') and (PacketFound = '1') ) then NextState <= WhichPacket; end if;
 						
-					when others =>
+					when WhichPacket =>
 					
-						FilterwheelPos <= x"AAAAAAAA";
+						Decoding <= '1';
 					
+						case PayloadType is
+
+							when PayloadTypeFilterwheelPos =>
+							
+								FilterwheelPos <= x"55555555";
+								
+								U32_0StartAddress <= HeaderEndPos + std_logic_vector(to_unsigned(5, PeekRamDepth));
+								
+								U32_0Start <= '1';
+								
+								NextState <= ReadingFilterwheelPos;
+								
+							when others =>
+							
+								FilterwheelPos <= x"AAAAAAAA";
+								
+								NextState <= Idle;
+							
+						end case;
+						
+					when ReadingFilterwheelPos =>		
+					
+						if (U32_0Done = '1') then
+					
+							U32_0Start <= '0';
+
+							FilterwheelPos <= U32_0Out;
+							--~ FilterwheelPos <= x"33333333";
+							
+							NextState <= Idle;
+							
+						else
+						
+							FilterwheelPos <= x"77777777";
+							
+						end if;				
+
+					when others => -- ought never to get here...
+
+						NextState <= Idle;
+						
 				end case;
 				
-			else
-			
-				if (U32_0Start <= '1') and (U32_0Done = '1') then
-				
-					U32_0Start <= '0';
-					InPacket <= '0';
-					Decoding <= '0';
-					
-					case PayloadType is
-
-						when PayloadTypeFilterwheelPos =>
-							
-							--~ FilterwheelPos <= U32_0Out(3 downto 0);
-							--~ FilterwheelPos <= U32_0Out(31 downto 24);
-							FilterwheelPos <= U32_0Out;
-							
-						when others =>
-
-							--We just let the processor handle everything else...
-							FilterwheelPos <= x"FFFFFFFF";
-	
-					end case;
-					
-				end if;
-			
 			end if;
-			
-			if (PacketFound = '0') then --assumption is this is only zero after we just got a header, so plenty of time above to decode everything...
-			
-				U32_0Start <= '0';
-				InPacket <= '0';
-				Decoding <= '0';
-		
-			end if;  
-			
-		  end if;  
 		  
 		end if;
 		

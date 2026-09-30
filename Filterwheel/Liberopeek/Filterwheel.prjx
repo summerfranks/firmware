@@ -1147,8 +1147,8 @@ SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
 STATE="utd"
-TIME="1789688876"
-SIZE="1685259"
+TIME="1790709159"
+SIZE="2367938"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
@@ -1669,8 +1669,10 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Run Programming Action:Filterwheel_PROGRAM.log
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
