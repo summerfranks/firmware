@@ -63,6 +63,22 @@ entity UartRxFifoExtClkPeek is
 		FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
 		PayloadType : out std_logic_vector(15 downto 0);
 		PayloadLen : out std_logic_vector(15 downto 0);
+		PayloadField0 : out std_logic_vector(7 downto 0);
+		PayloadField1 : out std_logic_vector(7 downto 0);
+		PayloadField2 : out std_logic_vector(7 downto 0);
+		PayloadField3 : out std_logic_vector(7 downto 0);
+		PayloadField4 : out std_logic_vector(7 downto 0);
+		PayloadField5 : out std_logic_vector(7 downto 0);
+		PayloadField6 : out std_logic_vector(7 downto 0);
+		PayloadField7 : out std_logic_vector(7 downto 0);
+		PayloadField8 : out std_logic_vector(7 downto 0);
+		PayloadField9 : out std_logic_vector(7 downto 0);
+		PayloadField10 : out std_logic_vector(7 downto 0);
+		PayloadField11 : out std_logic_vector(7 downto 0);
+		PayloadField12 : out std_logic_vector(7 downto 0);
+		PayloadField13 : out std_logic_vector(7 downto 0);
+		PayloadField14 : out std_logic_vector(7 downto 0);
+		PayloadField15 : out std_logic_vector(7 downto 0);		
 		PacketCrc : out std_logic_vector(31 downto 0);
 		CalcCrc : out std_logic_vector(31 downto 0);
 		PacketFound : out std_logic;
@@ -113,6 +129,22 @@ architecture implementation of UartRxFifoExtClkPeek is
 			FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
 			PayloadType : out std_logic_vector(15 downto 0);
 			PayloadLen : out std_logic_vector(15 downto 0);
+			PayloadField0 : out std_logic_vector(7 downto 0);
+			PayloadField1 : out std_logic_vector(7 downto 0);
+			PayloadField2 : out std_logic_vector(7 downto 0);
+			PayloadField3 : out std_logic_vector(7 downto 0);
+			PayloadField4 : out std_logic_vector(7 downto 0);
+			PayloadField5 : out std_logic_vector(7 downto 0);
+			PayloadField6 : out std_logic_vector(7 downto 0);
+			PayloadField7 : out std_logic_vector(7 downto 0);
+			PayloadField8 : out std_logic_vector(7 downto 0);
+			PayloadField9 : out std_logic_vector(7 downto 0);
+			PayloadField10 : out std_logic_vector(7 downto 0);
+			PayloadField11 : out std_logic_vector(7 downto 0);
+			PayloadField12 : out std_logic_vector(7 downto 0);
+			PayloadField13 : out std_logic_vector(7 downto 0);
+			PayloadField14 : out std_logic_vector(7 downto 0);
+			PayloadField15 : out std_logic_vector(7 downto 0);
 			PacketCrc : out std_logic_vector(31 downto 0);
 			CalcCrc : out std_logic_vector(31 downto 0);
 			PacketFound : out std_logic;
@@ -143,18 +175,6 @@ architecture implementation of UartRxFifoExtClkPeek is
 	signal WriteFifo_i : std_logic; --Sync WriteFifo to clock domain	
 	
 begin
-
-	--~ --Just sync the Txd to the UartClock
-	--~ ClkSyncRead : IBufP2Ports
-	--~ port map
-	--~ (
-		--~ clk => clk,
-		--~ I => ReadFifo,
-		--~ O => ReadFifo_i
-	--~ );
-	
-	--~ Dbg1 <= RxComplete_i;
-	--~ Dbg1 <= WriteFifo_i;	
 	
 	ReadFifo_i <= ReadFifo;
 	
@@ -196,6 +216,22 @@ begin
 		FooterEndPos => FooterEndPos,
 		PayloadType => PayloadType,
 		PayloadLen => PayloadLen,
+		PayloadField0 => PayloadField0,
+		PayloadField1 => PayloadField1,
+		PayloadField2 => PayloadField2,
+		PayloadField3 => PayloadField3,
+		PayloadField4 => PayloadField4,
+		PayloadField5 => PayloadField5,
+		PayloadField6 => PayloadField6,
+		PayloadField7 => PayloadField7,
+		PayloadField8 => PayloadField8,
+		PayloadField9 => PayloadField9,
+		PayloadField10 => PayloadField10,
+		PayloadField11 => PayloadField11,
+		PayloadField12 => PayloadField12,
+		PayloadField13 => PayloadField13,
+		PayloadField14 => PayloadField14,
+		PayloadField15 => PayloadField15,
 		PacketCrc => PacketCrc,
 		CalcCrc => CalcCrc,
 		PacketFound => PacketFound,

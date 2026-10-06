@@ -49,8 +49,6 @@ end PeekRamReader;
 
 architecture PeekRamReaderImplemenatation of PeekRamReader is
 
-	--~ constant PayloadTypeFilterwheelPos : std_logic_vector(15 downto 0) := x"4006";
-
 	signal CurrentByte : natural range 0 to NumBytes;
 	signal LastStart : std_logic;
 	signal Done_i : std_logic;
@@ -63,10 +61,6 @@ architecture PeekRamReaderImplemenatation of PeekRamReader is
 	process (clk, rst, Start)
 	  begin
 	  
-		--~ Dbg1 <= LatchCrc;
-		--~ Dbg2 <= LatchPayloadType;
-		--~ Dbg3 <= LatchPayloadLen;
-		
 		if (rst = '1') then
 		  
 			DataOut <= (others => '0');

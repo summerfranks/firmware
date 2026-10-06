@@ -88,13 +88,13 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1789685067"
-SIZE="102681"
+TIME="1791321719"
+SIZE="106762"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
 STATE="utd"
-TIME="1789686354"
-SIZE="4645"
+TIME="1791323045"
+SIZE="5714"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
@@ -203,8 +203,8 @@ SIZE="2261"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd,hdl"
 STATE="utd"
-TIME="1789677609"
-SIZE="2772"
+TIME="1791322622"
+SIZE="2495"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 STATE="utd"
@@ -213,18 +213,18 @@ SIZE="2547"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd,hdl"
 STATE="utd"
-TIME="1763139239"
-SIZE="2039"
+TIME="1791322592"
+SIZE="1973"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd,hdl"
 STATE="utd"
-TIME="1789512536"
-SIZE="3026"
+TIME="1791308523"
+SIZE="2851"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1789682381"
-SIZE="10865"
+TIME="1791322577"
+SIZE="17130"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -293,8 +293,8 @@ SIZE="4214"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd,hdl"
 STATE="utd"
-TIME="1788892907"
-SIZE="6118"
+TIME="1791322652"
+SIZE="8148"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd,hdl"
 STATE="utd"
@@ -1142,22 +1142,22 @@ PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.so,so"
 STATE="utd"
-TIME="1789688877"
+TIME="1791323411"
 SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
 STATE="utd"
-TIME="1790709159"
-SIZE="2367938"
+TIME="1791323410"
+SIZE="2365698"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
-TIME="1789688877"
-SIZE="7796"
+TIME="1791323411"
+SIZE="7698"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1789688876"
+TIME="1791323410"
 SIZE="7562"
 ENDFILE
 ENDLIST
@@ -1491,8 +1491,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1669,10 +1669,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Run Programming Action:Filterwheel_PROGRAM.log
 StartPage;StartPage;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
@@ -1759,6 +1757,8 @@ ENDLIST
 LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
 LIST "ClockDividerPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider.vhd","FALSE","FALSE"
+ENDLIST
+LIST "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 ENDLIST
 LIST "fifo::work","${CGRAPH_FIRMWARE}/include/fpga/fifo_gen.vhd","FALSE","FALSE"
 ENDLIST
@@ -1854,7 +1854,7 @@ ENDLIST
 LIST "PacketDecoder::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd","FALSE","FALSE"
 SUBBLOCK "PeekRamReader::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd","FALSE","FALSE"
 ENDLIST
-LIST "PacketValidator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd","FALSE","FALSE"
+LIST "PacketValidator::work","","FALSE","FALSE"
 ENDLIST
 LIST "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 ENDLIST
@@ -1863,10 +1863,11 @@ ENDLIST
 LIST "PeekRingBuffer::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd","FALSE","FALSE"
 SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
-SUBBLOCK "PacketValidator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd","FALSE","FALSE"
+SUBBLOCK "PacketValidator::work","","FALSE","FALSE"
 SUBBLOCK "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
+SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"
 ENDLIST
 LIST "PhaseComparatorPorts::work","${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd","FALSE","FALSE"
