@@ -59,9 +59,7 @@ architecture PeekRamImplementation of PeekRam is
     else
       if ( (clk'event) and (clk = '1') ) then
 
-        --~ ByteOut <= x"69";
-		--~ ByteOut <= ReadAddress(7 downto 0);
-		ByteOut <= RAM(to_integer(unsigned(ReadAddress)));
+        ByteOut <= RAM(to_integer(unsigned(ReadAddress)));
 		
         if (WriteReq = '1') then
             RAM(to_integer(unsigned(WriteAddress))) := ByteIn;

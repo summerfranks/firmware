@@ -445,6 +445,22 @@ architecture architecture_Main of Main is
 							FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
 							PayloadType : out std_logic_vector(15 downto 0);
 							PayloadLen : out std_logic_vector(15 downto 0);
+							PayloadField0 : out std_logic_vector(7 downto 0);
+							PayloadField1 : out std_logic_vector(7 downto 0);
+							PayloadField2 : out std_logic_vector(7 downto 0);
+							PayloadField3 : out std_logic_vector(7 downto 0);
+							PayloadField4 : out std_logic_vector(7 downto 0);
+							PayloadField5 : out std_logic_vector(7 downto 0);
+							PayloadField6 : out std_logic_vector(7 downto 0);
+							PayloadField7 : out std_logic_vector(7 downto 0);
+							PayloadField8 : out std_logic_vector(7 downto 0);
+							PayloadField9 : out std_logic_vector(7 downto 0);
+							PayloadField10 : out std_logic_vector(7 downto 0);
+							PayloadField11 : out std_logic_vector(7 downto 0);
+							PayloadField12 : out std_logic_vector(7 downto 0);
+							PayloadField13 : out std_logic_vector(7 downto 0);
+							PayloadField14 : out std_logic_vector(7 downto 0);
+							PayloadField15 : out std_logic_vector(7 downto 0);							
 							PacketCrc : out std_logic_vector(31 downto 0);
 							CalcCrc : out std_logic_vector(31 downto 0);
 							PacketFound : in std_logic;
@@ -885,6 +901,22 @@ architecture architecture_Main of Main is
 							HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							PayloadType : in std_logic_vector(15 downto 0);
 							PayloadLen : in std_logic_vector(15 downto 0);
+							PayloadField0 : in std_logic_vector(7 downto 0);
+							PayloadField1 : in std_logic_vector(7 downto 0);
+							PayloadField2 : in std_logic_vector(7 downto 0);
+							PayloadField3 : in std_logic_vector(7 downto 0);
+							PayloadField4 : in std_logic_vector(7 downto 0);
+							PayloadField5 : in std_logic_vector(7 downto 0);
+							PayloadField6 : in std_logic_vector(7 downto 0);
+							PayloadField7 : in std_logic_vector(7 downto 0);
+							PayloadField8 : in std_logic_vector(7 downto 0);
+							PayloadField9 : in std_logic_vector(7 downto 0);
+							PayloadField10 : in std_logic_vector(7 downto 0);
+							PayloadField11 : in std_logic_vector(7 downto 0);
+							PayloadField12 : in std_logic_vector(7 downto 0);
+							PayloadField13 : in std_logic_vector(7 downto 0);
+							PayloadField14 : in std_logic_vector(7 downto 0);
+							PayloadField15 : in std_logic_vector(7 downto 0);
 							
 							--Outputs
 							FilterwheelPos : out std_logic_vector(31 downto 0);
@@ -1174,6 +1206,22 @@ architecture architecture_Main of Main is
 			--~ signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0PayloadType : std_logic_vector(15 downto 0);
 			signal Uart0PayloadLen : std_logic_vector(15 downto 0);
+			signal Uart0PayloadField0 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField1 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField2 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField3 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField4 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField5 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField6 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField7 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField8 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField9 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField10 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField11 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField12 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField13 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField14 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField15 : std_logic_vector(7 downto 0);
 			--~ signal Uart0HeaderFooterPayloadLenMatches : std_logic;
 			signal Uart0HeaderFound : std_logic;
 			signal Uart0FooterFound : std_logic;
@@ -1967,6 +2015,22 @@ begin
 		FooterEndPos => Uart0FooterEndPos,
 		PayloadType => Uart0PayloadType,
 		PayloadLen => Uart0PayloadLen,
+		PayloadField0 => Uart0PayloadField0,
+		PayloadField1 => Uart0PayloadField1,
+		PayloadField2 => Uart0PayloadField2,
+		PayloadField3 => Uart0PayloadField3,
+		PayloadField4 => Uart0PayloadField4,
+		PayloadField5 => Uart0PayloadField5,
+		PayloadField6 => Uart0PayloadField6,
+		PayloadField7 => Uart0PayloadField7,
+		PayloadField8 => Uart0PayloadField8,
+		PayloadField9 => Uart0PayloadField9,
+		PayloadField10 => Uart0PayloadField10,
+		PayloadField11 => Uart0PayloadField11,
+		PayloadField12 => Uart0PayloadField12,
+		PayloadField13 => Uart0PayloadField13,
+		PayloadField14 => Uart0PayloadField14,
+		PayloadField15 => Uart0PayloadField15,
 		PacketCrc => Uart0PacketCrc,
 		CalcCrc => Uart0CalcCrc,
 		PacketFound => Uart0PacketFound,
@@ -2013,6 +2077,22 @@ begin
 		HeaderEndPos => Uart0HeaderEndPos,
 		PayloadType => Uart0PayloadType,
 		PayloadLen => Uart0PayloadLen,
+		PayloadField0 => Uart0PayloadField0,
+		PayloadField1 => Uart0PayloadField1,
+		PayloadField2 => Uart0PayloadField2,
+		PayloadField3 => Uart0PayloadField3,
+		PayloadField4 => Uart0PayloadField4,
+		PayloadField5 => Uart0PayloadField5,
+		PayloadField6 => Uart0PayloadField6,
+		PayloadField7 => Uart0PayloadField7,
+		PayloadField8 => Uart0PayloadField8,
+		PayloadField9 => Uart0PayloadField9,
+		PayloadField10 => Uart0PayloadField10,
+		PayloadField11 => Uart0PayloadField11,
+		PayloadField12 => Uart0PayloadField12,
+		PayloadField13 => Uart0PayloadField13,
+		PayloadField14 => Uart0PayloadField14,
+		PayloadField15 => Uart0PayloadField15,
 		FilterwheelPos => FilterwheelPos,
 		Dbg1 => TP1,
 		Dbg2 => open,

@@ -40,11 +40,7 @@ entity PacketValidator is
 	FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
     PayloadLen : in std_logic_vector(15 downto 0);
 	PacketCrc : in std_logic_vector(31 downto 0);
-	CalcCrc : in std_logic_vector(31 downto 0);
-	
-	Dbg1 : out std_logic;
-	Dbg2 : out std_logic;
-	Dbg3 : out std_logic--;
+	CalcCrc : in std_logic_vector(31 downto 0)--;
   );
 end PacketValidator;
 
@@ -53,7 +49,6 @@ architecture PacketValidatorImplemenatation of PacketValidator is
 
 	constant PayloadTypeFilterwheelPos : std_logic_vector(15 downto 0) := x"4006";
 
-	--~ signal LastHeaderFound : std_logic;
 	signal LastFooterFound : std_logic;
 	
   begin
@@ -61,10 +56,6 @@ architecture PacketValidatorImplemenatation of PacketValidator is
   	process (clk, rst, FooterFound)
 	  begin
 	  
-		Dbg1 <= FooterFound;
-		Dbg2 <= PacketFound;
-		Dbg3 <= '0';
-		
 		if (rst = '1') then
 		  
 			LastFooterFound <= '0';
@@ -93,12 +84,7 @@ architecture PacketValidatorImplemenatation of PacketValidator is
 				end if;
 				
 			else
-			
-				--~ if (LastFooterFound = '0') then 
-				
-					--~ PacketFound <= '0'; 
-					
-				--~ end if;
+		
 			
 			end if;
 			

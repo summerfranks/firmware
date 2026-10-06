@@ -48,6 +48,22 @@ entity PeekRingBuffer is
 	FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
     PayloadType : out std_logic_vector(15 downto 0);
 	PayloadLen : out std_logic_vector(15 downto 0);
+	PayloadField0 : out std_logic_vector(7 downto 0);
+	PayloadField1 : out std_logic_vector(7 downto 0);
+	PayloadField2 : out std_logic_vector(7 downto 0);
+	PayloadField3 : out std_logic_vector(7 downto 0);
+	PayloadField4 : out std_logic_vector(7 downto 0);
+	PayloadField5 : out std_logic_vector(7 downto 0);
+	PayloadField6 : out std_logic_vector(7 downto 0);
+	PayloadField7 : out std_logic_vector(7 downto 0);
+	PayloadField8 : out std_logic_vector(7 downto 0);
+	PayloadField9 : out std_logic_vector(7 downto 0);
+	PayloadField10 : out std_logic_vector(7 downto 0);
+	PayloadField11 : out std_logic_vector(7 downto 0);
+	PayloadField12 : out std_logic_vector(7 downto 0);
+	PayloadField13 : out std_logic_vector(7 downto 0);
+	PayloadField14 : out std_logic_vector(7 downto 0);
+	PayloadField15 : out std_logic_vector(7 downto 0);
 	PacketCrc : out std_logic_vector(31 downto 0);
 	CalcCrc : out std_logic_vector(31 downto 0);
 	PacketFound : out std_logic;
@@ -135,11 +151,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
 		PayloadLen : in std_logic_vector(15 downto 0);
 		PacketCrc : in std_logic_vector(31 downto 0);
-		CalcCrc : in std_logic_vector(31 downto 0);
-
-		Dbg1 : out std_logic;
-		Dbg2 : out std_logic;
-		Dbg3 : out std_logic--;
+		CalcCrc : in std_logic_vector(31 downto 0)--;
 	);
 	end component;
 
@@ -149,21 +161,30 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	signal LastPopReq : std_logic;
 	signal LastWriteReq : std_logic;
 
-	--~ signal HeaderFound : std_logic;
-	--~ signal FooterFound_i : std_logic;
 	signal LastHeaderFound : std_logic;
 	signal FooterFound_i : std_logic;
 	signal FooterLatched : std_logic;	
 	signal LastFooterFound : std_logic;
-	--~ signal HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
-	--~ signal FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
-	
-	--~ signal PayloadType : std_logic_vector(15 downto 0);
-	--~ signal PayloadLen : std_logic_vector(15 downto 0);
 	signal CalcCrc_i : std_logic_vector(31 downto 0);
 	
 	signal LatchPayloadType : std_logic;
 	signal LatchPayloadLen : std_logic;
+	signal LatchPayloadField0 : std_logic;
+	signal LatchPayloadField1 : std_logic;
+	signal LatchPayloadField2 : std_logic;
+	signal LatchPayloadField3 : std_logic;
+	signal LatchPayloadField4 : std_logic;
+	signal LatchPayloadField5 : std_logic;
+	signal LatchPayloadField6 : std_logic;
+	signal LatchPayloadField7 : std_logic;
+	signal LatchPayloadField8 : std_logic;
+	signal LatchPayloadField9 : std_logic;
+	signal LatchPayloadField10 : std_logic;
+	signal LatchPayloadField11 : std_logic;
+	signal LatchPayloadField12 : std_logic;
+	signal LatchPayloadField13 : std_logic;
+	signal LatchPayloadField14 : std_logic;
+	signal LatchPayloadField15 : std_logic;
 	signal LatchCrc : std_logic;	
 	signal CrcRst : std_logic;
 	
@@ -184,14 +205,14 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	HeaderFinder : PatternFinder
 	generic map 
 	(
-		--~ Byte0 => x"1B",
-		--~ Byte1 => x"AD",
-		--~ Byte2 => x"BA",
-		--~ Byte3 => x"BE"--,
-		Byte0 => x"BE",
-		Byte1 => x"BA",
-		Byte2 => x"AD",
-		Byte3 => x"1B"--,
+		--~ Byte0 => x"1B", --NO!
+		--~ Byte1 => x"AD" --NO!,
+		--~ Byte2 => x"BA", --NO!
+		--~ Byte3 => x"BE"--, --NO!
+		Byte0 => x"BE", --YES!
+		Byte1 => x"BA", --YES!
+		Byte2 => x"AD", --YES!
+		Byte3 => x"1B"--, --YES!
 	)
 	port map
 	(
@@ -205,10 +226,6 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	FooterFinder : PatternFinder
 	generic map 
 	(
-		--~ Byte0 => x"0A",
-		--~ Byte1 => x"0F",
-		--~ Byte2 => x"AD",
-		--~ Byte3 => x"ED"--,
 		Byte0 => x"ED",
 		Byte1 => x"AD",
 		Byte2 => x"0F",
@@ -253,6 +270,23 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		FieldLatched => PayloadLen--,
 	);
 	
+	PayloadField0Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField0, FieldLatched => PayloadField0);
+	PayloadField1Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField1, FieldLatched => PayloadField1);
+	PayloadField2Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField2, FieldLatched => PayloadField2);
+	PayloadField3Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField3, FieldLatched => PayloadField3);
+	PayloadField4Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField4, FieldLatched => PayloadField4);
+	PayloadField5Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField5, FieldLatched => PayloadField5);
+	PayloadField6Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField6, FieldLatched => PayloadField6);
+	PayloadField7Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField7, FieldLatched => PayloadField7);
+	PayloadField8Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField8, FieldLatched => PayloadField8);
+	PayloadField9Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField9, FieldLatched => PayloadField9);
+	PayloadField10Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField10, FieldLatched => PayloadField10);
+	PayloadField11Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField11, FieldLatched => PayloadField11);
+	PayloadField12Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField12, FieldLatched => PayloadField12);
+	PayloadField13Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField13, FieldLatched => PayloadField13);
+	PayloadField14Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField14, FieldLatched => PayloadField14);
+	PayloadField15Latcher : FieldLatcher generic map (NumBytes => 1) port map (clk => clk, rst => rst, ByteIn => ByteIn, WriteReq => WriteReq, Latch => LatchPayloadField15, FieldLatched => PayloadField15);
+
 	CRCLatcher : FieldLatcher
 	generic map 
 	(
@@ -280,10 +314,8 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	PacketValidator_i : PacketValidator
 	port map
 	(
-		--~ clk => WriteReq,
 		rst => CrcRst,
 		clk => clk,
-		--~ rst => rst,
 		PacketFound => PacketFound,
 		HeaderFound => HeaderFound,
 		FooterFound => FooterLatched,
@@ -291,10 +323,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		FooterEndPos => FooterEndPos,
 		PayloadLen => PayloadLen,
 		PacketCrc => PacketCrc,
-		CalcCrc => CalcCrc_i,
-		Dbg1 => open,
-		Dbg2 => open,
-		Dbg3 => open--,
+		CalcCrc => CalcCrc_i--,
 	);
 
 	process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound_i, latchcrc, latchpayloadlen, latchpayloadtype)
@@ -334,6 +363,22 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 		CalcCrc <= (others => '0');
 		LatchPayloadType <= '0';
 		LatchPayloadLen <= '0';
+		LatchPayloadField0 <= '0';
+		LatchPayloadField1 <= '0';
+		LatchPayloadField2 <= '0';
+		LatchPayloadField3 <= '0';
+		LatchPayloadField4 <= '0';
+		LatchPayloadField5 <= '0';
+		LatchPayloadField6 <= '0';
+		LatchPayloadField7 <= '0';
+		LatchPayloadField8 <= '0';
+		LatchPayloadField9 <= '0';
+		LatchPayloadField10 <= '0';
+		LatchPayloadField11 <= '0';
+		LatchPayloadField12 <= '0';
+		LatchPayloadField13 <= '0';
+		LatchPayloadField14 <= '0';
+		LatchPayloadField15 <= '0';
 		LatchCrc <= '0';
 		CrcRst <= '0';
 	    
@@ -347,10 +392,7 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 	  
         if ( (LastPopReq = '0') and (PopReq = '1') ) then
 		
-			--~ --Do a pop
-            --~ DataStartAddress_i <= PopAddress;
-        
-			--Instead let's just clear the whole damn buffer for now since we don't know how to wrap anyway!
+			--~ --Do a pop; let's just clear the whole damn buffer for now since we don't know how to wrap anyway!
 			DataStartAddress_i <= (others => '0');
 			WriteAddress <= (others => '0');
 			HeaderEndPos <= (others => '0');
@@ -360,8 +402,6 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 
         if ( (LastWriteReq = '0') and (WriteReq = '1') ) then
 		
-			--~ Dbg1 <= '1';
-				
 			if (WriteAddress < ( (2**PeekRamDepth) - 1) ) then
 		
 				WriteAddress <= WriteAddress + std_logic_vector(to_unsigned(1, PeekRamDepth));
@@ -380,17 +420,27 @@ architecture PeekRingBufferImplemenatation of PeekRingBuffer is
 			
 			if (WriteAddress = HeaderEndPos + 2) then LatchPayloadType <= '1'; else LatchPayloadType <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4) then LatchPayloadLen <= '1'; else LatchPayloadLen <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 5) then LatchPayloadField0 <= '1'; else LatchPayloadField0 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 6) then LatchPayloadField1 <= '1'; else LatchPayloadField1 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 7) then LatchPayloadField2 <= '1'; else LatchPayloadField2 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 8) then LatchPayloadField3 <= '1'; else LatchPayloadField3 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 9) then LatchPayloadField4 <= '1'; else LatchPayloadField4 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 10) then LatchPayloadField5 <= '1'; else LatchPayloadField5 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 11) then LatchPayloadField6 <= '1'; else LatchPayloadField6 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 12) then LatchPayloadField7 <= '1'; else LatchPayloadField7 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 13) then LatchPayloadField8 <= '1'; else LatchPayloadField8 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 14) then LatchPayloadField9 <= '1'; else LatchPayloadField9 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 15) then LatchPayloadField10 <= '1'; else LatchPayloadField10 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 16) then LatchPayloadField11 <= '1'; else LatchPayloadField11 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 17) then LatchPayloadField12 <= '1'; else LatchPayloadField12 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 18) then LatchPayloadField13 <= '1'; else LatchPayloadField13 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 19) then LatchPayloadField14 <= '1'; else LatchPayloadField14 <= '0'; end if;
+			if (WriteAddress = HeaderEndPos + 20) then LatchPayloadField15 <= '1'; else LatchPayloadField15 <= '0'; end if;
 			if (WriteAddress = HeaderEndPos + 4 + PayloadLen) then CalcCrc <= CalcCrc_i; end if;
 			if (WriteAddress = HeaderEndPos + 8 + PayloadLen) then LatchCrc <= '1'; else LatchCrc <= '0'; end if;
 			
-			--debug- copy other stuff into crc field so we can look at it:
-			--~ CalcCrc(31 downto 16) <= x"0000";
-			--~ CalcCrc(15 downto 0) <= HeaderEndPos + 8 + PayloadLen; 
-			
 		else
 		
-			--~ Dbg1 <= '0';
-			
 		end if;
 
 		--Update on the edge of found; can't put this on the writereq edge, because the flag will toggle on the next clock after, not synchrounously!

@@ -43,6 +43,22 @@ entity PacketDecoder is
 	HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
     PayloadType : in std_logic_vector(15 downto 0);
 	PayloadLen : in std_logic_vector(15 downto 0);
+	PayloadField0 : in std_logic_vector(7 downto 0);
+	PayloadField1 : in std_logic_vector(7 downto 0);
+	PayloadField2 : in std_logic_vector(7 downto 0);
+	PayloadField3 : in std_logic_vector(7 downto 0);
+	PayloadField4 : in std_logic_vector(7 downto 0);
+	PayloadField5 : in std_logic_vector(7 downto 0);
+	PayloadField6 : in std_logic_vector(7 downto 0);
+	PayloadField7 : in std_logic_vector(7 downto 0);
+	PayloadField8 : in std_logic_vector(7 downto 0);
+	PayloadField9 : in std_logic_vector(7 downto 0);
+	PayloadField10 : in std_logic_vector(7 downto 0);
+	PayloadField11 : in std_logic_vector(7 downto 0);
+	PayloadField12 : in std_logic_vector(7 downto 0);
+	PayloadField13 : in std_logic_vector(7 downto 0);
+	PayloadField14 : in std_logic_vector(7 downto 0);
+	PayloadField15 : in std_logic_vector(7 downto 0);
 	
 	--Outputs
 	FilterwheelPos : out std_logic_vector(31 downto 0);
@@ -174,7 +190,8 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 					
 							U32_0Start <= '0';
 
-							FilterwheelPos <= U32_0Out;
+							FilterwheelPos <= PayloadField3 & PayloadField2 & PayloadField1 & PayloadField0;
+							--~ FilterwheelPos <= U32_0Out;
 							--~ FilterwheelPos <= x"33333333";
 							
 							NextState <= Idle;
