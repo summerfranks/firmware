@@ -34,9 +34,8 @@ entity PacketDecoder is
     rst : in std_logic;
 		
     -- Bus:
-	PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
-    PeekRamByteOut : in std_logic_vector(7 downto 0);
-	Decoding : out std_logic;
+    TxdByteOut : out std_logic_vector(7 downto 0);
+	WriteTxd : out std_logic;
 	
 	--Packet 
 	PacketFound : in std_logic;
@@ -59,10 +58,6 @@ entity PacketDecoder is
 	PayloadField13 : in std_logic_vector(7 downto 0);
 	PayloadField14 : in std_logic_vector(7 downto 0);
 	PayloadField15 : in std_logic_vector(7 downto 0);
-	
-	--Outputs
-	FilterwheelPos : out std_logic_vector(31 downto 0);
-	--~ MoveFilterwheel : out std_logic;
 	
 	Dbg1 : out std_logic;
 	Dbg2 : out std_logic;
