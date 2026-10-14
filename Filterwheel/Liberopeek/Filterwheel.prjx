@@ -88,13 +88,13 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1791321719"
-SIZE="106762"
+TIME="1791993819"
+SIZE="107449"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
 STATE="utd"
-TIME="1791323045"
-SIZE="5714"
+TIME="1791993912"
+SIZE="9648"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
@@ -201,10 +201,15 @@ STATE="utd"
 TIME="1771366070"
 SIZE="2261"
 ENDFILE
+VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketGenerator.vhd,hdl"
+STATE="utd"
+TIME="1791994257"
+SIZE="8051"
+ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd,hdl"
 STATE="utd"
-TIME="1791322622"
-SIZE="2495"
+TIME="1791909045"
+SIZE="2497"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd,hdl"
 STATE="utd"
@@ -213,18 +218,18 @@ SIZE="2547"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd,hdl"
 STATE="utd"
-TIME="1791322592"
+TIME="1791909045"
 SIZE="1973"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd,hdl"
 STATE="utd"
-TIME="1791308523"
+TIME="1791909045"
 SIZE="2851"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd,hdl"
 STATE="utd"
-TIME="1791322577"
-SIZE="17130"
+TIME="1791909045"
+SIZE="17008"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/PhaseComparator.vhd,hdl"
 STATE="utd"
@@ -293,7 +298,7 @@ SIZE="4214"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoExtClkPeek.vhd,hdl"
 STATE="utd"
-TIME="1791322652"
+TIME="1791909045"
 SIZE="8148"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/include/fpga/UartRxFifoParity.vhd,hdl"
@@ -1069,8 +1074,8 @@ SIZE="11217"
 ENDFILE
 VALUE "<project>/constraint/user.sdc,sdc"
 STATE="utd"
-TIME="1763032276"
-SIZE="2833"
+TIME="1791909045"
+SIZE="5162"
 ENDFILE
 VALUE "<project>/simulation/bfmtovec_compile.tcl,sim"
 STATE="utd"
@@ -1142,22 +1147,22 @@ PARENT="<project>/component/work/Filterwheel_sb_MSS/Filterwheel_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.so,so"
 STATE="utd"
-TIME="1791323411"
+TIME="1791325017"
 SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
-STATE="utd"
-TIME="1791323410"
-SIZE="2365698"
+STATE="ood"
+TIME="1791909045"
+SIZE="2524321"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_syn.prj,prj"
 STATE="utd"
-TIME="1791323411"
-SIZE="7698"
+TIME="1791994287"
+SIZE="7310"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1791323410"
+TIME="1791909045"
 SIZE="7562"
 ENDFILE
 ENDLIST
@@ -1183,7 +1188,8 @@ VALUE "<project>/constraint/user.sdc,sdc"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1193,7 +1199,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl2
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1203,7 +1210,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl3
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1213,7 +1221,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl4
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1518,7 +1527,8 @@ ENDLIST
 LIST ProjectState5.1
 LIST "Filterwheel::work"
 LIST Impl1
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1528,7 +1538,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl2
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1538,7 +1549,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl3
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1548,7 +1560,8 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl4
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1852,9 +1865,13 @@ SUBBLOCK "OneShotPorts::work","${CGRAPH_FIRMWARE}/include/fpga/OneShot.vhd","FAL
 SUBBLOCK "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
 LIST "PacketDecoder::work","${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd","FALSE","FALSE"
+SUBBLOCK "PacketGenerator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketGenerator.vhd","FALSE","FALSE"
 SUBBLOCK "PeekRamReader::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRamReader.vhd","FALSE","FALSE"
 ENDLIST
-LIST "PacketValidator::work","","FALSE","FALSE"
+LIST "PacketGenerator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketGenerator.vhd","FALSE","FALSE"
+SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
+ENDLIST
+LIST "PacketValidator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd","FALSE","FALSE"
 ENDLIST
 LIST "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 ENDLIST
@@ -1863,7 +1880,7 @@ ENDLIST
 LIST "PeekRingBuffer::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRingBuffer.vhd","FALSE","FALSE"
 SUBBLOCK "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
-SUBBLOCK "PacketValidator::work","","FALSE","FALSE"
+SUBBLOCK "PacketValidator::work","${CGRAPH_FIRMWARE}/include/fpga/PacketValidator.vhd","FALSE","FALSE"
 SUBBLOCK "PeekRam::work","${CGRAPH_FIRMWARE}/include/fpga/PeekRam.vhd","FALSE","FALSE"
 SUBBLOCK "FieldLatcher::work","${CGRAPH_FIRMWARE}/include/fpga/FieldLatcher.vhd","FALSE","FALSE"
 SUBBLOCK "PatternFinder::work","${CGRAPH_FIRMWARE}/include/fpga/PatternFinder.vhd","FALSE","FALSE"

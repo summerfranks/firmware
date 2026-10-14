@@ -70,15 +70,28 @@ end PacketGenerator;
 
 architecture PacketGeneratorImplemenatation of PacketGenerator is
 
-	signal BytePos : natural range 0 to 4 + 4 + 24 + 4 + 4);
+	signal BytePos : natural range 0 to (4 + 4 + 24 + 4 + 4);
 	signal LastStart : std_logic;	
 	signal WriteTxd_i : std_logic;	
-	signal TxdByte_i : out std_logic_vector(7 downto 0);
+	signal TxdByte_i : std_logic_vector(7 downto 0);
 	signal CrcRst : std_logic;	
-	signal CalcCrc_i : out std_logic_vector(31 downto 0);
-	signal CalcCrc : out std_logic_vector(31 downto 0);
+	signal CalcCrc_i : std_logic_vector(31 downto 0);
+	signal CalcCrc : std_logic_vector(31 downto 0);
+	
+	component CrcStream is
+	port (
+	
+		--Globals
+		clk : in std_logic;
+		rst : in std_logic;
+		
+		data : in std_logic_vector(7 downto 0);
+		crc : out std_logic_vector(31 downto 0)
+	
+	); end component;
 
-
+  begin
+  
 	Crcer : CrcStream
 	port map
 	(
@@ -88,7 +101,7 @@ architecture PacketGeneratorImplemenatation of PacketGenerator is
 		crc => CalcCrc_i--,
 	);
 
-  process (clk, rst, PopReq, WriteReq, WriteAddress, HeaderEndPos, FooterEndPos, HeaderFound, FooterFound_i, latchcrc, latchpayloadlen, latchpayloadtype)
+  process (clk, rst)
   begin
   
 	WriteTxd <= WriteTxd_i;
@@ -151,30 +164,30 @@ architecture PacketGeneratorImplemenatation of PacketGenerator is
 						if (BytePos = 7) then TxdByte_i <= PayloadLen(15 downto 8); end if;
 						
 						--Payload (24 bytes allows for 3 channels of FSM A/D data...)
-						if ( (BytePos = 8) and (PayloadLen >= 1) ) then TxdByte_i <= PayloadField0 end if;
-						if ( (BytePos = 9) and (PayloadLen >= 2) ) then TxdByte_i <= PayloadField1 end if;
-						if ( (BytePos = 10) and (PayloadLen >= 3) ) then TxdByte_i <= PayloadField2 end if;
-						if ( (BytePos = 11) and (PayloadLen >= 4) ) then TxdByte_i <= PayloadField3 end if;
-						if ( (BytePos = 12) and (PayloadLen >= 5) ) then TxdByte_i <= PayloadField4 end if;
-						if ( (BytePos = 13) and (PayloadLen >= 6) ) then TxdByte_i <= PayloadField5 end if;
-						if ( (BytePos = 14) and (PayloadLen >= 7) ) then TxdByte_i <= PayloadField6 end if;
-						if ( (BytePos = 15) and (PayloadLen >= 8) ) then TxdByte_i <= PayloadField7 end if;
-						if ( (BytePos = 16) and (PayloadLen >= 9) ) then TxdByte_i <= PayloadField8 end if;
-						if ( (BytePos = 17) and (PayloadLen >= 10) ) then TxdByte_i <= PayloadField9 end if;
-						if ( (BytePos = 18) and (PayloadLen >= 11) ) then TxdByte_i <= PayloadField10 end if;
-						if ( (BytePos = 19) and (PayloadLen >= 12) ) then TxdByte_i <= PayloadField11 end if;
-						if ( (BytePos = 20) and (PayloadLen >= 13) ) then TxdByte_i <= PayloadField12 end if;
-						if ( (BytePos = 21) and (PayloadLen >= 14) ) then TxdByte_i <= PayloadField13 end if;
-						if ( (BytePos = 22) and (PayloadLen >= 15) ) then TxdByte_i <= PayloadField14 end if;
-						if ( (BytePos = 23) and (PayloadLen >= 16) ) then TxdByte_i <= PayloadField15 end if;
-						if ( (BytePos = 24) and (PayloadLen >= 17) ) then TxdByte_i <= PayloadField16 end if;
-						if ( (BytePos = 25) and (PayloadLen >= 18) ) then TxdByte_i <= PayloadField17 end if;
-						if ( (BytePos = 26) and (PayloadLen >= 19) ) then TxdByte_i <= PayloadField18 end if;
-						if ( (BytePos = 27) and (PayloadLen >= 20) ) then TxdByte_i <= PayloadField19 end if;
-						if ( (BytePos = 28) and (PayloadLen >= 21) ) then TxdByte_i <= PayloadField20 end if;
-						if ( (BytePos = 29) and (PayloadLen >= 22) ) then TxdByte_i <= PayloadField21 end if;
-						if ( (BytePos = 30) and (PayloadLen >= 23) ) then TxdByte_i <= PayloadField22 end if;
-						if ( (BytePos = 31) and (PayloadLen >= 24) ) then TxdByte_i <= PayloadField23 end if;
+						if ( (BytePos = 8) and (PayloadLen >= 1) ) then TxdByte_i <= PayloadField0; end if;
+						if ( (BytePos = 9) and (PayloadLen >= 2) ) then TxdByte_i <= PayloadField1; end if;
+						if ( (BytePos = 10) and (PayloadLen >= 3) ) then TxdByte_i <= PayloadField2; end if;
+						if ( (BytePos = 11) and (PayloadLen >= 4) ) then TxdByte_i <= PayloadField3; end if;
+						if ( (BytePos = 12) and (PayloadLen >= 5) ) then TxdByte_i <= PayloadField4; end if;
+						if ( (BytePos = 13) and (PayloadLen >= 6) ) then TxdByte_i <= PayloadField5; end if;
+						if ( (BytePos = 14) and (PayloadLen >= 7) ) then TxdByte_i <= PayloadField6; end if;
+						if ( (BytePos = 15) and (PayloadLen >= 8) ) then TxdByte_i <= PayloadField7; end if;
+						if ( (BytePos = 16) and (PayloadLen >= 9) ) then TxdByte_i <= PayloadField8; end if;
+						if ( (BytePos = 17) and (PayloadLen >= 10) ) then TxdByte_i <= PayloadField9; end if;
+						if ( (BytePos = 18) and (PayloadLen >= 11) ) then TxdByte_i <= PayloadField10; end if;
+						if ( (BytePos = 19) and (PayloadLen >= 12) ) then TxdByte_i <= PayloadField11; end if;
+						if ( (BytePos = 20) and (PayloadLen >= 13) ) then TxdByte_i <= PayloadField12; end if;
+						if ( (BytePos = 21) and (PayloadLen >= 14) ) then TxdByte_i <= PayloadField13; end if;
+						if ( (BytePos = 22) and (PayloadLen >= 15) ) then TxdByte_i <= PayloadField14; end if;
+						if ( (BytePos = 23) and (PayloadLen >= 16) ) then TxdByte_i <= PayloadField15; end if;
+						if ( (BytePos = 24) and (PayloadLen >= 17) ) then TxdByte_i <= PayloadField16; end if;
+						if ( (BytePos = 25) and (PayloadLen >= 18) ) then TxdByte_i <= PayloadField17; end if;
+						if ( (BytePos = 26) and (PayloadLen >= 19) ) then TxdByte_i <= PayloadField18; end if;
+						if ( (BytePos = 27) and (PayloadLen >= 20) ) then TxdByte_i <= PayloadField19; end if;
+						if ( (BytePos = 28) and (PayloadLen >= 21) ) then TxdByte_i <= PayloadField20; end if;
+						if ( (BytePos = 29) and (PayloadLen >= 22) ) then TxdByte_i <= PayloadField21; end if;
+						if ( (BytePos = 30) and (PayloadLen >= 23) ) then TxdByte_i <= PayloadField22; end if;
+						if ( (BytePos = 31) and (PayloadLen >= 24) ) then TxdByte_i <= PayloadField23; end if;
 											
 						--Crc
 						if (BytePos = 8 + PayloadLen) then TxdByte_i <= CalcCrc_i(7 downto 0); CalcCrc <= CalcCrc_i; CrcRst <= '1'; end if;
@@ -183,10 +196,10 @@ architecture PacketGeneratorImplemenatation of PacketGenerator is
 						if (BytePos = 11 + PayloadLen) then TxdByte_i <= CalcCrc(31 downto 24); end if;
 						
 						--Footer
-						if (BytePos = 12 + PayloadLen) then TxdByte_i <= x"ED" end if;
-						if (BytePos = 13 + PayloadLen) then TxdByte_i <= x"AD" end if;
-						if (BytePos = 14 + PayloadLen) then TxdByte_i <= x"0F" end if;
-						if (BytePos = 15 + PayloadLen) then TxdByte_i <= x"0A" end if;
+						if (BytePos = 12 + PayloadLen) then TxdByte_i <= x"ED"; end if;
+						if (BytePos = 13 + PayloadLen) then TxdByte_i <= x"AD"; end if;
+						if (BytePos = 14 + PayloadLen) then TxdByte_i <= x"0F"; end if;
+						if (BytePos = 15 + PayloadLen) then TxdByte_i <= x"0A"; end if;
 					
 					end if;
 

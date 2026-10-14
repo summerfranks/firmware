@@ -1,5 +1,5 @@
 # Microsemi Corp.
-# Date: 2026-Oct-06 15:17:04
+# Date: 2026-Oct-14 09:14:20
 # This file was generated based on the following SDC source files:
 #   /home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/constraint/Filterwheel_derived_constraints.sdc
 #   /home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/constraint/user.sdc
@@ -19,6 +19,11 @@ set_clock_to_output -min 0 -clock { MasterClk } [ get_ports { SckMonAdc0 } ]
 set_clock_to_output -max 19 -clock { MasterClk } [ get_ports { SckMonAdc0 } ]
 set_clock_to_output -min 0 -clock { MasterClk } [ get_ports { nCsMonAdc0 } ]
 set_clock_to_output -max 19 -clock { MasterClk } [ get_ports { nCsMonAdc0 } ]
+set_false_path -through [ get_nets { Filterwheel_sb_0/CORERESETP_0/ddr_settled Filterwheel_sb_0/CORERESETP_0/release_sdif*_core } ]
+set_false_path -from [ get_cells { Filterwheel_sb_0/CORERESETP_0/MSS_HPMS_READY_int } ] -to [ get_cells { Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc_q1 } ]
+set_false_path -from [ get_cells { Filterwheel_sb_0/CORERESETP_0/MSS_HPMS_READY_int } ] -to [ get_cells { Filterwheel_sb_0/CORERESETP_0/sdif*_areset_n_rcosc* } ]
+set_false_path -through [ get_pins { Filterwheel_sb_0/Filterwheel_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_010_IP/CONFIG_PRESET_N } ]
+set_false_path -through [ get_pins { Filterwheel_sb_0/SYSRESET_POR/INST_SYSRESET_FF_IP/POWER_ON_RESET_N } ]
 set_false_path -through [ get_nets { Filterwheel_sb_0/CORERESETP_0/ddr_settled Filterwheel_sb_0/CORERESETP_0/release_sdif*_core } ]
 set_false_path -from [ get_cells { Filterwheel_sb_0/CORERESETP_0/MSS_HPMS_READY_int } ] -to [ get_cells { Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc Filterwheel_sb_0/CORERESETP_0/sm0_areset_n_rcosc_q1 } ]
 set_false_path -from [ get_cells { Filterwheel_sb_0/CORERESETP_0/MSS_HPMS_READY_int } ] -to [ get_cells { Filterwheel_sb_0/CORERESETP_0/sdif*_areset_n_rcosc* } ]

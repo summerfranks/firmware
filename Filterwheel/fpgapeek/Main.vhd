@@ -895,6 +895,9 @@ architecture architecture_Main of Main is
 							PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
 							PeekRamByteOut : in std_logic_vector(7 downto 0);
 							Decoding : out std_logic;
+							TxdByte : out std_logic_vector(7 downto 0);
+							WriteTxd : out std_logic;
+							Transmitting : out std_logic;
 
 							--Packet 
 							PacketFound : in std_logic;
@@ -1086,7 +1089,6 @@ architecture architecture_Main of Main is
 							
 						); end component;
 
-
 						
 --Constants & Setup
 	
@@ -1178,17 +1180,22 @@ architecture architecture_Main of Main is
 			signal Uart0RxFifoData : std_logic_vector(7 downto 0);
 			signal Uart0RxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal WriteUart0 : std_logic;
+			signal WriteUart0_i : std_logic;
+			signal Uart0DecoderWriteTxd : std_logic;
+			signal Uart0DecoderTransmitting : std_logic;
 			signal Uart0TxFifoFull : std_logic;
 			signal Uart0TxFifoEmpty : std_logic;
 			signal Uart0TxFifoData : std_logic_vector(7 downto 0);
+			signal Uart0TxFifoData_i : std_logic_vector(7 downto 0);
+			signal Uart0DecoderTxdByte : std_logic_vector(7 downto 0);
 			signal Uart0TxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0ClkDivider : std_logic_vector(7 downto 0);
 			signal UartClk0 : std_logic;			
 			signal UartTxClk0 : std_logic;			
 			signal Txd0_i : std_logic;
 			signal Rxd0_i : std_logic;
-			signal UartRx0Dbg : std_logic;			
-
+			signal UartRx0Dbg : std_logic;	
+			
 			signal Uart0RxFifoPeekReadAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekWriteAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(PeekRamDepth - 1 downto 0);
@@ -2072,6 +2079,9 @@ begin
 		rst => Uart0FifoReset_i,
 		PeekRamAddress => Uart0RxFifoPeekAddrPacketDecoder,
 		PeekRamByteOut => Uart0RxFifoPeekPeekData,
+		TxdByte => Uart0DecoderTxdByte,
+		WriteTxd => Uart0DecoderWriteTxd, 
+		Transmitting => Uart0DecoderTransmitting,
 		Decoding => Uart0PacketDecoding,
 		PacketFound => Uart0PacketFound,
 		HeaderEndPos => Uart0HeaderEndPos,
@@ -2152,8 +2162,8 @@ begin
 		BitClockOut => open,
 		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
-		WriteStrobe => WriteUart0,
-		WriteData => Uart0TxFifoData,
+		WriteStrobe => WriteUart0_i,
+		WriteData => Uart0TxFifoData_i,
 		FifoFull => Uart0TxFifoFull,
 		FifoEmpty => Uart0TxFifoEmpty,
 		FifoCount => Uart0TxFifoCount,
@@ -2164,6 +2174,9 @@ begin
 		--~ Txd => open--,
 	);
 	Txd0 <= Txd0_i;
+	
+	WriteUart0_i <= WriteUart0 when (Uart0DecoderTransmitting = '0') else Uart0DecoderWriteTxd;
+	Uart0TxFifoData_i <= Uart0TxFifoData when (Uart0DecoderTransmitting = '0') else Uart0DecoderTxdByte;
 	
 	--Mux master reset (boot) and user reset (datamapper)
 	Uart0FifoReset_i <= MasterReset or Uart0FifoReset;

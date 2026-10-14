@@ -34,8 +34,12 @@ entity PacketDecoder is
     rst : in std_logic;
 		
     -- Bus:
-    TxdByteOut : out std_logic_vector(7 downto 0);
+	PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
+	PeekRamByteOut : in std_logic_vector(7 downto 0);
+	Decoding : out std_logic;
+    TxdByte : out std_logic_vector(7 downto 0);
 	WriteTxd : out std_logic;
+	Transmitting : out std_logic;
 	
 	--Packet 
 	PacketFound : in std_logic;
@@ -59,6 +63,10 @@ entity PacketDecoder is
 	PayloadField14 : in std_logic_vector(7 downto 0);
 	PayloadField15 : in std_logic_vector(7 downto 0);
 	
+	--Outputs
+	FilterwheelPos : out std_logic_vector(31 downto 0);
+	--~ MoveFilterwheel : out std_logic;
+	
 	Dbg1 : out std_logic;
 	Dbg2 : out std_logic;
 	Dbg3 : out std_logic--;
@@ -77,6 +85,14 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	signal U32_0Start : std_logic;
 	signal U32_0Done : std_logic;
 	signal U32_0Out : std_logic_vector(31 downto 0);
+	
+	signal StartResponseGenerator : std_logic;
+	signal ResponseGeneratorPayloadType : std_logic_vector(15 downto 0);
+	signal ResponseGeneratorPayloadLen : std_logic_vector(15 downto 0);
+	signal ResponseGeneratorPayloadField0 : std_logic_vector(7 downto 0);
+	signal ResponseGeneratorPayloadField1 : std_logic_vector(7 downto 0);
+	signal ResponseGeneratorPayloadField2 : std_logic_vector(7 downto 0);
+	signal ResponseGeneratorPayloadField3 : std_logic_vector(7 downto 0);
 	
 	type States is (Idle, WhichPacket, ReadingFilterwheelPos);
 	signal NextState : States := Idle;
@@ -100,6 +116,44 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	  );
 	end component;
 	
+	component PacketGenerator is
+	port (
+		clk : in std_logic;
+		rst : in std_logic;
+			
+		TxdByte : out std_logic_vector(7 downto 0);
+		WriteTxd : out std_logic;
+
+		Start : in std_logic;
+		PayloadType : in std_logic_vector(15 downto 0);
+		PayloadLen : in std_logic_vector(15 downto 0);
+		PayloadField0 : in std_logic_vector(7 downto 0);
+		PayloadField1 : in std_logic_vector(7 downto 0);
+		PayloadField2 : in std_logic_vector(7 downto 0);
+		PayloadField3 : in std_logic_vector(7 downto 0);
+		PayloadField4 : in std_logic_vector(7 downto 0);
+		PayloadField5 : in std_logic_vector(7 downto 0);
+		PayloadField6 : in std_logic_vector(7 downto 0);
+		PayloadField7 : in std_logic_vector(7 downto 0);
+		PayloadField8 : in std_logic_vector(7 downto 0);
+		PayloadField9 : in std_logic_vector(7 downto 0);
+		PayloadField10 : in std_logic_vector(7 downto 0);
+		PayloadField11 : in std_logic_vector(7 downto 0);
+		PayloadField12 : in std_logic_vector(7 downto 0);
+		PayloadField13 : in std_logic_vector(7 downto 0);
+		PayloadField14 : in std_logic_vector(7 downto 0);
+		PayloadField15 : in std_logic_vector(7 downto 0);
+		PayloadField16 : in std_logic_vector(7 downto 0);
+		PayloadField17 : in std_logic_vector(7 downto 0);
+		PayloadField18 : in std_logic_vector(7 downto 0);
+		PayloadField19 : in std_logic_vector(7 downto 0);
+		PayloadField20 : in std_logic_vector(7 downto 0);
+		PayloadField21 : in std_logic_vector(7 downto 0);
+		PayloadField22 : in std_logic_vector(7 downto 0);
+		PayloadField23 : in std_logic_vector(7 downto 0);
+		Done : out std_logic--;
+	); end component;
+
   begin
   
   	U32_0 : PeekRamReader
@@ -117,6 +171,42 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		Start => U32_0Start,
 		Done => U32_0Done,
 		DataOut => U32_0Out--,
+	);
+	
+	ResponseGenerator : PacketGenerator
+	port map (
+		clk => clk,
+		rst => rst,
+		TxdByte => TxdByte,
+		WriteTxd => WriteTxd,
+ 		Start => StartResponseGenerator,
+		PayloadType => ResponseGeneratorPayloadType,
+		PayloadLen => ResponseGeneratorPayloadLen,
+		PayloadField0 => ResponseGeneratorPayloadField0,
+		PayloadField1 => ResponseGeneratorPayloadField1,
+		PayloadField2 => ResponseGeneratorPayloadField2,
+		PayloadField3 => ResponseGeneratorPayloadField3,
+		PayloadField4 => x"00",
+		PayloadField5 => x"00",
+		PayloadField6 => x"00",
+		PayloadField7 => x"00",
+		PayloadField8 => x"00",
+		PayloadField9 => x"00",
+		PayloadField10 => x"00",
+		PayloadField11 => x"00",
+		PayloadField12 => x"00",
+		PayloadField13 => x"00",
+		PayloadField14 => x"00",
+		PayloadField15 => x"00",
+		PayloadField16 => x"00",
+		PayloadField17 => x"00",
+		PayloadField18 => x"00",
+		PayloadField19 => x"00",
+		PayloadField20 => x"00",
+		PayloadField21 => x"00",
+		PayloadField22 => x"00",
+		PayloadField23 => x"00",
+		Done => Transmitting--,
 	);
 
 	process (clk, rst, PacketFound, CurrentState)
@@ -136,6 +226,13 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 			U32_0StartAddress <= (others => '0');
 			FilterwheelPos <= (others => '0');
 			U32_0Start <= '0';
+			StartResponseGenerator <= '0';
+			ResponseGeneratorPayloadType <= (others => '0');
+			ResponseGeneratorPayloadLen <= (others => '0');
+			ResponseGeneratorPayloadField0 <= (others => '0');
+			ResponseGeneratorPayloadField1 <= (others => '0');
+			ResponseGeneratorPayloadField2 <= (others => '0');
+			ResponseGeneratorPayloadField3 <= (others => '0');
 			
 		else
 		
@@ -152,6 +249,8 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 						Decoding <= '0';
 					
 						U32_0Start <= '0';
+						
+						StartResponseGenerator <= '0';
 					
 						if ( (LastPacketFound = '0') and (PacketFound = '1') ) then NextState <= WhichPacket; end if;
 						
@@ -189,6 +288,14 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 							--~ FilterwheelPos <= U32_0Out;
 							--~ FilterwheelPos <= x"33333333";
 							
+							StartResponseGenerator <= '1';
+							ResponseGeneratorPayloadType <= PayloadTypeFilterwheelPos;
+							ResponseGeneratorPayloadLen <= x"0004";
+							ResponseGeneratorPayloadField0 <= PayloadField0;
+							ResponseGeneratorPayloadField1 <= PayloadField1;
+							ResponseGeneratorPayloadField2 <= PayloadField2;
+							ResponseGeneratorPayloadField3 <= PayloadField3;
+
 							NextState <= Idle;
 							
 						else
