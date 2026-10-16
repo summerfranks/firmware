@@ -2104,15 +2104,18 @@ begin
 		PayloadField14 => Uart0PayloadField14,
 		PayloadField15 => Uart0PayloadField15,
 		FilterwheelPos => FilterwheelPos,
-		Dbg1 => TP1,
+		Dbg1 => open,
 		Dbg2 => open,
-		Dbg3 => TP7--,
+		Dbg3 => open--,
 	);
 
+	TP1 <= Uart0DecoderWriteTxd;
+	TP7 <= Uart0DecoderTransmitting;
+							 
 	--~ TP1 <= Uart0HeaderEndPos(0);
 	TP2 <= Uart0HeaderEndPos(1);
-	TP3 <= Uart0PacketDecoding;
-	TP4 <= Uart0PacketFound;
+	TP3 <= Uart0TxFifoEmpty;
+	TP4 <= Uart0TxFifoCount(1);
 	TP5 <= Uart0FooterEndPos(0);
 	TP6 <= Uart0FooterEndPos(1);
 	--~ TP7 <= Uart0FooterEndPos(2);

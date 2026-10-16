@@ -1,5 +1,5 @@
-"VCXO",19.608,"CLK0_PAD","CLK0_PAD"
-"MasterClk",9.804,"FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0","FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0"
+"CLK0_PAD",19.608,"CLK0_PAD","CLK0_PAD"
+"FCCC_C0_0/FCCC_C0_0/GL0",9.804,"FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0","FCCC_C0_0/FCCC_C0_0/CCC_INST/INST_CCC_IP:GL0"
 "Filterwheel_sb_0/CCC_0/GL0",9.804,"Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0","Filterwheel_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0"
 "Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ/CLKOUT",20,"Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ:CLKOUT","Filterwheel_sb_0/FABOSC_0/I_RCOSC_25_50MHZ:CLKOUT"
 "Main_0/PacketDecoder0/ResponseGenerator/WriteTxd_i:Q",,"Main_0/PacketDecoder0/ResponseGenerator/WriteTxd_i:Q","Main_0/PacketDecoder0/ResponseGenerator/WriteTxd_i:Q"

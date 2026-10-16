@@ -88,13 +88,13 @@ SIZE="1186"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/Main.vhd,hdl"
 STATE="utd"
-TIME="1791993819"
-SIZE="107449"
+TIME="1792081355"
+SIZE="107524"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/PacketDecoder.vhd,hdl"
 STATE="utd"
-TIME="1791993912"
-SIZE="9648"
+TIME="1792080339"
+SIZE="9732"
 ENDFILE
 VALUE "${CGRAPH_FIRMWARE}/Filterwheel/fpgapeek/RegisterSpace.vhd,hdl"
 STATE="utd"
@@ -1064,8 +1064,8 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
 STATE="utd"
-TIME="1763032276"
-SIZE="3243"
+TIME="1792085427"
+SIZE="3261"
 ENDFILE
 VALUE "<project>/constraint/io/user.pdc,io_pdc"
 STATE="utd"
@@ -1074,8 +1074,8 @@ SIZE="11217"
 ENDFILE
 VALUE "<project>/constraint/user.sdc,sdc"
 STATE="utd"
-TIME="1791909045"
-SIZE="5162"
+TIME="1792094919"
+SIZE="5304"
 ENDFILE
 VALUE "<project>/simulation/bfmtovec_compile.tcl,sim"
 STATE="utd"
@@ -1151,7 +1151,7 @@ TIME="1791325017"
 SIZE="251"
 ENDFILE
 VALUE "<project>/synthesis/Filterwheel.vm,syn_vm"
-STATE="ood"
+STATE="utd"
 TIME="1791909045"
 SIZE="2524321"
 ENDFILE
@@ -1176,6 +1176,7 @@ VALUE "<project>/simulation/subsystem.bfm,sim"
 ENDLIST
 LIST SynthesisConstraints
 VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
+VALUE "<project>/constraint/user.sdc,sdc"
 ENDLIST
 LIST TimingConstraints
 VALUE "<project>/constraint/Filterwheel_derived_constraints.sdc,sdc"
@@ -1188,8 +1189,7 @@ VALUE "<project>/constraint/user.sdc,sdc"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1199,8 +1199,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl2
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1210,8 +1209,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl3
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1221,8 +1219,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl4
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1500,8 +1497,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="/home/summer/microchip/Libero_SoC_v2023.2/SynplifyPro/bin/synplify_pro"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -1527,8 +1524,7 @@ ENDLIST
 LIST ProjectState5.1
 LIST "Filterwheel::work"
 LIST Impl1
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1538,8 +1534,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl2
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1549,8 +1544,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl3
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1560,8 +1554,7 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 LIST Impl4
-ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateFailure
-ideSYNTHESIS(<project>/synthesis/Filterwheel.edn,syn_edn)=StateFailure
+ideSYNTHESIS(<project>/synthesis/Filterwheel.vm,syn_vm)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -1682,8 +1675,11 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Generate Bitstream:Filterwheel_generateBitstream.log
+Constraint Manager;Constraint Manager;0
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "ads1258::work","${CGRAPH_FIRMWARE}/include/fpga/ads1258.vhd","FALSE","FALSE"
@@ -1717,6 +1713,13 @@ LIST "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FA
 ENDLIST
 LIST "CrcStream::work","${CGRAPH_FIRMWARE}/include/fpga/crc_stream.vhd","FALSE","FALSE"
 SUBBLOCK "crc_byte::work","${CGRAPH_FIRMWARE}/include/fpga/crc_byte.vhd","FALSE","FALSE"
+ENDLIST
+LIST "DESIGN_FIRMWARE::work","component/work/DESIGN_FIRMWARE/DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "ClockDivider2XPorts::work","${CGRAPH_FIRMWARE}/include/fpga/ClockDivider2X.vhd","FALSE","FALSE"
 ENDLIST
@@ -1903,6 +1906,16 @@ ENDLIST
 LIST "RCOSC_25_50MHZ_FAB::work","component/Actel/SgCore/OSC/2.0.101/osc_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "RtcCounterPorts::work","${CGRAPH_FIRMWARE}/include/fpga/RtcCounter.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
+ENDLIST
+LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "SpiDacTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiDacTrio.vhd","FALSE","FALSE"
 SUBBLOCK "SpiMasterTrioPorts::work","${CGRAPH_FIRMWARE}/include/fpga/SpiMasterTrio.vhd","FALSE","FALSE"

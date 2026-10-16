@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version T-2022.09M-SP2-1
 #--  Project file /home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/synthesis/run_options.txt
-#--  Written on Thu Jun  4 17:07:07 2026
+#--  Written on Thu Oct 15 19:43:16 2026
 
 
 #project files
@@ -19,10 +19,7 @@ add_file -verilog -lib COREAPB3_LIB "/home/summer/projects/CGraph/firmware/FineS
 add_file -verilog -lib COREAPB3_LIB "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v"
 add_file -verilog "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/component/work/FineSteeringMirror_sb/FineSteeringMirror_sb.v"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpgapeekfifos/BuildNumber.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider2X.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/VariableClockDivider.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/DacDitherer.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP1.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBufP2.vhd"
@@ -30,20 +27,22 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/IBu
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterQuad.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/Ltc2378AccumQuad.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PPSCount.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_byte.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_stream.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/CGraphTypes.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PacketGenerator.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRamReader.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpgapeekfifos/PacketDecoder.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/FieldLatcher.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PacketValidator.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRam.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PatternFinder.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/PeekRingBuffer.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxRaw.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxExtClk.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClkPeek.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd"
-add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider2X.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/ClockDivider.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/crc_fifo.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/OneShot.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpgapeekfifos/RegisterSpace.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiMaster.vhd"
@@ -51,6 +50,11 @@ add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/Spi
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiDacQuad.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiMasterDual.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/SpiDeviceDual.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/fifo_gen.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/gated_fifo.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartRxFifoExtClk.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTx.vhd"
+add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/include/fpga/UartTxFifoExtClk.vhd"
 add_file -vhdl -lib work "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/fpgapeekfifos/Main.vhd"
 add_file -verilog "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/component/work/FineSteeringMirror/FineSteeringMirror.v"
 add_file -fpga_constraint "/home/summer/projects/CGraph/firmware/FineSteeringMirrorController/Liberopeekfifos/designer/FineSteeringMirror/synthesis.fdc"

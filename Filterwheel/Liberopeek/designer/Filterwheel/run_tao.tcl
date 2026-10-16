@@ -49,5 +49,6 @@ read_verilog -mode system_verilog {/home/summer/projects/CGraph/firmware/Filterw
 set_top_level {Filterwheel}
 map_netlist
 read_sdc {/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/constraint/Filterwheel_derived_constraints.sdc}
+read_sdc {/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/constraint/user.sdc}
 check_constraints -ignore_errors {/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/constraint/synthesis_sdc_errors.log}
 write_fdc {/home/summer/projects/CGraph/firmware/Filterwheel/Liberopeek/designer/Filterwheel/synthesis.fdc}

@@ -226,7 +226,7 @@ public:
         {
             return(false);
         }
-        uint32_t CRC = CRC32BZIP2((const uint8_t*)Header, sizeof(CGraphPacketHeader) + Header->PayloadLen);
+        uint32_t CRC = CRC32BZIP2((const uint8_t*)(&Header->PayloadType), sizeof(CGraphPacketHeader) + Header->PayloadLen);
         if (CRC != Footer->CRC32BZIP2)
         {
             return(false);
@@ -249,7 +249,7 @@ public:
             memcpy(&(Buffer[sizeof(CGraphPacketHeader)]), Payload, PayloadLen);
         }
         CGraphPacketFooter* Footer = reinterpret_cast<CGraphPacketFooter*>(&(Buffer[sizeof(CGraphPacketHeader) + PayloadLen]));
-        uint32_t CRC = CRC32BZIP2(Buffer, sizeof(CGraphPacketHeader) + PayloadLen);
+        uint32_t CRC = CRC32BZIP2(&(Buffer[sizeof(CGraphMagikPacketStartToken)]), (sizeof(CGraphPacketHeader) - sizeof(CGraphMagikPacketStartToken)) + PayloadLen);
         Footer->CRC32BZIP2 = CRC;
         Footer->PacketEndToken = CGraphMagikPacketEndToken;
         return(sizeof(CGraphPacketHeader) + PayloadLen + sizeof(CGraphPacketFooter));
@@ -403,9 +403,9 @@ public:
 		//~ //Move fpga data to flat buffer to do crc:
 		const size_t TwiceMaxPacketLen = 16384;
 		uint8_t CRCBuf[TwiceMaxPacketLen];
-		size_t crclen =  sizeof(CGraphPacketHeader) + payloadlen;
-		Buffer.CopyToFlatBuffer(PacketStartPos, crclen, CRCBuf, TwiceMaxPacketLen);
-		uint32_t CRC = CRC32BZIP2(CRCBuf, sizeof(CGraphPacketHeader) + payloadlen);
+		size_t crclen =  (sizeof(CGraphPacketHeader) - sizeof(CGraphMagikPacketStartToken)) + payloadlen;
+		Buffer.CopyToFlatBuffer(PacketStartPos + sizeof(CGraphMagikPacketStartToken), crclen, CRCBuf, TwiceMaxPacketLen);
+		uint32_t CRC = CRC32BZIP2(CRCBuf, crclen);
 		
 		//~ //Naw, let's let the fpga do the crc instead!
 		//~ int32_t CrcEndPos = PacketEndPos - sizeof(CGraphPacketFooter::CRC32BZIP2);
@@ -528,7 +528,6 @@ struct CGraphHardFaultPayload
 //--------------------------------------------------------------------- FSM Fine Steering Mirror 0x2000 packets -------------------------------------------------------------
 
 static const uint16_t CGraphPayloadTypeFSMDacs = 0x2002U;
-static const uint16_t CGraphPayloadTypeFSMDacsDeprecated = 0x0002U; //Payload: 3 uint32's
 static const uint16_t CGraphPayloadTypeFSMAdcs = 0x2003U;
 static const uint16_t CGraphPayloadTypeFSMAdcsFloatingPoint = 0x2004U;
 static const uint16_t CGraphPayloadTypeFSMDacsFloatingPoint = 0x2005U;
@@ -538,6 +537,7 @@ static const uint16_t CGraphPayloadTypeFSMAdcConfigRegister = 0x2008U;
 static const uint16_t CGraphPayloadTypeFSMAccumulatorConfigRegister = 0x2009U;
 static const uint16_t CGraphPayloadTypeFSMDacConfigRegister = 0x200AU;
 
+static const uint16_t CGraphPayloadTypeFSMDacsDeprecated = 0x0002U; //Payload: 3 uint32's
 static const uint16_t CGraphPayloadTypeFSMDacsFloatingPointDeprecated = 0x0003U; //Payload: 3 double-precision floats
 static const uint16_t CGraphPayloadTypeFSMAdcsDeprecated = 0x0004U; //Payload: 3 AdcAcumulators
 static const uint16_t CGraphPayloadTypeFSMAdcsFloatingPointDeprecated = 0x0005U; //Payload: 3 double-precision floats

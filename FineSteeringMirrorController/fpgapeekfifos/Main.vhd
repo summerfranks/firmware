@@ -69,7 +69,7 @@ port (
 	
 	--uC Ram Bus 
 	
-	RamBusAddress : in std_logic_vector(9 downto 0); 
+	RamBusAddress : in std_logic_vector(PeekRamDepth - 1 downto 0); 
 	RamBusDataIn : in std_logic_vector(31 downto 0);
 	RamBusDataOut : out std_logic_vector(31 downto 0);
 	RamBusnCs : in std_logic;
@@ -317,7 +317,7 @@ architecture architecture_Main of Main is
 							SetTime : in std_logic;
 							SetChangedTime : out std_logic;
 							Seconds : out std_logic_vector(21 downto 0);
-							Milliseconds : out std_logic_vector(9 downto 0)--;
+							Milliseconds : out std_logic_vector(PeekRamDepth - 1 downto 0)--;
 						);
 						end component;
 						
@@ -371,7 +371,7 @@ architecture architecture_Main of Main is
 						generic 
 						(
 							UART_CLOCK_FREQHZ : natural := 14745600;
-							DEPTH_BITS : natural := 10;
+							FIFO_BITS : natural := 10;
 							BAUDRATE : natural := 38400--;
 						);
 						port 
@@ -390,14 +390,14 @@ architecture architecture_Main of Main is
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
-							FifoCount	: out std_logic_vector(DEPTH_BITS - 1 downto 0)--;		
+							FifoCount	: out std_logic_vector(FIFO_BITS - 1 downto 0)--;		
 						);
 						end component;
 						
 						component UartRxFifoExtClk is
 						generic 
 						(
-							DEPTH_BITS : natural := 10--;
+							FIFO_BITS : natural := 10--;
 						);
 						port 
 						(
@@ -416,7 +416,7 @@ architecture architecture_Main of Main is
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
-							FifoCount	: out std_logic_vector(DEPTH_BITS - 1 downto 0)--;
+							FifoCount	: out std_logic_vector(FIFO_BITS - 1 downto 0)--;
 						);
 						end component;
 
@@ -444,8 +444,25 @@ architecture architecture_Main of Main is
 							FooterEndPos : out std_logic_vector(PeekRamDepth - 1 downto 0);
 							PayloadType : out std_logic_vector(15 downto 0);
 							PayloadLen : out std_logic_vector(15 downto 0);
+							PayloadField0 : out std_logic_vector(7 downto 0);
+							PayloadField1 : out std_logic_vector(7 downto 0);
+							PayloadField2 : out std_logic_vector(7 downto 0);
+							PayloadField3 : out std_logic_vector(7 downto 0);
+							PayloadField4 : out std_logic_vector(7 downto 0);
+							PayloadField5 : out std_logic_vector(7 downto 0);
+							PayloadField6 : out std_logic_vector(7 downto 0);
+							PayloadField7 : out std_logic_vector(7 downto 0);
+							PayloadField8 : out std_logic_vector(7 downto 0);
+							PayloadField9 : out std_logic_vector(7 downto 0);
+							PayloadField10 : out std_logic_vector(7 downto 0);
+							PayloadField11 : out std_logic_vector(7 downto 0);
+							PayloadField12 : out std_logic_vector(7 downto 0);
+							PayloadField13 : out std_logic_vector(7 downto 0);
+							PayloadField14 : out std_logic_vector(7 downto 0);
+							PayloadField15 : out std_logic_vector(7 downto 0);							
 							PacketCrc : out std_logic_vector(31 downto 0);
 							CalcCrc : out std_logic_vector(31 downto 0);
+							PacketFound : in std_logic;
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
@@ -462,7 +479,7 @@ architecture architecture_Main of Main is
 						component UartRxMultiFifoPeek is
 						generic 
 						(
-							DEPTH_BITS : natural := 10;
+							FIFO_BITS : natural := 10;
 							BAUD_DIVIDER_BITS : natural := 8--;
 						);
 						port 
@@ -481,7 +498,7 @@ architecture architecture_Main of Main is
 							--Fifo status:
 							FifoFull	: out std_logic;
 							FifoEmpty	: out std_logic;
-							FifoCount	: out std_logic_vector(DEPTH_BITS - 1 downto 0)--;		
+							FifoCount	: out std_logic_vector(FIFO_BITS - 1 downto 0)--;		
 						);
 						end component;
 						
@@ -501,7 +518,7 @@ architecture architecture_Main of Main is
 						generic 
 						(
 							UART_CLOCK_FREQHZ : natural := 14745600; --for making industry-standard baudrates
-							DEPTH_BITS : natural := 10;
+							FIFO_BITS : natural := 10;
 							BAUDRATE : natural := 38400--;
 						);
 						port 
@@ -517,7 +534,7 @@ architecture architecture_Main of Main is
 							WriteData : in std_logic_vector(7 downto 0); --the byte
 							FifoFull : out std_logic; --fifo status:
 							FifoEmpty : out std_logic; --fifo status:
-							FifoCount : out std_logic_vector(DEPTH_BITS - 1 downto 0); --fifo status:
+							FifoCount : out std_logic_vector(FIFO_BITS - 1 downto 0); --fifo status:
 							
 							--'analog' side (frontyard)
 							TxInProgress : out std_logic; --currently sending data...
@@ -529,7 +546,7 @@ architecture architecture_Main of Main is
 						component UartTxFifoExtClk is
 						generic 
 						(
-							DEPTH_BITS : natural := 10--;
+							FIFO_BITS : natural := 10--;
 						);
 						port 
 						(
@@ -543,7 +560,7 @@ architecture architecture_Main of Main is
 							WriteData : in std_logic_vector(7 downto 0); --the byte
 							FifoFull : out std_logic; --fifo status:
 							FifoEmpty : out std_logic; --fifo status:
-							FifoCount : out std_logic_vector(DEPTH_BITS - 1 downto 0); --fifo status:
+							FifoCount : out std_logic_vector(FIFO_BITS - 1 downto 0); --fifo status:
 							BitClockOut : out std_logic; --generally used for debug of divider values...		
 							BitCountOut : out std_logic_vector(3 downto 0);
 							
@@ -556,7 +573,7 @@ architecture architecture_Main of Main is
 						
 						component CrcFifo is
 						generic (
-								DEPTH_BITS : natural := 10--;
+							DEPTH_BITS : natural := 10--;
 						);
 						port (
 						
@@ -631,8 +648,7 @@ architecture architecture_Main of Main is
 
 						component RegisterSpacePorts is
 						generic (
-							ADDRESS_BITS : natural := 10;
-							UART_FIFO_DEPTH_BITS : natural := 9--;
+							ADDRESS_BITS : natural := 10--;
 						);
 						port (
 											
@@ -731,22 +747,22 @@ architecture architecture_Main of Main is
 							Uart0RxFifoFull : in std_logic;
 							Uart0RxFifoEmpty : in std_logic;
 							Uart0RxFifoData : in std_logic_vector(7 downto 0);
-							Uart0RxFifoCount : in std_logic_vector(9 downto 0);
+							Uart0RxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							WriteUart0 : out std_logic;
 							Uart0TxFifoFull : in std_logic;
 							Uart0TxFifoEmpty : in std_logic;
 							Uart0TxFifoData : out std_logic_vector(7 downto 0);
-							Uart0TxFifoCount : in std_logic_vector(9 downto 0);
+							Uart0TxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart0ClkDivider : out std_logic_vector(7 downto 0);
-							Uart0RxFifoPeekReadAddr : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0RxFifoPeekWriteAddr : in std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0RxFifoPeekPeekAddr : out std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekReadAddr : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0RxFifoPeekWriteAddr : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0RxFifoPeekPeekAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart0RxFifoPeekPeekData : in std_logic_vector(7 downto 0);
-							Uart0RxFifoPeekMultiPopAddr : out std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0RxFifoPeekMultiPopAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart0RxFifoPeekMultiPopStrobe : out std_logic;		
-							Uart0CrcStartAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0CrcEndAddr : out unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
-							Uart0CrcCurrentAddr : in unsigned(UART_FIFO_DEPTH_BITS - 1 downto 0);
+							Uart0CrcStartAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0CrcEndAddr : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							Uart0CrcCurrentAddr : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart0DoCrc : out std_logic;
 							Uart0CrcDone : in std_logic;
 							Uart0Crc : in std_logic_vector(31 downto 0);
@@ -758,18 +774,27 @@ architecture architecture_Main of Main is
 							Uart0PayloadLen : in std_logic_vector(15 downto 0);
 							Uart0PacketCrc : in std_logic_vector(31 downto 0);
 							Uart0CalcCrc : in std_logic_vector(31 downto 0);
-							
+							HeaderFound : in std_logic;
+							FooterFound : in std_logic;
+							HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							FooterEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadType : in std_logic_vector(15 downto 0);
+							PayloadLen : in std_logic_vector(15 downto 0);
+							PacketCrc : in std_logic_vector(31 downto 0);
+							CalcCrc : in std_logic_vector(31 downto 0);
+							PacketFound : in std_logic;
+
 							Uart1FifoReset : out std_logic;
 							ReadUart1 : out std_logic;
 							Uart1RxFifoFull : in std_logic;
 							Uart1RxFifoEmpty : in std_logic;
 							Uart1RxFifoData : in std_logic_vector(7 downto 0);
-							Uart1RxFifoCount : in std_logic_vector(9 downto 0);
+							Uart1RxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							WriteUart1 : out std_logic;
 							Uart1TxFifoFull : in std_logic;
 							Uart1TxFifoEmpty : in std_logic;
 							Uart1TxFifoData : out std_logic_vector(7 downto 0);
-							Uart1TxFifoCount : in std_logic_vector(9 downto 0);
+							Uart1TxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart1ClkDivider : out std_logic_vector(7 downto 0);
 							
 							Uart2FifoReset : out std_logic;
@@ -777,12 +802,12 @@ architecture architecture_Main of Main is
 							Uart2RxFifoFull : in std_logic;
 							Uart2RxFifoEmpty : in std_logic;
 							Uart2RxFifoData : in std_logic_vector(7 downto 0);
-							Uart2RxFifoCount : in std_logic_vector(9 downto 0);
+							Uart2RxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							WriteUart2 : out std_logic;
 							Uart2TxFifoFull : in std_logic;
 							Uart2TxFifoEmpty : in std_logic;
 							Uart2TxFifoData : out std_logic_vector(7 downto 0);
-							Uart2TxFifoCount : in std_logic_vector(9 downto 0);
+							Uart2TxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart2ClkDivider : out std_logic_vector(7 downto 0);
 							
 							Uart3FifoReset : out std_logic;
@@ -790,12 +815,12 @@ architecture architecture_Main of Main is
 							Uart3RxFifoFull : in std_logic;
 							Uart3RxFifoEmpty : in std_logic;
 							Uart3RxFifoData : in std_logic_vector(7 downto 0);
-							Uart3RxFifoCount : in std_logic_vector(9 downto 0);
+							Uart3RxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							WriteUart3 : out std_logic;
 							Uart3TxFifoFull : in std_logic;
 							Uart3TxFifoEmpty : in std_logic;
 							Uart3TxFifoData : out std_logic_vector(7 downto 0);
-							Uart3TxFifoCount : in std_logic_vector(9 downto 0);
+							Uart3TxFifoCount : in std_logic_vector(PeekRamDepth - 1 downto 0);
 							Uart3ClkDivider : out std_logic_vector(7 downto 0);
 							
 							--Timing
@@ -1083,6 +1108,62 @@ architecture architecture_Main of Main is
 							
 						); end component;
 						
+						component PacketDecoder is
+						port (
+							clk : in std_logic;
+							rst : in std_logic;
+								
+							-- Bus:
+							PeekRamAddress : out std_logic_vector(PeekRamDepth - 1 downto 0);
+							PeekRamByteOut : in std_logic_vector(7 downto 0);
+							Decoding : out std_logic;
+							TxdByte : out std_logic_vector(7 downto 0);
+							WriteTxd : out std_logic;
+							Transmitting : out std_logic;
+
+							--Packet 
+							PacketFound : in std_logic;
+							HeaderEndPos : in std_logic_vector(PeekRamDepth - 1 downto 0);
+							PayloadType : in std_logic_vector(15 downto 0);
+							PayloadLen : in std_logic_vector(15 downto 0);
+							PayloadField0 : in std_logic_vector(7 downto 0);
+							PayloadField1 : in std_logic_vector(7 downto 0);
+							PayloadField2 : in std_logic_vector(7 downto 0);
+							PayloadField3 : in std_logic_vector(7 downto 0);
+							PayloadField4 : in std_logic_vector(7 downto 0);
+							PayloadField5 : in std_logic_vector(7 downto 0);
+							PayloadField6 : in std_logic_vector(7 downto 0);
+							PayloadField7 : in std_logic_vector(7 downto 0);
+							PayloadField8 : in std_logic_vector(7 downto 0);
+							PayloadField9 : in std_logic_vector(7 downto 0);
+							PayloadField10 : in std_logic_vector(7 downto 0);
+							PayloadField11 : in std_logic_vector(7 downto 0);
+							PayloadField12 : in std_logic_vector(7 downto 0);
+							PayloadField13 : in std_logic_vector(7 downto 0);
+							PayloadField14 : in std_logic_vector(7 downto 0);
+							PayloadField15 : in std_logic_vector(7 downto 0);
+							
+							--Outputs
+							DacSetpointA : out std_logic_vector(23 downto 0);
+							DacSetpointB : out std_logic_vector(23 downto 0);
+							DacSetpointC : out std_logic_vector(23 downto 0);
+							SetDacs : out std_logic;
+	
+							--Inputs
+							DacAReadback : in std_logic_vector(23 downto 0);
+							DacBReadback : in std_logic_vector(23 downto 0);
+							DacCReadback : in std_logic_vector(23 downto 0);
+							AdcSampleA : in std_logic_vector(47 downto 0);
+							AdcSampleB : in std_logic_vector(47 downto 0);
+							AdcSampleC : in std_logic_vector(47 downto 0);
+							AdcNumAccums : in std_logic_vector(15 downto 0);
+
+							Dbg1 : out std_logic;
+							Dbg2 : out std_logic;
+							Dbg3 : out std_logic--;
+						); end component;
+
+						
 --Constants & Setup
 	
 
@@ -1104,8 +1185,6 @@ architecture architecture_Main of Main is
 		--~ constant UartClockPeriod : real := 68.1; --really should be exactly 1 / conv_real(UartBaseClockFreq), but it's just used by DCM clock library, and conv_real doesn't exist.
 		--~ constant UartClockFreq : natural := BaseClockFreq * UartClockFreqMultiplier / UartClockFreqDivider; -- 14.6802MHz (14.7456 ideal; 0.44% dev)
 
-		constant UART_FIFO_DEPTH_BITS : natural := 10;
-		
 		--FPGA internal
 		
 			signal MasterReset : std_logic; --Our power-on-reset signal for everything
@@ -1117,7 +1196,7 @@ architecture architecture_Main of Main is
 			--~ signal RamBusLatch_i : std_logic;		
 			signal RamBusCE_i : std_logic;		
 			signal RamBusWrnRd_i : std_logic;		
-			signal RamBusAddress_i : std_logic_vector(9 downto 0);		
+			signal RamBusAddress_i : std_logic_vector(PeekRamDepth - 1 downto 0);		
 			signal RamDataOut : std_logic_vector(31 downto 0);		
 			signal RamDataIn : std_logic_vector(31 downto 0);		
 			signal RamBusAck_i : std_logic;					
@@ -1163,7 +1242,20 @@ architecture architecture_Main of Main is
 			signal DacASetpoint : std_logic_vector(23 downto 0);	
 			signal DacBSetpoint : std_logic_vector(23 downto 0);	
 			signal DacCSetpoint : std_logic_vector(23 downto 0);	
-			signal DacDSetpoint : std_logic_vector(23 downto 0);	
+			signal DacDSetpoint : std_logic_vector(23 downto 0);
+			
+			signal DacSetpointA_0 : std_logic_vector(23 downto 0);
+			signal DacSetpointB_0 : std_logic_vector(23 downto 0);
+			signal DacSetpointC_0 : std_logic_vector(23 downto 0);
+			signal PacketDecoder0SetDacs : std_logic;	
+			signal LastPacketDecoder0SetDacs : std_logic;	
+			
+			signal DacSetpointA_RS : std_logic_vector(23 downto 0);
+			signal DacSetpointB_RS : std_logic_vector(23 downto 0);
+			signal DacSetpointC_RS : std_logic_vector(23 downto 0);
+			signal RegisterSpaceSetDacs : std_logic;	
+			signal LastRegisterSpaceSetDacs : std_logic;	
+					
 			signal DacASetpointMax_i : std_logic_vector(23 downto 0);	
 			signal DacBSetpointMax_i : std_logic_vector(23 downto 0);	
 			signal DacCSetpointMax_i : std_logic_vector(23 downto 0);	
@@ -1258,45 +1350,69 @@ architecture architecture_Main of Main is
 			signal Uart0RxFifoEmpty : std_logic;
 			signal Uart0RxFifoReadAck : std_logic;
 			signal Uart0RxFifoData : std_logic_vector(7 downto 0);
-			signal Uart0RxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal WriteUart0 : std_logic;
+			signal WriteUart0_i : std_logic;
+			signal Uart0DecoderWriteTxd : std_logic;
+			signal Uart0DecoderTransmitting : std_logic;
 			signal Uart0TxFifoFull : std_logic;
 			signal Uart0TxFifoEmpty : std_logic;
 			signal Uart0TxFifoData : std_logic_vector(7 downto 0);
-			signal Uart0TxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0DecoderTxdByte : std_logic_vector(7 downto 0);
+			signal Uart0TxFifoData_i : std_logic_vector(7 downto 0);
+			signal Uart0TxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0ClkDivider : std_logic_vector(7 downto 0);
 			signal UartClk0 : std_logic;			
 			signal UartTxClk0 : std_logic;			
 			signal Txd0_i : std_logic;
 			signal Rxd0_i : std_logic;
 			signal UartRx0Dbg : std_logic;	
-			signal Uart0RxFifoPeekReadAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekWriteAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddrRegisterSpace : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0RxFifoPeekPeekAddrCrcer : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekReadAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0RxFifoPeekWriteAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddr_i : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddrRegisterSpace : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0RxFifoPeekPeekAddrCrcer : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekPeekData : std_logic_vector(7 downto 0);
-			signal Uart0RxFifoPeekMultiPopAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0RxFifoPeekMultiPopAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0RxFifoPeekMultiPopStrobe : std_logic;
-			signal Uart0CrcStartAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0CrcEndAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
-			signal Uart0CrcCurrentAddr : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart0CrcStartAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0CrcEndAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0CrcCurrentAddr : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0DoCrc : std_logic;
 			signal Uart0CrcDone : std_logic;
 			signal Uart0Crc : std_logic_vector(31 downto 0);
 			signal Uart0LastHeaderEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0LastFooterEnd : std_logic_vector(PeekRamDepth - 1 downto 0);
-			signal Uart0PayloadLen : std_logic_vector(31 downto 0);
 			signal Uart0HeaderFooterPayloadLenMatches : std_logic;
+			signal Uart0PayloadType : std_logic_vector(15 downto 0);
+			signal Uart0PayloadLen : std_logic_vector(15 downto 0);
+			signal Uart0PayloadField0 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField1 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField2 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField3 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField4 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField5 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField6 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField7 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField8 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField9 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField10 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField11 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField12 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField13 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField14 : std_logic_vector(7 downto 0);
+			signal Uart0PayloadField15 : std_logic_vector(7 downto 0);
+			--~ signal Uart0HeaderFooterPayloadLenMatches : std_logic;
 			signal Uart0HeaderFound : std_logic;
 			signal Uart0FooterFound : std_logic;
 			signal Uart0HeaderEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart0FooterEndPos : std_logic_vector(PeekRamDepth - 1 downto 0);
-			signal Uart0PayloadType : std_logic_vector(15 downto 0);
-			signal Uart0PayloadLen : std_logic_vector(15 downto 0);
 			signal Uart0PacketCrc : std_logic_vector(31 downto 0);
 			signal Uart0CalcCrc : std_logic_vector(31 downto 0);
-
+			signal Uart0PacketFound : std_logic;
+			signal Uart0RxFifoPeekAddrPacketDecoder : std_logic_vector(PeekRamDepth - 1 downto 0);
+			signal Uart0PacketDecoding : std_logic;
+			
 			signal Uart1FifoReset : std_logic;
 			signal Uart1FifoReset_i : std_logic;
 			signal ReadUart1 : std_logic;
@@ -1304,12 +1420,12 @@ architecture architecture_Main of Main is
 			signal Uart1RxFifoEmpty : std_logic;
 			signal Uart1RxFifoReadAck : std_logic;
 			signal Uart1RxFifoData : std_logic_vector(7 downto 0);
-			signal Uart1RxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart1RxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal WriteUart1 : std_logic;
 			signal Uart1TxFifoFull : std_logic;
 			signal Uart1TxFifoEmpty : std_logic;
 			signal Uart1TxFifoData : std_logic_vector(7 downto 0);
-			signal Uart1TxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart1TxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart1ClkDivider : std_logic_vector(7 downto 0);
 			signal UartClk1 : std_logic;			
 			signal UartTxClk1 : std_logic;			
@@ -1324,12 +1440,12 @@ architecture architecture_Main of Main is
 			signal Uart2RxFifoEmpty : std_logic;
 			signal Uart2RxFifoReadAck : std_logic;
 			signal Uart2RxFifoData : std_logic_vector(7 downto 0);
-			signal Uart2RxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart2RxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal WriteUart2 : std_logic;
 			signal Uart2TxFifoFull : std_logic;
 			signal Uart2TxFifoEmpty : std_logic;
 			signal Uart2TxFifoData : std_logic_vector(7 downto 0);
-			signal Uart2TxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart2TxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart2ClkDivider : std_logic_vector(7 downto 0);
 			signal UartClk2 : std_logic;			
 			signal UartTxClk2 : std_logic;			
@@ -1344,12 +1460,12 @@ architecture architecture_Main of Main is
 			signal Uart3RxFifoEmpty : std_logic;
 			signal Uart3RxFifoReadAck : std_logic;
 			signal Uart3RxFifoData : std_logic_vector(7 downto 0);
-			signal Uart3RxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart3RxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal WriteUart3 : std_logic;
 			signal Uart3TxFifoFull : std_logic;
 			signal Uart3TxFifoEmpty : std_logic;
 			signal Uart3TxFifoData : std_logic_vector(7 downto 0);
-			signal Uart3TxFifoCount : std_logic_vector(UART_FIFO_DEPTH_BITS - 1 downto 0);
+			signal Uart3TxFifoCount : std_logic_vector(PeekRamDepth - 1 downto 0);
 			signal Uart3ClkDivider : std_logic_vector(7 downto 0);
 			signal UartClk3 : std_logic;			
 			signal UartTxClk3 : std_logic;			
@@ -1471,8 +1587,7 @@ begin
 	RegisterSpace : RegisterSpacePorts
 	generic map 
 	(
-		ADDRESS_BITS => 10,
-		UART_FIFO_DEPTH_BITS => UART_FIFO_DEPTH_BITS--,
+		ADDRESS_BITS => PeekRamDepth--,
 	)
 	port map
 	(
@@ -1530,11 +1645,11 @@ begin
 		Ux1SelJmp => Ux1SelJmp_i,
 				
 		--FSM D/A's
-		DacASetpoint => DacASetpoint,
-		DacBSetpoint => DacBSetpoint,
-		DacCSetpoint => DacCSetpoint,
+		DacASetpoint => DacSetpointA_RS,
+		DacBSetpoint => DacSetpointB_RS,
+		DacCSetpoint => DacSetpointC_RS,
 		DacDSetpoint => DacDSetpoint,
-		WriteDacs => WriteDacs,
+		WriteDacs => RegisterSpaceSetDacs,
 		DacAReadback => DacAReadback,
 		DacBReadback => DacBReadback,
 		DacCReadback => DacCReadback,
@@ -1606,7 +1721,17 @@ begin
 		Uart0PayloadLen => Uart0PayloadLen,
 		Uart0PacketCrc => Uart0PacketCrc,
 		Uart0CalcCrc => Uart0CalcCrc,
-
+		
+		HeaderFound => Uart0HeaderFound,
+		FooterFound => Uart0FooterFound,
+		HeaderEndPos => Uart0HeaderEndPos,
+		FooterEndPos => Uart0FooterEndPos,
+		PayloadType => Uart0PayloadType,
+		PayloadLen => Uart0PayloadLen,
+		PacketCrc => Uart0PacketCrc,
+		CalcCrc => Uart0CalcCrc,
+		PacketFound => Uart0PacketFound,
+		
 		Uart1FifoReset => Uart1FifoReset,
 		ReadUart1 => ReadUart1,
 		Uart1RxFifoFull => Uart1RxFifoFull,
@@ -2083,15 +2208,16 @@ begin
 		--~ BaudDivider => Uart0ClkDivider,
 		Rxd => Rxd0_i,
 		--~ Dbg1 => UartRx0Dbg,
+		--~ Dbg1 => TP1,
+		--~ Dbg2 => TP2,
+		--~ Dbg3 => TP3,
+		--~ RxComplete => TP4,
 		Dbg1 => open,
 		Dbg2 => open,
 		Dbg3 => open,
 		RxComplete => open,
 		ReadFifo => ReadUart0,
-		LastHeaderEnd => Uart0LastHeaderEnd,
-		LastFooterEnd => Uart0LastFooterEnd,
-		PayloadLen => Uart0PayloadLen,
-		HeaderFooterPayloadLenMatches => Uart0HeaderFooterPayloadLenMatches,
+		--~ HeaderFooterPayloadLenMatches => Uart0HeaderFooterPayloadLenMatches,
 		FifoFull => Uart0RxFifoFull,
 		FifoEmpty => Uart0RxFifoEmpty,
 		FifoReadData => Uart0RxFifoData,
@@ -2103,8 +2229,25 @@ begin
 		FooterEndPos => Uart0FooterEndPos,
 		PayloadType => Uart0PayloadType,
 		PayloadLen => Uart0PayloadLen,
+		PayloadField0 => Uart0PayloadField0,
+		PayloadField1 => Uart0PayloadField1,
+		PayloadField2 => Uart0PayloadField2,
+		PayloadField3 => Uart0PayloadField3,
+		PayloadField4 => Uart0PayloadField4,
+		PayloadField5 => Uart0PayloadField5,
+		PayloadField6 => Uart0PayloadField6,
+		PayloadField7 => Uart0PayloadField7,
+		PayloadField8 => Uart0PayloadField8,
+		PayloadField9 => Uart0PayloadField9,
+		PayloadField10 => Uart0PayloadField10,
+		PayloadField11 => Uart0PayloadField11,
+		PayloadField12 => Uart0PayloadField12,
+		PayloadField13 => Uart0PayloadField13,
+		PayloadField14 => Uart0PayloadField14,
+		PayloadField15 => Uart0PayloadField15,
 		PacketCrc => Uart0PacketCrc,
 		CalcCrc => Uart0CalcCrc,
+		PacketFound => Uart0PacketFound,
 		FifoReadAddr => Uart0RxFifoPeekReadAddr,
 		FifoWriteAddr => Uart0RxFifoPeekWriteAddr,
 		FifoPeekAddr => Uart0RxFifoPeekPeekAddr_i,
@@ -2116,7 +2259,7 @@ begin
 	RS422_Rx0_Crcer : CrcFifo
 	generic map
 	(
-		DEPTH_BITS => 10--,
+		DEPTH_BITS => PeekRamDepth--,
 	)
 	port map
 	(
@@ -2125,20 +2268,97 @@ begin
 		FifoStartAddr => Uart0CrcStartAddr,
 		FifoEndAddr => Uart0CrcEndAddr,
 		FifoPeekData => Uart0RxFifoPeekPeekData,
-		FifoPeekAddr => Uart0RxFifoPeekPeekAddrCrcer,
+		FifoPeekAddr => Uart0CrcCurrentAddr,
 		StartCrc => Uart0DoCrc,
 		Crc => Uart0Crc,
 		CrcComplete => Uart0CrcDone--,
 	);
-			
+	-- !!May want to add Uart0CrcCurrentAddr functionality for debug...
+	
 	--This gonna get funky: if we're doing a crc, the crc core has acess to the fifo, otherwise the processor gets acess to the fifo...
-	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekPeekAddrCrcer when (Uart0CrcDone = '0') else Uart0RxFifoPeekPeekAddrRegisterSpace;
-			
+	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	--~ Uart0RxFifoPeekPeekAddr_i <= Uart0CrcCurrentAddr when (Uart0CrcDone = '0') else Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekAddrPacketDecoder;
+	Uart0RxFifoPeekPeekAddr_i <= Uart0RxFifoPeekAddrPacketDecoder when (Uart0PacketDecoding = '1') else Uart0RxFifoPeekPeekAddrRegisterSpace;
+	
+	PacketDecoder0 : PacketDecoder
+	port map (
+		clk => MasterClk,
+		rst => Uart0FifoReset_i,
+		PeekRamAddress => Uart0RxFifoPeekAddrPacketDecoder,
+		PeekRamByteOut => Uart0RxFifoPeekPeekData,
+		TxdByte => Uart0DecoderTxdByte,
+		WriteTxd => Uart0DecoderWriteTxd, 
+		Transmitting => Uart0DecoderTransmitting,
+		Decoding => Uart0PacketDecoding,
+		PacketFound => Uart0PacketFound,
+		HeaderEndPos => Uart0HeaderEndPos,
+		PayloadType => Uart0PayloadType,
+		PayloadLen => Uart0PayloadLen,
+		PayloadField0 => Uart0PayloadField0,
+		PayloadField1 => Uart0PayloadField1,
+		PayloadField2 => Uart0PayloadField2,
+		PayloadField3 => Uart0PayloadField3,
+		PayloadField4 => Uart0PayloadField4,
+		PayloadField5 => Uart0PayloadField5,
+		PayloadField6 => Uart0PayloadField6,
+		PayloadField7 => Uart0PayloadField7,
+		PayloadField8 => Uart0PayloadField8,
+		PayloadField9 => Uart0PayloadField9,
+		PayloadField10 => Uart0PayloadField10,
+		PayloadField11 => Uart0PayloadField11,
+		PayloadField12 => Uart0PayloadField12,
+		PayloadField13 => Uart0PayloadField13,
+		PayloadField14 => Uart0PayloadField14,
+		PayloadField15 => Uart0PayloadField15,
+		DacSetpointA => DacSetpointA_0,
+		DacSetpointB => DacSetpointB_0,
+		DacSetpointC => DacSetpointC_0,
+		DacAReadback => DacAReadback,
+		DacBReadback => DacBReadback,
+		DacCReadback => DacCReadback,
+		SetDacs => PacketDecoder0SetDacs,
+		AdcSampleA => AdcSampleToReadA,
+		AdcSampleB => AdcSampleToReadB,
+		AdcSampleC => AdcSampleToReadC,
+		AdcNumAccums => AdcSampleNumAccums,
+		Dbg1 => open,
+		Dbg2 => open,
+		Dbg3 => open--,
+	);
+
+	TP1 <= Uart0DecoderWriteTxd;
+	TP7 <= Uart0DecoderTransmitting;
+							 
+	--~ TP1 <= Uart0HeaderEndPos(0);
+	TP2 <= Uart0HeaderEndPos(1);
+	TP3 <= Uart0TxFifoEmpty;
+	TP4 <= Uart0TxFifoCount(1);
+	TP5 <= Uart0FooterEndPos(0);
+	TP6 <= Uart0FooterEndPos(1);
+	--~ TP7 <= Uart0FooterEndPos(2);
+	TP8 <= Uart0FooterEndPos(3);	
+	--~ LedG <= not(UartRx0Dbg);
+	--~ TP1 <= Uart0PacketFound;
+	--~ TP2 <= Uart0PacketDecoding;
+	--~ TP3 <= Uart0RxFifoPeekAddrPacketDecoder(0);
+	--~ TP4 <= Uart0HeaderEndPos(0);
+	--~ TP5 <= Uart0HeaderEndPos(1);
+	--~ TP6 <= Uart0HeaderEndPos(2);
+	--~ TP7 <= Uart0FooterFound;
+	--~ TP8 <= Uart0HeaderEndPos(3);	
+	--~ TP1 <= Uart0CrcDone;
+	--~ TP4 <= Uart0CrcCurrentAddr(0);
+	--~ TP5 <= Uart0HeaderFound;
+	--~ TP6 <= Uart0FooterFound;
+	--~ TP7 <= Uart0RxFifoPeekMultiPopStrobe;
+	--~ TP8 <= Uart0PayloadType(0);
+	
 	RS422_Tx0 : UartTxFifoExtClk
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
+		--~ DEPTH_BITS => PeekRamDepth--,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 12500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2158,8 +2378,8 @@ begin
 		BitClockOut => open,
 		BitCountOut => open,
 		--~ BitClockOut => Ux1SelJmp,		
-		WriteStrobe => WriteUart0,
-		WriteData => Uart0TxFifoData,
+		WriteStrobe => WriteUart0_i,
+		WriteData => Uart0TxFifoData_i,
 		FifoFull => Uart0TxFifoFull,
 		FifoEmpty => Uart0TxFifoEmpty,
 		FifoCount => Uart0TxFifoCount,
@@ -2169,6 +2389,9 @@ begin
 		Txd => Txd0_i--,
 		--~ Txd => open--,
 	);
+	
+	WriteUart0_i <= WriteUart0 when (Uart0DecoderTransmitting = '0') else Uart0DecoderWriteTxd;
+	Uart0TxFifoData_i <= Uart0TxFifoData when (Uart0DecoderTransmitting = '0') else Uart0DecoderTxdByte;
 	Tx0 <= Txd0_i;
 	
 	--Mux master reset (boot) and user reset (datamapper)
@@ -2208,7 +2431,7 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 12500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2238,7 +2461,7 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 12500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2309,7 +2532,7 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 12500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2339,8 +2562,8 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		--~ DEPTH_BITS => 10,
-		DEPTH_BITS => 10--,
+		--~ DEPTH_BITS => PeekRamDepth,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 12500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2421,7 +2644,7 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		DEPTH_BITS => 10--,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 13500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2451,8 +2674,8 @@ begin
 	generic map
 	(
 		--~ UART_CLOCK_FREQHZ => BoardMasterClockFreq,
-		--~ DEPTH_BITS => 10,
-		DEPTH_BITS => 10--,
+		--~ DEPTH_BITS => PeekRamDepth,
+		FIFO_BITS => PeekRamDepth--,
 		--~ BAUD_DIVIDER_BITS => 8--,
 		--~ BAUDRATE => 13500000--,
 		--~ BAUDRATE => 8000000--,
@@ -2669,17 +2892,44 @@ begin
 		
 		--This is where we have to actually set all of our registers, since the M2S devices don't support initialization as though they are from the 1980's...
 		
-		
 		else
 		
 			if ( (MasterClk'event) and (MasterClk = '1') ) then
+				
+				LastPacketDecoder0SetDacs <= PacketDecoder0SetDacs;
+				LastRegisterSpaceSetDacs <= RegisterSpaceSetDacs;
+				
+				if ( (LastPacketDecoder0SetDacs = '0') and (PacketDecoder0SetDacs = '1') ) then
+				
+					DacASetpoint <= DacSetpointA_0;
+					DacBSetpoint <= DacSetpointB_0;
+					DacCSetpoint <= DacSetpointC_0;
+					
+					WriteDacs <= '1';
+					
+				else
+				
+					if ( (LastRegisterSpaceSetDacs = '0') and (RegisterSpaceSetDacs = '1') ) then
+					
+						DacASetpoint <= DacSetpointA_0;
+						DacBSetpoint <= DacSetpointB_0;
+						DacCSetpoint <= DacSetpointC_0;
+						
+						WriteDacs <= '1';
+						
+					else
+					
+						WriteDacs <= '0';
+				
+					end if;
+				
+				end if;
 				
 			end if;
 			
 		end if;		
 
 	end process;
-
 	
 end architecture_Main;
 

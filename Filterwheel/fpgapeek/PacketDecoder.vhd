@@ -81,6 +81,8 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 	signal LastPacketFound : std_logic;
 	signal InPacket : std_logic;
 	
+	signal NotTransmitting : std_logic;
+
 	signal U32_0StartAddress : std_logic_vector(PeekRamDepth - 1 downto 0);
 	signal U32_0Start : std_logic;
 	signal U32_0Done : std_logic;
@@ -206,7 +208,7 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		PayloadField21 => x"00",
 		PayloadField22 => x"00",
 		PayloadField23 => x"00",
-		Done => Transmitting--,
+		Done => NotTransmitting--,
 	);
 
 	process (clk, rst, PacketFound, CurrentState)
@@ -215,6 +217,8 @@ architecture PacketDecoderImplemenatation of PacketDecoder is
 		Dbg1 <= U32_0Start;
 		Dbg2 <= U32_0Done;
 		Dbg3 <= InPacket;
+		
+		Transmitting <= not(NotTransmitting);
 		
 		if (rst = '1') then
 		  
